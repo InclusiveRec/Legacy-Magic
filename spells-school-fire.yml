@@ -178,6 +178,7 @@ fire_shield:
 combust:
     spell-class: ".targeted.CombustSpell"
     fire-tick-damage: 4
+    check-plugins: false
 
 
 # warmth
