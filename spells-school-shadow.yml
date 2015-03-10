@@ -1,0 +1,72 @@
+blind:
+    spell-class: ".targeted.PotionEffectSpell"
+    name: blind
+    spell-icon: ink_sack:0
+    description: |
+        &rBlind   -   Shadow School
+        &3Blind your target.
+    cast-item: bone
+    cooldown: 15
+    range: 20
+    type: 15
+    strength: 0
+    duration: 600
+    targeted: true
+    can-target: players
+    obey-los: true
+    cost:
+        - mana 20
+        - 375 1
+    memory: 3
+    str-cost: "20 mana and spider's eye"
+    str-cast-self: You have blinded %t!
+    str-no-target: No target found.
+    effects:
+      victim:
+        position: target
+        effect: smoke
+invisibility:
+    spell-class: ".buff.InvisibilitySpell"
+    name: invisibility
+    spell-icon: record_11
+    description: |
+        &rInvisibility   -   Shadow School
+        &3Makes you invisible to players and monsters.
+    cast-item: bone
+    cooldown: 60
+    effects:
+        - caster spawn
+        - disabled spawn
+    toggle: true
+    prevent-pickups: true
+    cancel-on-give-damage: true
+    cancel-on-logout: true
+    duration: 15
+    cost:
+        - mana 25
+    use-cost:
+        - mana 15
+    memory: 5
+    use-cost-interval: 5
+    str-cost: 25 mana, plus 15 mana every 5 seconds
+    str-cast-self: You vanish!
+    str-cast-others: "%a vanishes!"
+    str-fade: You are visible again.
+nightvision:
+    spell-class: ".targeted.PotionEffectSpell"
+    name: nightvision
+    description: |
+        &rNightvision   -   Shadow School
+        &3You can see in the dark
+    spell-icon: 381
+    cast-item: stick
+    duration: 600
+    targeted: false
+    type: 16
+    cost:
+        - mana 20
+        - 375 1
+    memory: 2
+    str-cost: 20 mana and a spider eye
+    cooldown: 30
+    beneficial: true

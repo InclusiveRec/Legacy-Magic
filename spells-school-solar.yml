@@ -1,0 +1,416 @@
+predefined-items:
+
+
+    # Item factory
+
+    sun_grimoire:
+        type: "enchanted_book"
+        name: "&eAlmanac"
+        lore:
+          - "Detailed observations"
+          - "of the movements of the sun"
+          - "and theories of how to"
+          - "harness its power."
+
+    # Custom reagent
+
+    sun_concoction:
+        type: "351:11"
+        name: "&eSolar Concoction"
+        lore:
+            - "The elves combine sunflowers"
+            - "with a druidic concoction"
+            - "to create this special mixture"
+
+    # Defensive casting
+
+    sun_staff:
+        type: 369
+        name: "&eSolar Staff"
+        lore:
+          - "A golden staff,"
+          - "glowing with solar"
+          - "energy."
+
+
+    # Weapons
+
+    elven_blade:
+        type: iron_sword
+        name: "&eElvensteel Blade"
+        lore:
+            - "This sword is both"
+            - "surprisingly lightweight"
+            - "and lethally sharp."
+        enchants:
+            - "damage_undead 2"
+            - "durability 2"
+    elven_arrow:
+        type: arrow
+        name: "&eElven Arrow"
+        lore:
+          - "To use their powers, arcane"
+          - "archers require these"
+          - "arrows of superior quality."
+    elven_bow:
+        type: bow
+        name: "&eElven Bow"
+        lore:
+          - "A fine longbow crafted"
+          - "from a seasoned elm stave,"
+          - "strung with horsehair."
+        enchants:
+          - "arrow_damage 2"
+          - "damage_undead 2"
+          - "durability 2"
+
+
+#############################
+#       The Grimoire        #
+#############################
+
+# Creating the Grimoire
+
+lore_of_the_sun:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: enchanted_book
+    cost:
+        - mana 100
+        - book 1
+        - sun_concoction 12
+    items:
+        - sun_grimoire
+
+# Item creation spells
+
+solar_staff:
+    spell-class: ".instant.ConjureSpell"
+    description: |
+        &eSolar Staff  -   L05 Solar Spell
+        Infuse your wand with the life-giving energy of the sun.
+    cast-item: sun_grimoire
+    cost:
+        - mana 100
+        - 266 2
+        - stick 2
+        - sun_concoction 6
+    memory: 8
+    str-cost: 100 mana, 2 gold ingots, 2 sticks, and 6 solar concoction.
+    items:
+        - sun_staff 1
+    str-cast-self: Your simple wand grows green and sprouts leaves.
+    str-cast-others: "%a holds forth a wand, which comes to life, growing green and leafy."
+elvensteel:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: sun_grimoire
+    items:
+        - elven_blade
+elven_bowyer:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: sun_grimoire
+    memory: 4
+    prerequisites:
+        - woodland_gardener
+    items:
+        - elven_bow
+elven_fletcher:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: sun_grimoire
+    memory: 4
+    prerequisites:
+        - woodland_gardener
+    items:
+        - elven_arrow 6-9
+
+# Bonus spells
+
+dawnrite:
+    spell-class: ".instant.RitualSpell"
+    description: |
+        &eDawnrite   -   Solar School
+        A ritual which will cause the sun to rise.
+        This ritual requires three participants and takes 20 seconds of concentration to cast.
+        Moving will disrupt the ritual.
+    cost:
+        - mana 100
+    memory: 10
+    str-cost: 100 mana.  Uses 10 memory slots.
+    cast-item: sun_staff
+    allow-command-casting: true
+    require-cast-item-on-command: true
+    str-cost: 50 mana and a gold block
+    ritual-duration: 400
+    charge-reagents-immediately: false
+    cooldown: 1800
+    spell: sunrise
+    str-cast-self: You have begun the ritual to summon the dawn.
+    str-cast-others: "%a has begun a ritual to summon dawn.  Right-click to participate."
+    str-ritual-joined: You have joined in the dawn rite.
+    str-ritual-interrupted: The dawn rite has been interrupted!
+    str-ritual-fail: The dawn rite has failed.
+    str-ritual-success: The dawn is summoned!
+    modifiers:
+        - night required
+    str-modifier-failed: You can only begin this ritual at night.
+skycalm:
+    spell-class: ".ExternalCommandSpell"
+    name: skycalm
+    cooldown: 300
+    description: |
+            &rSkycalm   -   Solar School
+            &3Clear the skies of bad weather
+    cast-item: sun_staff
+    cost:
+        - mana 50
+        - 175 1
+    memory: 5
+    str-cost: 50 mana and a sunflower
+    command-to-execute:
+        - "weather clear"
+    execute-on-console-instead: true
+    cast-time: 100
+    str-cast-start: You begin to calm the skies...
+    str-cast-self: The weather clears!
+    modifiers:
+        - storm required
+    str-modifier-failed: The sky is already clear!
+
+#########################################
+#           Magic Shears                #
+#                                       #
+#       Much of solar magic depends on  #
+#   reagents based on forest magic.     #
+#   These are obtained by adding extra  #
+#   spells to magic shears.  The solar  #
+#   variants require lightwalk.         #
+#########################################
+
+solar_concoction:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_sickle
+    spell-icon: "351:11"
+    prerequisites: woodland_concoction
+    memory: 1
+    items:
+        - sun_concoction 4-6
+    cost:
+        - mana 10
+        - 175 2
+        - forest_concoction 6
+lightwalk:
+    spell-class: ".buff.LightwalkSpell"
+    cast-item: stick,forest_sickle
+    spell-icon: glowstone
+    memory: 1
+    description: |
+        &eLightwalk: L01 Solar Spell
+        Light your path.
+    cost:
+        - mana 25
+        - sun_concoction 2
+    use-cost:
+        - sun_concoction 1
+    memory: 1
+    use-cost-interval: 25
+    str-cost: 25 mana and 3 torches, plus 1 torch occasionally
+    str-cast-self: Light appears at your feet.
+    str-fade: The light at your feet goes out.
+bloom:
+    spell-class: ".targeted.FarmSpell"
+    description: |
+        &eBloom   -   Plant School
+        Greatly accelerate crop growth
+    prerequisites: woodland_concoction
+    cooldown: 1
+    cast-item: stick,forest_sickle
+    cast-time: 60
+    radius: 8
+    growth: 2
+    cost:
+        - mana 40
+        - sun_concoction 2
+    memory: 1
+    str-cost: 40 mana and 2 solar concoction.
+    str-cast-self: The crops around you burst into bloom!
+    modifiers:
+        - outside continue
+        - day addpower 2
+
+
+# Solar staff
+
+banish:
+    spell-class: ".instant.PurgeSpell"
+    spell-icon: 377
+    cast-item: sun_staff
+    description: |
+        &rBanish   -   Solar School
+        &3Destroy all monsters near you.
+    range: 8
+    cast-item: sun_staff,stick
+    cooldown: 10
+    cost:
+        - mana 50
+    memory: 5
+    str-cost: 50 mana
+    str-cast-self: You banish the encroaching forces of darkness.
+    str-cast-others: "%a banishes the encroaching forces of darkness."
+    can-target:
+      - blaze
+      - cave_spider
+      - creeper
+      - enderman
+      - ghast
+      - magma_cube
+      - silverfish
+      - skeleton
+      - slime
+      - spider
+      - witch
+      - zombie
+      - pigzombie
+cleanse:
+    spell-class: ".targeted.CleanseSpell"
+    name: cleanse
+    description: |
+        &rCleanse   -   Solar School
+        &3Remove negative effects from yourself.
+    cast-item: sun_staff,stick
+    cooldown: 60
+    remove:
+      - fire
+      - 17
+      - 19
+      - 20
+    target-self: true
+    beneficial: true
+    cost:
+        - mana 20
+        - 175:4 1
+    memory: 2
+    str-cost: 20 mana and the clippings of a rose bush.
+    str-cast-self: You cleanse yourself of negative effects.
+prayer:
+    spell-class: ".instant.PrayerSpell"
+    cast-item: sun_staff,stick
+    spell-icon: yellow_flower
+    description: |
+        &rPrayer   -   Solar School
+        &3Heals yourself for five hearts.
+    cast-item: stick
+    cooldown: 15
+    amount-healed: 10
+    cost:
+        - mana 20
+    memory: 1
+    str-cost: 20 mana
+    str-cast-self: You have healed yourself.
+    str-at-full-health: You are already at full health.
+heal:
+    spell-class: ".targeted.HealSpell"
+    name: heal
+    cast-item: sun_staff,stick
+    spell-icon: red_rose
+    description: |
+        &rHeal   -   Solar School
+        &3Heals a target player.
+    cast-item: stick
+    heal-amount: 10
+    cancel-if-full: true
+    effects:
+        - target potion FF0000 40
+    can-target: players,wolf,cat
+    obey-los: true
+    cooldown: 0
+    range: 12
+    cost:
+        - mana 10
+    memory: 1
+    str-cost: 10 mana
+    str-cast-self: You have healed %t.
+    str-cast-target: "%a has healed you."
+    str-no-target: No target to heal.
+    str-max-health: "%t is already at max health."
+soothe:
+    spell-class: ".targeted.ChainSpell"
+    cast-item: sun_staff,stick
+    description: |
+        &rSoothe   -   Solar School
+        &3A wave of healing energy emanates from the caster, passing
+        through nearby individuals and restoring their health.
+    spell: heal
+    range: 20
+    cooldown: 30
+    bounces: 5
+    bounce-range: 8
+    interval: 15
+    beneficial: true
+    target-players: true
+    target-non-players: false
+    cast-item: sunstaff
+    cost:
+        - mana 25
+        - 38:1 1
+    memory: 6
+    requires: heal
+    str-cost: 25 mana and a blue orchid.
+    str-cast-self: You send forth a wave of soothing energy.
+    str-cast-others: A wave of soothing energy emanates from %a.
+
+# Sword spells
+
+solar_armour:
+    enabled: false
+    spell-class: ".buff.ArmorSpell"
+
+heroic_charge:
+    enabled: false
+    spell-class: ".MultiSpell"
+    cast-item: elven_blade
+    cooldown: 0.5
+    spells:
+        - getback
+        - jump
+
+solar_ray:
+    spell-class: ".instant.ParticleProjectileSpell"
+    cast-item: sun_staff
+    bindable: false
+    spell-icon: 377
+    memory: 20
+    cost:
+      - mana 40
+      - 175 1
+    str-cost: 40 mana and a sunflower
+    cooldown: 5
+    particle-name: mobSpell
+    particle-velocity: 40
+    projectile-gravity: 0.1
+    max-distance: 120
+    hit-players: true
+    stop-on-hit-entity: false
+    description: |
+            &rSolar Blast   -   Solar School
+            &3Blasts your enemy with solar energy, forcing them back and disorienting them.
+    spell: punch
+    str-no-target: No target found.
+    str-cast: You blast %t with a ray of solar energy!
+    str-cast-target: "%a blasts you with a ray of solar energy!"
+    str-cast-others: "%a blasts %t with a ray of solar energy!"
+
+# Passive spells
+
+solar_guard:
+    spell-class: ".PassiveSpell"
+    requires: solar_blast
+    triggers:
+        - takedamage ENTITY_ATTACK
+        - takedamage PROJECTILE
+        - takedamage MAGIC
+    spells:
+        - solar_ray
+    cost:
+        - mana 20
+        - 175 1
+    memory: 10

@@ -1,0 +1,159 @@
+
+
+
+
+
+#  Some thoughts on death magic:
+#  Very dear trade-offs.  Health, negative status effects, etc can be traded for mana.
+#  Rule number two, this stuff is hungry for mana.
+#  Rule number three: where possible, make it scary
+
+#  A scary, hungry spell:
+#  Deathclaws
+#  Claws of some sort snatch a player, paralyzing and damagine them.  Hold until caster's mana runs out
+
+necrotic_claw:
+    spell-class: ".TargetedMultiSpell"
+    range: 2
+    spells:
+        - paralysis
+        - drain
+        - DELAY 20
+        - drain
+        - DELAY 20
+        - drain
+
+awakening:
+    spell-class: ".instant.DummySpell"
+    description: |
+            Awakening: L05 Death spell
+            A great horde of undead arises where you bid.
+            The dead have no loyalty to you...
+
+
+# effects
+
+paralysis:
+    spell-class: ".targeted.StunSpell"
+    duration: 2.5
+
+
+
+# oldstuff
+
+
+drain:
+    spell-class: ".targeted.DrainlifeSpell"
+    name: drain
+    description: |
+        &rDrain   -   Death School
+        &3Suck the life out of your enemy.
+    spell-icon: ghast_tear
+    cast-item: bone
+    can-cast-by-command: false
+    cooldown: 10
+    range: 10
+    take-type: health
+    take-amt: 3
+    give-type: health
+    give-amt: 2
+    obey-los: 2
+    ignore-armor: true
+    target-players: true
+    check-plugins: true
+    cost:
+        - mana 25
+    memory: 2
+    str-cost: 25 mana
+    str-cast-self: You drain life from your enemy.
+    str-cast-others: "%a sucks the life from %t!"
+    str-cast-target: "%a sucks some of your life away!"
+    str-no-target: No source of life energy found.
+minion:
+    spell-class: ".buff.MinionSpell"
+    name: minion
+    spell-icon: monster_egg:54
+    description: |
+        &rMinion   -   Death School
+        &3Summons an undead minion to aid you
+    cast-item: bone
+    cooldown: 10
+    duration: 60
+    mob-chances:
+        - Zombie 73
+        - Skeleton 25
+        - Wither_Skeleton 2
+    prevent-sun-burn: true
+    target-players: false
+    cost:
+        - mana 30
+        - rotten_flesh 2
+        - bone 2
+    memory: 3
+    str-cost: 30 mana, 2 rotten flesh and 2 bones
+    str-cast-self: You summon an undead minion.
+    str-cast-others: "%a has summoned an undead minion."
+    str-fade: Your undead minion dies.
+rupture:
+    spell-class: ".targeted.ExplodeSpell"
+    name: rupture
+    spell-icon: 289
+    description: |
+        &rRupture   -   Death School
+        &3Charge up power to create an explosion at a target point
+    cast-item: bone, minepick
+    cost:
+        - mana 15
+        - 289 1
+    memory: 5
+    str-cost: 15 mana and 1 gunpowder
+    cooldown: 10
+    range: 25
+    explosion-size: 4
+    backfire-chance: 3
+    cast-time: 60
+    str-cast-start: You begin charging your power...
+    str-cast-self: You strike out destructive energy!
+    str-cast-others: "%a strikes out with destructive energy!"
+    interrupt-on-move: false
+    can-cast-by-command: false
+sacrifice:
+    spell-class: ".instant.ManaSpell"
+    name: lifetap
+    spell-icon: potion:8193
+    description: |
+        &rSacrifice   -   Death School
+        &3Restores mana at the cost of life.
+    cast-item: bone
+    cooldown: 5
+    mana: 25
+    cost:
+        - health 4
+    memory: 1
+    str-cost: 2 hearts
+    str-cast-self: You restore 25 mana.
+    can-cast-by-command: true
+spite:
+    spell-class: ".targeted.AreaEffectSpell"
+    name: spite
+    description: |
+        &rSpite   -   Death School
+        &3Unleash an burst of dark energy, blinding your foes and draining their life energy
+    spell-icon: 375
+    cast-item: bone
+    cost:
+        - mana 60
+        - 375 6
+    memory: 6
+    str-cost: "60 mana and six spider eyes"
+    cooldown: 60
+    vertical-radius: 3
+    horizontal-radius: 4
+    point-blank: false
+    range: 20
+    target-players: true
+    target-non-players: false
+    fail-if-no-targets: false
+    spells:
+        - blind
+        - drain

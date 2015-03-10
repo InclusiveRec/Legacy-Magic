@@ -1,0 +1,100 @@
+predefined-items:
+    server_manual:
+        type: "written_book"
+        title: "A Strange New World"
+        author: "Inclusive Recreation"
+        lore:
+          -  "&0&kMS$:tome:gate,-1"
+        pages:
+            - |
+
+              &l     A Strange
+                    New World
+
+                     &rA Guide
+
+                          by
+                Inclusive Recreation
+
+
+
+
+
+                     &oFirst edition
+            -  |
+              &lTable of Contents
+
+              &rI.  Welcome
+              II.  Towns
+              III.  The Economy
+              IV.  Magic
+              V.  Roleplaying
+
+
+
+
+              Also be sure to visit:
+              inclusiverec.enjin.com
+            - |
+              &nI.  Welcome
+
+              &r  Welcome to &oA Strange New World&r, the Inclusive Recreation program's Minecraft server.  It might be a little different from servers you've played on before, so this guide is to help you get started.
+            - |
+              &nII.  Towns
+              
+              &r  If you wish, you can set off on your own into the wilderness to establish your home.  However, you may wish to join many of the servers' players in one of the server's towns.
+            - When you first join the server, you will start off in the library of Spawnville.  Spawnville is the server's most central town.  There are plots available in West Spawnville where you may freely build.
+            - In time, you may wish to resettle yourself in a different part of town, or in another town entirely.  If you find two other players to join you, you can even start your own town.
+            - Many towns offer plots for sale.  They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.
+            - |
+              &nIII.  The Economy
+
+              &r  On &oA Strange New World&r, commerce is carried out with an emerald currency.  Gaining emeralds will let you buy items and supplies, rent or purchase land, and pay rent or taxes.
+            - There are some useful tools for managing your treasure.  If you place a sign on a chest with &o[Vault]&r on the first line, the server will use it to store your emeralds.
+            - |
+                The following self-explanatory commands can be used to measure and manipulate your emeralds:
+
+                /balance or /money
+                /money pay
+                /money deposit
+                /money withdraw
+            - You can gain emeralds by mining, trading with villagers, or selling things to player shops.  If you want to start a shop of your own, you will need to find a town plot that allows it, and put a sign on a chest with &o[Shop]&r on the first line.
+            - |
+              &nIV.  Magic&r
+              
+                This land is rich in energies which can fuel useful and sometimes powerful magic spells.  Right-clicking with a stick, or some other cast item, will cycle through spells to be cast with a left-click.
+            - |
+                You can also cast many spells with /cast <spell name>.  Try these out:
+                /cast list
+                /cast help gate
+                /cast help mark
+            -  You might notice that many spells have costs.  Mana is an energy that recharges over time, or by consuming (right-clicking) lapis lazuli or glowstone dust.  It can be checked with the /mana command.  Others consume various items or resources.
+            -  There are several ways to gain magic.  Some shops sell scrolls which allow for a set number of casts, or tomes which teach the spell.  More can be learnt by joining the Solar Druids of Sunfield, a guild, or a school of magic.
+            - |
+              &nV.  Roleplaying&r
+
+                &oA Strange New World&r is a roleplaying server.  This means that the character a person plays as and the person themself are seperate identities.  You can be a hero or villain, or anyone else you can imagine.
+            - The important thing to remember about roleplaying is that it can only work when everyone is glad to participate.  You can have a fight or a war, but only if both sides agree.  Make sure you respect others' boundaries, so it can be fun for everyone.
+            - Sometimes it is important for a player to absolutely differentiate between their character and what they actually think.  If you ever need to do that, [use these square brackets.]  So your character might say "I hate you," but you might say [This is fun.]
+            - As long as we're considerate of each other, and trust others to be considerate of us, we can have a lot of fun.  Great to have you on the server, and may you have many exciting adventures!
+manual:
+    spell-class: ".instant.ConjureSpell"
+    name: manual
+    spell-icon: 387
+    description: |
+        &rManual   -   Arcane Art
+        &3Create a server manual.
+    str-cost: 10 mana, 1 glowstone dust, and a book and quill.
+    str-cast-self: |
+        The quill rises in the air, moves quickly over
+        the rapidly flipping pages, and pens a guide
+        to the Strange New Land.
+    cost:
+      - mana 10
+      - glowstone_dust 1
+      - 386 1
+    items:
+        - server_manual 1
+    add-to-inventory: true
+    always-granted: true
+

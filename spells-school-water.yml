@@ -1,0 +1,111 @@
+freeze:
+    spell-class: ".instant.FreezeSpell"
+    name: freeze
+    spell-icon: snow_ball
+    description: |
+        &rFreeze   -   Water School
+        &3The mage blast forth a flurry of icy shards which damage and slow all in their path.
+        This spell is stronger when the mage is standing on &bfrozen&3 terrain.
+    cast-item: 279
+    snowballs: 25
+    horizontal-spread: 15
+    vertical-spread: 5
+    damage: 2
+    slow-amount: 2
+    slow-duration: 80
+    target-players: true
+    cooldown: 5
+    cost:
+        - mana 15
+        - snow_ball 1
+    memory: 2
+    str-cost: 15 mana and a snowball.
+    spell-power-affects-range: true
+    power-affects-duration: true
+    modifiers:
+        - onblock 78,79,80,174 power 2
+geyser:
+    spell-class: ".targeted.GeyserSpell"
+    cast-item: stick
+    description: |
+        &rGeyser   -   Water School
+        Create a water geyser at your enemy's feet.
+    cast-item:
+    range: 20
+    damage: 3
+    velocity: 10
+    animation-speed: 3
+    geyser-height: 9
+    geyser-type: water
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    cost:
+        - mana 15
+    memory: 2
+    str-cost: 15 mana
+    cooldown: 3
+    str-cast-self: You call up a geyser.
+    str-no-target: No target found.
+gills:
+    spell-class: ".buff.GillsSpell"
+    spell-icon: gold_helmet
+    cast-item: stick
+    description: |
+        &rGills   -   Water School
+        &3Allows you to breath underwater.
+    glass-head-effect: true
+    cooldown: 60
+    duration: 300
+    num-uses: 5
+    cost:
+        - mana 50
+        - sugar_cane 1
+    use-cost:
+        - sugar_cane 1
+    memory: 2
+    use-cost-interval: 1
+    str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane few seconds
+    str-cast-self: You form gills on your neck!
+    str-fade: Your gills disappear.
+water:
+    spell-class: ".targeted.MaterializeSpell"
+    cast-item: stick
+    spell-icon: water_bucket
+    description: |
+        &rWater   -   Water School
+        &3Summons a water spring into existence.
+    cast-item: book
+    cooldown: 120
+    range: 8
+    block-type: water
+    reset-delay: 200
+    apply-physics: true
+    check-plugins: true
+    cost:
+        - mana 15
+    memory: 1
+    str-cost: 15 mana
+    str-no-target: No target found.
+    str-failed: ""
+waterwalk:
+    spell-class: ".buff.WaterwalkSpell"
+    cast-item: stick
+    spell-icon: boat
+    description: |
+        &rWaterwalk   -   Water School
+        &3Walk across the water.
+    speed: 0.05
+    duration: 60
+    cancel-on-logout: true
+    cancel-on-teleport: true
+    cost:
+        - mana 25
+        - boat 1
+    memory: 1
+    use-cost:
+        - mana 10
+    use-cost-interval: 20
+    str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
+    str-cast-self: You can now walk on water!
+    str-fade: You can no longer walk on water.

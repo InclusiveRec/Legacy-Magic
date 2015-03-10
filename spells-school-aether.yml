@@ -1,0 +1,36 @@
+blink:
+    spell-class: ".targeted.BlinkSpell"
+    name: blink
+    spell-icon: ender_pearl
+    description: |
+        &rBlink   -   Arcane School
+        &3Teleport a short distance.
+    cast-item: stick
+    cooldown: 4
+    range: 25
+    pass-through-ceiling: false
+    smoke-trail: true
+    effects:
+        - pos1 ender
+        - pos2 ender
+    cost:
+        - mana 15
+    memory: 1
+    str-cost: 15 mana
+    str-cast-self: You blink away!
+    str-cast-others: "%a blinks away!"
+    str-cant-blink: You cannot blink there.
+enderchest:
+    spell-class: ".instant.EnderchestSpell"
+    name: enderchest
+    spell-icon: ender_chest
+    description: |
+        &rEnderchest   -   Arcane School
+        &3Opens your ender chest inventory.
+    cast-item: book
+    cooldown: 300
+    cost:
+        - mana 50
+        - 368 1
+    memory: 1
+    str-cost: 50 mana and an enderpearl.

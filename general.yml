@@ -1,0 +1,64 @@
+debug: false
+debug-level: 3
+enable-error-logging: true
+enable-stat-collection: true
+enable-volatile-features: true
+enable-tab-completion: true
+str-cast-usage: |
+    Usage: /cast <spell>. 
+    Use /cast list to see a list of spells.
+str-unknown-spell: You do not know a spell with that name.
+str-spell-change: You are now using %s&3.
+str-on-cooldown: "You can't cast that spell again for another %c seconds."
+str-cant-cast: "You can't cast that spell right now."
+str-wrong-world: "That spell doesn't work in this dimension."
+str-console-name: Arcana
+text-color: 3
+broadcast-range: 20
+spell-icon-slot: 8
+separate-player-spells-per-world: false
+always-show-message-on-cycle: true
+only-cycle-to-castable-spells: true
+allow-cast-with-fist: true
+cast-with-left-click: true
+cast-with-right-click: true
+ops-have-all-spells: true
+ops-ignore-reagents: false
+ops-ignore-cooldowns: false
+ops-ignore-cast-times: false
+default-all-perms-false: true
+ignore-cast-item-enchants: false
+ignore-cast-item-names: false
+ignore-cast-item-durability: [257, 267, 268, 269, 270, 271, 279, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317, 359 ]
+los-transparent-blocks: [ 0, 27, 28, 31, 32, 37, 38, 39, 40, 50, 51, 55, 63, 65, 66, 68, 69, 70, 72, 75, 76, 77, 78, 93, 94, 106, 111 ]
+global-cooldown: 100
+check-world-pvp-flag: true
+cast-on-animate: false
+use-exp-bar-as-cast-time-bar: false
+cooldowns-persist-through-reload: true
+
+entity-names:
+    zombie: an ugly zombie
+    skeleton: a scary skeleton
+    spider: a spider
+    cavespider: a nasty little spider
+    creeper: a creepy creeper
+    slime: a slimy blob
+    wolf: a wolf
+    snowman: a snow golem
+    villager: an innocent villager
+    enderman: Mr. Enderman
+    silverfish: a slimy silverfish
+    ghast: a ghast
+    pigzombie: a pig zombie
+    blaze: a blaze
+    lavaslime: a magma slime
+    giant: the giant
+    enderdragon: the ender dragon
+    cow: a cow
+    sheep: a sheep
+    pig: a smelly pig
+    chicken: a duck
+    mushroomcow: a deformed cow
+    squid: a slimy squid
+    irongolem: a friendly iron golem
