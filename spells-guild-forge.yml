@@ -27,7 +27,7 @@ dowse:
     description: |
         &rDowse   -   Guild Spell: &4Forge
         &3Dowse for iron ore.
-    cast-item: 257, minepick
+    cast-item: minepick
     cooldown: 60
     block-type: iron_ore
     entity-type: ""
@@ -46,7 +46,7 @@ mighty_swing_i:
     description: |
         &rMighty Swing   -   Guild Spell: &4Forge
         &3Your muscles bulge with strength, and you cut through stone with ease.
-    cast-item: 257, minepick
+    cast-item: minepick
     cooldown: 30
     target-self: true
     beneficial: true
