@@ -121,8 +121,8 @@ woodland_concoction:
       - forest_concoction 2-4
     description: |
             &2Herbal Concoction: Lv02 Forest Spell
-            Prepare a woodland concoction from a red and yellow flower,
-            a brown mushroom, and a fern.
+            Prepare a woodland concoction from a red and yellow flower, and
+            a brown mushroom.
             Requires knowledge of the &2food&3 spell.
     str-cast-self: You prepare a druidic concoction.
 
@@ -161,7 +161,7 @@ forage:
     description: |
             &2Forage: Lv01 Forest Spell
             You discover sources of food in the wilderness.
-    str-cost: 10 mana.  Uses 1 memory slot.
+    str-cost: 5 mana.  Uses 1 memory slot.
     str-cast-self: You feel less hungry.
     str-on-cooldown: ""
     modifiers:
