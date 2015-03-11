@@ -219,7 +219,7 @@ solar_concoction:
             &eSolar Concoction: Lv01 Solar Spell
             Mixes a solar concoction.
             Requires knowledge of the &2woodland concoction&3 spell.
-    str-cost: "Add 2 sunflowers to 6 solar concoction, using 10 mana."
+    str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
 lightwalk:
     spell-class: ".buff.LightwalkSpell"
     cast-item: stick,forest_sickle
