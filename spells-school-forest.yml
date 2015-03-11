@@ -45,6 +45,11 @@ predefined-items:
             - "breathing with druidic magic."
 
 
+    wolf_fang:
+        type: flint
+        name: "&2Wolf's Fang"
+        lore:
+            - "A razor-sharp incisor."
 
 #############################
 #                           #
@@ -126,6 +131,7 @@ woodland_concoction:
 woodland_wand:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
+    spell-icon: stick
     prerequisites: woodland_gardener,scroll
     memory: 10
     cost:
@@ -161,15 +167,10 @@ forage:
     modifiers:
         - holding "359|&2Magic Sickle" power 2
     effects:
-        audio:
+        munch:
             position: caster
             effect: sound
-            sound: eat
-        visual:
-            position: caster
-            effect: particles
-            particle-name: "iconcrack_260_0"
-            count: 3
+            sound: random.eat
 lifewalk:
     spell-class: ".buff.LifewalkSpell"
     spell-icon: yellow_flower
@@ -322,8 +323,9 @@ hedge:
     cooldown: 4
     wall-duration: 30
     range: 10
-    wall-width: 9
-    wall-height: 4
+    spell-power-affects-range: false
+    wall-width: 6
+    wall-height: 3
     wall-depth: 2
     wall-type: 18
     description: |
@@ -333,7 +335,7 @@ hedge:
     str-cost: 15 mana and 2 druidic concoction.
     str-no-target: You cannot create a hedge there.
     modifiers:
-        - holding "280|&2Oak wand" power 3
+        - holding "280|&2Oak wand" power 2
 
 
 
@@ -344,28 +346,53 @@ hedge:
 #   Still in development
 #
 
+fang:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_grimoire
+    spell-icon: flint
+    prerequisites:
+        - leap
+        - haste
+        - bind
+        - unbind
+        - scroll
+    memory: 5
+    cost:
+        - bone 6
+        - forest_concoction 4
+        - mana 60
+    items:
+        - wolf_fang
+    description: |
+            &2Fang: Lv05 Forest Spell
+
+rend:
+    spell-class: ".TargetedMultiSpell"
+    cast-item: wolf_fang
+    spell-icon: 423
+
 wolf:
     enabled: false
     spell-class: ".targeted.SpawnMonsterSpell"
-    name: "wolf"
-    description: |
-            &rWolf   -   Forest School
-            &3Summons a wolf to accompany you.
+    prerequisites:
+        - forage
+    memory: 3
+    cost:
+        - mana 50
+        - bone 3
     location: target
     entity-type: wolf
     range: 5
     duration: 0
-    cooldown: 
+    cooldown: 600
     tamed: true
-    cost:
-        - mana 50
-        - bone 3
-    memory: 3
-    requires: food
-    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
-    str-cast-self: A wolf appears!
     modifiers:
         - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+    description: |
+            &rWolf   -   Forest School
+            &3Summons a wolf to accompany you.
+    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
+    str-cast-self: A wolf appears!
 
 call_of_the_wild:
     enabled: false
