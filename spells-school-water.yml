@@ -53,7 +53,7 @@ gills:
     cast-item: stick
     description: |
         &rGills   -   Water School
-        &3Allows you to breath underwater.
+        &3Allows you to breathe underwater.
     glass-head-effect: true
     cooldown: 60
     duration: 300
