@@ -10,7 +10,7 @@
 
 #  A scary, hungry spell:
 #  Deathclaws
-#  Claws of some sort snatch a player, paralyzing and damagine them.  Hold until caster's mana runs out
+#  Claws of some sort snatch a player, paralyzing and damaging them.  Hold until caster's mana runs out
 
 necrotic_claw:
     spell-class: ".TargetedMultiSpell"
