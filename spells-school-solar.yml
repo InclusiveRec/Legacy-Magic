@@ -308,12 +308,12 @@ cleanse:
     beneficial: true
     cost:
         - mana 20
-        - 175:4 1
+        - 175 1
     memory: 2
     description: |
         &eCleanse: Lv02 Solar Spell
         Remove negative effects from yourself.
-    str-cost: 20 mana and the clippings of a rose bush.
+    str-cost: 20 mana and a sunflower.
     str-cast-self: You cleanse yourself of negative effects.
 prayer:
     spell-class: ".instant.PrayerSpell"
