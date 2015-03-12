@@ -40,7 +40,7 @@ mix_mortar:
     str-cast-self: The mortar is prepared.  Sticky!
     interrupt-on-damage: true
     interrupt-on-cast: true
-    str-interrupted: The mixing process has been disrupted, and the matrials have been ruined.
+    str-interrupted: The mixing process has been disrupted, and the materials have been ruined.
 
 patchwork:
     spell-class: ".targeted.ReplaceSpell"
