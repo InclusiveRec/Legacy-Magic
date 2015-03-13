@@ -1,3 +1,58 @@
+predefined-items:
+# James, Shadow wand is basic
+# Staff is middle, and Scepter is advanced
+# I have NOT added memory costs
+# and I REQUIRE you to have protocollib from
+# http://ci.shadowvolt.com/job/ProtocolLib/lastSuccessfulBuild/artifact/ProtocolLib/target/ProtocolLib.jar/
+    shadow_wand:
+        type: bone
+        name: "&cShadow Wand"
+    shadow_staff:
+        type: bone
+        name: "&cShadow Staff"
+    shadow_scepter:
+        type: 399
+        name: "&4Shadow Scepter"
+    
+#Conjuration
+shadowand_maker:
+    name: shadowand_maker
+    spell-class: ".instant.ConjureSpell"
+    cast-item: arrow
+    spell-icon: bone
+    cost:
+        - mana 10
+        - 369 1
+        - 373:8270 1
+    items:
+        - shadow_wand
+    str-cost: "A lengthened invisibility potion, a blaze rod, and 10 mana"
+shadowstaff_maker:
+    name: shadowstaff_maker
+    spell-class: ".instant.ConjureSpell"
+    cast-item: shadow_wand
+    spell-icon: 155
+    cost:
+        - mana 100
+        - shadow_wand 1
+        - 385 5
+    items:
+        - shadow_staff
+    str-cost: "A shadow wand, 5 fire charges, and 100 mana"
+shadowscepter_maker:
+    name: shadowscepter_maker
+    spell-class: ".instant.ConjureSpell"
+    cast-item: shadow_staff
+    spell-icon: 155:1
+    cost:
+        - mana 600
+        - shadow_staff 1
+        - 385 192
+        - 399 1
+    items:
+        - shadow_scepter
+    str-cost: "A Shadow Staff, 3 stacks of fire charges, a nether star, and 600 mana"
+#Offense
 blind:
     spell-class: ".targeted.PotionEffectSpell"
     name: blind
@@ -5,7 +60,7 @@ blind:
     description: |
         &rBlind   -   Shadow School
         &3Blind your target.
-    cast-item: bone
+    cast-item: shadow_wand
     cooldown: 15
     range: 20
     type: 15
@@ -16,7 +71,7 @@ blind:
     obey-los: true
     cost:
         - mana 20
-        - 375 1
+        - 375 10
     memory: 3
     str-cost: "20 mana and spider's eye"
     str-cast-self: You have blinded %t!
@@ -32,7 +87,7 @@ invisibility:
     description: |
         &rInvisibility   -   Shadow School
         &3Makes you invisible to players and monsters.
-    cast-item: bone
+    cast-item: shadow_staff
     cooldown: 60
     effects:
         - caster spawn
@@ -44,6 +99,7 @@ invisibility:
     duration: 15
     cost:
         - mana 25
+        - 399 5
     use-cost:
         - mana 15
     memory: 5
@@ -59,14 +115,124 @@ nightvision:
         &rNightvision   -   Shadow School
         &3You can see in the dark
     spell-icon: 381
-    cast-item: stick
+    cast-item: shadow_wand
     duration: 600
     targeted: false
     type: 16
     cost:
         - mana 20
-        - 375 1
+        - 375 50
+        - 395 1
     memory: 2
     str-cost: 20 mana and a spider eye
     cooldown: 30
     beneficial: true
+confuse:
+    spell-class: ".targeted.PotionEffectSpell"
+    spell-icon: 370
+    name: confuse
+    type: 9
+    duration: 600
+    strength: 1
+    cooldown: 100
+    targeted: true
+    can-target: players
+    obay-los: true
+    memory: 5
+    cost:
+        - mana 100
+        - 376 10
+    str-cast-self: You have confused %t!
+    str-cost: 100 mana and 10 fermented spider eyes
+    cast-item: shadow_staff
+weaken:
+    spell-class: ".targeted.PotionEffectSpell"
+    spell-icon: 268
+    cast-item: 276:1560
+    name: weaken
+    type: 18
+    duration: 60
+    strength: 5
+    cooldown: 100
+    targeted: true
+    can-target: players
+    obay-los: true
+    memory: 5
+    cost:
+        - mana 600
+        - 268:58 5
+    str-cost: 600 nama and an almost-broken wooden sword
+    str-cast-self: You have confused %t!
+    cast-item: shadow_scepter
+firenova:
+    spell-class: ".instant.FirenovaSpell"
+    name: firenova
+    spell-icon: 259
+    description: Summon an expanding ring of fire.
+    cast-item: shadow_wand
+    cooldown: 10
+    range: 5
+    tick-speed: 10
+    burn-tall-grass: true
+    check-plugins: true
+    cost:
+        - mana 150
+        - 369 10
+    str-cost: 150 mana and a blaze rod
+    str-cast-self: You summon an expanding ring of fire.
+    str-cast-others: "%a summons an expanding ring of fire."
+novaburst:
+    spell-class: ".instant.FirenovaSpell"
+    name: novaburst
+    spell-icon: 327
+    description: Summon an expanding ring of fire.
+    cast-item: shadow_staff
+    cooldown: 10
+    range: 5
+    tick-speed: 10
+    burn-tall-grass: true
+    check-plugins: true
+    cost:
+        - mana 15
+        - 369 100
+    str-cost: 15 mana and 100 blaze rods
+    str-cast-self: You summon an expanding ring of fire.
+    str-cast-others: "%a summons an expanding ring of fire."
+    spells:
+        - firenova
+        - firenova
+        - firenova
+        
+# THE FOLLOWING SPELL REQUIRES PROTOCOLLIB!!!
+disguise:
+    spell-icon: 326
+    name: disguise
+    spell-class: ".targeted.DisguiseSpell"
+    entity-type: player
+    nameplate-text: Connierific
+    cast-item: shadow_scepter
+    target-self: true
+    toggle: true
+    duration: 0
+    cast-item: shadow_scepter
+    cost:
+        - mana 100
+        - 38 1
+    str-cost: A rose and 100 mana
+
+# SAME HERE, GET PROTOCOLLIB!
+disguiseenemy:
+    spell-icon: 122
+    name: disguiseenemy
+    spell-class: ".targeted.DisguiseSpell"
+    entity-type: enderdragon
+    nameplate-text: Da Boss!
+    toggle: true
+    target-self: false
+    duration: 0
+    cast-item: shadow_scepter
+    cost:
+        - mana 100
+        - 38 1
+        - 399 1
+    str-cost: A rose, a nether star, and 150 mana
