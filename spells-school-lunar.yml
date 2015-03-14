@@ -1,0 +1,191 @@
+predefined-items:
+    moon_concoction:
+        type: "351:6"
+        name: "&6Lunar Concoction"
+        lore:
+            - "We mix Solar Concoction and Glass"
+            - "to get the Lunar Concoction"
+    lunar_rod:
+        type: stick
+        name: "&6Lunar Stick"
+        lore: 
+            - A stick infused with the power of the moon
+    
+    lunar_ingot:
+        type: goldingot
+        name: "&6Lunar Ingot"
+        lore:
+            - A gold ingot infused with the power of the moon
+    
+    lunar_wand:
+        type: 415
+        name: "&6Lunar Wand"
+        lore:
+            - A wand capable of
+            - harnessing the power
+            - of the moon
+    lunar_staff:
+        type: leather
+        name: "&6Lunar Staff"
+        lore:
+            - A staff capable of
+            - harnessing the power
+            - of the moon
+    lunar_sickle:
+        type: shears
+        name: "&6Lunar Shears"
+        lore:
+            - A pair of shears
+            - fabricated from the
+            - moon
+        enchants:
+            - "damage_all 1"        
+lunarconcoction:
+    name: lunarconcoction
+    prerequisites:
+        - solar_concoction
+    spell-class: ".instant.ConjureSpell"
+    cast-item: lunar_wand,lunar_staff,lunar_sickle,sun_staff
+    spell-icon: moon_concoction
+    cost:
+        - mana 100
+        - 314 1
+        - sun_concoction
+    items:
+        - moon_concoction 1-2
+    str-cost: "A Solar Concoction, a glass bottle, and 100 mana"
+    modifiers:
+        - night required  
+lunarrod:
+    prerequisites:
+        - lunarshears
+    name: lunarrod
+    spell-class: ".instant.ConjureSpell"
+    cast-item: lunar_sickle,lunar_wand,lunar_staff
+    spell-icon: lunar_rod
+    cost:
+        - mana 100
+        - 369 1
+        - stick 1
+        - moon_concoction 5
+    items:
+        - lunar_rod
+    str-cost: "A blaze rod, 5 lunar concoctions, a stick, and 100 mana"
+    modifiers:
+        - night required  
+lunaringot:
+    name: lunaringot
+    prerequisites:
+        - lunarshears
+    spell-class: ".instant.ConjureSpell"
+    cast-item: lunar_sickle,lunar_wand,lunar_staff
+    spell-icon: lunar_ingot
+    cost:
+        - mana 150
+        - 369 1
+        - 266 1
+        - moon_concoction 5
+    items:
+        - lunar_ingot
+    str-cost: "1 gold, 5 lunar concoctions, a blaze rod, and 150 mana"
+    modifiers:
+        - night required  
+lunarwand:
+    name: lunarwand
+    prerequisites:
+        - lunar_sickle
+    spell-class: ".instant.ConjureSpell"
+    cast-item: lunar_sickle,lunar_wand,lunar_staff
+    spell-icon: lunar_wand
+    cost:
+        - mana 100
+        - lunar_rod 5
+        - lunar_ingot 2
+        - moon_concoction 50
+    items:
+        - lunar_wand
+    str-cost: "100 mana, 50 lunar concoctions, 5 lunar rods, and 2 lunar ingots"   
+    modifiers:
+        - night required   
+lunarstaff:
+    name: lunarstaff
+    prerequisites:
+        - lunarwand
+    spell-class: ".instant.ConjureSpell"
+    cast-item: lunar_wand,lunar_staff
+    spell-icon: lunar_staff
+    cost:
+        - mana 200
+        - lunar_rod 10
+        - lunar_ingot 4
+        - lunar_sickle
+        - moon_concoction 100
+    items:
+        - lunar_staff
+    str-cost: "Lunar Shears, 100 lunar concoction, 10 Lunar Rods, 4 Lunar Ingots, and 200 mana"   
+    modifiers:
+        - night required   
+lunarshears:
+    name: lunarshears
+    spell-class: ".instant.ConjureSpell"
+    cast-item: shears
+    spell-icon: shears
+    cost:
+        - mana 100
+        - 369 1
+        - glass 16
+        - shears 1
+        - moon_concoction 200
+    items:
+        - lunar_sickle
+    str-cost: "10 glass, 200 lunar concoction, a blaze rod, and 100 mana"
+    modifiers:
+        - night required  
+dusk:
+    spell-class: ".ExternalCommandSpell"
+    name: sunrise
+    description: Makes the sun rise.
+    execute-on-console-instead: true
+    command-to-execute:
+        - "time set 10000"
+duskrite:
+    spell-class: ".instant.RitualSpell"
+    cast-item: lunar_staff
+    prerequisites:
+        - dawnrite
+    memory: 10
+    cost:
+        - mana 100
+        - 266 1
+    ritual-duration: 400
+    charge-reagents-immediately: false
+    cooldown: 100
+    spell: dusk
+    modifiers:
+        - day required
+    str-cost: "100 mana and 1 gold ingot."
+    str-cast-self: You have begun the ritual to summon the dusk.
+    str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
+    str-ritual-joined: You have joined in the dusk rite.
+    str-ritual-interrupted: The dusk rite has been interrupted!
+    str-ritual-fail: The dusk rite has failed.
+    str-ritual-success: The night is summoned!
+    str-modifier-failed: You can only begin this ritual at day.
+moonwalk:
+
+    spell-class: ".buff.LightwalkSpell"
+    cast-item: lunar_wand,lunar_staff
+    spell-icon: glowstone
+    memory: 1
+    cost:
+        - mana 25
+        - moon_concoction 2
+    use-cost:
+        - moon_concoction 1
+    memory: 1
+    use-cost-interval: 25
+    str-cost: 25 mana and 2 lunar concoction, plus 1 lunar concoction occasionally.
+    str-cast-self: Light appears at your feet.
+    str-fade: The light at your feet goes out.
+    modifiers:
+        - night required
