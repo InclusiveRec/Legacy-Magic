@@ -30,38 +30,10 @@ sunrise:
     execute-on-console-instead: true
     command-to-execute:
         - "time set 0"
-getvined:
-    spell-class: ".TargetedMultiSpell"
-    spells:
-      - viney
-      - cripple
-viney:
-    spell-class: ".targeted.GeyserSpell"
-    damage: 1
-    animation-speed: 1
-    geyser-height: 6
-    velocity: 0
-    geyser-type: 106
 cripple:
     spell-class: ".targeted.CrippleSpell"
     effect-strength: 2
     effect-duration: 100
-tempwolf:
-    enabled: false
-    spell-class: ".targeted.SpawnMonsterSpell"
-    location: caster
-    entity-type: wolf
-    duration: 400
-    allow-spawn-in-midair: true
-    tamed: true
-    cost:
-        - mana 50
-        - bone 3
-    memory: 3
-    requires: wolf
-    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
-    modifiers:
-        - chance 50 required
 jump:
     spell-class: ".instant.LeapSpell"
     cancel-damage: false

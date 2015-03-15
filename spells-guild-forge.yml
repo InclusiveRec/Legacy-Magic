@@ -10,9 +10,9 @@ predefined-items:
           - "efficiency 5"
           - "unbreaking 3"
 # Apprentice
-craft_minepick:
+forge_magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
-    name: "magic_pickaxe"
+    cast-item: book
     spell-icon: 257
     description: 
     cost:

@@ -1,4 +1,4 @@
-debug: false
+debug: true
 debug-level: 3
 enable-error-logging: true
 enable-stat-collection: true
@@ -29,7 +29,7 @@ ops-ignore-cast-times: false
 default-all-perms-false: true
 ignore-cast-item-enchants: false
 ignore-cast-item-names: false
-ignore-cast-item-durability: [257, 267, 268, 269, 270, 271, 279, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317, 359 ]
+ignore-cast-item-durability: [256, 257, 267, 268, 269, 270, 271, 279, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317, 359 ]
 los-transparent-blocks: [ 0, 27, 28, 31, 32, 37, 38, 39, 40, 50, 51, 55, 63, 65, 66, 68, 69, 70, 72, 75, 76, 77, 78, 93, 94, 106, 111 ]
 global-cooldown: 100
 check-world-pvp-flag: true

@@ -1,56 +1,84 @@
-freeze:
-    spell-class: ".instant.FreezeSpell"
-    name: freeze
-    spell-icon: snow_ball
-    description: |
-        &rFreeze   -   Water School
-        &3The mage blast forth a flurry of icy shards which damage and slow all in their path.
-        This spell is stronger when the mage is standing on &bfrozen&3 terrain.
-    cast-item: 279
-    snowballs: 25
-    horizontal-spread: 15
-    vertical-spread: 5
-    damage: 2
-    slow-amount: 2
-    slow-duration: 80
-    target-players: true
-    cooldown: 5
+predefined-items:
+    water_grimoire:
+        type: "enchanted_book"
+        name: "&1On Hydromancy"
+        lore:
+            - "A treatise on the magic"
+            - "which flows through rivers"
+            - "and beneath the seas, and"
+            - "the secrets to harnessing it."
+    water_focus:
+        type: "diamond"
+        name: "&1Hydromantic Focus"
+        lore:
+            - "This crystal aids a mage"
+            - "in focussing the energy"
+            - "within water."
+    water_rod:
+        type: "diamond_hoe"
+        name: "&1Dowsing Rod"
+        lore:
+            - "With this rod,"
+            - "a hydromancer can"
+            - "find and navigate"
+            - "the world's waters."
+
+#############################
+#                           #
+#   Item creation spells    #
+#                           #
+#############################
+
+lore_of_water:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: "enchanted_book"
+    memory: 15
     cost:
-        - mana 15
-        - snow_ball 1
-    memory: 2
-    str-cost: 15 mana and a snowball.
-    spell-power-affects-range: true
-    power-affects-duration: true
-    modifiers:
-        - onblock 78,79,80,174 power 2
-geyser:
-    spell-class: ".targeted.GeyserSpell"
-    cast-item: stick
+        - mana 100
+        - book 1
+        - diamond 1
+    items:
+        - water_grimoire
     description: |
-        &rGeyser   -   Water School
-        Create a water geyser at your enemy's feet.
-    cast-item:
-    range: 20
-    damage: 3
-    velocity: 10
-    animation-speed: 3
-    geyser-height: 9
-    geyser-type: water
-    ignore-armor: false
-    obey-los: true
-    target-players: true
+            &1Lore of Water: Lv15 Water Spell
+            Create a grimoire of Hydromantic lore.
+    str-cost: 100 mana, a book, and a diamond.
+hydromantic_focus:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: water_grimoire
+    spell-icon: diamond
+    memory: 10
     cost:
-        - mana 15
-    memory: 2
-    str-cost: 15 mana
-    cooldown: 3
-    str-cast-self: You call up a geyser.
-    str-no-target: No target found.
+        - mana 50
+        - diamond 3
+    items:
+        - water_focus
+    description: |
+            &1Hydromantic Focus: Lv10 Water Spell
+            Create a hydromantic focus to direct water spells.
+    str-cost: 50 mana and 3 diamonds.
+dowsing_rod:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: water_grimoire
+    spell-icon: "diamond_hoe"
+    memory: 10
+    cost:
+        - mana 50
+        - diamond 2
+    items:
+        - water_rod
+
+#########################
+#                       #
+#   Dowsing rod spells  #
+#                       #
+#########################
+
 gills:
     spell-class: ".buff.GillsSpell"
+    cast-item: water_rod,stick
     spell-icon: gold_helmet
-    cast-item: stick
     description: |
         &rGills   -   Water School
         &3Allows you to breathe underwater.
@@ -70,7 +98,7 @@ gills:
     str-fade: Your gills disappear.
 water:
     spell-class: ".targeted.MaterializeSpell"
-    cast-item: stick
+    cast-item: water_rod,stick
     spell-icon: water_bucket
     description: |
         &rWater   -   Water School
@@ -87,10 +115,9 @@ water:
     memory: 1
     str-cost: 15 mana
     str-no-target: No target found.
-    str-failed: ""
 waterwalk:
     spell-class: ".buff.WaterwalkSpell"
-    cast-item: stick
+    cast-item: water_rod,stick
     spell-icon: boat
     description: |
         &rWaterwalk   -   Water School
@@ -109,3 +136,62 @@ waterwalk:
     str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
     str-cast-self: You can now walk on water!
     str-fade: You can no longer walk on water.
+
+
+#########################
+#                       #
+#   Water Focus Spells  #
+#                       #
+#########################
+
+freeze:
+    spell-class: ".instant.FreezeSpell"
+    cast-item: water_focus,stick
+    spell-icon: snow_ball
+    memory: 2
+    snowballs: 25
+    horizontal-spread: 15
+    vertical-spread: 5
+    damage: 2
+    slow-amount: 2
+    slow-duration: 80
+    target-players: true
+    cooldown: 3
+    cost:
+        - mana 15
+        - snow_ball 1
+    spell-power-affects-range: true
+    power-affects-duration: true
+    modifiers:
+        - onblock 78,79,80,174 power 2
+        - holding "264|&1Hydromantic__Focus" cooldown 0.2
+    description: |
+        &1Freeze:  Lv02 Water Spell
+        Blast forth a flurry of icy shards which damage and slow all in their path.
+    str-cost: 15 mana and a snowball.
+    str-on-cooldown: ""
+geyser:
+    spell-class: ".targeted.GeyserSpell"
+    cast-item: water_focus,stick
+    spell-icon: "38:1"
+    description: |
+        &rGeyser   -   Water School
+        Create a water geyser at your enemy's feet.
+    range: 20
+    damage: 3
+    velocity: 10
+    require-entity-target: false
+    animation-speed: 3
+    geyser-height: 9
+    geyser-type: water
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    cost:
+        - mana 15
+    memory: 2
+    str-cost: 15 mana
+    cooldown: 3
+    str-cast-self: You call up a geyser.
+    str-no-target: No target found.
+
