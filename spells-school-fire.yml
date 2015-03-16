@@ -45,6 +45,7 @@ lore_of_flame:
     description: |
             &4Lore of Flame: Lv20 Fire Spell
             Creates a fiery grimoire.
+            Requires fiery staff and fiery potion spells.
 
 fiery_staff:
     spell-class: ".instant.ConjureSpell"
@@ -68,7 +69,7 @@ fiery_staff:
     items:
         - fire_staff 1
         - blaze_powder 6-10
-    str-cost: 100 mana, 2 blaze rods.
+    str-cost: 50 mana, 2 blaze rods.
     add-to-inventory: false
     str-cast-self: You create a fiery staff.
 
@@ -94,7 +95,7 @@ firebreathing:
             Firebreathing   -   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-
+    str-cost: 10 mana
 smoke:
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: fire_staff,blaze_powder
