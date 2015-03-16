@@ -13,3 +13,7 @@ TASKS:
     - modifiers
     - description and other strings
     - effects (particles, sound effects, etc)
+- Standardise spell descriptions.  e.g.
+    - (Colour code)Spellname: Lv(memory) (school) spell
+    - Descriptive text
+    - [Requires (prerequisites)]
