@@ -417,6 +417,7 @@ solar_ray:
     description: |
             &eSolar Ray: Lv10 Solar Spell
             Blasts your enemy with solar energy, forcing them back and disorienting them.
+            Requires the &eSolar Staff&3 spell.
     spell: punch
     str-no-target: No target found.
     str-cast: You blast %t with a ray of solar energy!
