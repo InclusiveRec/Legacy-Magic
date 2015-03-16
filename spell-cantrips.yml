@@ -40,7 +40,7 @@ help:
     always-granted: true
     description: |
         &rHelp   -   Cantrip
-        &3Get information about a specified spell.
+        &3Get information about a specified spell that you already know.
     require-known-spell: true
     str-usage: "Usage: /cast help <spell>"
     str-no-spell: You do not know a spell by that name.
@@ -198,7 +198,8 @@ tome:
       - scroll
     description: |
         &rTome   -   Cantrip
-        &3Create a tome that teaches a spell.
+        &3Create a tome that teaches a spell. 
+        Requires the bind, unbind and scroll spells.
     cancel-read-on-learn: true
     consume-book: false
     allow-overwrite: false
@@ -225,7 +226,8 @@ spellbook:
         - tome
     description: |
         &rSpellbook   -   Cantrip
-        &3Create a spellbook that teaches a spell.
+        &3Create a spellbook that teaches a spell. 
+        Requires the bind, unbind, scroll, and tome spells.
     default-uses: 10
     destroy-when-used-up: false
     spellbook-block: 116
@@ -234,7 +236,7 @@ spellbook:
     str-no-spell: You do not know a spell by that name.
     str-cant-teach: "You can't create a spellbook with that spell."
     str-no-target: You must target an enchanting table to create a spellbook.
-    str-has-spellbook: That bookcase already has a spellbook.
+    str-has-spellbook: That enchanting table already has a spellbook.
     str-cant-destroy: You cannot destroy an enchanting table with a spellbook.
     str-cant-learn: You cannot learn the spell in this spellbook.
     str-already-known: You already know the %s spell.
@@ -251,7 +253,7 @@ teach:
       - spellbook
     description: |
         &rTeach   -   Cantrip
-        &3Teach a spell to another player.
+        &3Teach a spell to another player. Requires the bind, unbind, scroll, tome, and spellbook spells.
     require-known-spell: true
     str-usage: "Usage: /cast teach <target> <spell>"
     str-no-target: No such player.
