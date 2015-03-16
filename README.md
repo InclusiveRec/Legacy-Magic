@@ -1,8 +1,11 @@
 # Magic
 MagicSpells configuration for server
 
-TASKS:
-- Maintain spell descriptions and error messages (description and str-cost entries)
+ORGANISATIONAL TASKS:
+- Standardise spell descriptions.  e.g.
+    - (Colour code)Spellname: Lv(memory) (school) spell
+    - Descriptive text
+    - [Requires (prerequisites)]
 - Standardise spell layouts:
     - spell-class
     - cast-item
@@ -13,7 +16,4 @@ TASKS:
     - modifiers
     - description and other strings
     - effects (particles, sound effects, etc)
-- Standardise spell descriptions.  e.g.
-    - (Colour code)Spellname: Lv(memory) (school) spell
-    - Descriptive text
-    - [Requires (prerequisites)]
+
