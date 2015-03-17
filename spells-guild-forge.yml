@@ -14,7 +14,8 @@ forge_magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: 257
-    description: 
+    description: |
+         Forge Apprentice Spell
     cost:
         - mana 100
         - 257 1
@@ -25,6 +26,7 @@ dowse:
     name: dowse
     spell-icon: compass
     description: |
+        Forge Apprentice Spell
         &rDowse   -   Guild Spell: &4Forge
         &3Dowse for iron ore.
     cast-item: minepick
@@ -44,6 +46,7 @@ mighty_swing_i:
     spell-class: ".targeted.PotionEffectSpell"
     name: mighty_swing_i
     description: |
+        Forge Apprentice Spell
         &rMighty Swing   -   Guild Spell: &4Forge
         &3Your muscles bulge with strength, and you cut through stone with ease.
     cast-item: minepick
@@ -65,6 +68,7 @@ repair:
     name: repair
     spell-icon: workbench
     description: |
+        Forge Journeyman Spell
         &rRepair   -   Cantrip
         &3Repairs your gear.
     cast-item: book
@@ -92,6 +96,7 @@ stonevision:
     spell-class: ".buff.StonevisionSpell"
     name: stonevision
     description: |
+        Forge Master Spell
         &rStonevision   -   Guild Spell: &4Forge
         &3With great concentration, you can see through stone.
     cast-item: minepick
