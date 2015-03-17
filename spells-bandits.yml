@@ -10,6 +10,7 @@ bandit_hideout:
     description: |
         &rHideout   -   Bandit power
         &3Sets the hideout for the bandit gang, which they can reach with the retreat spell.
+        Requires the bandit retreat spell.
     str-cost: 50 mana and a stack of oak logs.
     str-cast-self: This is now the bandit hideout.  Good call, chief!
     str-on-cooldown: The hideout can only be moved once every six hours.
