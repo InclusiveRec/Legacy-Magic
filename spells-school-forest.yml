@@ -376,10 +376,10 @@ fang:
 
 rend:
     spell-class: ".TargetedMultiSpell"
+    spell-icon: 423
     cast-item: wolf_fang
     range: 1
     point-blank: true
-    spell-icon: 423
     debug: true
     target-players: true
     require-entity-target: true
@@ -398,25 +398,28 @@ rend:
 
 wolf:
     spell-class: ".targeted.SpawnMonsterSpell"
+    spell-icon: 352
+    cast-item: wolf_fang
     prerequisites:
         - forage
     memory: 3
     cost:
-        - mana 50
+        - levels 20
         - bone 3
     location: target
     entity-type: wolf
     range: 5
     duration: 0
-    cooldown: 600
+    cooldown: 60
     tamed: true
     modifiers:
         - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
     description: |
-            &rWolf   -   Forest School
-            &3Summons a wolf to accompany you.
-    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
-    str-cast-self: A wolf appears!
+            &2Wolf: Lv03 Forest Spell
+            Summons a wolf to accompany you.
+    str-cost: "3 bones and 20 experience levels."
+    str-cast-self: "A wolf appears!"
+    str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
 
 call_of_the_wild:
     spell-class: ".targeted.PulserSpell"

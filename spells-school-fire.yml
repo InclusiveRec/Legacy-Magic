@@ -121,8 +121,6 @@ smoke:
         vert-spread: 1
         speed: 0.2
         count: 50
-
-
 spark:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff,377
@@ -150,13 +148,32 @@ spark:
     #  Intermediate Spells  #
     #########################
 fireball:
+    enabled: false
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
+    spell-icon: "351:1"
+    prerequisites:
+        - fiery_staff
+    memory: 5
+    cost:
+        - mana 50
+        - blaze_powder 1
+    cooldown: 10
+    target-players: true
+    damage-multiplier: 2
+    description: |
+            &4Fireball: Lv05 Fire Spell
+            Launches a great ball of fiery destruction.
+            Requires the &4firestaff&3 spell.
+    str-cost: 50 mana and one blaze powder.
+
 fire_nova:
+    enabled: false
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff,377
     spell-icon: blaze_powder
 warmth:
+    enabled: false
     spell-class: ".targeted.DummySpell"
     cast-item: fire_staff
     prerequisites:
