@@ -66,6 +66,7 @@ lore_of_the_woods:
     description: |
             &2Woodland Lore: Lv20 Forest Spell
             Creates a woodland grimoire.
+            Requires woodland concoction, woodland gardener, and oakenstaff spells.
     spell-icon: enchanted_book
     prerequisites: woodland_concotion,woodland_gardener,oakenstaff
     memory: 20
@@ -370,6 +371,7 @@ fang:
     description: |
             &2Fang: Lv05 Forest Spell
             Creates a wolf's fang to channel wilderness magic.
+            Requires the wolf, bind, unbind, and scroll spells.
     str-cost: 6 bones, 4 woodland concoction, and 80 mana.
 
 
@@ -417,6 +419,7 @@ wolf:
     description: |
             &2Wolf: Lv03 Forest Spell
             Summons a wolf to accompany you.
+            Requires the forage spell.
     str-cost: "3 bones and 20 experience levels."
     str-cast-self: "A wolf appears!"
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
