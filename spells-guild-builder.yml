@@ -23,6 +23,7 @@ mix_mortar:
     name: mix_mortar
     spell-icon: "351:7"
     description: |
+        	Builder Apprentice Spell
         	&rMix Mortar   -   Builders' Guild
         	&3Mixes mortar out of raw materials.
         	The process takes some time.
@@ -45,6 +46,7 @@ mix_mortar:
 patchwork:
     spell-class: ".targeted.ReplaceSpell"
     description: |
+            Builder Apprentice Spell
             &rPatchwork   -   Builders' Guild
             &3Patches up cobblestone as stonebrick.
     range: 8
@@ -69,6 +71,7 @@ trowel:
     name: trowel
     spell-icon: IRON_SPADE
     description: |
+        Builder Journeyman Spell
         &rTrowel   -   Builders' Guild
         &3Crafts a builder's trowel.
     cost:
