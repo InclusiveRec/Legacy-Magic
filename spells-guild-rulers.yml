@@ -4,14 +4,14 @@ populate:
     cast-item: book
     spell-icon: emerald
     entity-type: villager
-    description: |
-        &rPopulate   -   Cantrip
-        &3Spawns a random villager.
     cost:
         - mana 20
         - 133 1
-    str-cost: 20 mana and an emerald block
-    str-cast-self: You summon a villager
+    description: |
+        &rPopulate   -   Cantrip
+        &3Spawns a random villager.
+    str-cost: 20 mana and an emerald block.
+    str-cast-self: You summon a villager.
     range: 10
     effects:
         spit:
