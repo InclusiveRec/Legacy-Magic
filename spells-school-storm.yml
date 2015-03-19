@@ -34,6 +34,7 @@ lore_of_storms:
     description: |
             &9Lore of Storms: Lv15 Storm Spell
             Creates a book of storms.
+            Requires tome and stormhammer spells.
     str-cost: 100 mana, a book, and 4 snow blocks.
 
 
@@ -49,7 +50,7 @@ stormhammer:
         - diamond 3
         - feather 3
     memory: 10
-    str-cost: 100 mana, 3 feathers, and 3 diamonds.
+    str-cost: 50 mana, 3 feathers, and 3 diamonds.
     str-cast-self: You create a stormhammer.
     items:
       - stormhammer 1
@@ -58,10 +59,6 @@ gust:
     spell-class: ".instant.ForcepushSpell"
     cast-item: stormhammer
     spell-icon: feather
-    description: |
-        &rGust   -   Storm School
-        &3With a flick of the wrist, the mage blows their enemies away.
-        This spell is greatly empowered during a &9storm&3.
     cooldown: 3
     range: 16
     horizontal-force: 30
@@ -71,12 +68,16 @@ gust:
         - mana 10
         - feather 1
     memory: 2
-    str-cost: 10 mana and a feather
-    str-cast-self: You blow a powerful wind gust at your enemies!
-    str-cast-others: "%a blows a powerful gust of wind!"
     modifiers:
         - outside continue
         - storm power 2
+    description: |
+        &rGust   -   Storm School
+        &3With a flick of the wrist, the mage blows their enemies away.
+        This spell is greatly empowered during a &9storm&3.
+    str-cost: 10 mana and a feather
+    str-cast-self: You blow a powerful wind gust at your enemies!
+    str-cast-others: "%a blows a powerful gust of wind!"
 lightning:
     spell-class: ".targeted.LightningSpell"
     cast-item: stormhammer
@@ -85,16 +86,16 @@ lightning:
     cost:
         - mana 25
         - wool 1
-    modifiers:
-        - outside required
-        - storm cooldown 0.3
-        - holding "279|&9Stormhammer" range 50
     cooldown: 10
     range: 20
     require-entity-target: false
     obey-los: true
     target-players: true
     check-plugins: true
+    modifiers:
+        - outside required
+        - storm cooldown 0.3
+        - holding "279|&9Stormhammer" range 50
     description: |
         &rLightning   -   Storm School
         &3The mage calls down single lightning bolt.
@@ -107,10 +108,6 @@ lightning:
 storm:
     spell-class: ".ExternalCommandSpell"
     name: storm
-    description: |
-        &rStorm   -   Storm School
-        &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
-        All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
     cooldown: 300
     cast-time: 100
     cost:
@@ -121,21 +118,22 @@ storm:
     command-to-execute:
         - weather thunder
     execute-on-console-instead: true
+    modifiers:
+        - outside required
+    description: |
+        &rStorm   -   Storm School
+        &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
+        All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
     str-cast-start: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
     str-interrupted: Your concentration has been disturbed!  The mat is consumed in a crackle of energy, and you are left feeling drained.
     always-activate: true
     str-cast-self: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
-    modifiers:
-        - outside required
     str-modifier-failed: You must have a view of the sky to cast this spell.
 windwalk:
     spell-class: ".buff.WindwalkSpell"
     cast-item: stormhammer
     spell-icon: diamond_boots
-    description: |
-        &rWindwalk   -   Storm School
-        The caster rides the winds of a raging storm.
     cooldown: 300
     cost:
         - mana 25
@@ -146,12 +144,15 @@ windwalk:
         - mana 10
         - feather 1
     use-cost-interval: 20
+    modifiers:
+        - storm required
+        - outside required
+    description: |
+        &rWindwalk   -   Storm School
+        The caster rides the winds of a raging storm.
     str-cost: 25 mana, 2 feathers, and a feather every 20 seconds.
     str-cost-self: You rise up into the stormy sky!
     str-cost-others: "%a rises up into the stormy sky!"
     str-fade: The winds cease to support you, and you descend...
     fly-speed: 0.3
     launch-speed: 5
-    modifiers:
-        - storm required
-        - outside required
