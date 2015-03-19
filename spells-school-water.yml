@@ -66,6 +66,7 @@ dowsing_rod:
     cost:
         - mana 50
         - diamond 2
+    str-cost: 50 mana and 2 diamonds.
     items:
         - water_rod
 
@@ -79,9 +80,6 @@ gills:
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
-    description: |
-        &rGills   -   Water School
-        &3Allows you to breathe underwater.
     glass-head-effect: true
     cooldown: 60
     duration: 300
@@ -93,16 +91,16 @@ gills:
         - sugar_cane 1
     memory: 2
     use-cost-interval: 1
-    str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane few seconds
+    description: |
+        &rGills   -   Water School
+        &3Allows you to breathe underwater.
+    str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane every few seconds
     str-cast-self: You form gills on your neck!
     str-fade: Your gills disappear.
 water:
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
-    description: |
-        &rWater   -   Water School
-        &3Summons a water spring into existence.
     cast-item: book
     cooldown: 120
     range: 8
@@ -113,15 +111,15 @@ water:
     cost:
         - mana 15
     memory: 1
+    description: |
+        &rWater   -   Water School
+        &3Summons a water spring into existence.
     str-cost: 15 mana
     str-no-target: No target found.
 waterwalk:
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
-    description: |
-        &rWaterwalk   -   Water School
-        &3Walk across the water.
     speed: 0.05
     duration: 60
     cancel-on-logout: true
@@ -133,6 +131,9 @@ waterwalk:
     use-cost:
         - mana 10
     use-cost-interval: 20
+    description: |
+        &rWaterwalk   -   Water School
+        &3Walk across the water.
     str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
     str-cast-self: You can now walk on water!
     str-fade: You can no longer walk on water.
@@ -174,9 +175,6 @@ geyser:
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
-    description: |
-        &rGeyser   -   Water School
-        Create a water geyser at your enemy's feet.
     range: 20
     damage: 3
     velocity: 10
@@ -190,6 +188,9 @@ geyser:
     cost:
         - mana 15
     memory: 2
+    description: |
+        &rGeyser   -   Water School
+        Create a water geyser at your enemy's feet.
     str-cost: 15 mana
     cooldown: 3
     str-cast-self: You call up a geyser.
