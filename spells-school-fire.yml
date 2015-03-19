@@ -44,8 +44,8 @@ lore_of_flame:
             &4Lore of Flame: Lv20 Fire Spell
             Creates a fiery grimoire.
             Requires fiery staff and fiery potion spells.
-     str-cost: 50 mana, 1 book, 6 blaze powder.
-     effects: []
+    str-cost: 50 mana, 1 book, 6 blaze powder.
+    effects: []
 
 fiery_staff:
     spell-class: ".instant.ConjureSpell"

@@ -56,7 +56,7 @@ patchwork:
     cost:
         - mana 10
         - mortar 2
-     description: |
+    description: |
             Builder Apprentice Spell
             &rPatchwork   -   Builders' Guild
             &3Patches up cobblestone as stonebrick.
