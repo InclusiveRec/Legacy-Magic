@@ -13,12 +13,11 @@ poison:
     targeted: true
     target-players: true
 punch:
-    spell-class: ".targeted.ForcebombSpell"
-    pushback-force: 40
-    radius: 5
+    spell-class: ".targeted.ForcetossSpell"
+    horizontal-force: 25
+    vertical-force: 10
+    range: 5
     target-players: true
-    additional-vertical-force: 20
-    max-vertical-force: 40
     effects:
         bang:
             position: target
