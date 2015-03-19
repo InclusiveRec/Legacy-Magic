@@ -108,7 +108,7 @@ smoke:
     target-caster: true
     point-blank: false
     spell-source-in-center: true
-    spells: 
+    spells:
         - nauseate
         - poison
     str-cast-self: Casty
@@ -125,7 +125,7 @@ spark:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff,377
     spell-icon: fireball
-    cost: 
+    cost:
         - mana 20
         - blaze_powder 1
     memory: 2
@@ -152,12 +152,12 @@ fireball:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
-    prerequisites:
-        - fiery_staff
-    memory: 5
     cost:
         - mana 50
         - blaze_powder 1
+    prerequisites:
+        - fiery_staff
+    memory: 5
     cooldown: 10
     target-players: true
     damage-multiplier: 2
