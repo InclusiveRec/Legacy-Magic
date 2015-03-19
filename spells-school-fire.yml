@@ -29,7 +29,6 @@ predefined-items:
 lore_of_flame:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
-    str-cost: 50 mana, 1 book, 6 blaze powder.
     spell-icon: "enchanted_book"
     cost:
         - mana 50
@@ -41,18 +40,20 @@ lore_of_flame:
         - fiery_potion
     items:
         - fire_grimoire 1
-    effects: []
     description: |
             &4Lore of Flame: Lv20 Fire Spell
             Creates a fiery grimoire.
             Requires fiery staff and fiery potion spells.
+     str-cost: 50 mana, 1 book, 6 blaze powder.
+     effects: []
 
 fiery_staff:
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
+    spell-icon: blaze_rod
     allow-command-casting: false
     bindable: false
-    spell-icon: blaze_rod
+    add-to-inventory: false
     prerequisites:
         - bind
         - unbind
@@ -60,17 +61,16 @@ fiery_staff:
         - smoke
         - spark
     memory: 10
-    description: |
-            Firestaff   -   Fire School.
-            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
     cost:
         - mana 50
         - blaze_rod 2
     items:
         - fire_staff 1
         - blaze_powder 6-10
+    description: |
+            Firestaff   -   Fire School.
+            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
     str-cost: 50 mana, 2 blaze rods.
-    add-to-inventory: false
     str-cast-self: You create a fiery staff.
 
 
@@ -137,12 +137,12 @@ spark:
     no-explosion: true
     check-plugins: true
     small-fireball: true
-    str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
-    str-cast-self: "You hurl a bolt of fiery energy!"
-    str-cast-others: "%a hurls a bolt of fiery energy!"
     description: |
         &rSpark   -   Fire School
         &3Cast a fiery bolt at monsterous foes.
+    str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
+    str-cast-self: "You hurl a bolt of fiery energy!"
+    str-cast-others: "%a hurls a bolt of fiery energy!"
 
     #########################
     #  Intermediate Spells  #
