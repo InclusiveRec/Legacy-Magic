@@ -15,7 +15,7 @@ forge_magic_pickaxe:
     cast-item: book
     spell-icon: 257
     description: |
-         Forge Apprentice Spell
+        &rMagic Pickaxe   Apprentice Guild Spell: &4Forge
     cost:
         - mana 100
         - 257 1
@@ -26,8 +26,7 @@ dowse:
     name: dowse
     spell-icon: compass
     description: |
-        Forge Apprentice Spell
-        &rDowse   -   Guild Spell: &4Forge
+        &rDowse   Apprentice Guild Spell: &4Forge
         &3Dowse for iron ore.
     cast-item: minepick
     cooldown: 60
@@ -46,8 +45,7 @@ mighty_swing_i:
     spell-class: ".targeted.PotionEffectSpell"
     name: mighty_swing_i
     description: |
-        Forge Apprentice Spell
-        &rMighty Swing   -   Guild Spell: &4Forge
+        &rMighty Swing   Apprentice Guild Spell: &4Forge
         &3Your muscles bulge with strength, and you cut through stone with ease.
     cast-item: minepick
     cooldown: 30
@@ -68,8 +66,7 @@ repair:
     name: repair
     spell-icon: workbench
     description: |
-        Forge Journeyman Spell
-        &rRepair   -   Cantrip
+        &rRepair   Journeyman Guild Spell: &4Forge
         &3Repairs your gear.
     cast-item: book
     cooldown: 120
@@ -96,8 +93,7 @@ stonevision:
     spell-class: ".buff.StonevisionSpell"
     name: stonevision
     description: |
-        Forge Master Spell
-        &rStonevision   -   Guild Spell: &4Forge
+        &rStonevision   Master Guild Spell: &4Forge
         &3With great concentration, you can see through stone.
     cast-item: minepick
     cost:
