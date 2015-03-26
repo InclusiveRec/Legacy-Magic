@@ -26,7 +26,7 @@ ops-have-all-spells: true
 ops-ignore-reagents: false
 ops-ignore-cooldowns: false
 ops-ignore-cast-times: false
-default-all-perms-false: true
+default-all-perms-false: false
 ignore-cast-item-enchants: false
 ignore-cast-item-names: false
 ignore-cast-item-durability: [256, 257, 267, 268, 269, 270, 271, 279, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317, 359 ]
