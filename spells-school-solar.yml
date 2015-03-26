@@ -427,7 +427,7 @@ solar_ray:
 # Passive spells
 
 solar_guard:
-    spell-class: ".PassiveSpell"
+    spell-class: "instant.PassiveSpell"
     requires: solar_ray
     triggers:
         - takedamage ENTITY_ATTACK
