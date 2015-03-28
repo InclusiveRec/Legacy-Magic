@@ -430,9 +430,7 @@ solar_guard:
     spell-class: ".PassiveSpell"
     requires: solar_ray
     triggers:
-        - takedamage ENTITY_ATTACK
-        - takedamage PROJECTILE
-        - takedamage MAGIC
+        - takedamage
     spells:
         - solar_ray
     cost:
