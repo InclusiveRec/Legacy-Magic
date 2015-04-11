@@ -499,3 +499,15 @@ bleeding:
             count: 20
             horiz-spread: 1.5
             vert-spread: 1.2
+#Tree Spell - Makes a tree
+    tree:
+        spell-class: ".targeted.TreeSpell"
+        name: tree
+        range: 15
+        cooldown: 30
+        tree-type: dark_oak
+        animation-speed: 20
+        cost:
+            - 6 1
+        str-cost: 1 sapling
+        str-no-target: You cannot grow a tree there.
