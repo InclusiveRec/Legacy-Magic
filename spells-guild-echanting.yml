@@ -17,7 +17,7 @@ create_xp:
     - xp_bowl 5
   items:
     - 384 10
-create_bowl
+create_bowl:
   spell-class: ".instant.ConjureSpell"
   name: "XPHolder"
   cast-item: torch
@@ -36,9 +36,9 @@ XPWand:
     - emerald 1
   items:
     - xp_wand
-zeusrage:
-  spell-class: ".targeted.LightningSpell"
-  name: "ZeusRage"
+da:
+  spell-class: "."
+  name: ""
   cooldown: 100
   range: 10
   cost:
@@ -46,6 +46,3 @@ zeusrage:
     - gold_ingot 10
     - levels 10
   cast-item: xp_wand
-  modifiers:
-    - night required
-    - storm reagents 0.5
