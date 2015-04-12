@@ -21,11 +21,11 @@ create_bowl:
   spell-class: ".instant.ConjureSpell"
   name: "XPHolder"
   cast-item: torch
-    cost:
-      - bowl 1
-      - mana 101
-    items:
-      - xp_bowl 5
+  cost:
+    - bowl 1
+    - mana 101
+  items:
+    - xp_bowl 5
 XPWand:
   spell-class: ".instant.ConjureSpell"
   cast-item: stick
@@ -36,13 +36,3 @@ XPWand:
     - emerald 1
   items:
     - xp_wand
-da:
-  spell-class: "."
-  name: ""
-  cooldown: 100
-  range: 10
-  cost:
-    - mana 150
-    - gold_ingot 10
-    - levels 10
-  cast-item: xp_wand
