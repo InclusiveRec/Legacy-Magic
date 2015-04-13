@@ -344,8 +344,21 @@ hedge:
     str-cost: 15 mana and 2 druidic concoction.
     str-no-target: You cannot create a hedge there.
     
+# Intermediate spells (require the woodland_wand spell to learn)
 
-
+crow_flight:
+    spell-class: ".buff.WindwalkSpell"
+    cast-item: forest_wand
+    spell-icon: feather
+    prerequisites:
+        - woodland_wand
+    memory: 5
+    duration: 40
+    max-y: 120
+    max-altitude: 20
+    fly-speed: 0.2
+    str-cast-self: You swoop upwards!
+    str-fade: Your flight has ended.
 
 ####################
 #                  #

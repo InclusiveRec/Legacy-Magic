@@ -1,4 +1,4 @@
-debug: true
+debug: false
 debug-level: 3
 enable-error-logging: true
 enable-stat-collection: true

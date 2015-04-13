@@ -92,10 +92,11 @@ lightning:
     obey-los: true
     target-players: true
     check-plugins: true
+    spell-power-affects-range: true
     modifiers:
         - outside required
         - storm cooldown 0.3
-        - holding "279|&9Stormhammer" range 50
+        - holding "279|&9Stormhammer" power 2.5
     description: |
         &rLightning   -   Storm School
         &3The mage calls down single lightning bolt.
