@@ -99,6 +99,7 @@ woodland_gardener:
         Creates herbalist's enchanted sickle.
         Requires the &2woodland concoction&3 spell.
     str-missing-reagents: "You need 50 mana to enchant your shears."
+    str-cost: 50 mana and a set of shears.
     effects:
         sound:
           position: caster
@@ -126,6 +127,7 @@ woodland_concoction:
             a brown mushroom.
             Requires knowledge of the &2food&3 spell.
     str-cast-self: You prepare a druidic concoction.
+    str-cost: 5 mana, a dendelion, a poppy and a little brown mushroom.
 
 # Cast item(s)
 
@@ -136,11 +138,13 @@ woodland_wand:
     prerequisites: woodland_gardener,scroll
     memory: 10
     cost:
+        - mana 50
         - stick 1
         - "6:0 1"
     items:
         - forest_wand
     str-missing-reagents: This spell requires a stick, an oak sapling, and 50 mana.
+    str-cost: 50 mana, a stick, and an oak sapling. Uses 10 memory slots.
 
 
 #####################
@@ -206,6 +210,7 @@ mulch:
             &2Mulch: L01 Forest spell
             Turns cut grass into bone meal.
             Requires the &2druidic concoction&3 spell.
+    str-cost: 5 mana and 12 clumps of grass.
     str-cast-self: You cut some grass into mulch.
 
 
@@ -316,7 +321,7 @@ entangle:
         - holding "280|&2Oak wand" power 2
     description:  |
             &2Entangle:  Lv03 Forest Spell
-            Vines and thorns whip out at your enemies!
+            Vines and thorns whip out at your enemies! Holding an Oak Wand increases the effect.
     str-cost: 12 mana and 4 woodland concoction.
     
 hedge:
@@ -342,7 +347,7 @@ hedge:
             Sprouts a hedge to impede your foes.
             Requires the &2lifewalk&3 spell.
     str-cost: 15 mana and 2 druidic concoction.
-    str-no-target: You cannot create a hedge there.
+    str-no-target: You cannot create a hedge there. Aim above the ground.
     
 # Intermediate spells (require the woodland_wand spell to learn)
 
