@@ -21,14 +21,14 @@ lore_of_storms:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    prerequisites:
-        - tome
-        - stormhammer
-    memory: 15
     cost:
         - mana 100
         - book 1
         - snow_block 4
+    prerequisites:
+        - tome
+        - stormhammer
+    memory: 15
     items:
         - storm_grimoire 1
     description: |
@@ -40,16 +40,16 @@ lore_of_storms:
 
 stormhammer:
     spell-class: ".instant.ConjureSpell"
-    spell-icon: diamond_axe
     cast-item: storm_grimoire
-    description: |
-        &rStormrod   -   Storm School
-        &3You craft a storm rod.
+    spell-icon: diamond_axe
     cost:
         - mana 50
         - diamond 3
         - feather 3
     memory: 10
+    description: |
+        &rStormrod   -   Storm School
+        &3You craft a storm rod.
     str-cost: 50 mana, 3 feathers, and 3 diamonds.
     str-cast-self: You create a stormhammer.
     items:
@@ -59,14 +59,14 @@ gust:
     spell-class: ".instant.ForcepushSpell"
     cast-item: stormhammer
     spell-icon: feather
+    cost:
+        - mana 10
+        - feather 1
     cooldown: 3
     range: 16
     horizontal-force: 30
     vertical-force: 10
     target-players: true
-    cost:
-        - mana 10
-        - feather 1
     memory: 2
     modifiers:
         - outside continue
@@ -82,11 +82,11 @@ lightning:
     spell-class: ".targeted.LightningSpell"
     cast-item: stormhammer
     spell-icon: gold_sword
-    memory: 3
     cost:
         - mana 25
         - wool 1
     cooldown: 10
+    memory: 3
     range: 20
     require-entity-target: false
     obey-los: true
