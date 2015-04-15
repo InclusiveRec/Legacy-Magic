@@ -512,3 +512,16 @@ bleeding:
             count: 20
             horiz-spread: 1.5
             vert-spread: 1.2
+
+oaky:
+  spell-class: ".targeted.TreeSpell"
+  name: oaky
+  range: 15
+  cooldown: 20
+  tree-type: dark_oak
+  animation-speed: 10
+  cost:
+    - mana 30
+  memory: 10
+  str-cost: 30 mana.
+  str-no-target: You cannot grow a tree there.
