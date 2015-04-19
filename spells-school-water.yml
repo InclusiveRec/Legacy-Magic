@@ -41,7 +41,7 @@ lore_of_water:
     items:
         - water_grimoire
     description: |
-            &1Lore of Water: Lv15 Water Spell
+            &1Lore of Water: 15 Memory Water Spell
             Create a grimoire of Hydromantic lore.
     str-cost: 100 mana, a book, and a diamond.
 hydromantic_focus:
@@ -55,7 +55,7 @@ hydromantic_focus:
     items:
         - water_focus
     description: |
-            &1Hydromantic Focus: Lv10 Water Spell
+            &1Hydromantic Focus: 10 Memory Water Spell
             Create a hydromantic focus to direct water spells.
     str-cost: 50 mana and 3 diamonds.
 dowsing_rod:
@@ -92,7 +92,7 @@ gills:
     memory: 2
     use-cost-interval: 1
     description: |
-        &rGills   -   Water School
+        &rGills   2 Memory   Water School
         &3Allows you to breathe underwater.
     str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane every few seconds
     str-cast-self: You form gills on your neck!
@@ -112,7 +112,7 @@ water:
         - mana 15
     memory: 1
     description: |
-        &rWater   -   Water School
+        &rWater   1 Memory   Water School
         &3Summons a water spring into existence.
     str-cost: 15 mana
     str-no-target: No target found.
@@ -132,7 +132,7 @@ waterwalk:
         - mana 10
     use-cost-interval: 20
     description: |
-        &rWaterwalk   -   Water School
+        &rWaterwalk   1 Memory   Water School
         &3Walk across the water.
     str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
     str-cast-self: You can now walk on water!
@@ -167,7 +167,7 @@ freeze:
         - onblock 78,79,80,174 power 2
         - holding "264|&1Hydromantic__Focus" cooldown 0.2
     description: |
-        &1Freeze:  Lv02 Water Spell
+        &1Freeze:  L2 Memory Water Spell
         Blast forth a flurry of icy shards which damage and slow all in their path.
     str-cost: 15 mana and a snowball.
     str-on-cooldown: ""
@@ -189,7 +189,7 @@ geyser:
         - mana 15
     memory: 2
     description: |
-        &rGeyser   -   Water School
+        &rGeyser   2 Memory   Water School
         Create a water geyser at your enemy's feet.
     str-cost: 15 mana
     cooldown: 3
