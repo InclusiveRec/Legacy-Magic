@@ -458,7 +458,7 @@ call_of_the_wild:
         - tempwolf
     cost:
         - mana 60
-    
+
 # Effect spells
 
 tempwolf:

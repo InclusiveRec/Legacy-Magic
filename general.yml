@@ -1,4 +1,4 @@
-debug: false
+debug: true
 debug-level: 3
 enable-error-logging: true
 enable-stat-collection: true
@@ -23,9 +23,9 @@ allow-cast-with-fist: true
 cast-with-left-click: true
 cast-with-right-click: true
 ops-have-all-spells: true
-ops-ignore-reagents: false
-ops-ignore-cooldowns: false
-ops-ignore-cast-times: false
+ops-ignore-reagents: true
+ops-ignore-cooldowns: true
+ops-ignore-cast-times: true
 default-all-perms-false: true
 ignore-cast-item-enchants: false
 ignore-cast-item-names: false

@@ -1,0 +1,86 @@
+predefined-items:
+    hunt_knife:
+        name: "Hunting Knife"
+        type: iron_sword
+        lore:
+            - "A good sharp blade, fit for"
+            - "slaughtering animals with"
+            - "a minimum of waste."
+        enchants:
+            - "loot_bonus_mobs 3"
+            - "damage_all 1"
+
+# Apprentice
+
+stalking:
+    spell-class: ".PassiveSpell"
+    triggers:
+        - sneak
+    cooldown: 20
+    cost:
+        - mana 10
+    spells:
+        - monster_invisibility
+    send-failure-messages: true
+
+monster_invisibility:
+    spell-class: ".buff.InvisibilitySpell"
+    prevent-pickups: false
+    invisible-to-players: false
+    duration: 30
+    str-fade: "You have emerged from cover!"
+    cancel-on-give-damage: true
+    cancel-on-logout: true
+    cancel-on-spell-cast: true
+    str-cast-self: You are stalking the creatures of the wilderness.
+    str-cast-others: "%p is stalking wild creatures."
+    modifiers:
+        - holding "iron_sword|Hunting Knife" required
+    str-modifier-failed: "You lack the proper equipment to begin stalking your prey."
+
+
+# Journeyman
+
+trapper:
+    spell-class: ".MultiSpell"
+    cast-item: stick
+    spell-icon: 420
+    check-individual-modifiers: true
+    spells:
+        - trycow
+        - trysheep
+        - trypig
+        - tryrabbit
+    modifiers:
+        - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,EXTREME_HILLS_PLUS,SAVANNA,SAVANNA_PLATEAU,SUNFLOWER_PLAINS,FLOWER_FOREST,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+    str-modifier-failed: "You can't manage to trap any creatures in this biome."
+trycow:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: cow
+    modifiers:
+        - biome PLAINS,SAVANNA,SAVANNA_PLATEAU,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS required
+trysheep:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: sheep
+    modifiers:
+        - biome EXTREME_HILLS,EXTREME_HILLS_PLUS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+trypig:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: pig
+    modifiers:
+        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS required
+tryrabbit:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: rabbit
+    modifiers:
+        - biome SUNFLOWER_PLAINS,FLOWER_FOREST required
+
+# Master
+
+hunting_knife:
+    spell-class: ".instant.ConjureSpell"
+    items:
+        - hunt_knife 1
+    description: |
+            &rCleaver   -   Butcher Journeyman Power
+            Creates a fine tool for slaughtering livestock.
