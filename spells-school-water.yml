@@ -33,11 +33,11 @@ lore_of_water:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
-    memory: 15
     cost:
         - mana 100
         - book 1
         - diamond 1
+    memory: 15
     items:
         - water_grimoire
     description: |
@@ -48,10 +48,10 @@ hydromantic_focus:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
-    memory: 10
     cost:
         - mana 50
         - diamond 3
+    memory: 10
     items:
         - water_focus
     description: |
@@ -62,10 +62,10 @@ dowsing_rod:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
-    memory: 10
     cost:
         - mana 50
         - diamond 2
+    memory: 10
     str-cost: 50 mana and 2 diamonds.
     items:
         - water_rod
