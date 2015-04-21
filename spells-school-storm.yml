@@ -32,7 +32,7 @@ lore_of_storms:
     items:
         - storm_grimoire 1
     description: |
-            &9Lore of Storms: Lv15 Storm Spell
+            &9Lore of Storms: 15 Memory Storm Spell
             Creates a book of storms.
             Requires tome and stormhammer spells.
     str-cost: 100 mana, a book, and 4 snow blocks.
@@ -48,7 +48,7 @@ stormhammer:
         - feather 3
     memory: 10
     description: |
-        &rStormrod   -   Storm School
+        &rStormrod   10 Memory   Storm School
         &3You craft a storm rod.
     str-cost: 50 mana, 3 feathers, and 3 diamonds.
     str-cast-self: You create a stormhammer.
@@ -72,7 +72,7 @@ gust:
         - outside continue
         - storm power 2
     description: |
-        &rGust   -   Storm School
+        &rGust   2 Memory   Storm School
         &3With a flick of the wrist, the mage blows their enemies away.
         This spell is greatly empowered during a &9storm&3.
     str-cost: 10 mana and a feather
@@ -98,7 +98,7 @@ lightning:
         - storm cooldown 0.3
         - holding "279|&9Stormhammer" power 2.5
     description: |
-        &rLightning   -   Storm School
+        &rLightning   3 Memory   Storm School
         &3The mage calls down single lightning bolt.
         During a &9storm&3, lightning can be called with great frequency.
     str-cost: 25 mana and a handful of wool
@@ -122,7 +122,7 @@ storm:
     modifiers:
         - outside required
     description: |
-        &rStorm   -   Storm School
+        &rStorm   5 Memory   Storm School
         &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
         All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
     str-cast-start: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
@@ -149,7 +149,7 @@ windwalk:
         - storm required
         - outside required
     description: |
-        &rWindwalk   -   Storm School
+        &rWindwalk   15 Memory   Storm School
         The caster rides the winds of a raging storm.
     str-cost: 25 mana, 2 feathers, and a feather every 20 seconds.
     str-cost-self: You rise up into the stormy sky!
