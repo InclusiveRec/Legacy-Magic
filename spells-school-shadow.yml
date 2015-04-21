@@ -16,7 +16,7 @@ blind:
         - 375 1
     memory: 3
     description: |
-        &rBlind   -   Shadow School
+        &rBlind   3 Memory   Shadow School
         &3Blind your target.
     str-cost: "20 mana and spider's eye"
     str-cast-self: You have blinded %t!
@@ -46,7 +46,7 @@ invisibility:
     memory: 5
     use-cost-interval: 5
     description: |
-        &rInvisibility   -   Shadow School
+        &rInvisibility   5 Memory   Shadow School
         &3Makes you invisible to players and monsters.
     str-cost: 25 mana, plus 15 mana every 5 seconds
     str-cast-self: You vanish!
@@ -65,7 +65,7 @@ nightvision:
         - 375 1
     memory: 2
     description: |
-        &rNightvision   -   Shadow School
+        &rNightvision   2 Memory   Shadow School
         &3You can see in the dark!
     str-cost: 20 mana and a spider eye
     cooldown: 30
