@@ -83,7 +83,7 @@ lore_of_the_sun:
     items:
         - sun_grimoire
     description: |
-            &eLore of the Sun: Lv15 Solar Spell
+            &eLore of the Sun: 15 Memory Solar Spell
             Creates an Almanac, the grimoire of the Solar school.
     str-cost: "A book, 100 mana, and 12 solar concoction."
 
@@ -101,7 +101,7 @@ solar_staff:
     items:
         - sun_staff 1
     description: |
-        &eSolar Staff  -   L05 Solar Spell
+        &eSolar Staff  -   8 Memory Solar Spell
         Infuse your wand with the life-giving energy of the sun.
     str-cost: 100 mana, 2 gold ingots, 2 sticks, and 6 solar concoction.
     str-cast-self: With a flash, the gold shapes itself into a shining golden staff.
@@ -156,7 +156,7 @@ dawnrite:
     modifiers:
         - night required
     description: |
-            &eDawnrite: Lv10 Solar Spell
+            &eDawnrite: 10 Memory Solar Spell
             A ritual which will cause the sun to rise.
             This ritual requires three participants and takes 20 seconds of concentration to cast.
             Moving will disrupt the ritual.  Requires the &eSolar Staff&3 spell.
@@ -177,7 +177,7 @@ skycalm:
     cooldown: 300
     cost:
         - mana 50
-        - 371 3
+        - sun_concoction 3
     command-to-execute:
         - "weather clear"
     execute-on-console-instead: true
@@ -185,10 +185,10 @@ skycalm:
     modifiers:
         - storm required
     description: |
-            &eSunstaff: Lv05 Solar Spell
+            &eSunstaff: 5 Memory Solar Spell
             You clear the skies of bad weather.
             Requires the &esolar staff&3 spell.
-    str-cost: 50 mana and 3 nuggets of gold.
+    str-cost: 50 mana and 3 solar concoctions.
     str-modifier-failed: The sky is already clear!
     str-cast-start: You begin to calm the skies...
     str-cast-self: The weather clears!
@@ -216,7 +216,7 @@ solar_concoction:
         - 175 2
         - forest_concoction 6
     description: |
-            &eSolar Concoction: Lv01 Solar Spell
+            &eSolar Concoction: 1 Memory Solar Spell
             Mixes a solar concoction.
             Requires knowledge of the &2woodland concoction&3 spell.
     str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
@@ -233,7 +233,7 @@ lightwalk:
     memory: 1
     use-cost-interval: 25
     description: |
-        &eLightwalk: L01 Solar Spell
+        &eLightwalk: 1 Memory Solar Spell
         Light your path.
     str-cost: 25 mana and 2 solar concoction, plus 1 solar concoction occasionally.
     str-cast-self: Light appears at your feet.
@@ -255,7 +255,7 @@ bloom:
         - day addpower 2
         - holding "359|&2Magic Sickle" power 2
     description: |
-        &eBloom: L01 Solar Spell
+        &eBloom: 1 Memory Solar Spell
         Greatly accelerate crop growth.
         Requires the &2woodland concoction&3 spell.
     str-cost: 40 mana and 2 solar concoction.
@@ -289,7 +289,7 @@ banish:
       - zombie
       - pigzombie
     description: |
-        &eBanish: Lv05 Solar Spell
+        &eBanish: 5 Memory Solar Spell
         Destroy all monsters near you.
     str-cost: 50 mana.
     str-cast-self: You banish the encroaching forces of darkness.
@@ -311,7 +311,7 @@ cleanse:
         - 175 1
     memory: 2
     description: |
-        &eCleanse: Lv02 Solar Spell
+        &eCleanse: 2 Memory Solar Spell
         Remove negative effects from yourself.
     str-cost: 20 mana and a sunflower.
     str-cast-self: You cleanse yourself of negative effects.
@@ -326,7 +326,7 @@ prayer:
         - mana 30
     memory: 2
     description: |
-        &ePrayer: Lv02 Solar Spell
+        &ePrayer: 2 Memory Solar Spell
         &3Heals yourself for five hearts.
     str-cost: 30 mana
     str-cast-self: You have healed yourself.
@@ -344,8 +344,8 @@ heal:
         - mana 10
     memory: 1
     description: |
-        &eHeal: Lv01 Solar Spell
-        Heals a target player.
+        &eHeal: 1 Memory Solar Spell
+        Heals a nearby target player.
     str-cost: 10 mana
     str-cast-self: You have healed %t.
     str-cast-target: "%a has healed you."
@@ -373,7 +373,7 @@ soothe:
         - mana 25
         - sun_concoction
     description: |
-        &eSoothe: Lv06 Solar Spell
+        &eSoothe: 6 Memory Solar Spell
         A wave of healing energy emanates from the caster, passing
         through nearby individuals and restoring their health.
     str-cost: 25 mana and one solar concoction.
