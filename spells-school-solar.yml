@@ -33,38 +33,6 @@ predefined-items:
           - "energy."
 
 
-    # Weapons
-
-    elven_blade:
-        type: iron_sword
-        name: "&eElvensteel Blade"
-        lore:
-            - "This sword is both"
-            - "surprisingly lightweight"
-            - "and lethally sharp."
-        enchants:
-            - "damage_undead 2"
-            - "durability 2"
-    elven_arrow:
-        type: arrow
-        name: "&eElven Arrow"
-        lore:
-          - "To use their powers, arcane"
-          - "archers require these"
-          - "arrows of superior quality."
-    elven_bow:
-        type: bow
-        name: "&eElven Bow"
-        lore:
-          - "A fine longbow crafted"
-          - "from a seasoned elm stave,"
-          - "strung with horsehair."
-        enchants:
-          - "arrow_damage 2"
-          - "damage_undead 2"
-          - "durability 2"
-
-
 #############################
 #       The Grimoire        #
 #############################
@@ -112,31 +80,8 @@ solar_staff:
             particle-name: fireworksSpark
             count: 20
 
-# Disabling these spells until they're more fully developed
-elvensteel:
-    enabled: false
-    spell-class: ".instant.ConjureSpell"
-    cast-item: sun_grimoire
-    items:
-        - elven_blade
-elven_bowyer:
-    enabled: false
-    spell-class: ".instant.ConjureSpell"
-    cast-item: sun_grimoire
-    memory: 4
-    prerequisites:
-        - woodland_gardener
-    items:
-        - elven_bow
-elven_fletcher:
-    enabled: false
-    spell-class: ".instant.ConjureSpell"
-    cast-item: sun_grimoire
-    memory: 4
-    prerequisites:
-        - woodland_gardener
-    items:
-        - elven_arrow 6-9
+# Enabling these for the battle
+
 
 # Bonus spells
 
@@ -268,7 +213,7 @@ bloom:
 banish:
     spell-class: ".instant.PurgeSpell"
     spell-icon: 377
-    cast-item: sun_staff,stick
+    cast-item: sun_staff
     memory: 5
     range: 8
     cooldown: 10
@@ -297,7 +242,7 @@ banish:
 cleanse:
     spell-class: ".targeted.CleanseSpell"
     name: cleanse
-    cast-item: sun_staff,stick
+    cast-item: sun_staff
     cooldown: 60
     remove:
       - fire
@@ -317,7 +262,7 @@ cleanse:
     str-cast-self: You cleanse yourself of negative effects.
 prayer:
     spell-class: ".instant.PrayerSpell"
-    cast-item: sun_staff,stick
+    cast-item: sun_staff
     spell-icon: yellow_flower
     cast-item: stick
     cooldown: 3
@@ -333,7 +278,7 @@ prayer:
     str-at-full-health: You are already at full health.
 heal:
     spell-class: ".targeted.HealSpell"
-    cast-item: sun_staff,stick
+    cast-item: sun_staff
     spell-icon: red_rose
     heal-amount: 4
     cancel-if-full: true
@@ -355,7 +300,7 @@ heal:
         - target potion FF0000 40
 soothe:
     spell-class: ".targeted.ChainSpell"
-    cast-item: sun_staff,stick
+    cast-item: sun_staff
     prerequisites:
         - heal
     memory: 6
@@ -379,21 +324,12 @@ soothe:
     str-cost: 25 mana and one solar concoction.
     str-cast-self: You send forth a wave of soothing energy.
     str-cast-others: A wave of soothing energy emanates from %a.
+    modifiers:
+        - wearing "314|&eKnight's Helm" continue
+        - wearing "315|&eKnight's Cuirass" continue
+        - wearing "316|&eKnight's Greaves" continue
+        - wearing "317|&eKnight's Sabatons" power 1.
 
-# Sword spells
-
-solar_armour:
-    enabled: false
-    spell-class: ".buff.ArmorSpell"
-
-heroic_charge:
-    enabled: false
-    spell-class: ".MultiSpell"
-    cast-item: elven_blade
-    cooldown: 0.5
-    spells:
-        - getback
-        - jump
 
 solar_ray:
     spell-class: ".instant.ParticleProjectileSpell"
@@ -439,3 +375,7 @@ solar_guard:
         - mana 20
         - 175 1
     memory: 10
+
+
+
+

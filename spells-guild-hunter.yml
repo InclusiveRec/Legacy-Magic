@@ -35,7 +35,7 @@ monster_invisibility:
     str-cast-self: You are stalking the creatures of the wilderness.
     str-cast-others: "%p is stalking wild creatures."
     modifiers:
-        - holding "iron_sword|Hunting Knife" required
+        - holding "267|Hunting Knife" required
     str-modifier-failed: "You lack the proper equipment to begin stalking your prey."
 
 
