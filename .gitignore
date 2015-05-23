@@ -4,7 +4,5 @@ spellbooks/
 errors/
 
 # Unwanted files
-books.txt
-cooldowns.txt
-marks-mark.txt
+*.txt
 zones.yml
