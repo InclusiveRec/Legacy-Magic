@@ -13,6 +13,7 @@
 #  Claws of some sort snatch a player, paralyzing and damaging them.  Hold until caster's mana runs out
 
 necrotic_claw:
+    permission-name: death
     spell-class: ".TargetedMultiSpell"
     range: 2
     spells:
@@ -24,6 +25,7 @@ necrotic_claw:
         - drain
 
 awakening:
+    permission-name: death
     spell-class: ".instant.DummySpell"
     description: |
             Awakening: L05 Death spell
@@ -34,6 +36,7 @@ awakening:
 # effects
 
 paralysis:
+    permission-name: death
     spell-class: ".targeted.StunSpell"
     duration: 2.5
 
@@ -43,8 +46,8 @@ paralysis:
 
 
 drain:
+    permission-name: death
     spell-class: ".targeted.DrainlifeSpell"
-    name: drain
     spell-icon: ghast_tear
     cast-item: bone
     can-cast-by-command: false
@@ -71,8 +74,8 @@ drain:
     str-no-target: No source of life energy found.
     
 minion:
+    permission-name: death
     spell-class: ".buff.MinionSpell"
-    name: minion
     spell-icon: monster_egg:54
     cast-item: bone
     cooldown: 10
@@ -97,8 +100,8 @@ minion:
     str-fade: Your undead minion dies.
     
 rupture:
+    permission-name: death
     spell-class: ".targeted.ExplodeSpell"
-    name: rupture
     spell-icon: 289
     cast-item: bone, minepick
     cost:
@@ -121,6 +124,7 @@ rupture:
     can-cast-by-command: false
     
 sacrifice:
+    permission-name: death
     spell-class: ".instant.ManaSpell"
     spell-icon: potion:8193
     cast-item: bone
@@ -137,8 +141,8 @@ sacrifice:
     can-cast-by-command: true
     
 spite:
+    permission-name: death
     spell-class: ".targeted.AreaEffectSpell"
-    name: spite
     spell-icon: 375
     cast-item: bone
     cost:

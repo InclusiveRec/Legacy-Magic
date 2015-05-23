@@ -81,6 +81,7 @@ lore_of_the_woods:
 # Gardening tool
 
 woodland_gardener:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: shears
     spell-icon: shears
@@ -108,6 +109,7 @@ woodland_gardener:
 # Base concoction
 
 woodland_concoction:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     spell-icon: "351:2"
     cast-item: forest_sickle
@@ -130,6 +132,7 @@ woodland_concoction:
 # Cast item(s)
 
 woodland_wand:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: stick
@@ -150,6 +153,7 @@ woodland_wand:
 #####################
 
 forage:
+    permission-name: forest
     spell-class: ".instant.FoodSpell"
     cast-item: stick,forest_sickle
     spell-icon: apple
@@ -173,6 +177,7 @@ forage:
             effect: sound
             sound: random.eat
 lifewalk:
+    permission-name: forest
     spell-class: ".buff.LifewalkSpell"
     spell-icon: yellow_flower
     cast-item: stick,forest_sickle
@@ -191,6 +196,7 @@ lifewalk:
     str-cast-self: Flowers spring up in your footsteps.
     str-fade: Your steps no longer cause flowers to grow.
 mulch:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     spell-icon: "31:1"
     cast-item: stick,forest_sickle
@@ -218,6 +224,7 @@ mulch:
 # Basic spells
 
 haste:
+    permission-name: forest
     spell-class: ".buff.HasteSpell"
     cast-item: stick,forest_wand
     spell-icon: gold_boots
@@ -252,6 +259,7 @@ haste:
         effect: sound
         sound: "mob.wolf.panting"
 leap:
+    permission-name: forest
     spell-class: ".instant.LeapSpell"
     cast-item: stick,forest_wand
     spell-icon: diamond_boots
@@ -276,6 +284,7 @@ leap:
             effect: blockbreak
             id: "13:0"
 safefall:
+    permission-name: forest
     spell-class: ".buff.InvulnerabilitySpell"
     name: safefall
     spell-icon: feather
@@ -299,6 +308,7 @@ safefall:
     str-cast-self: You feel lighter.
     str-fade: Your normal weight returns.
 entangle:
+    permission-name: forest
     spell-class: ".targeted.AreaEffectSpell"
     spell-icon: 106
     cast-item: stick,forest_wand
@@ -320,6 +330,7 @@ entangle:
     str-cost: 12 mana and 4 woodland concoction.
     
 hedge:
+    permission-name: forest
     spell-class: ".instant.WallSpell"
     spell-icon: 184
     cast-item: stick,forest_wand
@@ -347,6 +358,8 @@ hedge:
 # Intermediate spells (require the woodland_wand spell to learn)
 
 crow_flight:
+    enabled: false
+    permission-name: forest
     spell-class: ".buff.WindwalkSpell"
     cast-item: forest_wand
     spell-icon: feather
@@ -369,6 +382,7 @@ crow_flight:
 # Cast item
 
 fang:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: flint
@@ -393,6 +407,7 @@ fang:
 
 
 rend:
+    permission-name: forest
     spell-class: ".TargetedMultiSpell"
     spell-icon: 423
     cast-item: wolf_fang
@@ -415,6 +430,7 @@ rend:
             sound: mob.wolf.growl
 
 wolf:
+    permission-name: forest
     spell-class: ".targeted.SpawnMonsterSpell"
     spell-icon: 352
     cast-item: wolf_fang
@@ -441,6 +457,7 @@ wolf:
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
 
 call_of_the_wild:
+    permission-name: forest
     spell-class: ".targeted.PulserSpell"
     cast-item: wolf_fang
     spell-icon: "6:1"

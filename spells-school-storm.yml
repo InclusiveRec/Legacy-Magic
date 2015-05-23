@@ -39,6 +39,7 @@ lore_of_storms:
 
 
 stormhammer:
+    permission-name: storm
     spell-class: ".instant.ConjureSpell"
     cast-item: storm_grimoire
     spell-icon: diamond_axe
@@ -55,6 +56,7 @@ stormhammer:
     items:
       - stormhammer 1
 freeze:
+    permission-name: storm
     spell-class: ".instant.FreezeSpell"
     cast-item: water_focus,stick
     spell-icon: snow_ball
@@ -81,6 +83,7 @@ freeze:
     str-cost: 15 mana and a snowball.
     str-on-cooldown: ""
 gust:
+    permission-name: storm
     spell-class: ".instant.ForcepushSpell"
     cast-item: stormhammer
     spell-icon: feather
@@ -104,6 +107,7 @@ gust:
     str-cast-self: You blow a powerful wind gust at your enemies!
     str-cast-others: "%a blows a powerful gust of wind!"
 lightning:
+    permission-name: storm
     spell-class: ".targeted.LightningSpell"
     cast-item: stormhammer
     spell-icon: gold_sword
@@ -132,6 +136,7 @@ lightning:
     str-on-cooldown: ""
     str-modifier-failed: You can only target areas outside.
 storm:
+    permission-name: storm
     spell-class: ".ExternalCommandSpell"
     name: storm
     cooldown: 300
@@ -157,6 +162,7 @@ storm:
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
     str-modifier-failed: You must have a view of the sky to cast this spell.
 windwalk:
+    permission-name: storm
     spell-class: ".buff.WindwalkSpell"
     cast-item: stormhammer
     spell-icon: diamond_boots

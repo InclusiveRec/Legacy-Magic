@@ -1,4 +1,5 @@
 blind:
+    permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
     name: blind
     spell-icon: ink_sack:0
@@ -26,6 +27,7 @@ blind:
         position: target
         effect: smoke
 invisibility:
+    permission-name: shadow
     spell-class: ".buff.InvisibilitySpell"
     name: invisibility
     spell-icon: record_11
@@ -53,6 +55,7 @@ invisibility:
     str-cast-others: "%a vanishes!"
     str-fade: You are visible again.
 nightvision:
+    permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
     name: nightvision
     spell-icon: 381

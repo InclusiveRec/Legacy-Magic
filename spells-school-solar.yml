@@ -58,6 +58,7 @@ lore_of_the_sun:
 # Item creation spells
 
 solar_staff:
+    permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
     cost:
@@ -80,12 +81,10 @@ solar_staff:
             particle-name: fireworksSpark
             count: 20
 
-# Enabling these for the battle
-
-
 # Bonus spells
 
 dawnrite:
+    permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
     prerequisites:
@@ -114,6 +113,7 @@ dawnrite:
     str-ritual-success: The dawn is summoned!
     str-modifier-failed: You can only begin this ritual at night.
 skycalm:
+    permission-name: solar
     spell-class: ".ExternalCommandSpell"
     cast-item: sun_staff
     prerequisites:
@@ -149,6 +149,7 @@ skycalm:
 #########################################
 
 solar_concoction:
+    permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
     spell-icon: "351:11"
@@ -166,6 +167,7 @@ solar_concoction:
             Requires knowledge of the &2woodland concoction&3 spell.
     str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
 lightwalk:
+    permission-name: solar
     spell-class: ".buff.LightwalkSpell"
     cast-item: stick,forest_sickle
     spell-icon: glowstone
@@ -184,6 +186,7 @@ lightwalk:
     str-cast-self: Light appears at your feet.
     str-fade: The light at your feet goes out.
 bloom:
+    permission-name: solar
     spell-class: ".targeted.FarmSpell"
     cast-item: stick,forest_sickle
     prerequisites: woodland_concoction
@@ -211,6 +214,7 @@ bloom:
 # Solar staff
 
 banish:
+    permission-name: solar
     spell-class: ".instant.PurgeSpell"
     spell-icon: 377
     cast-item: sun_staff
@@ -240,6 +244,7 @@ banish:
     str-cast-self: You banish the encroaching forces of darkness.
     str-cast-others: "%a banishes the encroaching forces of darkness."
 cleanse:
+    permission-name: solar
     spell-class: ".targeted.CleanseSpell"
     name: cleanse
     cast-item: sun_staff
@@ -261,6 +266,7 @@ cleanse:
     str-cost: 20 mana and a sunflower.
     str-cast-self: You cleanse yourself of negative effects.
 prayer:
+    permission-name: solar
     spell-class: ".instant.PrayerSpell"
     cast-item: sun_staff
     spell-icon: yellow_flower
@@ -277,6 +283,7 @@ prayer:
     str-cast-self: You have healed yourself.
     str-at-full-health: You are already at full health.
 heal:
+    permission-name: solar
     spell-class: ".targeted.HealSpell"
     cast-item: sun_staff
     spell-icon: red_rose
@@ -299,6 +306,7 @@ heal:
     effects:
         - target potion FF0000 40
 soothe:
+    permission-name: solar
     spell-class: ".targeted.ChainSpell"
     cast-item: sun_staff
     prerequisites:
@@ -332,6 +340,7 @@ soothe:
 
 
 solar_ray:
+    permission-name: solar
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: sun_staff
     bindable: false
@@ -363,8 +372,8 @@ solar_ray:
 # Passive spells
 
 solar_guard:
+    permission-name: solar
     spell-class: ".PassiveSpell"
-    requires: solar_ray
     triggers:
         - takedamage ENTITY_ATTACK
         - takedamage PROJECTILE

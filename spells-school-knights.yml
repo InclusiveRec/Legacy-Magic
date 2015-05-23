@@ -25,6 +25,7 @@
 #
 
 warhorse:
+    permission-name: knights
     spell-class: ".instant.SteedSpell"
     permission-name: knight_school
     memory: 2
@@ -53,6 +54,7 @@ warhorse:
 
 sword_template:
     enabled: false
+    permission-name: knights
     spell-class: ".PassiveSpell"
     memory: 0
     triggers:
@@ -69,6 +71,7 @@ sword_template:
     str-cost: "10 mana; 0 memory; bound to all knightly swords."
 
 stunning_blow:
+    permission-name: knights
     spell-class: ".PassiveSpell"
     triggers:
         - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
@@ -85,6 +88,7 @@ stunning_blow:
 
 
 charge:
+    permission-name: knights
     spell-class: ".PassiveSpell"
     triggers:
         - sprint
@@ -101,6 +105,7 @@ charge:
 #
 
 knightly_harness:
+    permission-name: knights
     spell-class: ".MultiSpell"
     cast-item: knight_saddle
     target-self: true
@@ -115,23 +120,27 @@ knightly_harness:
     str-cost: "1 iron block and 50 mana."
 
 en_garde:
+    permission-name: knights
     spell-class: ".buff.DummySpell"
     str-cast-self: "You drop into your guard..."
     str-cast-self: ""
     duration: 180
 
 burnished_cuirass:
+    permission-name: knights
     spell-class: ".PassiveSpell"
     triggers:
         - spellcast en_garde
     spells:
         - equip_burnished_cuirass
 equip_burnished_cuirass:
+    permission-name: knights
     spell-class: ".buff.ArmorSpell"
     chestplae: burnished_cuirass
     str-cast-self: "You conjure a burnished cuirass!"
 
 equip_knightly_armour:
+    permission-name: knights
     spell-class: ".MultiSpell"
     spells:
         - equip_helm
@@ -139,18 +148,22 @@ equip_knightly_armour:
         - equip_leggings
         - equip_spurs
 equip_helm:
+    permission-name: knights
     spell-class: ".buff.ArmorSpell"
     helmet: knightly_helm
     duration: 180
 equip_hauberk:
+    permission-name: knights
     spell-class: ".buff.ArmorSpell"
     chestplate: knightly_hauberk
     duration: 180
 equip_leggings:
+    permission-name: knights
     spell-class: ".buff.ArmorSpell"
     leggings: knightly_greaves
     duration: 180
 equip_spurs:
+    permission-name: knights
     spell-class: ".buff.ArmorSpell"
     boots:  knightly_sabatons
     duration: 180
@@ -164,6 +177,7 @@ equip_spurs:
 
 guard_template:
     enabled: false
+    permission-name: knights
     spell-class: ".PassiveSpell"
     triggers:
         - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
@@ -180,6 +194,7 @@ guard_template:
     str-cast-target: "%c deflects your blow."
 
 grim_determination:
+    permission-name: knights
     spell-class: ".PassiveSpell"
     memory: 5
     triggers:

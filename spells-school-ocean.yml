@@ -45,6 +45,7 @@ lore_of_oceans:
             Create a grimoire of Hydromantic lore.
     str-cost: 100 mana, a book, and a diamond.
 hydromantic_focus:
+    permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
@@ -59,6 +60,7 @@ hydromantic_focus:
             Create a hydromantic focus to direct water spells.
     str-cost: 50 mana and 3 diamonds.
 dowsing_rod:
+    permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
@@ -77,6 +79,7 @@ dowsing_rod:
 #########################
 
 gills:
+    permission-name: ocean
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
@@ -98,6 +101,7 @@ gills:
     str-cast-self: You form gills on your neck!
     str-fade: Your gills disappear.
 water:
+    permission-name: ocean
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
@@ -117,6 +121,7 @@ water:
     str-cost: 15 mana
     str-no-target: No target found.
 waterwalk:
+    permission-name: ocean
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
@@ -147,6 +152,7 @@ waterwalk:
 
 
 geyser:
+    permission-name: ocean
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
