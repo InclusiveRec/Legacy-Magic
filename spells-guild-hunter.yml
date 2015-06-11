@@ -1,18 +1,7 @@
-predefined-items:
-    hunt_knife:
-        name: "Hunting Knife"
-        type: iron_sword
-        lore:
-            - "A good sharp blade, fit for"
-            - "slaughtering animals with"
-            - "a minimum of waste."
-        enchants:
-            - "loot_bonus_mobs 3"
-            - "damage_all 1"
-
 # Apprentice
 
 stalking:
+    permission-name: hunterapprentice
     spell-class: ".PassiveSpell"
     triggers:
         - sneak
@@ -42,6 +31,7 @@ monster_invisibility:
 # Journeyman
 
 trapper:
+    permission-name: hunterjourneyman
     spell-class: ".MultiSpell"
     cast-item: stick
     spell-icon: 420
@@ -78,9 +68,23 @@ tryrabbit:
 # Master
 
 hunting_knife:
+    permission-name: huntermaster
     spell-class: ".instant.ConjureSpell"
     items:
         - hunt_knife 1
     description: |
             &rCleaver   -   Butcher Journeyman Power
             Creates a fine tool for slaughtering livestock.
+
+
+predefined-items:
+    hunt_knife:
+        name: "Hunting Knife"
+        type: iron_sword
+        lore:
+            - "A good sharp blade, fit for"
+            - "slaughtering animals with"
+            - "a minimum of waste."
+        enchants:
+            - "loot_bonus_mobs 3"
+            - "damage_all 1"

@@ -9,10 +9,6 @@ default-regen-amount: 1
 regen-interval: 20
 
 ranks:
-    archmage:
-        max-mana: 600
-        regen-amount: 7
-        starting-mana: 300
     master:
         max-mana: 300
         regen-amount: 5

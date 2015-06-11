@@ -1,14 +1,3 @@
-predefined-items:
-    minepick:
-        type: 257
-        name: "Miner's Pick"
-        lore:
-          - "This pick carries"
-          - "a powerful enchantment"
-          - "of stone magic."
-        enchants:
-          - "efficiency 5"
-          - "unbreaking 3"
 # Apprentice
 forge_magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
@@ -108,5 +97,14 @@ stonevision:
     str-cast-self: The stone around you flickers and fades away...
 
 
-
-
+predefined-items:
+    minepick:
+        type: 257
+        name: "Miner's Pick"
+        lore:
+          - "This pick carries"
+          - "a powerful enchantment"
+          - "of stone magic."
+        enchants:
+          - "efficiency 5"
+          - "unbreaking 3"

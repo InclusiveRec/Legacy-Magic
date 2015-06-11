@@ -1,24 +1,7 @@
-predefined-items:
-    mortar:
-        name: "Mortar"
-        lore:
-          - "A wet, sticky mixture"
-          - "of sand and ground bone"
-          - "used for setting stonework."
-        type: "351:7"
-    builders_trowel:
-        name: "Builder's Trowel"
-        lore: 
-          - "An enchanted tool"
-          - "used by members of"
-          - "builders' guilds."
-        type: IRON_SPADE
-        enchants:
-          - "dig_speed 2"
-          - "durability 2"
-          - "silk_touch 1"
+
 # Apprentice level
 mix_mortar:
+    permission-name: builderapprentice
     spell-class: ".instant.ConjureSpell"
     name: mix_mortar
     spell-icon: "351:7"
@@ -32,9 +15,9 @@ mix_mortar:
     bindable: false
     cast-time: 200
     description: |
-        	&rMix Mortar  Apprentice Builders' Guild
-        	&3Mixes mortar out of raw materials.
-        	The process takes some time.
+            &rMix Mortar  Apprentice Builders' Guild
+            &3Mixes mortar out of raw materials.
+            The process takes some time.
     str-cast-start: You begin mixing a batch of mortar...
     str-cast-self: The mortar is prepared.  Sticky!
     str-cost: 10 mana, 16 sand, and 8 bone meal.
@@ -43,6 +26,7 @@ mix_mortar:
     str-interrupted: The mixing process has been disrupted, and the materials have been ruined.
 
 patchwork:
+    permission-name: builderapprentice
     spell-class: ".targeted.ReplaceSpell"
     range: 8
     radius-up: 2
@@ -65,6 +49,7 @@ patchwork:
 # Journeyman level
 
 trowel:
+    permission-name: builderjourneyman
     spell-class: ".instant.ConjureSpell"
     name: trowel
     spell-icon: IRON_SPADE
@@ -78,4 +63,27 @@ trowel:
     str-cost: 20 mana, 5 experience levels, and an iron shovel.
     items:
         - builders_trowel 1
+
 # Master level
+
+
+
+predefined-items:
+    mortar:
+        name: "Mortar"
+        lore:
+          - "A wet, sticky mixture"
+          - "of sand and ground bone"
+          - "used for setting stonework."
+        type: "351:7"
+    builders_trowel:
+        name: "Builder's Trowel"
+        lore: 
+          - "An enchanted tool"
+          - "used by members of"
+          - "builders' guilds."
+        type: IRON_SPADE
+        enchants:
+          - "dig_speed 2"
+          - "durability 2"
+          - "silk_touch 1"

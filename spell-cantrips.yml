@@ -1,3 +1,5 @@
+# Free spells
+
 blink:
     permission-name: novice
     spell-class: ".targeted.BlinkSpell"
@@ -56,50 +58,6 @@ gate:
     description: |
         &rGate   -   Cantrip
         &3Teleport to spawn.
-list:
-    permission-name: novice
-    spell-class: ".command.ListSpell"
-    name: list
-    always-granted: true
-    description: |
-        &rList   -   Cantrip
-        &3List all the spells you know.
-    only-show-castable-spells: true
-    reload-granted-spells: true
-    spells-to-hide: []
-    str-prefix: "Known spells:"
-    str-no-spells: You do not know any spells.
-help:
-    permission-name: novice
-    spell-class: ".command.HelpSpell"
-    name: help
-    always-granted: true
-    description: |
-        &rHelp   -   Cantrip
-        &3Get information about a specified spell that you already know.
-    require-known-spell: true
-    str-usage: "Usage: /cast help <spell>"
-    str-no-spell: You do not know a spell by that name.
-    str-desc-line: "%d"
-    str-cost-line: "Cost: %c"
-forget:
-    permission-name: novice
-    spell-class: ".command.ForgetSpell"
-    name: forget
-    always-granted: true
-    description: |
-        &rForget   -   Cantrip
-        &3Make a player forget a spell.
-    allow-self-forget: true
-    str-usage: "Usage: /cast forget <target> <spell>"
-    str-no-target: No such player.
-    str-no-spell: You do not know a spell by that name.
-    str-doesnt-know: That person does not know that spell.
-    str-cast-self: You made %t forget the %s spell.
-    str-cast-target: "%a has made you forget the %s spell."
-    str-cast-self-target: "You have forgotten the %s spell."
-    str-reset-target: "You have reset %t's spellbook."
-    str-reset-self: "You have forgotten all of your spells."
 mark:
     permission-name: novice
     spell-class: ".instant.MarkSpell"
@@ -162,6 +120,57 @@ summon_helper:
     str-summon-pending: "%a is summoning you! Type /accept to teleport."
     str-summon-accepted: You have been summoned.
     str-summon-expired: The summon has expired.
+
+
+# Novice spells
+
+list:
+    permission-name: novice
+    spell-class: ".command.ListSpell"
+    name: list
+    always-granted: true
+    description: |
+        &rList   -   Cantrip
+        &3List all the spells you know.
+    only-show-castable-spells: true
+    reload-granted-spells: true
+    spells-to-hide: []
+    str-prefix: "Known spells:"
+    str-no-spells: You do not know any spells.
+help:
+    permission-name: novice
+    spell-class: ".command.HelpSpell"
+    name: help
+    always-granted: true
+    description: |
+        &rHelp   -   Cantrip
+        &3Get information about a specified spell that you already know.
+    require-known-spell: true
+    str-usage: "Usage: /cast help <spell>"
+    str-no-spell: You do not know a spell by that name.
+    str-desc-line: "%d"
+    str-cost-line: "Cost: %c"
+forget:
+    permission-name: novice
+    spell-class: ".command.ForgetSpell"
+    name: forget
+    always-granted: true
+    description: |
+        &rForget   -   Cantrip
+        &3Make a player forget a spell.
+    allow-self-forget: true
+    str-usage: "Usage: /cast forget <target> <spell>"
+    str-no-target: No such player.
+    str-no-spell: You do not know a spell by that name.
+    str-doesnt-know: That person does not know that spell.
+    str-cast-self: You made %t forget the %s spell.
+    str-cast-target: "%a has made you forget the %s spell."
+    str-cast-self-target: "You have forgotten the %s spell."
+    str-reset-target: "You have reset %t's spellbook."
+    str-reset-self: "You have forgotten all of your spells."
+
+
+
 
 # Apprentice level
 
@@ -266,7 +275,7 @@ spellbook:
     str-no-target: You must target an enchanting table to create a spellbook.
     str-has-spellbook: That enchanting table already has a spellbook.
     str-cant-destroy: You cannot destroy an enchanting table with a spellbook.
-    str-cant-learn: You cannot learn the spell in this spellbook.
+    str-cant-learn: Try as you might, you fail to learn the %s spell.
     str-already-known: You already know the %s spell.
     str-learned: You have learned the %s spell!
 
