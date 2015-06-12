@@ -56,10 +56,7 @@ fiery_staff:
     bindable: false
     add-to-inventory: false
     prerequisites:
-        - bind
-        - unbind
-        - firebreathing
-        - smoke
+        - scroll
         - spark
     memory: 10
     cost:

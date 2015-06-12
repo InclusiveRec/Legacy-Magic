@@ -61,6 +61,9 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
+    prerequisites:
+        - scroll
+        - solar_ray
     cost:
         - mana 100
         - 266 2
@@ -345,8 +348,6 @@ solar_ray:
     cast-item: sun_staff
     bindable: false
     spell-icon: 377
-    prerequisites:
-        - solar_staff
     memory: 4
     cost:
       - mana 40

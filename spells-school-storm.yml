@@ -48,8 +48,11 @@ stormhammer:
         - diamond 3
         - feather 3
     memory: 5
+    prerequisites:
+        - scroll
+        - lightning
     description: |
-        &rStormrod   10 Memory   Storm School
+        &rStormrod   5 Memory   Storm School
         &3You craft a storm rod.
     str-cost: 50 mana, 3 feathers, and 3 diamonds.
     str-cast-self: You create a stormhammer.

@@ -53,6 +53,9 @@ hydromantic_focus:
         - mana 50
         - diamond 3
     memory: 3
+    prerequisites:
+        - scroll
+        - geyser
     items:
         - water_focus
     description: |
@@ -68,6 +71,9 @@ dowsing_rod:
         - mana 50
         - diamond 2
     memory: 2
+    prerequisites:
+        - scroll
+        - water
     str-cost: 50 mana and 2 diamonds.
     items:
         - water_rod
