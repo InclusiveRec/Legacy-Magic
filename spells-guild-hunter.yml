@@ -13,6 +13,7 @@ stalking:
     send-failure-messages: true
 
 monster_invisibility:
+    permission-name: hunterapprentice
     spell-class: ".buff.InvisibilitySpell"
     prevent-pickups: false
     invisible-to-players: false
