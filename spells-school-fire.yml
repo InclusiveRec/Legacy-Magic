@@ -188,6 +188,7 @@ warmth:
     ###################
 
 fire_shield:
+    permission-name: fire
     spell-class: ".instant.DummySpell"
     cast-item: fire_staff
     prerequisites:
@@ -198,6 +199,7 @@ fire_shield:
     #################
 
 combust:
+    permission-name: fire
     spell-class: ".targeted.CombustSpell"
     fire-tick-damage: 4
     check-plugins: false
