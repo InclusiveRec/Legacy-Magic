@@ -52,7 +52,7 @@ hydromantic_focus:
     cost:
         - mana 50
         - diamond 3
-    memory: 10
+    memory: 3
     items:
         - water_focus
     description: |
@@ -67,7 +67,7 @@ dowsing_rod:
     cost:
         - mana 50
         - diamond 2
-    memory: 10
+    memory: 2
     str-cost: 50 mana and 2 diamonds.
     items:
         - water_rod
@@ -92,7 +92,7 @@ gills:
         - sugar_cane 1
     use-cost:
         - sugar_cane 1
-    memory: 2
+    memory: 5
     use-cost-interval: 1
     description: |
         &rGills   2 Memory   Water School
@@ -132,7 +132,7 @@ waterwalk:
     cost:
         - mana 25
         - boat 1
-    memory: 1
+    memory: 3
     use-cost:
         - mana 10
     use-cost-interval: 20
@@ -168,7 +168,7 @@ geyser:
     target-players: true
     cost:
         - mana 15
-    memory: 2
+    memory: 4
     description: |
         &rGeyser   2 Memory   Water School
         Create a water geyser at your enemy's feet.

@@ -47,7 +47,7 @@ stormhammer:
         - mana 50
         - diamond 3
         - feather 3
-    memory: 10
+    memory: 5
     description: |
         &rStormrod   10 Memory   Storm School
         &3You craft a storm rod.
@@ -60,7 +60,7 @@ freeze:
     spell-class: ".instant.FreezeSpell"
     cast-item: water_focus,stick
     spell-icon: snow_ball
-    memory: 2
+    memory: 4
     snowballs: 25
     horizontal-spread: 15
     vertical-spread: 5
@@ -95,7 +95,7 @@ gust:
     horizontal-force: 30
     vertical-force: 10
     target-players: true
-    memory: 2
+    memory: 4
     modifiers:
         - outside continue
         - storm power 2
@@ -144,7 +144,7 @@ storm:
     cost:
         - mana 80
         - wool 3
-    memory: 5
+    memory: 8
     str-cost: 80 mana and 3 fleeces to channel the power.
     command-to-execute:
         - weather thunder
@@ -170,7 +170,7 @@ windwalk:
     cost:
         - mana 25
         - feather 2
-    memory: 15
+    memory: 7
     requires: storm
     use-cost:
         - mana 10

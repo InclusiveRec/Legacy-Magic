@@ -103,7 +103,7 @@ smoke:
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: fire_staff,blaze_powder
     spell-icon: "160:8"
-    memory: 1
+    memory: 3
     fail-if-no-targets: false
     horizontal-radius: 5
     vertical-radius: 2
@@ -132,7 +132,7 @@ spark:
     cost:
         - mana 20
         - blaze_powder 1
-    memory: 2
+    memory: 3
     allow-command-casting: false
     cooldown: 1
     range: 20

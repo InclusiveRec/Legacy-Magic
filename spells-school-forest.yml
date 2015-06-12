@@ -119,7 +119,7 @@ woodland_concoction:
       - 39 1        # 1 brown mushroom
       - 37 1        # 1 yellow flowers
       - 38 1        # 1 red flower
-    memory: 2
+    memory: 1
     items:
       - forest_concoction 2-4
     description: |
@@ -137,7 +137,7 @@ woodland_wand:
     cast-item: forest_grimoire
     spell-icon: stick
     prerequisites: woodland_gardener,scroll
-    memory: 10
+    memory: 5
     cost:
         - stick 1
         - "6:0 1"
@@ -182,7 +182,7 @@ lifewalk:
     spell-icon: yellow_flower
     cast-item: stick,forest_sickle
     bindable: false
-    memory: 1
+    memory: 2
     cost:
         - mana 10
         - forest_concoction 2
@@ -202,7 +202,7 @@ mulch:
     cast-item: stick,forest_sickle
     bindable: false
     prerequisites: druidic_concoction
-    memory: 1
+    memory: 3
     cost:
         - mana 5
         - "31:1 12"
@@ -233,7 +233,7 @@ haste:
     duration: 60
     cost:
         - mana 20
-    memory: 1
+    memory: 3
     modifiers:
         - holding "280|&2Oak wand" power 2
     description: |
@@ -289,7 +289,7 @@ safefall:
     name: safefall
     spell-icon: feather
     cast-item: stick,forest_wand
-    cooldown: 2
+    cooldown: 3
     damage-causes:
         - fall
     duration: 300
@@ -312,7 +312,7 @@ entangle:
     spell-class: ".targeted.AreaEffectSpell"
     spell-icon: 106
     cast-item: stick,forest_wand
-    memory: 3
+    memory: 4
     cost:
         - mana 12
         - forest_concoction 4
@@ -334,7 +334,7 @@ hedge:
     spell-class: ".instant.WallSpell"
     spell-icon: 184
     cast-item: stick,forest_wand
-    memory: 1
+    memory: 5
     cost:
         - mana 15
         - forest_concoction 2
@@ -391,7 +391,7 @@ fang:
         - bind
         - unbind
         - scroll
-    memory: 5
+    memory: 2
     cost:
         - bone 6
         - forest_concoction 4
@@ -409,6 +409,7 @@ fang:
 rend:
     permission-name: forest
     spell-class: ".TargetedMultiSpell"
+    memory: 2
     spell-icon: 423
     cast-item: wolf_fang
     range: 1
@@ -436,7 +437,7 @@ wolf:
     cast-item: wolf_fang
     prerequisites:
         - forage
-    memory: 3
+    memory: 5
     cost:
         - levels 20
         - bone 3
@@ -457,6 +458,7 @@ wolf:
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
 
 call_of_the_wild:
+    enabled: false
     permission-name: forest
     spell-class: ".targeted.PulserSpell"
     cast-item: wolf_fang
@@ -475,8 +477,9 @@ call_of_the_wild:
         - tempwolf
     cost:
         - mana 60
+    memory: 6
 
-# Effect spells
+# Effect spells (cannot be researched)
 
 tempwolf:
     spell-class: ".targeted.SpawnMonsterSpell"

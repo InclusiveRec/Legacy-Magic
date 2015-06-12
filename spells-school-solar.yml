@@ -66,7 +66,7 @@ solar_staff:
         - 266 2
         - stick 2
         - sun_concoction 6
-    memory: 8
+    memory: 5
     items:
         - sun_staff 1
     description: |
@@ -89,7 +89,7 @@ dawnrite:
     cast-item: sun_staff
     prerequisites:
         - solar_staff
-    memory: 10
+    memory: 6
     cost:
         - mana 100
         - 266 1
@@ -171,7 +171,7 @@ lightwalk:
     spell-class: ".buff.LightwalkSpell"
     cast-item: stick,forest_sickle
     spell-icon: glowstone
-    memory: 1
+    memory: 3
     cost:
         - mana 25
         - sun_concoction 2
@@ -190,7 +190,7 @@ bloom:
     spell-class: ".targeted.FarmSpell"
     cast-item: stick,forest_sickle
     prerequisites: woodland_concoction
-    memory: 1
+    memory: 3
     cost:
         - mana 40
         - sun_concoction 2
@@ -218,7 +218,7 @@ banish:
     spell-class: ".instant.PurgeSpell"
     spell-icon: 377
     cast-item: sun_staff
-    memory: 5
+    memory: 4
     range: 8
     cooldown: 10
     cost:
@@ -259,7 +259,7 @@ cleanse:
     cost:
         - mana 20
         - 175 1
-    memory: 2
+    memory: 3
     description: |
         &eCleanse: 2 Memory Solar Spell
         Remove negative effects from yourself.
@@ -275,7 +275,7 @@ prayer:
     amount-healed: 10
     cost:
         - mana 30
-    memory: 2
+    memory: 3
     description: |
         &ePrayer: 2 Memory Solar Spell
         &3Heals yourself for five hearts.
@@ -294,7 +294,7 @@ heal:
     range: 12
     cost:
         - mana 10
-    memory: 1
+    memory: 4
     description: |
         &eHeal: 1 Memory Solar Spell
         Heals a nearby target player.
@@ -347,7 +347,7 @@ solar_ray:
     spell-icon: 377
     prerequisites:
         - solar_staff
-    memory: 10
+    memory: 4
     cost:
       - mana 40
       - 175 1
@@ -383,7 +383,7 @@ solar_guard:
     cost:
         - mana 20
         - 175 1
-    memory: 10
+    memory: 7
 
 
 
