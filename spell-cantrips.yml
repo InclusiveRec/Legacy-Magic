@@ -1,7 +1,7 @@
 # Free spells
 
 blink:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".targeted.BlinkSpell"
     always-granted: true
     spell-icon: ender_pearl
@@ -23,7 +23,7 @@ blink:
     str-cast-others: "%a blinks away!"
     str-cant-blink: You cannot blink there.
 enderchest:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".instant.EnderchestSpell"
     always-granted: true
     spell-icon: ender_chest
@@ -37,7 +37,7 @@ enderchest:
         - 368 1
     str-cost: 50 mana and an enderpearl.
 gate:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
@@ -59,7 +59,7 @@ gate:
         &rGate   -   Cantrip
         &3Teleport to spawn.
 mark:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".instant.MarkSpell"
     cast-item: book
     spell-icon: bed
@@ -75,7 +75,7 @@ mark:
         &rMark   -   Cantrip
         &3Marks your location for later recall.
 recall:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".instant.RecallSpell"
     spell-icon: compass
     cast-item: book
@@ -97,7 +97,7 @@ recall:
     str-too-far: Your marked location is too far away.
     str-cast-others: "%a disappears!"
 summon_helper:
-    permission-name: novice
+    permission-name: cantrip
     name: summon
     spell-class: ".targeted.SummonSpell"
     always-granted: true
@@ -125,7 +125,7 @@ summon_helper:
 # Novice spells
 
 list:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".command.ListSpell"
     name: list
     always-granted: true
@@ -138,7 +138,7 @@ list:
     str-prefix: "Known spells:"
     str-no-spells: You do not know any spells.
 help:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".command.HelpSpell"
     name: help
     always-granted: true
@@ -151,7 +151,7 @@ help:
     str-desc-line: "%d"
     str-cost-line: "Cost: %c"
 forget:
-    permission-name: novice
+    permission-name: cantrip
     spell-class: ".command.ForgetSpell"
     name: forget
     always-granted: true
@@ -298,7 +298,7 @@ teach:
 # Settlement Magic
 
 populate:
-    permission-name: mayor
+    permission-name: cantrip
     spell-class: ".targeted.SpawnMonsterSpell"
     cast-item: book
     spell-icon: emerald
