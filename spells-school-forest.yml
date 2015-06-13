@@ -126,7 +126,7 @@ woodland_concoction:
             &2Herbal Concoction: Lv02 Forest Spell
             Prepare a woodland concoction from a red and yellow flower, and
             a brown mushroom.
-            Requires knowledge of the &2food&3 spell.
+            Requires knowledge of the &2forage&3 spell.
     str-cast-self: You prepare a druidic concoction.
 
 # Cast item(s)
@@ -212,6 +212,7 @@ mulch:
             &2Mulch: L01 Forest spell
             Turns cut grass into bone meal.
             Requires the &2druidic concoction&3 spell.
+    str-cost: 5 mana and 12 blades of grass.
     str-cast-self: You cut some grass into mulch.
 
 
