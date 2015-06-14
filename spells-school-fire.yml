@@ -41,7 +41,7 @@ lore_of_flame:
     items:
         - fire_grimoire 1
     description: |
-            &4Lore of Flame: Lv10 Fire Spell
+            &4Lore of Flame: 10 Memory Fire Spell
             Creates a fiery grimoire.
             Requires fiery staff and fiery potion spells.
     str-cost: 50 mana, 1 book, 6 blaze powder.
@@ -66,7 +66,7 @@ fiery_staff:
         - fire_staff 1
         - blaze_powder 6-10
     description: |
-            Firestaff:  Lv10   Fire School.
+            Firestaff:  10 Memory   Fire School.
             Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
     str-cost: 50 mana, 2 blaze rods.
     str-cast-self: You create a fiery staff.
@@ -91,7 +91,7 @@ firebreathing:
         - mana 10
     memory: 3
     description: |
-            Firebreathing:  Lv03   Fire School
+            Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
     str-cost: 10 mana
@@ -139,7 +139,7 @@ spark:
     check-plugins: true
     small-fireball: true
     description: |
-        &rSpark:    Lv02   Fire School
+        &rSpark:    3 Memory   Fire School
         &3Cast a fiery bolt at monsterous foes.
     str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
