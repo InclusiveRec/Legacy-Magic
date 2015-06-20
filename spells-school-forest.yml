@@ -76,7 +76,7 @@ lore_of_the_woods:
       - mana 100
     items:
       - forest_grimoire
-    str-cost: A book, 100 mana, and 12 woodland concoctions.
+    str-cost: A book, 100 mana, and 12 druidic concoctions.
 
 # Gardening tool
 
@@ -124,7 +124,7 @@ woodland_concoction:
       - forest_concoction 2-4
     description: |
             &2Herbal Concoction: Lv02 Forest Spell
-            Prepare a woodland concoction from a red and yellow flower, and
+            Prepare a druidic concoction from a red and yellow flower, and
             a brown mushroom.
             Requires knowledge of the &2forage&3 spell.
     str-cast-self: You prepare a druidic concoction.
@@ -192,7 +192,7 @@ lifewalk:
     description: |
             &2Lifewalk:  L01 Forest spell
             Flowers grow in your footsteps.
-    str-cost: 10 mana and 2 forest concoction, plus 1 forest concoction every 10 steps.
+    str-cost: 10 mana and 2 druidic concoction, plus 1 druidic concoction every 10 steps.
     str-cast-self: Flowers spring up in your footsteps.
     str-fade: Your steps no longer cause flowers to grow.
 mulch:
@@ -201,7 +201,7 @@ mulch:
     spell-icon: "31:1"
     cast-item: stick,forest_sickle
     bindable: false
-    prerequisites: druidic_concoction
+    prerequisites: woodland_concoction
     memory: 3
     cost:
         - mana 5
@@ -211,7 +211,7 @@ mulch:
     description: |
             &2Mulch: L01 Forest spell
             Turns cut grass into bone meal.
-            Requires the &2druidic concoction&3 spell.
+            Requires the &2woodland concoction&3 spell.
     str-cost: 5 mana and 12 blades of grass.
     str-cast-self: You cut some grass into mulch.
 
@@ -328,7 +328,7 @@ entangle:
     description:  |
             &2Entangle:  Lv03 Forest Spell
             Vines and thorns whip out at your enemies!
-    str-cost: 12 mana and 4 woodland concoction.
+    str-cost: 12 mana and 4 druidic concoction.
     
 hedge:
     permission-name: forest
@@ -403,7 +403,7 @@ fang:
             &2Fang: Lv05 Forest Spell
             Creates a wolf's fang to channel wilderness magic.
             Requires the wolf, bind, unbind, and scroll spells.
-    str-cost: 6 bones, 4 woodland concoction, and 80 mana.
+    str-cost: 6 bones, 4 druidic concoction, and 80 mana.
 
 
 
