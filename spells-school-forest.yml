@@ -64,7 +64,7 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     description: |
-            &2Woodland Lore: Lv20 Forest Spell
+            &2Woodland Lore: 20 Memory Forest Spell
             Creates a woodland grimoire.
             Requires woodland concoction, woodland gardener, and oakenstaff spells.
     spell-icon: enchanted_book
@@ -96,7 +96,7 @@ woodland_gardener:
     items:
       - forest_sickle
     description: |
-        &2Woodland Gardener: Lv02 Forest Spell
+        &2Woodland Gardener: 2 Memory Forest Spell
         Creates herbalist's enchanted sickle.
         Requires the &2woodland concoction&3 spell.
     str-missing-reagents: "You need 50 mana to enchant your shears."
@@ -123,7 +123,7 @@ woodland_concoction:
     items:
       - forest_concoction 2-4
     description: |
-            &2Herbal Concoction: Lv02 Forest Spell
+            &2Herbal Concoction: 1 Memory Forest Spell
             Prepare a woodland concoction from a red and yellow flower, and
             a brown mushroom.
             Requires knowledge of the &2forage&3 spell.
@@ -166,7 +166,7 @@ forage:
     modifiers:
         - holding "359|&2Magic Sickle" power 2
     description: |
-            &2Forage: Lv01 Forest Spell
+            &2Forage: 1 Memory Forest Spell
             You discover sources of food in the wilderness.
     str-cost: 5 mana.  Uses 1 memory slot.
     str-cast-self: You feel less hungry.
@@ -190,7 +190,7 @@ lifewalk:
     use-cost:
         - forest_concoction 1
     description: |
-            &2Lifewalk:  L01 Forest spell
+            &2Lifewalk:  2 Memory Forest spell
             Flowers grow in your footsteps.
     str-cost: 10 mana and 2 forest concoction, plus 1 forest concoction every 10 steps.
     str-cast-self: Flowers spring up in your footsteps.
@@ -209,7 +209,7 @@ mulch:
     items:
         - "351:15 8-10"
     description: |
-            &2Mulch: L01 Forest spell
+            &2Mulch: 3 Memory Forest spell
             Turns cut grass into bone meal.
             Requires the &2druidic concoction&3 spell.
     str-cost: 5 mana and 12 blades of grass.
@@ -238,7 +238,7 @@ haste:
     modifiers:
         - holding "280|&2Oak wand" power 2
     description: |
-        &rHaste: Lv01 Forest Spell
+        &rHaste: 3 Memory Forest Spell
         Sprint faster for a time.
     str-cost: 20 mana.
     str-cast-self: You gain unnatural speed!
@@ -274,7 +274,7 @@ leap:
     modifiers:
         - holding "280|&2Oak wand" power 2
     description: |
-            &2Leap: Lv02 Forest Spell
+            &2Leap: 3 Memory Forest Spell
             You leap forward.
     str-cost: 10 mana.
     str-cast-self: You leap forward!
@@ -302,7 +302,7 @@ safefall:
         - mana 15
     use-cost-interval: 1
     description: |
-        &2Safefall: Lv01 Forest Spell
+        &2Safefall: 1 Memory Forest Spell
         Allows you to fall without taking damage.
         Requires the &2leap&3 spell.
     str-cost: 30 mana, plus 15 mana per fall.
@@ -326,7 +326,7 @@ entangle:
     modifiers:
         - holding "280|&2Oak wand" power 2
     description:  |
-            &2Entangle:  Lv03 Forest Spell
+            &2Entangle:  4 Memory Forest Spell
             Vines and thorns whip out at your enemies!
     str-cost: 12 mana and 4 woodland concoction.
     
@@ -350,7 +350,7 @@ hedge:
     modifiers:
         - holding "280|&2Oak wand" power 2
     description: |
-            &2Hedge: Lv01 Forest Spell
+            &2Hedge: 5 Memory Forest Spell
             Sprouts a hedge to impede your foes.
             Requires the &2lifewalk&3 spell.
     str-cost: 15 mana and 2 druidic concoction.
@@ -400,7 +400,7 @@ fang:
     items:
         - wolf_fang
     description: |
-            &2Fang: Lv05 Forest Spell
+            &2Fang: 2 Memory Forest Spell
             Creates a wolf's fang to channel wilderness magic.
             Requires the wolf, bind, unbind, and scroll spells.
     str-cost: 6 bones, 4 woodland concoction, and 80 mana.
@@ -451,7 +451,7 @@ wolf:
     modifiers:
         - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
     description: |
-            &2Wolf: Lv03 Forest Spell
+            &2Wolf: 5 Memory Forest Spell
             Summons a wolf to accompany you.
             Requires the forage spell.
     str-cost: "3 bones and 20 experience levels."
