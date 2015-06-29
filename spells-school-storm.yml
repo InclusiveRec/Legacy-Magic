@@ -81,7 +81,7 @@ freeze:
         - onblock 78,79,80,174 power 2
         - holding "264|&1Hydromantic__Focus" cooldown 0.2
     description: |
-        &1Freeze:  L2 Memory Water Spell
+        &1Freeze:  4 Memory Water Spell
         Blast forth a flurry of icy shards which damage and slow all in their path.
     str-cost: 15 mana and a snowball.
     str-on-cooldown: ""
@@ -103,7 +103,7 @@ gust:
         - outside continue
         - storm power 2
     description: |
-        &rGust   2 Memory   Storm School
+        &rGust   4 Memory   Storm School
         &3With a flick of the wrist, the mage blows their enemies away.
         This spell is greatly empowered during a &9storm&3.
     str-cost: 10 mana and a feather
@@ -155,7 +155,7 @@ storm:
     modifiers:
         - outside required
     description: |
-        &rStorm   5 Memory   Storm School
+        &rStorm   8 Memory   Storm School
         &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
         All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
     str-cast-start: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
@@ -183,7 +183,7 @@ windwalk:
         - storm required
         - outside required
     description: |
-        &rWindwalk   15 Memory   Storm School
+        &rWindwalk   7 Memory   Storm School
         The caster rides the winds of a raging storm.
     str-cost: 25 mana, 2 feathers, and a feather every 20 seconds.
     str-cost-self: You rise up into the stormy sky!
