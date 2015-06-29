@@ -11,9 +11,12 @@ stalking:
     spells:
         - monster_invisibility
     send-failure-messages: true
+    modifiers:
+        - holding "267|Hunting Knife" required
+    str-cast-self: You are stalking the creatures of the wilderness.
+    str-cast-others: "%p is stalking wild creatures."
 
 monster_invisibility:
-    permission-name: hunterapprentice
     spell-class: ".buff.InvisibilitySpell"
     prevent-pickups: false
     invisible-to-players: false
@@ -22,11 +25,6 @@ monster_invisibility:
     cancel-on-give-damage: true
     cancel-on-logout: true
     cancel-on-spell-cast: true
-    str-cast-self: You are stalking the creatures of the wilderness.
-    str-cast-others: "%p is stalking wild creatures."
-    modifiers:
-        - holding "267|Hunting Knife" required
-    str-modifier-failed: "You lack the proper equipment to begin stalking your prey."
 
 
 # Journeyman
@@ -37,6 +35,9 @@ trapper:
     cast-item: stick
     spell-icon: 420
     check-individual-modifiers: true
+    cost:
+        - levels 3
+    str-missing-reagents: It takes 3 experience levels to trap an animal.
     spells:
         - trycow
         - trysheep
@@ -71,6 +72,10 @@ tryrabbit:
 hunting_knife:
     permission-name: huntermaster
     spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    cost:
+        - iron_sword 1
+        - levels 10
     items:
         - hunt_knife 1
     description: |
