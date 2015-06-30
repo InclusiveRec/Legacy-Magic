@@ -2,6 +2,7 @@
 hideouts/
 spellbooks/
 errors/
+special/
 
 # Unwanted files
 *.txt
