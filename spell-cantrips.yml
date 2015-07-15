@@ -49,7 +49,6 @@ gate:
         - pos2 ender
     cost:
         - mana 30
-    memory: 1
     str-cost: 30 mana
     cooldown: 1
     str-cast-self: You have teleported to spawn.

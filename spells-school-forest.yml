@@ -78,7 +78,7 @@ lore_of_the_woods:
       - forest_grimoire
     str-cost: A book, 100 mana, and 12 woodland concoctions.
 
-# Gardening tool
+# Cast items
 
 woodland_gardener:
     permission-name: forest
@@ -106,6 +106,22 @@ woodland_gardener:
           effect: sound
           sound: ambient.cave.1
 
+hunting_knife:
+    permission-name: forest
+    memory: 5
+    prerequisites:
+        - scroll
+        - stalking
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    cost:
+        - iron_sword 1
+        - levels 10
+    items:
+        - hunt_knife 1
+    description: |
+            &rCleaver   -   Butcher Journeyman Power
+            Creates a fine tool for slaughtering livestock.
 # Base concoction
 
 woodland_concoction:
@@ -214,7 +230,41 @@ mulch:
             Requires the &2druidic concoction&3 spell.
     str-cost: 5 mana and 12 blades of grass.
     str-cast-self: You cut some grass into mulch.
-
+trapper:
+    permission-name: forest
+    memory: 4
+    spell-class: ".MultiSpell"
+    cast-item: stick,forest_sickle
+    spell-icon: 420
+    check-individual-modifiers: true
+    cost:
+        - levels 1
+        - woodland_concoction 6
+    str-missing-reagents: It takes 1 experience level and 6 woodland concoction to trap an animal.
+    spells:
+        - trycow
+        - trysheep
+        - trypig
+        - tryrabbit
+    modifiers:
+        - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,EXTREME_HILLS_PLUS,SAVANNA,SAVANNA_PLATEAU,SUNFLOWER_PLAINS,FLOWER_FOREST,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+    str-modifier-failed: "You can't manage to trap any creatures in this biome."
+stalking:
+    permission-name: forest
+    spell-class: ".PassiveSpell"
+    memory: 2
+    triggers:
+        - sneak
+    cooldown: 20
+    cost:
+        - mana 10
+    spells:
+        - monster_invisibility
+    send-failure-messages: true
+    modifiers:
+        - holding "267|Hunting Knife","267|&2Hunting Knife"  required
+    str-cast-self: You are stalking the creatures of the wilderness.
+    str-cast-others: "%p is stalking wild creatures."
 
 #####################
 #                   #
@@ -356,23 +406,6 @@ hedge:
     str-cost: 15 mana and 2 druidic concoction.
     str-no-target: You cannot create a hedge there.
     
-# Intermediate spells (require the woodland_wand spell to learn)
-
-crow_flight:
-    enabled: false
-    permission-name: forest
-    spell-class: ".buff.WindwalkSpell"
-    cast-item: forest_wand
-    spell-icon: feather
-    prerequisites:
-        - woodland_wand
-    memory: 5
-    duration: 40
-    max-y: 120
-    max-altitude: 20
-    fly-speed: 0.2
-    str-cast-self: You swoop upwards!
-    str-fade: Your flight has ended.
 
 ####################
 #                  #
@@ -533,3 +566,38 @@ bleeding:
             count: 20
             horiz-spread: 1.5
             vert-spread: 1.2
+
+# For trapper spell
+
+trycow:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: cow
+    modifiers:
+        - biome PLAINS,SAVANNA,SAVANNA_PLATEAU,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS required
+trysheep:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: sheep
+    modifiers:
+        - biome EXTREME_HILLS,EXTREME_HILLS_PLUS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+trypig:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: pig
+    modifiers:
+        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS required
+tryrabbit:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: rabbit
+    modifiers:
+        - biome SUNFLOWER_PLAINS,FLOWER_FOREST required
+
+# For stalking spell
+
+monster_invisibility:
+    spell-class: ".buff.InvisibilitySpell"
+    prevent-pickups: false
+    invisible-to-players: false
+    duration: 30
+    str-fade: "You have emerged from cover!"
+    cancel-on-give-damage: true
+    cancel-on-logout: true
+    cancel-on-spell-cast: true
