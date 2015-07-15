@@ -1,0 +1,185 @@
+predefined-items:
+    water_grimoire:
+        type: "enchanted_book"
+        name: "&1On Hydromancy"
+        lore:
+            - "A treatise on the magic"
+            - "which flows through rivers"
+            - "and beneath the seas, and"
+            - "the secrets to harnessing it."
+    water_focus:
+        type: "diamond"
+        name: "&1Hydromantic Focus"
+        lore:
+            - "This crystal aids a mage"
+            - "in focussing the energy"
+            - "within water."
+    water_rod:
+        type: "diamond_hoe"
+        name: "&1Dowsing Rod"
+        lore:
+            - "With this rod,"
+            - "a hydromancer can"
+            - "find and navigate"
+            - "the world's waters."
+
+#############################
+#                           #
+#   Item creation spells    #
+#                           #
+#############################
+
+lore_of_oceans:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: "enchanted_book"
+    cost:
+        - mana 100
+        - book 1
+        - diamond 1
+    memory: 15
+    items:
+        - water_grimoire
+    description: |
+            &1Lore of Water: 15 Memory Water Spell
+            Create a grimoire of Hydromantic lore.
+    str-cost: 100 mana, a book, and a diamond.
+hydromantic_focus:
+    permission-name: ocean
+    spell-class: ".instant.ConjureSpell"
+    cast-item: water_grimoire
+    spell-icon: diamond
+    cost:
+        - mana 50
+        - diamond 3
+    memory: 3
+    prerequisites:
+        - scroll
+        - geyser
+    items:
+        - water_focus
+    description: |
+            &1Hydromantic Focus: 3 Memory Water Spell
+            Create a hydromantic focus to direct water spells.
+    str-cost: 50 mana and 3 diamonds.
+dowsing_rod:
+    permission-name: ocean
+    spell-class: ".instant.ConjureSpell"
+    cast-item: water_grimoire
+    spell-icon: "diamond_hoe"
+    cost:
+        - mana 50
+        - diamond 2
+    memory: 2
+    prerequisites:
+        - scroll
+        - water
+    str-cost: 50 mana and 2 diamonds.
+    items:
+        - water_rod
+
+#########################
+#                       #
+#   Dowsing rod spells  #
+#                       #
+#########################
+
+gills:
+    permission-name: ocean
+    spell-class: ".buff.GillsSpell"
+    cast-item: water_rod,stick
+    spell-icon: gold_helmet
+    glass-head-effect: true
+    cooldown: 60
+    duration: 300
+    num-uses: 5
+    cost:
+        - mana 50
+        - sugar_cane 1
+    use-cost:
+        - sugar_cane 1
+    memory: 5
+    use-cost-interval: 1
+    description: |
+        &rGills   5 Memory   Water School
+        &3Allows you to breathe underwater.
+    str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane every few seconds
+    str-cast-self: You form gills on your neck!
+    str-fade: Your gills disappear.
+water:
+    permission-name: ocean
+    spell-class: ".targeted.MaterializeSpell"
+    cast-item: water_rod,stick
+    spell-icon: water_bucket
+    cast-item: book
+    cooldown: 120
+    range: 8
+    block-type: water
+    reset-delay: 200
+    apply-physics: true
+    check-plugins: true
+    cost:
+        - mana 15
+    memory: 1
+    description: |
+        &rWater   1 Memory   Water School
+        &3Summons a water spring into existence.
+    str-cost: 15 mana
+    str-no-target: No target found.
+waterwalk:
+    permission-name: ocean
+    spell-class: ".buff.WaterwalkSpell"
+    cast-item: water_rod,stick
+    spell-icon: boat
+    speed: 0.05
+    duration: 60
+    cancel-on-logout: true
+    cancel-on-teleport: true
+    cost:
+        - mana 25
+        - boat 1
+    memory: 3
+    use-cost:
+        - mana 10
+    use-cost-interval: 20
+    description: |
+        &rWaterwalk   3 Memory   Water School
+        &3Walk across the water.
+    str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
+    str-cast-self: You can now walk on water!
+    str-fade: You can no longer walk on water.
+
+
+#########################
+#                       #
+#   Water Focus Spells  #
+#                       #
+#########################
+
+
+geyser:
+    permission-name: ocean
+    spell-class: ".targeted.GeyserSpell"
+    cast-item: water_focus,stick
+    spell-icon: "38:1"
+    range: 20
+    damage: 3
+    velocity: 10
+    require-entity-target: false
+    animation-speed: 3
+    geyser-height: 9
+    geyser-type: water
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    cost:
+        - mana 15
+    memory: 4
+    description: |
+        &rGeyser   4 Memory   Water School
+        Create a water geyser at your enemy's feet.
+    str-cost: 15 mana
+    cooldown: 3
+    str-cast-self: You call up a geyser.
+    str-no-target: No target found.
+

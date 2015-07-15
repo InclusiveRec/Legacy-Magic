@@ -1,0 +1,45 @@
+#
+#   STATUS: DRAFT
+#
+
+predefined-items:
+  xp_bowl:
+    type: bowl
+    lore:
+      - "Holds XP"
+  xp_wand:
+    type: stick
+    lore:
+      - "An XP mage's casting tool"
+create_xp:
+  enabled: false
+  spell-class: ".instant.ConjureSpell"
+  name: "XPMaker"
+  cast-item: xp_bowl
+  cost:
+    - mana 100
+    - paper 1
+    - xp_bowl 5
+  items:
+    - 384 10
+create_bowl:
+  enabled: false
+  spell-class: ".instant.ConjureSpell"
+  name: "XPHolder"
+  cast-item: torch
+  cost:
+    - bowl 1
+    - mana 101
+  items:
+    - xp_bowl 5
+XPWand:
+  enabled: false
+  spell-class: ".instant.ConjureSpell"
+  cast-item: stick
+  cost:
+    - mana 151
+    - stick 15
+    - 384 5
+    - emerald 1
+  items:
+    - xp_wand

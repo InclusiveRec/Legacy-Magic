@@ -29,7 +29,6 @@ predefined-items:
 lore_of_flame:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
-    str-cost: 50 mana, 1 book, 6 blaze powder.
     spell-icon: "enchanted_book"
     cost:
         - mana 50
@@ -41,35 +40,35 @@ lore_of_flame:
         - fiery_potion
     items:
         - fire_grimoire 1
-    effects: []
     description: |
-            &4Lore of Flame: Lv20 Fire Spell
+            &4Lore of Flame: 10 Memory Fire Spell
             Creates a fiery grimoire.
+            Requires fiery staff and fiery potion spells.
+    str-cost: 50 mana, 1 book, 6 blaze powder.
+    effects: []
 
 fiery_staff:
+    permission-name: fire
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
+    spell-icon: blaze_rod
     allow-command-casting: false
     bindable: false
-    spell-icon: blaze_rod
+    add-to-inventory: false
     prerequisites:
-        - bind
-        - unbind
-        - firebreathing
-        - smoke
+        - scroll
         - spark
     memory: 10
-    description: |
-            Firestaff   -   Fire School.
-            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
     cost:
         - mana 50
         - blaze_rod 2
     items:
         - fire_staff 1
         - blaze_powder 6-10
-    str-cost: 100 mana, 2 blaze rods.
-    add-to-inventory: false
+    description: |
+            Firestaff:  10 Memory   Fire School.
+            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
+    str-cost: 50 mana, 2 blaze rods.
     str-cast-self: You create a fiery staff.
 
 
@@ -79,6 +78,7 @@ fiery_staff:
 ################
 
 firebreathing:
+    permission-name: fire
     spell-class: ".instant.ParticleProjectileSpell"
     projectile-spread: 0.1
     cast-item: fire_staff,blaze_powder
@@ -91,15 +91,16 @@ firebreathing:
         - mana 10
     memory: 3
     description: |
-            Firebreathing   -   Fire School
+            Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-
+    str-cost: 10 mana
 smoke:
+    permission-name: fire
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: fire_staff,blaze_powder
     spell-icon: "160:8"
-    memory: 1
+    memory: 3
     fail-if-no-targets: false
     horizontal-radius: 5
     vertical-radius: 2
@@ -107,7 +108,7 @@ smoke:
     target-caster: true
     point-blank: false
     spell-source-in-center: true
-    spells: 
+    spells:
         - nauseate
         - poison
     str-cast-self: Casty
@@ -120,16 +121,15 @@ smoke:
         vert-spread: 1
         speed: 0.2
         count: 50
-
-
 spark:
+    permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff,377
     spell-icon: fireball
-    cost: 
+    cost:
         - mana 20
         - blaze_powder 1
-    memory: 2
+    memory: 3
     allow-command-casting: false
     cooldown: 1
     range: 20
@@ -138,24 +138,46 @@ spark:
     no-explosion: true
     check-plugins: true
     small-fireball: true
+    description: |
+        &rSpark:    3 Memory   Fire School
+        &3Cast a fiery bolt at monsterous foes.
     str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
-    description: |
-        &rSpark   -   Fire School
-        &3Cast a fiery bolt at monsterous foes.
 
     #########################
     #  Intermediate Spells  #
     #########################
 fireball:
+    enabled: false
+    permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
+    spell-icon: "351:1"
+    cost:
+        - mana 50
+        - blaze_powder 1
+    prerequisites:
+        - fiery_staff
+    memory: 5
+    cooldown: 10
+    target-players: true
+    damage-multiplier: 2
+    description: |
+            &4Fireball: Lv05 Fire Spell
+            Launches a great ball of fiery destruction.
+            Requires the &4firestaff&3 spell.
+    str-cost: 50 mana and one blaze powder.
+
 fire_nova:
+    enabled: false
+    permission-name: fire
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff,377
     spell-icon: blaze_powder
 warmth:
+    enabled: false
+    permission-name: fire
     spell-class: ".targeted.DummySpell"
     cast-item: fire_staff
     prerequisites:
@@ -166,6 +188,7 @@ warmth:
     ###################
 
 fire_shield:
+    permission-name: fire
     spell-class: ".instant.DummySpell"
     cast-item: fire_staff
     prerequisites:
@@ -176,6 +199,7 @@ fire_shield:
     #################
 
 combust:
+    permission-name: fire
     spell-class: ".targeted.CombustSpell"
     fire-tick-damage: 4
     check-plugins: false

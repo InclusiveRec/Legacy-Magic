@@ -45,6 +45,11 @@ predefined-items:
             - "breathing with druidic magic."
 
 
+    wolf_fang:
+        type: flint
+        name: "&2Wolf's Fang"
+        lore:
+            - "A razor-sharp incisor."
 
 #############################
 #                           #
@@ -59,8 +64,9 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     description: |
-            &2Woodland Lore: Lv20 Forest Spell
+            &2Woodland Lore: 20 Memory Forest Spell
             Creates a woodland grimoire.
+            Requires woodland concoction, woodland gardener, and oakenstaff spells.
     spell-icon: enchanted_book
     prerequisites: woodland_concotion,woodland_gardener,oakenstaff
     memory: 20
@@ -75,6 +81,7 @@ lore_of_the_woods:
 # Gardening tool
 
 woodland_gardener:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: shears
     spell-icon: shears
@@ -89,7 +96,7 @@ woodland_gardener:
     items:
       - forest_sickle
     description: |
-        &2Woodland Gardener: Lv02 Forest Spell
+        &2Woodland Gardener: 2 Memory Forest Spell
         Creates herbalist's enchanted sickle.
         Requires the &2woodland concoction&3 spell.
     str-missing-reagents: "You need 50 mana to enchant your shears."
@@ -102,6 +109,7 @@ woodland_gardener:
 # Base concoction
 
 woodland_concoction:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     spell-icon: "351:2"
     cast-item: forest_sickle
@@ -111,23 +119,25 @@ woodland_concoction:
       - 39 1        # 1 brown mushroom
       - 37 1        # 1 yellow flowers
       - 38 1        # 1 red flower
-    memory: 2
+    memory: 1
     items:
       - forest_concoction 2-4
     description: |
-            &2Herbal Concoction: Lv02 Forest Spell
-            Prepare a woodland concoction from a red and yellow flower,
-            a brown mushroom, and a fern.
-            Requires knowledge of the &2food&3 spell.
+            &2Herbal Concoction: 1 Memory Forest Spell
+            Prepare a woodland concoction from a red and yellow flower, and
+            a brown mushroom.
+            Requires knowledge of the &2forage&3 spell.
     str-cast-self: You prepare a druidic concoction.
 
 # Cast item(s)
 
 woodland_wand:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
+    spell-icon: stick
     prerequisites: woodland_gardener,scroll
-    memory: 10
+    memory: 5
     cost:
         - stick 1
         - "6:0 1"
@@ -143,6 +153,7 @@ woodland_wand:
 #####################
 
 forage:
+    permission-name: forest
     spell-class: ".instant.FoodSpell"
     cast-item: stick,forest_sickle
     spell-icon: apple
@@ -152,30 +163,26 @@ forage:
     cooldown: 0.5
     food: 1
     saturation: 2
-    description: |
-            &2Forage: Lv01 Forest Spell
-            You discover sources of food in the wilderness.
-    str-cost: 10 mana.  Uses 1 memory slot.
-    str-cast-self: You feel less hungry.
-    str-on-cooldown: ""
     modifiers:
         - holding "359|&2Magic Sickle" power 2
+    description: |
+            &2Forage: 1 Memory Forest Spell
+            You discover sources of food in the wilderness.
+    str-cost: 5 mana.  Uses 1 memory slot.
+    str-cast-self: You feel less hungry.
+    str-on-cooldown: ""
     effects:
-        audio:
+        munch:
             position: caster
             effect: sound
-            sound: eat
-        visual:
-            position: caster
-            effect: particles
-            particle-name: "iconcrack_260_0"
-            count: 3
+            sound: random.eat
 lifewalk:
+    permission-name: forest
     spell-class: ".buff.LifewalkSpell"
     spell-icon: yellow_flower
     cast-item: stick,forest_sickle
     bindable: false
-    memory: 1
+    memory: 2
     cost:
         - mana 10
         - forest_concoction 2
@@ -183,27 +190,29 @@ lifewalk:
     use-cost:
         - forest_concoction 1
     description: |
-            &2Lifewalk:  L01 Forest spell
+            &2Lifewalk:  2 Memory Forest spell
             Flowers grow in your footsteps.
     str-cost: 10 mana and 2 forest concoction, plus 1 forest concoction every 10 steps.
     str-cast-self: Flowers spring up in your footsteps.
     str-fade: Your steps no longer cause flowers to grow.
 mulch:
+    permission-name: forest
     spell-class: ".instant.ConjureSpell"
     spell-icon: "31:1"
     cast-item: stick,forest_sickle
     bindable: false
     prerequisites: druidic_concoction
-    memory: 1
+    memory: 3
     cost:
         - mana 5
         - "31:1 12"
     items:
         - "351:15 8-10"
     description: |
-            &2Mulch: L01 Forest spell
+            &2Mulch: 3 Memory Forest spell
             Turns cut grass into bone meal.
             Requires the &2druidic concoction&3 spell.
+    str-cost: 5 mana and 12 blades of grass.
     str-cast-self: You cut some grass into mulch.
 
 
@@ -216,17 +225,20 @@ mulch:
 # Basic spells
 
 haste:
+    permission-name: forest
     spell-class: ".buff.HasteSpell"
     cast-item: stick,forest_wand
     spell-icon: gold_boots
-    effect-strength: 3
+    effect-strength: 2
     boost-duration: 300
     duration: 60
     cost:
         - mana 20
-    memory: 1
+    memory: 3
+    modifiers:
+        - holding "280|&2Oak wand" power 2
     description: |
-        &rHaste: Lv01 Forest Spell
+        &rHaste: 3 Memory Forest Spell
         Sprint faster for a time.
     str-cost: 20 mana.
     str-cast-self: You gain unnatural speed!
@@ -248,6 +260,7 @@ haste:
         effect: sound
         sound: "mob.wolf.panting"
 leap:
+    permission-name: forest
     spell-class: ".instant.LeapSpell"
     cast-item: stick,forest_wand
     spell-icon: diamond_boots
@@ -258,25 +271,26 @@ leap:
     forward-velocity: 20
     upward-velocity: 6
     cancel-damage: true
+    modifiers:
+        - holding "280|&2Oak wand" power 2
     description: |
-            &2Leap: Lv02 Forest Spell
+            &2Leap: 3 Memory Forest Spell
             You leap forward.
     str-cost: 10 mana.
     str-cast-self: You leap forward!
     str-cast-others: "%a leaps forward!"
     str-on-cooldown: You are tensing your muscles...
-    modifiers:
-        - holding "280|&2Oak wand" power 2
     effects:
         boing:
             effect: blockbreak
             id: "13:0"
 safefall:
+    permission-name: forest
     spell-class: ".buff.InvulnerabilitySpell"
     name: safefall
     spell-icon: feather
     cast-item: stick,forest_wand
-    cooldown: 2
+    cooldown: 3
     damage-causes:
         - fall
     duration: 300
@@ -288,120 +302,234 @@ safefall:
         - mana 15
     use-cost-interval: 1
     description: |
-        &2Safefall: Lv01 Forest Spell
+        &2Safefall: 1 Memory Forest Spell
         Allows you to fall without taking damage.
         Requires the &2leap&3 spell.
     str-cost: 30 mana, plus 15 mana per fall.
     str-cast-self: You feel lighter.
     str-fade: Your normal weight returns.
 entangle:
+    permission-name: forest
     spell-class: ".targeted.AreaEffectSpell"
     spell-icon: 106
     cast-item: stick,forest_wand
-    memory: 3
+    memory: 4
     cost:
         - mana 12
         - forest_concoction 4
     cooldown: 0.5
     spells:
       - getvined
-    range: 20
+    range: 10
+    spell-power-affects-range: true
     spell-source-in-center: true
+    modifiers:
+        - holding "280|&2Oak wand" power 2
     description:  |
-            &2Entangle:  Lv03 Forest Spell
+            &2Entangle:  4 Memory Forest Spell
             Vines and thorns whip out at your enemies!
+    str-cost: 12 mana and 4 woodland concoction.
+    
 hedge:
+    permission-name: forest
     spell-class: ".instant.WallSpell"
     spell-icon: 184
     cast-item: stick,forest_wand
-    prerequisites: 
-    memory: 1
+    memory: 5
     cost:
         - mana 15
         - forest_concoction 2
     cooldown: 4
     wall-duration: 30
     range: 10
-    wall-width: 9
-    wall-height: 4
+    spell-power-affects-range: false
+    wall-width: 6
+    wall-height: 3
     wall-depth: 2
     wall-type: 18
+    modifiers:
+        - holding "280|&2Oak wand" power 2
     description: |
-            &2Hedge: Lv01 Forest Spell
+            &2Hedge: 5 Memory Forest Spell
             Sprouts a hedge to impede your foes.
             Requires the &2lifewalk&3 spell.
     str-cost: 15 mana and 2 druidic concoction.
     str-no-target: You cannot create a hedge there.
-    modifiers:
-        - holding "280|&2Oak wand" power 3
+    
+# Intermediate spells (require the woodland_wand spell to learn)
+
+crow_flight:
+    enabled: false
+    permission-name: forest
+    spell-class: ".buff.WindwalkSpell"
+    cast-item: forest_wand
+    spell-icon: feather
+    prerequisites:
+        - woodland_wand
+    memory: 5
+    duration: 40
+    max-y: 120
+    max-altitude: 20
+    fly-speed: 0.2
+    str-cast-self: You swoop upwards!
+    str-fade: Your flight has ended.
+
+####################
+#                  #
+#    Wolf magic    #
+#                  #
+####################
+
+# Cast item
+
+fang:
+    permission-name: forest
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_grimoire
+    spell-icon: flint
+    prerequisites:
+        - wolf
+        - bind
+        - unbind
+        - scroll
+    memory: 2
+    cost:
+        - bone 6
+        - forest_concoction 4
+        - mana 80
+    items:
+        - wolf_fang
+    description: |
+            &2Fang: 2 Memory Forest Spell
+            Creates a wolf's fang to channel wilderness magic.
+            Requires the wolf, bind, unbind, and scroll spells.
+    str-cost: 6 bones, 4 woodland concoction, and 80 mana.
 
 
 
-
-#
-#   Wolf spells
-#
-#   Still in development
-#
+rend:
+    permission-name: forest
+    spell-class: ".TargetedMultiSpell"
+    memory: 2
+    spell-icon: 423
+    cast-item: wolf_fang
+    range: 1
+    point-blank: true
+    debug: true
+    target-players: true
+    require-entity-target: true
+    spells:
+        - cripple
+        - bleeding
+        - DELAY 20
+        - bleeding
+        - DELAY 20
+        - bleeding
+    str-cast-self: You rip into your enemy with your fangs!
+    effects:
+        grrrr:
+            type: sound
+            sound: mob.wolf.growl
 
 wolf:
-    enabled: false
+    permission-name: forest
     spell-class: ".targeted.SpawnMonsterSpell"
-    name: "wolf"
-    description: |
-            &rWolf   -   Forest School
-            &3Summons a wolf to accompany you.
+    spell-icon: 352
+    cast-item: wolf_fang
+    prerequisites:
+        - forage
+    memory: 5
+    cost:
+        - levels 20
+        - bone 3
     location: target
     entity-type: wolf
     range: 5
     duration: 0
-    cooldown: 
+    cooldown: 60
+    tamed: true
+    modifiers:
+        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+    description: |
+            &2Wolf: 5 Memory Forest Spell
+            Summons a wolf to accompany you.
+            Requires the forage spell.
+    str-cost: "3 bones and 20 experience levels."
+    str-cast-self: "A wolf appears!"
+    str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
+
+call_of_the_wild:
+    enabled: false
+    permission-name: forest
+    spell-class: ".targeted.PulserSpell"
+    cast-item: wolf_fang
+    spell-icon: "6:1"
+    total-pulses: 20
+    interval: 40
+    cap-per-player: 3
+    block-type: "6:1"
+    modifiers:
+        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+
+    str-at-cap: You cannot summon a larger pack!
+    str-cast-self: You summon wolves!
+    str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
+    spells:
+        - tempwolf
+    cost:
+        - mana 60
+    memory: 6
+
+# Effect spells (cannot be researched)
+
+tempwolf:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: wolf
+    duration: 400
+    allow-spawn-in-midair: true
     tamed: true
     cost:
         - mana 50
         - bone 3
     memory: 3
-    requires: food
+    requires: wolf
     str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
-    str-cast-self: A wolf appears!
     modifiers:
-        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+        - chance 50 required
+    effects:
+        woosh:
+            position: target
+            type: splash
+            pot: 6
 
-call_of_the_wild:
-    enabled: false
-    spell-class: ".MultiSpell"
-    check-individual-cooldowns: false
-    check-individual-modifiers: true
-    stop-on-fail: true
+getvined:
+    spell-class: ".TargetedMultiSpell"
     spells:
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-        - DELAY 20
-        - tempwolf
-    cost:
-        - mana 20
-    modifiers:
-        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+      - viney
+      - cripple
+viney:
+    spell-class: ".targeted.GeyserSpell"
+    damage: 1
+    animation-speed: 1
+    geyser-height: 6
+    velocity: 0
+    geyser-type: 106
+
+bleeding:
+    spell-class: ".targeted.PainSpell"
+    damage: 3
+    spell-damage-type: animal
+    target-players: true
+    str-on-cooldown: Cooldown
+    effects:
+        sound:
+            position: target
+            effect: sound
+            sound: mob.slime.big
+        visual:
+            position: target
+            effect: particles
+            particle-name: spell
+            count: 20
+            horiz-spread: 1.5
+            vert-spread: 1.2

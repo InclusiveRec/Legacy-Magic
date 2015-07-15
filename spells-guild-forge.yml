@@ -1,33 +1,13 @@
-predefined-items:
-    minepick:
-        type: 257
-        name: "Miner's Pick"
-        lore:
-          - "This pick carries"
-          - "a powerful enchantment"
-          - "of stone magic."
-        enchants:
-          - "efficiency 5"
-          - "unbreaking 3"
 # Apprentice
-craft_minepick:
-    spell-class: ".instant.ConjureSpell"
-    name: "magic_pickaxe"
-    spell-icon: 257
-    description: 
-    cost:
-        - mana 100
-        - 257 1
-        - levels 15
-    str-cost: 100 mana, 15 experience levels, and an iron pickaxe to be enchanted.
 dowse:
     spell-class: ".instant.DowseSpell"
+    permission-name: forgeapprentice
     name: dowse
     spell-icon: compass
     description: |
-        &rDowse   -   Guild Spell: &4Forge
+        &rDowse   Apprentice Guild Spell: &4Forge
         &3Dowse for iron ore.
-    cast-item: 257, minepick
+    cast-item: minepick
     cooldown: 60
     block-type: iron_ore
     entity-type: ""
@@ -42,11 +22,11 @@ dowse:
     str-not-found: No iron ore found nearby.
 mighty_swing_i:
     spell-class: ".targeted.PotionEffectSpell"
-    name: mighty_swing_i
+    permission-name: forgeapprentice
     description: |
-        &rMighty Swing   -   Guild Spell: &4Forge
+        &rMighty Swing   Apprentice Guild Spell: &4Forge
         &3Your muscles bulge with strength, and you cut through stone with ease.
-    cast-item: 257, minepick
+    cast-item: minepick
     cooldown: 30
     target-self: true
     beneficial: true
@@ -62,10 +42,10 @@ mighty_swing_i:
 # Journeyman
 repair:
     spell-class: ".instant.RepairSpell"
-    name: repair
+    permission-name: forgejourneyman
     spell-icon: workbench
     description: |
-        &rRepair   -   Cantrip
+        &rRepair   Journeyman Guild Spell: &4Forge
         &3Repairs your gear.
     cast-item: book
     cooldown: 120
@@ -87,12 +67,11 @@ repair:
     str-cast-self: "You've repaired your gear!"
     str-nothing-to-repair: You have nothing to repair.
 
-# Master
 stonevision:
     spell-class: ".buff.StonevisionSpell"
-    name: stonevision
+    permission-name: forgejourneyman
     description: |
-        &rStonevision   -   Guild Spell: &4Forge
+        &rStonevision   Master Guild Spell: &4Forge
         &3With great concentration, you can see through stone.
     cast-item: minepick
     cost:
@@ -105,7 +84,28 @@ stonevision:
     range: 5
     duration: 60
     str-cast-self: The stone around you flickers and fades away...
+# Master
+forge_magic_pickaxe:
+    spell-class: ".instant.ConjureSpell"
+    permission-name: forgemaster
+    cast-item: book
+    spell-icon: 257
+    description: |
+        &rMagic Pickaxe   Apprentice Guild Spell: &4Forge
+    cost:
+        - mana 100
+        - 257 1
+        - levels 15
+    str-cost: 100 mana, 15 experience levels, and an iron pickaxe to be enchanted.
 
-
-
-
+predefined-items:
+    minepick:
+        type: 257
+        name: "Miner's Pick"
+        lore:
+          - "This pick carries"
+          - "a powerful enchantment"
+          - "of stone magic."
+        enchants:
+          - "efficiency 5"
+          - "unbreaking 3"
