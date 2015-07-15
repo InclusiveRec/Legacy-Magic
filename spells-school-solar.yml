@@ -293,7 +293,7 @@ heal:
     spell-icon: red_rose
     heal-amount: 4
     cancel-if-full: true
-    can-target: players,wolf,cat
+    can-target: players,wolf,cat,horse
     obey-los: true
     range: 12
     cost:
