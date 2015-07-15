@@ -51,6 +51,13 @@ predefined-items:
         lore:
             - "A razor-sharp incisor."
 
+    forest_sword:
+        name: "&2Hunting Knife"
+        type: iron_sword
+        enchants:
+         - "damage_all 1"
+         - "loot_bonus_mobs 2"
+
 #############################
 #                           #
 #   Item creation spells    #
@@ -118,10 +125,10 @@ hunting_knife:
         - iron_sword 1
         - levels 10
     items:
-        - hunt_knife 1
+        - forest_sword 1
     description: |
-            &rCleaver   -   Butcher Journeyman Power
-            Creates a fine tool for slaughtering livestock.
+            &2Hunting Knife: 5 memory Forest Spell.
+            Creates a fine tool for carving up one's prey...
 # Base concoction
 
 woodland_concoction:
@@ -239,7 +246,7 @@ trapper:
     check-individual-modifiers: true
     cost:
         - levels 1
-        - woodland_concoction 6
+        - forest_concoction 6
     str-missing-reagents: It takes 1 experience level and 6 woodland concoction to trap an animal.
     spells:
         - trycow
@@ -249,6 +256,9 @@ trapper:
     modifiers:
         - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,EXTREME_HILLS_PLUS,SAVANNA,SAVANNA_PLATEAU,SUNFLOWER_PLAINS,FLOWER_FOREST,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
     str-modifier-failed: "You can't manage to trap any creatures in this biome."
+    description: |
+            &2Trapper: 4 Memory Forest spell
+            Trap a wild creature for food!
 stalking:
     permission-name: forest
     spell-class: ".PassiveSpell"
@@ -262,7 +272,7 @@ stalking:
         - monster_invisibility
     send-failure-messages: true
     modifiers:
-        - holding "267|Hunting Knife","267|&2Hunting Knife"  required
+        - holding 267 required
     str-cast-self: You are stalking the creatures of the wilderness.
     str-cast-others: "%p is stalking wild creatures."
 
