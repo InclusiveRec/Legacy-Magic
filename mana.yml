@@ -6,7 +6,7 @@ color-empty: 0
 
 default-max-mana: 100
 default-regen-amount: 1
-regen-interval: 20
+regen-interval: 40
 
 ranks:
     master:
@@ -26,11 +26,11 @@ ranks:
         regen-amount: 1
         starting-mana: 50
 
-show-mana-on-use: true
+show-mana-on-use: false
 show-mana-on-regen: false
 show-mana-on-wood-tool: false
 show-mana-on-hunger-bar: false
-show-mana-on-experience-bar: false
+show-mana-on-experience-bar: true
 tool-slot: 8
 
 mana-potion-cooldown: 0.2
