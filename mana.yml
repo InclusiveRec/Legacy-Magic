@@ -6,35 +6,31 @@ color-empty: 0
 
 default-max-mana: 100
 default-regen-amount: 1
-regen-interval: 20
+regen-interval: 40
 
 ranks:
-    archmage:
-        max-mana: 600
-        regen-amount: 7
-        starting-mana: 300
     master:
         max-mana: 300
-        regen-amount: 5
+        regen-amount: 3
         starting-mana: 150
     journeyman:
         max-mana: 200
-        regen-amount: 3
+        regen-amount: 2
         starting-mana: 100
     apprentice:
         max-mana: 150
-        regen-amount: 3
+        regen-amount: 1
         starting-mana: 75
     novice:
         max-mana: 100
-        regen-amount: 2
+        regen-amount: 1
         starting-mana: 50
 
-show-mana-on-use: true
+show-mana-on-use: false
 show-mana-on-regen: false
 show-mana-on-wood-tool: false
 show-mana-on-hunger-bar: false
-show-mana-on-experience-bar: false
+show-mana-on-experience-bar: true
 tool-slot: 8
 
 mana-potion-cooldown: 0.2

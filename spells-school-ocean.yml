@@ -29,7 +29,7 @@ predefined-items:
 #                           #
 #############################
 
-lore_of_water:
+lore_of_oceans:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
@@ -41,31 +41,39 @@ lore_of_water:
     items:
         - water_grimoire
     description: |
-            &1Lore of Water: Lv15 Water Spell
+            &1Lore of Water: 15 Memory Water Spell
             Create a grimoire of Hydromantic lore.
     str-cost: 100 mana, a book, and a diamond.
 hydromantic_focus:
+    permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
     cost:
         - mana 50
         - diamond 3
-    memory: 10
+    memory: 3
+    prerequisites:
+        - scroll
+        - geyser
     items:
         - water_focus
     description: |
-            &1Hydromantic Focus: Lv10 Water Spell
+            &1Hydromantic Focus: 3 Memory Water Spell
             Create a hydromantic focus to direct water spells.
     str-cost: 50 mana and 3 diamonds.
 dowsing_rod:
+    permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
     cost:
         - mana 50
         - diamond 2
-    memory: 10
+    memory: 2
+    prerequisites:
+        - scroll
+        - water
     str-cost: 50 mana and 2 diamonds.
     items:
         - water_rod
@@ -77,6 +85,7 @@ dowsing_rod:
 #########################
 
 gills:
+    permission-name: ocean
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
@@ -89,15 +98,16 @@ gills:
         - sugar_cane 1
     use-cost:
         - sugar_cane 1
-    memory: 2
+    memory: 5
     use-cost-interval: 1
     description: |
-        &rGills   -   Water School
+        &rGills   5 Memory   Water School
         &3Allows you to breathe underwater.
     str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane every few seconds
     str-cast-self: You form gills on your neck!
     str-fade: Your gills disappear.
 water:
+    permission-name: ocean
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
@@ -112,11 +122,12 @@ water:
         - mana 15
     memory: 1
     description: |
-        &rWater   -   Water School
+        &rWater   1 Memory   Water School
         &3Summons a water spring into existence.
     str-cost: 15 mana
     str-no-target: No target found.
 waterwalk:
+    permission-name: ocean
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
@@ -127,12 +138,12 @@ waterwalk:
     cost:
         - mana 25
         - boat 1
-    memory: 1
+    memory: 3
     use-cost:
         - mana 10
     use-cost-interval: 20
     description: |
-        &rWaterwalk   -   Water School
+        &rWaterwalk   3 Memory   Water School
         &3Walk across the water.
     str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
     str-cast-self: You can now walk on water!
@@ -145,33 +156,9 @@ waterwalk:
 #                       #
 #########################
 
-freeze:
-    spell-class: ".instant.FreezeSpell"
-    cast-item: water_focus,stick
-    spell-icon: snow_ball
-    memory: 2
-    snowballs: 25
-    horizontal-spread: 15
-    vertical-spread: 5
-    damage: 2
-    slow-amount: 2
-    slow-duration: 80
-    target-players: true
-    cooldown: 3
-    cost:
-        - mana 15
-        - snow_ball 1
-    spell-power-affects-range: true
-    power-affects-duration: true
-    modifiers:
-        - onblock 78,79,80,174 power 2
-        - holding "264|&1Hydromantic__Focus" cooldown 0.2
-    description: |
-        &1Freeze:  Lv02 Water Spell
-        Blast forth a flurry of icy shards which damage and slow all in their path.
-    str-cost: 15 mana and a snowball.
-    str-on-cooldown: ""
+
 geyser:
+    permission-name: ocean
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
@@ -187,9 +174,9 @@ geyser:
     target-players: true
     cost:
         - mana 15
-    memory: 2
+    memory: 4
     description: |
-        &rGeyser   -   Water School
+        &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
     str-cost: 15 mana
     cooldown: 3

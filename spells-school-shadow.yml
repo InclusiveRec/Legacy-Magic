@@ -1,4 +1,5 @@
 blind:
+    permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
     name: blind
     spell-icon: ink_sack:0
@@ -14,9 +15,9 @@ blind:
     cost:
         - mana 20
         - 375 1
-    memory: 3
+    memory: 4
     description: |
-        &rBlind   3 Memory   Shadow School
+        &rBlind   4 Memory   Shadow School
         &3Blind your target.
     str-cost: "20 mana and spider's eye"
     str-cast-self: You have blinded %t!
@@ -26,6 +27,7 @@ blind:
         position: target
         effect: smoke
 invisibility:
+    permission-name: shadow
     spell-class: ".buff.InvisibilitySpell"
     name: invisibility
     spell-icon: record_11
@@ -53,6 +55,7 @@ invisibility:
     str-cast-others: "%a vanishes!"
     str-fade: You are visible again.
 nightvision:
+    permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
     name: nightvision
     spell-icon: 381
@@ -63,9 +66,9 @@ nightvision:
     cost:
         - mana 20
         - 375 1
-    memory: 2
+    memory: 4
     description: |
-        &rNightvision   2 Memory   Shadow School
+        &rNightvision   4 Memory   Shadow School
         &3You can see in the dark!
     str-cost: 20 mana and a spider eye
     cooldown: 30

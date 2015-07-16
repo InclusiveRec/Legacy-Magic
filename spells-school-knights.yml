@@ -1,0 +1,319 @@
+
+
+
+#
+# Knightly School
+#
+#   This school of magic has three main sections:
+#       - Buffs to armour; mounts
+#       - Passive spells tied to equipment
+#       - An item factory, based 
+#   Like other schools of magic, the knightly school
+#   also includes an item factory, centred around the grimoire.
+#   This allows one to create saddles and swords.
+#
+
+
+
+
+
+
+#
+#               Steed spells
+#   Cast from a war saddle.  Summon steeds
+#   for limited durations.
+#
+
+warhorse:
+    permission-name: knights
+    spell-class: ".instant.SteedSpell"
+    permission-name: knight_school
+    memory: 2
+    cast-item: knight-saddle
+    can-cast-by-command: false
+    bindable: false
+    color: BLACK
+    style: WHITE
+    variant: HORSE
+    cost:
+        - 396 1
+        - mana 20
+    str-cost: 20 mana and a golden carrot.
+    str-cast-self: You summon a knightly warhorse!
+    str-cast-others: "%c summons a knightly warhorse!"
+    str-cost: "20 mana and a golden carrot; uses the War Saddle; 5 memory."
+    description: "Summons a mount to aid you in battle."
+
+#
+#                       Sword spells
+#
+#   These are effects randomly applied to attacks
+#   made using knightly swords.  Some swords are 
+#   tied to other schools of magic.
+#
+
+sword_template:
+    enabled: false
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    memory: 0
+    triggers:
+        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
+    modifiers:
+        - chance 5 required
+    cost:
+        - mana 10
+    spells:
+        - stun
+    str-cast-self: "A description of the attack."
+    str-cast-others: "A description of the attack."
+    description: "Detail effects of this attack."
+    str-cost: "10 mana; 0 memory; bound to all knightly swords."
+
+stunning_blow:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    triggers:
+        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
+    spells:
+        - stun
+    modifiers:
+        - chance 4 required
+    str-cast-self: "You lash out at %t with your blade, briefly stunning them."
+    str-cast-target: "You have been stunned by %c's attack!"
+    effects:
+        owie:
+            effect: splash
+            pot: slowness
+
+
+charge:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    triggers:
+        - sprint
+    cooldown: 5
+    spells:
+        - shove
+    modifiers:
+        - holding "267|&eElvensteel Blade" stop
+        - holding "267|&8Broadsword" required
+
+#
+#           The knightly_harness spell.
+#
+#
+
+knightly_harness:
+    permission-name: knights
+    spell-class: ".MultiSpell"
+    cast-item: knight_saddle
+    target-self: true
+    spells:
+        - en_garde
+        - DELAY 1
+        - equip_knightly_armour
+    cost:
+        - mana 50
+        - 42 1
+    description: "You ready your guard and summon a suit of armour."
+    str-cost: "1 iron block and 50 mana."
+
+en_garde:
+    permission-name: knights
+    spell-class: ".buff.DummySpell"
+    str-cast-self: "You drop into your guard..."
+    str-cast-self: ""
+    duration: 180
+
+burnished_cuirass:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    triggers:
+        - spellcast en_garde
+    spells:
+        - equip_burnished_cuirass
+equip_burnished_cuirass:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    chestplae: burnished_cuirass
+    str-cast-self: "You conjure a burnished cuirass!"
+
+equip_knightly_armour:
+    permission-name: knights
+    spell-class: ".MultiSpell"
+    spells:
+        - equip_helm
+        - equip_hauberk
+        - equip_leggings
+        - equip_spurs
+equip_helm:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    helmet: knightly_helm
+    duration: 180
+equip_hauberk:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    chestplate: knightly_hauberk
+    duration: 180
+equip_leggings:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    leggings: knightly_greaves
+    duration: 180
+equip_spurs:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    boots:  knightly_sabatons
+    duration: 180
+
+#              Guard spells
+#
+#   Guard spells are passively triggered
+#   by enemy attacks.  They are quite
+#   mana-hungry.
+#
+
+guard_template:
+    enabled: false
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    triggers:
+        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
+    modifiers:
+        - buffactive en_garde required
+        - wearing "303|Some armour" power 2
+    spells:
+        - stun
+    cost:
+        - mana 10
+    description: "You deflect a blow."
+    str-cost: "10 mana; 0 memory.  [Enhanced when wearing...]"
+    str-cast-self: "You deflect %t's blow."
+    str-cast-target: "%c deflects your blow."
+
+grim_determination:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    memory: 5
+    triggers:
+        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
+    modifiers:
+        - buffactive en_garde required
+        - healthbelow 5 required
+        - wearing "303|&8Hauberk" power 2
+    spells:
+        - second_wind
+    cost:
+        - mana 40
+    description: "When near death, you find the strength to continue fighting."
+    str-cost: "40 mana; 5 memory; must be wearing your knightly hardness."
+    str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
+    str-no-reagents:  "Your strength is failing you..."
+
+#   Item factory
+
+#   TODO: Conjure spells
+
+#
+#               Items
+#
+#  The armoury of the knightly school is generated
+#  through use of the Heraldric Manual (knight_grimoire).
+#  This allows one to make swords and saddles, cast
+#  items for other spells.
+#
+#
+
+predefined-items:
+
+
+
+#
+#           Item factory
+#
+#   Grimoire for creating swords and saddles.
+#
+#
+#
+
+
+    # Grimoire
+
+    knight_grimoire:
+        type: "enchanted_book"
+        name: "&8Heraldric Manual"
+        lore:
+            - "Details the rules, disciplines,"
+            - "and orders of knighthood."
+            - "As well, it contains the crests"
+            - "and histories of rulers."
+
+    #       Buff caster
+
+    knight_saddle:
+        type: "saddle"
+        name: "&8War Saddle"
+        lore:
+            - "High at the front and back,"
+            - "with reinforced stirrups"
+            - "for powerful charges."
+
+    #       Swords
+
+    knight_sword:
+        type: "iron_sword"
+        name: "&8Broadsword"
+        lore:
+            - "A well-balanced broadsword,"
+            - "suited to swashing blows."
+        enchants:
+            - damage_all 2
+            - durability 2
+
+    elven_blade:
+        type: iron_sword
+        name: "&eElvensteel Blade"
+        lore:
+            - "This sword is both"
+            - "surprisingly lightweight"
+            - "and lethally sharp."
+        enchants:
+            - "damage_undead 2"
+            - "durability 2"
+
+    #
+    #           Armour
+    #    Granted as a temporary buff.  Confers bonuses to
+    #    sword spells.
+    #
+
+
+    #       Basic knightly armour
+
+    knightly_helm:
+        type: 306
+        name: "&8Great Helm"
+        enchants:
+            - PROTECTION_PROJECTILE 2
+    knightly_hauberk:
+        type: 303
+        name: "&8Hauberk"
+    knightly_greaves:
+        type: 316
+        name: "&8Banded Greaves"
+    knightly_sabatons:
+        type: 305
+        name: "&8Spurs"
+
+
+    #   Solar aligned.
+
+    burnished_cuirass:
+        type: 315
+        name: "&eBurnished Cuirass"
+        enchants:
+            - PROTECTION_FIRE
+
+

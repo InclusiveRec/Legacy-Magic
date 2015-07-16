@@ -1,0 +1,269 @@
+predefined-items:
+
+    stone_grimoire:
+        type: "enchanted_book"
+        name: "&8Stone Tablet"
+        lore:
+          - "The passage of time"
+          - "has etched into Stone"
+          - "the magical secrets"
+          - "found deep underground."
+
+    minepick:
+        type: 257
+        name: "&8Miner's Pick"
+        lore:
+          - "This pick carries"
+          - "a powerful enchantment"
+          - "of stone magic."
+        enchants:
+          - "efficiency 5"
+          - "unbreaking 3"
+
+    iron_trowel:
+        name: "&8Mason's Trowel"
+        lore: 
+          - "An enchanted tool."
+        type: IRON_SPADE
+        enchants:
+          - "dig_speed 2"
+          - "durability 2"
+          - "silk_touch 1"
+
+    # Custom reagent
+
+    mortar:
+        name: "&8Mortar"
+        lore:
+          - "A wet, sticky mixture"
+          - "of sand and ground bone"
+          - "used in masonry."
+        type: "351:7"
+
+
+#################################
+#                               #
+#       Item creation spells    #
+#                               #
+#################################
+
+    #
+    # The item factory
+    #
+
+lore_of_the_rock:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    description: |
+            &2Stone Lore: 20 Memory Stone Spell
+            Creates a stone grimoire.
+            Requires mix_mortar, trowel, and magic_pickaxe spells.
+    spell-icon: enchanted_book
+    prerequisites: mix_mortar,trowel,magic_pickaxe
+    memory: 20
+    cost:
+      - book 1
+      - mortar 12
+      - mana 100
+    items:
+      - stone_grimoire
+    str-cost: A book, 100 mana, and 12 mortar.
+
+    # 
+    #   Cast items 
+    #
+
+magic_pickaxe:
+    spell-class: ".instant.ConjureSpell"
+    permission-name: stone
+    memory: 5
+    cast-item: stone_grimoire
+    spell-icon: 257
+    description: |
+        &8Magic Pickaxe: 5 Memory Stone Spell
+    cost:
+        - mana 20
+        - 257 1
+        - levels 3
+    items:
+      - minepick
+    str-cost: 100 mana, 15 experience levels, and an iron pickaxe to be enchanted.
+    
+
+masons_trowel:
+    permission-name: stone
+    spell-class: ".instant.ConjureSpell"
+    name: trowel
+    spell-icon: IRON_SPADE
+    cost:
+        - mana 20
+        - iron_spade 1
+        - levels 5
+    memory: 2
+    description: |
+        &rTrowel   2 Memory Stone Spell
+        &3Crafts an iron trowel.
+    str-cost: 20 mana, 5 experience levels, and an iron shovel.
+    items:
+        - iron_trowel 1       
+
+    #
+    #  Reagents
+    #
+
+mix_mortar:
+    permission-name: stone
+    spell-class: ".instant.ConjureSpell"
+    name: mix_mortar
+    spell-icon: "351:7"
+    cost:
+        - mana 10
+        - sand 16
+        - "351:15 8"
+    memory: 1
+    items:
+        - mortar 64
+    cast-item: iron_trowel
+    bindable: false
+    cast-time: 200
+    description: |
+            &rMix Mortar  1 Memory Stone Spell
+            &3Mixes mortar out of raw materials.
+            The process takes some time.
+    str-cast-start: You begin mixing a batch of mortar...
+    str-cast-self: The mortar is prepared.  Sticky!
+    str-cost: 10 mana, 16 sand, and 8 bone meal.
+    interrupt-on-damage: true
+    interrupt-on-cast: true
+    str-interrupted: The mixing process has been disrupted, and the materials have been ruined.
+
+
+##########################
+#                        #
+#        Trowel          #
+#                        #
+#   Stoneworking spells  #
+#   to enable fast       #
+#   construction.        #
+#   Many require mortar  #
+#   or cobblestone, but  #
+#   have low mana        #
+#   costs and cooldowns  #
+#                        #
+##########################
+
+patchwork:
+    permission-name: stone 
+    spell-class: ".targeted.ReplaceSpell"
+    range: 8
+    radius-up: 2
+    radius-down: 2
+    radius-horiz: 2
+    replace-blocks:
+        - cobblestone
+    replace-with:
+        - stonebrick
+    memory: 5
+    cost:
+        - mana 10
+        - mortar 2
+    description: |
+            &rPatchwork   5 Memory Stone Spell
+            &3Patches up cobblestone as stonebrick.
+    str-cost: 10 mana and 2 mortar.
+    cast-item: iron_trowel
+    bindable: false
+
+repair:
+    spell-class: ".instant.RepairSpell"
+    permission-name: stone
+    spell-icon: workbench
+    memory: 2
+    description: |
+        &rRepair   2 Memory: &4Stone Spell
+        &3Repairs your gear.
+    cast-item: iron_trowel
+    cooldown: 120
+    repair-amount: 200
+    to-repair:
+        - held
+        - hotbar
+        - inventory
+        - helmet
+        - chestplate
+        - leggings
+        - boots
+    ignore-items:
+        - 259
+    cost:
+        - mana 50
+        - diamond_block 1
+    str-cost: 50 mana and 1 diamond block
+    str-cast-self: "You've repaired your gear!"
+    str-nothing-to-repair: You have nothing to repair.
+   
+#####################
+#                   #
+#       Minepick        #
+#                   #
+#####################
+
+dowse:
+    spell-class: ".instant.DowseSpell"
+    permission-name: Stone 
+    name: dowse
+    spell-icon: compass
+    memory: 2
+    description: |
+        &rDowse   2 Memory: &4Stone Spell
+        &3Dowse for iron ore.
+    cast-item: minepick
+    cooldown: 60
+    block-type: iron_ore
+    entity-type: ""
+    radius: 5
+    rotate-player: true
+    set-compass: true
+    cost:
+        - mana 20
+        - mortar 2
+    str-cost: 20 mana and 2 mortar 
+    str-cast-self: There is iron ore nearby.
+    str-not-found: No iron ore found nearby.
+mighty_swing_i:
+    spell-class: ".targeted.PotionEffectSpell"
+    permission-name: stone
+    memory: 5 
+    description: |
+        &rMighty Swing   5 Memory: &4Stone Spell
+        &3Your muscles bulge with strength, and you cut through stone with ease.
+    cast-item: minepick
+    cooldown: 30
+    target-self: true
+    beneficial: true
+    duration: 200
+    cost:
+        - mana 15
+        - 17 1
+    str-cost: 15 mana and an oak log.
+    str-cast-self: Your arms pulse with new strength!
+    type: 3
+    strength: 1
+stonevision:
+    spell-class: ".buff.StonevisionSpell"
+    permission-name: stone
+    description: |
+        &rStonevision   6 Memory Stone Spell
+        &3With great concentration, you can see through stone.
+    cast-item: minepick
+    memory: 6 
+    cost:
+        - mana 30
+        - 20 1
+    str-cost: 30 mana and 1 glass, plus 1 glass for every five blocks walked.
+    use-cost:
+        - 20 1
+    use-cost-interval: 5
+    range: 5
+    duration: 60
+    str-cast-self: The stone around you flickers and fades away...

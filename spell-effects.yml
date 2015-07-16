@@ -1,3 +1,7 @@
+cripple:
+    spell-class: ".targeted.CrippleSpell"
+    effect-strength: 2
+    effect-duration: 100
 nauseate:
     spell-class: ".targeted.PotionEffectSpell"
     type: 9
@@ -22,6 +26,24 @@ punch:
         bang:
             position: target
             effect: explosion
+second_wind:
+    spell-class: ".targeted.PotionEffectSpell"
+    duration: 40
+    type: 10
+    strength: 1
+shove:
+    spell-class: ".instant.ForcepushSpell"
+    pushback-force: 6
+    additional-vertical-force: 3
+    max-vertical-force: 6
+    effects:
+        haha:
+            position: caster
+            effect: sound
+            sound: mob.ghast.fireball
+stun:
+    spell-class: ".targeted.StunSpell"
+    duration: 3
 sunrise:
     spell-class: ".ExternalCommandSpell"
     name: sunrise
@@ -29,22 +51,3 @@ sunrise:
     execute-on-console-instead: true
     command-to-execute:
         - "time set 0"
-cripple:
-    spell-class: ".targeted.CrippleSpell"
-    effect-strength: 2
-    effect-duration: 100
-jump:
-    spell-class: ".instant.LeapSpell"
-    cancel-damage: false
-    forward-velocity: 20
-    upward-velocity: 2
-getback:
-    spell-class: ".targeted.ForcebombSpell"
-    always-activate: true
-    pushback-force: 6
-    additional-vertical-force: 3
-    max-vertical-force: 6
-    effects:
-        boom:
-            position: caster
-            effect: explosion

@@ -1,4 +1,7 @@
+# Free spells
+
 blink:
+    permission-name: cantrip
     spell-class: ".targeted.BlinkSpell"
     always-granted: true
     spell-icon: ender_pearl
@@ -20,6 +23,7 @@ blink:
     str-cast-others: "%a blinks away!"
     str-cant-blink: You cannot blink there.
 enderchest:
+    permission-name: cantrip
     spell-class: ".instant.EnderchestSpell"
     always-granted: true
     spell-icon: ender_chest
@@ -33,6 +37,7 @@ enderchest:
         - 368 1
     str-cost: 50 mana and an enderpearl.
 gate:
+    permission-name: cantrip
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
@@ -44,7 +49,6 @@ gate:
         - pos2 ender
     cost:
         - mana 30
-    memory: 1
     str-cost: 30 mana
     cooldown: 1
     str-cast-self: You have teleported to spawn.
@@ -53,51 +57,8 @@ gate:
     description: |
         &rGate   -   Cantrip
         &3Teleport to spawn.
-
-# Novice level
-
-list:
-    spell-class: ".command.ListSpell"
-    name: list
-    always-granted: true
-    description: |
-        &rList   -   Cantrip
-        &3List all the spells you know.
-    only-show-castable-spells: true
-    reload-granted-spells: true
-    spells-to-hide: []
-    str-prefix: "Known spells:"
-    str-no-spells: You do not know any spells.
-help:
-    spell-class: ".command.HelpSpell"
-    name: help
-    always-granted: true
-    description: |
-        &rHelp   -   Cantrip
-        &3Get information about a specified spell that you already know.
-    require-known-spell: true
-    str-usage: "Usage: /cast help <spell>"
-    str-no-spell: You do not know a spell by that name.
-    str-desc-line: "%d"
-    str-cost-line: "Cost: %c"
-forget:
-    spell-class: ".command.ForgetSpell"
-    name: forget
-    always-granted: true
-    description: |
-        &rForget   -   Cantrip
-        &3Make a player forget a spell.
-    allow-self-forget: true
-    str-usage: "Usage: /cast forget <target> <spell>"
-    str-no-target: No such player.
-    str-no-spell: You do not know a spell by that name.
-    str-doesnt-know: That person does not know that spell.
-    str-cast-self: You made %t forget the %s spell.
-    str-cast-target: "%a has made you forget the %s spell."
-    str-cast-self-target: "You have forgotten the %s spell."
-    str-reset-target: "You have reset %t's spellbook."
-    str-reset-self: "You have forgotten all of your spells."
 mark:
+    permission-name: cantrip
     spell-class: ".instant.MarkSpell"
     cast-item: book
     spell-icon: bed
@@ -113,8 +74,8 @@ mark:
         &rMark   -   Cantrip
         &3Marks your location for later recall.
 recall:
+    permission-name: cantrip
     spell-class: ".instant.RecallSpell"
-    name: recall
     spell-icon: compass
     cast-item: book
     always-granted: true
@@ -135,6 +96,7 @@ recall:
     str-too-far: Your marked location is too far away.
     str-cast-others: "%a disappears!"
 summon_helper:
+    permission-name: cantrip
     name: summon
     spell-class: ".targeted.SummonSpell"
     always-granted: true
@@ -158,11 +120,62 @@ summon_helper:
     str-summon-accepted: You have been summoned.
     str-summon-expired: The summon has expired.
 
+
+# Novice spells
+
+list:
+    permission-name: cantrip
+    spell-class: ".command.ListSpell"
+    name: list
+    always-granted: true
+    description: |
+        &rList   -   Cantrip
+        &3List all the spells you know.
+    only-show-castable-spells: true
+    reload-granted-spells: true
+    spells-to-hide: []
+    str-prefix: "Known spells:"
+    str-no-spells: You do not know any spells.
+help:
+    permission-name: cantrip
+    spell-class: ".command.HelpSpell"
+    name: help
+    always-granted: true
+    description: |
+        &rHelp   -   Cantrip
+        &3Get information about a specified spell that you already know.
+    require-known-spell: true
+    str-usage: "Usage: /cast help <spell>"
+    str-no-spell: You do not know a spell by that name.
+    str-desc-line: "%d"
+    str-cost-line: "Cost: %c"
+forget:
+    permission-name: cantrip
+    spell-class: ".command.ForgetSpell"
+    name: forget
+    always-granted: true
+    description: |
+        &rForget   -   Cantrip
+        &3Make a player forget a spell.
+    allow-self-forget: true
+    str-usage: "Usage: /cast forget <target> <spell>"
+    str-no-target: No such player.
+    str-no-spell: You do not know a spell by that name.
+    str-doesnt-know: That person does not know that spell.
+    str-cast-self: You made %t forget the %s spell.
+    str-cast-target: "%a has made you forget the %s spell."
+    str-cast-self-target: "You have forgotten the %s spell."
+    str-reset-target: "You have reset %t's spellbook."
+    str-reset-self: "You have forgotten all of your spells."
+
+
+
+
 # Apprentice level
 
 bind:
+    permission-name: apprentice
     spell-class: ".command.BindSpell"
-    memory: 5
     description: |
         Bind: L05 Cantrip
         Binds a spell to a wand item.
@@ -174,10 +187,8 @@ bind:
     str-cant-bind-spell: That spell cannot be bound to an item.
     str-cant-bind-item: That spell cannot be bound to that item.
 unbind:
+    permission-name: apprentice
     spell-class: ".command.UnbindSpell"
-    memory: 0
-    prerequisites:
-      - bind
     description: |
         Unbind: L05 Cantrip
         Unbinds a spell from its assigned wand item.
@@ -191,8 +202,8 @@ unbind:
 # Journeyman level
 
 scroll:
+    permission-name: journeyman
     spell-class: ".command.ScrollSpell"
-    memory: 10
     cast-item: book
     spell-icon: paper
     description: |
@@ -224,40 +235,31 @@ scroll:
 # Master level
 
 tome:
+    permission-name: master
     spell-class: ".command.TomeSpell"
-    memory: 10
-    prerequisites:
-      - bind
-      - unbind
-      - scroll
     description: |
         &rTome   -   Cantrip
         &3Create a tome that teaches a spell. 
         Requires the bind, unbind and scroll spells.
-    cancel-read-on-learn: true
+    cancel-read-on-learn: false
     consume-book: false
     allow-overwrite: false
     max-uses: -1
     default-uses: -1
     require-teach-perm: true
-    str-usage: "Usage: While holding a book, /cast tome <spell>"
+    str-usage: "Usage: Write and sign a book describing the spell's usage; while holding it, type /cast tome <spell>"
     str-no-spell: You do not know a spell with that name.
-    str-cant-teach: You cannot create a tome with that spell.
-    str-no-book: You must be holding a book.
-    str-already-has-spell: That book already contains a spell.
+    str-cant-teach: You have not mastered that school of magic.
+    str-no-book: You must be holding a written book.
+    str-already-has-spell: A mage has already filled these pages with instructions on the %s spell.
     str-already-known: You already know the %s spell.
-    str-cant-learn: You cannot learn the spell in this tome.
+    str-cant-learn: The %s spell is too advanced for you.
     str-learned: You have learned the %s spell.
-    str-cast-self: You have created a spell tome.
+    str-cast-self: You have created a tome of %s.
 
 spellbook:
+    permission-name: master
     spell-class: ".command.SpellbookSpell"
-    memory: 10
-    prerequisites:
-        - bind
-        - unbind
-        - scroll
-        - tome
     description: |
         &rSpellbook   -   Cantrip
         &3Create a spellbook that teaches a spell. 
@@ -272,19 +274,13 @@ spellbook:
     str-no-target: You must target an enchanting table to create a spellbook.
     str-has-spellbook: That enchanting table already has a spellbook.
     str-cant-destroy: You cannot destroy an enchanting table with a spellbook.
-    str-cant-learn: You cannot learn the spell in this spellbook.
+    str-cant-learn: Try as you might, you fail to learn the %s spell.
     str-already-known: You already know the %s spell.
     str-learned: You have learned the %s spell!
 
 teach:
+    permission-name: master
     spell-class: ".command.TeachSpell"
-    memory: 10
-    prerequisites:
-      - bind
-      - unbind
-      - scroll
-      - tome
-      - spellbook
     description: |
         &rTeach   -   Cantrip
         &3Teach a spell to another player. Requires the bind, unbind, scroll, tome, and spellbook spells.
@@ -296,3 +292,36 @@ teach:
     str-cant-learn: That person cannot learn that spell.
     str-cast-self: You have taught %t the %s spell.
     str-cast-target: "%a has taught you the %s spell."
+
+
+# Settlement Magic
+
+populate:
+    permission-name: cantrip
+    spell-class: ".targeted.SpawnMonsterSpell"
+    cast-item: book
+    spell-icon: emerald
+    entity-type: villager
+    cost:
+        - mana 20
+        - 133 1
+    description: |
+        &rPopulate   -   Cantrip
+        &3Spawns a random villager.
+    str-cost: 20 mana and an emerald block.
+    str-cast-self: You summon a villager.
+    range: 10
+    effects:
+        spit:
+            position: line
+            effect: itemspray
+            type: bread
+            quantity: 13
+            duration: 20
+            force: 1.2
+        huzzah:
+            position: target
+            effect: greensparkle
+        yay:
+            position: caster
+            effect: sound

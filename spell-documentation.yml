@@ -1,15 +1,14 @@
 predefined-items:
     server_manual:
         type: "written_book"
-        title: "A Strange New World"
+        title: "Galdur"
         author: "Inclusive Recreation"
         lore:
           -  "&0&kMS$:tome:gate,-1"
         pages:
             - |
 
-              &l     A Strange
-                    New World
+              &l     Galdur
 
                      &rA Guide
 
@@ -20,7 +19,7 @@ predefined-items:
 
 
 
-                     &oSecond edition
+                     &oThird edition
             -  |
               &lTable of Contents
 
@@ -38,7 +37,7 @@ predefined-items:
             - |
               &nI.  Welcome
 
-              &r  Welcome to &oA Strange New World&r, the Inclusive Recreation program's Minecraft server.  It might be a little different from servers you've played on before, so this guide is to help you get started.
+              &r  Welcome to &oGaldur&r, a world on the Inclusive Recreation program's Minecraft server.  It might be a little different from servers you've played on before, so this guide is to help you get started.
             - |
               &nII.  Towns
               
@@ -49,7 +48,7 @@ predefined-items:
             - |
               &nIII.  The Economy
 
-              &r  On &oA Strange New World&r, commerce is carried out with an emerald currency.  Gaining emeralds will let you buy items and supplies, rent or purchase land, and pay rent or taxes.
+              &r  On &oGaldur&r, commerce is carried out with an emerald currency.  Gaining emeralds will let you buy items and supplies, rent or purchase land, and pay rent or taxes.
             - There are some useful tools for managing your treasure.  If you place a sign on a chest with &o[Vault]&r on the first line, the server will use it to store your emeralds.
             - |
                 The following self-explanatory commands can be used to measure and manipulate your emeralds:
@@ -73,10 +72,10 @@ predefined-items:
             - |
               &nV.  Roleplaying&r
 
-                &oA Strange New World&r is a roleplaying server.  This means that the character a person plays as and the person themself are seperate identities.  You can be a hero or villain, or anyone else you can imagine.
+                &oGaldur&r is part of a roleplaying server.  This means that the character a person plays as and the person themself are seperate identities.  You can be a hero or villain, or anyone else you can imagine.
             - The important thing to remember about roleplaying is that it can only work when everyone is glad to participate.  You can have a fight or a war, but only if both sides agree.  Make sure you respect others' boundaries, so it can be fun for everyone.
             - Sometimes it is important for a player to absolutely differentiate between their character and what they actually think.  If you ever need to do that, [use these square brackets.]  So your character might say "I hate you," but you might say [This is fun.]
-            - As long as we're considerate of each other, and trust others to be considerate of us, we can have a lot of fun.  Great to have you on the server, and may you have many exciting adventures!
+            - As long as we're considerate of each other, and trust others to be considerate of us, we can have a lot of fun.  Great to have you in our world, and may you have many exciting adventures!
 manual:
     spell-class: ".instant.ConjureSpell"
     name: manual
@@ -84,14 +83,13 @@ manual:
     description: |
         &rManual   -   Arcane Art
         &3Create a server manual.
-    str-cost: 10 mana, 1 glowstone dust, and a book and quill.
+    str-cost: 10 mana, and a book and quill.
     str-cast-self: |
         The quill rises in the air, moves quickly over
         the rapidly flipping pages, and pens a guide
-        to the Strange New Land.
+        to the magical world of Galdur.
     cost:
       - mana 10
-      - glowstone_dust 1
       - 386 1
     items:
         - server_manual 1
