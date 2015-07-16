@@ -2,7 +2,7 @@ predefined-items:
 
     stone_grimoire:
         type: "enchanted_book"
-        name: "&eStone Tablet"
+        name: "&8Stone Tablet"
         lore:
           - "The passage of time"
           - "has etched into Stone"
@@ -11,7 +11,7 @@ predefined-items:
 
     minepick:
         type: 257
-        name: "Miner's Pick"
+        name: "&8Miner's Pick"
         lore:
           - "This pick carries"
           - "a powerful enchantment"
@@ -19,35 +19,37 @@ predefined-items:
         enchants:
           - "efficiency 5"
           - "unbreaking 3"
-          
+
     iron_trowel:
-        name: "Iron_Trowel"
+        name: "&8Mason's Trowel"
         lore: 
-          - "An enchanted tool"
+          - "An enchanted tool."
         type: IRON_SPADE
         enchants:
           - "dig_speed 2"
           - "durability 2"
           - "silk_touch 1"
-        
+
     # Custom reagent
 
     mortar:
-        name: "Mortar"
+        name: "&8Mortar"
         lore:
           - "A wet, sticky mixture"
           - "of sand and ground bone"
-          - "used in Stone Magic."
+          - "used in masonry."
         type: "351:7"
-        
-#############################
-#                           #
-#   Item creation spells    #
-#                           #
-#############################
 
 
-# The item factory
+#################################
+#                               #
+#       Item creation spells    #
+#                               #
+#################################
+
+    #
+    # The item factory
+    #
 
 lore_of_the_rock:
     spell-class: ".instant.ConjureSpell"
@@ -66,8 +68,11 @@ lore_of_the_rock:
     items:
       - stone_grimoire
     str-cost: A book, 100 mana, and 12 mortar.
- 
-# Cast items 
+
+    # 
+    #   Cast items 
+    #
+
 magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     permission-name: stone
@@ -75,16 +80,17 @@ magic_pickaxe:
     cast-item: stone_grimoire
     spell-icon: 257
     description: |
-        &rMagic Pickaxe   5 Memory: &4Stone Spell
+        &8Magic Pickaxe: 5 Memory Stone Spell
     cost:
-        - mana 100
+        - mana 20
         - 257 1
-        - levels 15
+        - levels 3
     items:
       - minepick
     str-cost: 100 mana, 15 experience levels, and an iron pickaxe to be enchanted.
+    
 
-trowel:
+masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
     name: trowel
@@ -101,7 +107,9 @@ trowel:
     items:
         - iron_trowel 1       
 
-#  Reagent
+    #
+    #  Reagents
+    #
 
 mix_mortar:
     permission-name: stone
@@ -129,11 +137,21 @@ mix_mortar:
     interrupt-on-cast: true
     str-interrupted: The mixing process has been disrupted, and the materials have been ruined.
 
-#####################
-#                   #
-#   Trowel          #
-#                   #
-#####################
+
+##########################
+#                        #
+#        Trowel          #
+#                        #
+#   Stoneworking spells  #
+#   to enable fast       #
+#   construction.        #
+#   Many require mortar  #
+#   or cobblestone, but  #
+#   have low mana        #
+#   costs and cooldowns  #
+#                        #
+##########################
+
 patchwork:
     permission-name: stone 
     spell-class: ".targeted.ReplaceSpell"
@@ -186,7 +204,7 @@ repair:
    
 #####################
 #                   #
-#   Minepick        #
+#       Minepick        #
 #                   #
 #####################
 
