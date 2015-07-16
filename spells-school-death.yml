@@ -44,10 +44,21 @@ predefined-items:
 necronomicon:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    spell-icon: 403
     items:
         - death_grimoire 1
     cost:
-        - mana 300
+        - levels 30
+        - book 1
+        - bone 16
+        - 397 1
+    str-cost: "30 levels, a book, 16 bones, and a skull."
+    description: |
+        &5Create Necronomicon: Death Master Spell
+        The death mage inscribes non-euclidean runes
+        upon a book, binding necromantic power
+        within its pages.
+
 
 bone_carving:
     permission-name: death
@@ -155,15 +166,6 @@ drain:
     description: |
         &5Drain: 3 Memory Death Spell
         Suck the life out of your enemy.
-
-paralysis:
-    permission-name: death
-    spell-class: ".targeted.StunSpell"
-    cast-item: bone, death_wand
-    duration: 20
-    power-affects-duration: true
-    cost:
-        - mana 50
 
 rupture:
     permission-name: death
