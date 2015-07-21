@@ -176,18 +176,18 @@ windwalk:
     memory: 7
     requires: storm
     use-cost:
-        - mana 10
+        - mana 20
         - feather 1
-    use-cost-interval: 20
+    use-cost-interval: 5
     modifiers:
         - storm required
         - outside required
     description: |
         &rWindwalk   7 Memory   Storm School
         The caster rides the winds of a raging storm.
-    str-cost: 25 mana, 2 feathers, and a feather every 20 seconds.
+    str-cost: 25 mana and two feathers initially; 20 mana and a feather every 5 seconds thereafter.
     str-cost-self: You rise up into the stormy sky!
     str-cost-others: "%a rises up into the stormy sky!"
     str-fade: The winds cease to support you, and you descend...
-    fly-speed: 0.3
+    fly-speed: 0.2
     launch-speed: 5
