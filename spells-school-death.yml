@@ -49,6 +49,27 @@ necronomicon:
     cost:
         - mana 300
 
+necronomicon:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: 403
+    items:
+      - death_grimoire 1
+      - death_grimoire 1
+    cost:
+        - levels 30
+        - mana 300
+        - book 1
+        - bone 16
+        - 397 1
+    str-cost: "30 levels, a book, 16 bones, and a skull."
+    description: |
+        &5Create Necronomicon: Death Master Spell
+        The death mage inscribes non-euclidean runes
+        upon a book, binding necromantic power
+        within its pages.
+
+
 bone_carving:
     permission-name: death
     spell-class: ".instant.ConjureSpell"
