@@ -93,7 +93,6 @@ magic_pickaxe:
 masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
-    name: trowel
     spell-icon: IRON_SPADE
     cost:
         - mana 20

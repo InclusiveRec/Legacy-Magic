@@ -178,7 +178,7 @@ windwalk:
     use-cost:
         - mana 20
         - feather 1
-    use-cost-interval: 5
+    use-cost-interval: 10
     modifiers:
         - storm required
         - outside required
@@ -189,5 +189,5 @@ windwalk:
     str-cost-self: You rise up into the stormy sky!
     str-cost-others: "%a rises up into the stormy sky!"
     str-fade: The winds cease to support you, and you descend...
-    fly-speed: 0.2
+    fly-speed: 0.3
     launch-speed: 5
