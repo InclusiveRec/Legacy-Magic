@@ -134,7 +134,6 @@ skycalm:
     description: |
             &eSunstaff: 5 Memory Solar Spell
             You clear the skies of bad weather.
-            Requires the &esolar staff&3 spell.
     str-cost: 50 mana and 3 solar concoctions.
     str-modifier-failed: The sky is already clear!
     str-cast-start: You begin to calm the skies...
@@ -386,5 +385,36 @@ solar_guard:
     memory: 7
 
 
+# Settlement Magic
 
+populate:
+    permission-name: solar
+    spell-class: ".targeted.SpawnMonsterSpell"
+    cast-item: book
+    spell-icon: emerald
+    entity-type: villager
+    memory: 6
+    cost:
+        - mana 20
+        - 133 1
+    description: |
+        &rPopulate   6 Memory   Solar Spell
+        &3Spawns a random villager.
+    str-cost: 20 mana and an emerald block.
+    str-cast-self: You summon a villager.
+    range: 10
+    effects:
+        spit:
+            position: line
+            effect: itemspray
+            type: bread
+            quantity: 13
+            duration: 20
+            force: 1.2
+        huzzah:
+            position: target
+            effect: greensparkle
+        yay:
+            position: caster
+            effect: sound
 
