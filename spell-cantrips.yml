@@ -82,7 +82,7 @@ recall:
     description: |
         &rRecall   -   Cantrip
         &3Teleports you to your marked location.
-    cooldown: 20
+    cooldown: 90
     mark-spell: mark
     max-range: -1
     allow-cross-world: true
@@ -109,6 +109,7 @@ summon_helper:
     require-acceptance: true
     max-accept-delay: 90
     accept-command: accept
+    cooldown: 300
     cost:
         - mana 30
     str-cost: 30 mana

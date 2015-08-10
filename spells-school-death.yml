@@ -44,11 +44,21 @@ predefined-items:
 necronomicon:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
-    spell-icon: 403
     items:
         - death_grimoire 1
     cost:
+        - mana 300
+
+necronomicon:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: 403
+    items:
+      - death_grimoire 1
+      - death_grimoire 1
+    cost:
         - levels 30
+        - mana 300
         - book 1
         - bone 16
         - 397 1
@@ -166,6 +176,15 @@ drain:
     description: |
         &5Drain: 3 Memory Death Spell
         Suck the life out of your enemy.
+
+paralysis:
+    permission-name: death
+    spell-class: ".targeted.StunSpell"
+    cast-item: bone, death_wand
+    duration: 20
+    power-affects-duration: true
+    cost:
+        - mana 50
 
 rupture:
     permission-name: death

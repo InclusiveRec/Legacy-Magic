@@ -120,8 +120,6 @@ skycalm:
     permission-name: solar
     spell-class: ".ExternalCommandSpell"
     cast-item: sun_staff
-    prerequisites:
-        - solar_staff
     memory: 5
     cooldown: 300
     cost:
