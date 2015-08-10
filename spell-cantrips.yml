@@ -227,8 +227,8 @@ scroll:
         You must hold a single blank paper
         and type /cast scroll <spell> <uses>.
     str-no-spell: You do not know a spell by that name.
-    str-cant-teach: You cannot create a tome with that spell.
-    str-cast-self: You have created a spell scroll for %s.
+    str-cant-teach: You cannot create a scroll with that spell.
+    str-cast-self: You have created a  %s spell scroll.
     str-on-use: "Spell Scroll: %s used. %u uses remaining."
     str-use-fail: Unable to use this scroll right now.
 
@@ -256,7 +256,7 @@ tome:
     str-already-known: You already know the %s spell.
     str-cant-learn: The %s spell is too advanced for you.
     str-learned: You have learned the %s spell.
-    str-cast-self: You have created a tome of %s.
+    str-cast-self: You have created a %s tome.
 
 spellbook:
     permission-name: master
@@ -295,34 +295,3 @@ teach:
     str-cast-target: "%a has taught you the %s spell."
 
 
-# Settlement Magic
-
-populate:
-    permission-name: cantrip
-    spell-class: ".targeted.SpawnMonsterSpell"
-    cast-item: book
-    spell-icon: emerald
-    entity-type: villager
-    cost:
-        - mana 20
-        - 133 1
-    description: |
-        &rPopulate   -   Cantrip
-        &3Spawns a random villager.
-    str-cost: 20 mana and an emerald block.
-    str-cast-self: You summon a villager.
-    range: 10
-    effects:
-        spit:
-            position: line
-            effect: itemspray
-            type: bread
-            quantity: 13
-            duration: 20
-            force: 1.2
-        huzzah:
-            position: target
-            effect: greensparkle
-        yay:
-            position: caster
-            effect: sound
