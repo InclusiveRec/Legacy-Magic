@@ -182,7 +182,6 @@ geyser:
     cooldown: 3
     str-cast-self: You call up a geyser.
     str-no-target: No target found.
-
 watersee:
     spell-class: ".PassiveSpell"
     triggers: 
@@ -196,7 +195,13 @@ watersee:
     str-cast: Night vision for you!
     str-cast-self: Night vision! Yay!
     modifiers:
-      - inblock 8,9
+      - inblock 8,9 required
+
+
+######################
+#      Effects       #
+######################
+
 nightvisionhelper: 
      spell-class: ".targeted.PotionEffectSpell" 
      name: nightvision 
