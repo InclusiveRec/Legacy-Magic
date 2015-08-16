@@ -1,139 +1,4 @@
-# Free spells
-
-blink:
-    permission-name: cantrip
-    spell-class: ".targeted.BlinkSpell"
-    always-granted: true
-    spell-icon: ender_pearl
-    description: |
-        &rBlink: Cantrip
-        &3Teleport a short distance.
-    cast-item: stick
-    cooldown: 3
-    range: 10
-    pass-through-ceiling: false
-    smoke-trail: true
-    effects:
-        - pos1 ender
-        - pos2 ender
-    cost:
-        - mana 15
-    str-cost: 15 mana
-    str-cast-self: You blink away!
-    str-cast-others: "%a blinks away!"
-    str-cant-blink: You cannot blink there.
-enderchest:
-    permission-name: cantrip
-    spell-class: ".instant.EnderchestSpell"
-    always-granted: true
-    spell-icon: ender_chest
-    description: |
-        &rEnderchest: Cantrip
-        &3Opens your ender chest inventory.
-    cast-item: book
-    cooldown: 300
-    cost:
-        - mana 50
-        - 368 1
-    str-cost: 50 mana and an enderpearl.
-
-
-# Teleports
-
-gate:
-    permission-name: cantrip
-    spell-class: ".instant.GateSpell"
-    cast-item: book
-    spell-icon: 358
-    always-granted: true
-    world: "world"
-    coordinates: SPAWN
-    effects:
-        - pos1 ender
-        - pos2 ender
-    cost:
-        - mana 30
-    str-cost: 30 mana
-    cooldown: 30
-    shared-cooldowns:
-        - summon_helper
-        - recall
-    str-cast-self: You have teleported to spawn.
-    str-cast-others: "%a teleports!"
-    str-gate-failed: Unable to teleport.
-    description: |
-        &rGate   -   Cantrip
-        &3Teleport to spawn.
-
-mark:
-    permission-name: cantrip
-    spell-class: ".instant.MarkSpell"
-    cast-item: book
-    spell-icon: bed
-    always-granted: true
-    permanent-marks: true
-    cost:
-        - mana 50
-        - redstone_block 1
-    cooldown: 20
-    str-cost: 50 mana and a redstone block.
-    str-cast-self: You have marked your location.
-    description: |
-        &rMark   -   Cantrip
-        &3Marks your location for later recall.
-recall:
-    permission-name: cantrip
-    spell-class: ".instant.RecallSpell"
-    spell-icon: compass
-    cast-item: book
-    always-granted: true
-    description: |
-        &rRecall   -   Cantrip
-        &3Teleports you to your marked location.
-    cooldown: 120
-    shared-cooldowns:
-        - summon_helper
-        - gate
-    mark-spell: mark
-    max-range: -1
-    allow-cross-world: true
-    use-bed-location: false
-    cost:
-        - mana 50
-    str-cost: 50 mana
-    str-cast-self: You teleport to your marked location.
-    str-no-mark: You have not marked a location to recall to.
-    str-other-world: You cannot recall to another world.
-    str-too-far: Your marked location is too far away.
-    str-cast-others: "%a disappears!"
-summon_helper:
-    permission-name: cantrip
-    name: summon
-    spell-class: ".targeted.SummonSpell"
-    always-granted: true
-    description: |
-        Summon   -   Cantrip
-        Summons an ally to your location.
-    can-cast-with-item: true
-    can-cast-by-command: true
-    require-exact-name: false
-    require-acceptance: true
-    max-accept-delay: 90
-    accept-command: accept
-    cooldown: 120
-    shared-cooldowns:
-        - gate
-        - recall
-    cost:
-        - mana 30
-    str-cost: 30 mana
-    str-usage: |
-        Usage: /cast summon <playername>, or /cast summon
-        while looking at a sign with a player name on the first line.
-    str-no-target: Target player not found.
-    str-summon-pending: "%a is summoning you! Type /accept to teleport."
-    str-summon-accepted: You have been summoned.
-    str-summon-expired: The summon has expired.
+# Plugin functions
 
 list:
     permission-name: cantrip
@@ -179,6 +44,151 @@ forget:
     str-cast-self-target: "You have forgotten the %s spell."
     str-reset-target: "You have reset %t's spellbook."
     str-reset-self: "You have forgotten all of your spells."
+
+# Teleportation spells
+
+gate:
+    permission-name: cantrip
+    spell-class: ".instant.GateSpell"
+    cast-item: book
+    spell-icon: 358
+    always-granted: true
+    world: "world"
+    coordinates: SPAWN
+    effects:
+        - pos1 ender
+        - pos2 ender
+    cost:
+        - mana 30
+    str-cost: 30 mana
+    cooldown: 30
+    shared-cooldowns:
+        - summon_helper 120
+        - recall 120
+    str-cast-self: You have teleported to spawn.
+    str-cast-others: "%a teleports!"
+    str-gate-failed: Unable to teleport.
+    description: |
+        &rGate   -   Cantrip
+        &3Teleport to spawn.
+
+mark:
+    permission-name: cantrip
+    spell-class: ".instant.MarkSpell"
+    cast-item: book
+    spell-icon: bed
+    always-granted: true
+    permanent-marks: true
+    cost:
+        - mana 50
+        - redstone_block 1
+    cooldown: 20
+    str-cost: 50 mana and a redstone block.
+    str-cast-self: You have marked your location.
+    description: |
+        &rMark   -   Cantrip
+        &3Marks your location for later recall.
+recall:
+    permission-name: cantrip
+    spell-class: ".instant.RecallSpell"
+    spell-icon: compass
+    cast-item: book
+    always-granted: true
+    description: |
+        &rRecall   -   Cantrip
+        &3Teleports you to your marked location.
+    cooldown: 120
+    shared-cooldowns:
+        - summon_helper 120
+        - gate 30
+    mark-spell: mark
+    max-range: 1000
+    allow-cross-world: true
+    use-bed-location: false
+    cost:
+        - mana 50
+    str-cost: 50 mana
+    str-cast-self: You teleport to your marked location.
+    str-no-mark: You have not marked a location to recall to.
+    str-other-world: You cannot recall to another world.
+    str-too-far: Your marked location is too far away.
+    str-cast-others: "%a disappears!"
+
+
+summon_helper:
+    permission-name: cantrip
+    name: summon
+    spell-class: ".targeted.SummonSpell"
+    always-granted: true
+    description: |
+        Summon   -   Cantrip
+        Summons an ally to your location.
+    can-cast-with-item: true
+    can-cast-by-command: true
+    require-exact-name: false
+    require-acceptance: true
+    max-accept-delay: 90
+    range: 1000
+    accept-command: accept
+    cooldown: 120
+    shared-cooldowns:
+        - gate 30
+        - recall 120
+    cost:
+        - mana 30
+    str-cost: 30 mana
+    str-usage: |
+        Usage: /cast summon <playername>, or /cast summon
+        while looking at a sign with a player name on the first line.
+    str-no-target: Target player not found.
+    str-summon-pending: "%a is summoning you! Type /accept to teleport."
+    str-summon-accepted: You have been summoned.
+    str-summon-expired: The summon has expired.
+
+
+# Bonus spells
+
+blink:
+    permission-name: cantrip
+    spell-class: ".targeted.BlinkSpell"
+    always-granted: true
+    spell-icon: ender_pearl
+    description: |
+        &rBlink: Cantrip
+        &3Teleport a short distance.
+    cast-item: stick
+    cooldown: 3
+    range: 10
+    pass-through-ceiling: false
+    smoke-trail: true
+    effects:
+        - pos1 ender
+        - pos2 ender
+    cost:
+        - mana 15
+    str-cost: 15 mana
+    str-cast-self: You blink away!
+    str-cast-others: "%a blinks away!"
+    str-cant-blink: You cannot blink there.
+enderchest:
+    permission-name: cantrip
+    spell-class: ".instant.EnderchestSpell"
+    always-granted: true
+    spell-icon: ender_chest
+    description: |
+        &rEnderchest: Cantrip
+        &3Opens your ender chest inventory.
+    cast-item: book
+    cooldown: 300
+    cost:
+        - mana 50
+        - 368 1
+    str-cost: 50 mana and an enderpearl.
+
+
+
+
+
 
 
 
