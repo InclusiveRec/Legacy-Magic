@@ -9,8 +9,8 @@ blink:
         &rBlink: Cantrip
         &3Teleport a short distance.
     cast-item: stick
-    cooldown: 4
-    range: 25
+    cooldown: 3
+    range: 10
     pass-through-ceiling: false
     smoke-trail: true
     effects:
@@ -36,6 +36,10 @@ enderchest:
         - mana 50
         - 368 1
     str-cost: 50 mana and an enderpearl.
+
+
+# Teleports
+
 gate:
     permission-name: cantrip
     spell-class: ".instant.GateSpell"
@@ -50,13 +54,17 @@ gate:
     cost:
         - mana 30
     str-cost: 30 mana
-    cooldown: 1
+    cooldown: 30
+    shared-cooldowns:
+        - summon_helper
+        - recall
     str-cast-self: You have teleported to spawn.
     str-cast-others: "%a teleports!"
     str-gate-failed: Unable to teleport.
     description: |
         &rGate   -   Cantrip
         &3Teleport to spawn.
+
 mark:
     permission-name: cantrip
     spell-class: ".instant.MarkSpell"
@@ -82,7 +90,10 @@ recall:
     description: |
         &rRecall   -   Cantrip
         &3Teleports you to your marked location.
-    cooldown: 90
+    cooldown: 120
+    shared-cooldowns:
+        - summon_helper
+        - gate
     mark-spell: mark
     max-range: -1
     allow-cross-world: true
@@ -109,7 +120,10 @@ summon_helper:
     require-acceptance: true
     max-accept-delay: 90
     accept-command: accept
-    cooldown: 300
+    cooldown: 120
+    shared-cooldowns:
+        - gate
+        - recall
     cost:
         - mana 30
     str-cost: 30 mana
@@ -120,9 +134,6 @@ summon_helper:
     str-summon-pending: "%a is summoning you! Type /accept to teleport."
     str-summon-accepted: You have been summoned.
     str-summon-expired: The summon has expired.
-
-
-# Novice spells
 
 list:
     permission-name: cantrip
