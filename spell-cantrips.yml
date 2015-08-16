@@ -103,7 +103,7 @@ recall:
         - gate 30
     mark-spell: mark
     max-range: 1000
-    allow-cross-world: true
+    allow-cross-world: false
     use-bed-location: false
     cost:
         - mana 50
