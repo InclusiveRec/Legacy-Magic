@@ -182,4 +182,36 @@ geyser:
     cooldown: 3
     str-cast-self: You call up a geyser.
     str-no-target: No target found.
+watersee:
+    spell-class: ".PassiveSpell"
+    triggers: 
+        - stopsneak
+    chance: 30
+    cooldown: 40
+    spells:
+        - nightvisionhelper
+    description: Night vision on sneak (Only works one third of the time... What did I do now?)!
+    str-cost: Night vision needs Mana, more psecifically, 120!
+    str-cast: Night vision for you!
+    str-cast-self: Night vision! Yay!
+    modifiers:
+      - inblock 8,9 required
 
+
+######################
+#      Effects       #
+######################
+
+nightvisionhelper: 
+     spell-class: ".targeted.PotionEffectSpell" 
+     name: nightvision 
+     duration: 600 
+     targeted: false 
+     type: 16 
+     cost: 
+         - mana 601
+     memory: 1000
+     description: See in the dark!
+     str-cost: 120 mana!
+     cooldown: 30 
+     beneficial: true 
