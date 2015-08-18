@@ -95,6 +95,33 @@ firebreathing:
             Breath fire upon your foes!
             Uses 3 memory slots.
     str-cost: 10 mana
+fireproof:
+    spell-class: ".targeted.PotionEffectSpell"
+    name: fireproof 
+    spell-icon: magma_cream
+    description: |
+        &2Fireproof: 3 Memory Fire Spell
+        Apply magma cream to protect yourself from fire and lava.
+        Requires the &2prayer&3 spell.
+    prerequisites:
+        - prayer 
+    cast-item: blaze_rod,fire_staff
+    cooldown: 30 
+    type: 12
+    strength: 1 
+    duration: 200
+    target-self: true
+    beneficial: true
+    memory: 3 
+    cost:
+        - mana 30
+        - 378 1
+    use-cost:
+        - 378
+    use-cost-interval: 2
+    str-cost: 30 mana and a dollop of magma cream, plus a touch more magma cream every few seconds.
+    str-cast-self: You apply magma cream to protect yourself from fire and lava!
+    str-fade: The protection of the magma cream wears off.
 smoke:
     permission-name: fire
     spell-class: ".targeted.AreaEffectSpell"
