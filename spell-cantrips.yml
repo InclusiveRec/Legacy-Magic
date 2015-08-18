@@ -94,6 +94,7 @@ recall:
     spell-icon: compass
     cast-item: book
     always-granted: true
+    allow-cross-world: false
     description: |
         &rRecall   -   Cantrip
         &3Teleports you to your marked location.
