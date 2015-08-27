@@ -96,6 +96,7 @@ firebreathing:
             Uses 3 memory slots.
     str-cost: 10 mana
 fireproof:
+    permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
     spell-icon: magma_cream
     description: |
