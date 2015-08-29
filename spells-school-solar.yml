@@ -128,7 +128,7 @@ skycalm:
     command-to-execute:
         - "weather clear"
     execute-on-console-instead: true
-    cast-time: 100
+    cast-time: 20
     modifiers:
         - storm required
     description: |
