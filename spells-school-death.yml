@@ -1,14 +1,3 @@
-#
-#   To do:
-#
-#   - Check spells for costs
-#   - Finish writing unfinished spells
-#   - Create cast items and associated spells
-#
-
-
-
-
 #  Some thoughts on death magic:
 #  Very dear trade-offs.  Health, negative status effects, etc can be traded for mana.
 #  Rule number two, this stuff is hungry for mana.
@@ -41,34 +30,30 @@ predefined-items:
 #   Item factory
 #
 
-necronomicon:
-    spell-class: ".instant.ConjureSpell"
-    cast-item: book
-    items:
-        - death_grimoire 1
-    cost:
-        - mana 300
-
-necronomicon:
+lore_of_death:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: 403
+    memory: 10
     items:
       - death_grimoire 1
-      - death_grimoire 1
     cost:
-        - levels 30
-        - mana 300
         - book 1
-        - bone 16
-        - 397 1
-    str-cost: "30 levels, a book, 16 bones, and a skull."
+        - levels 30
+        - 397 1 # a skull
+        - bone 13
+    str-cost: "A book, 30 levels, 13 bones and a skull."
+    str-cast-self: "You have created a Necronomicon.  The secrets of death magic are yours to command."
     description: |
-        &5Create Necronomicon: Death Master Spell
+        &5Lore of Death: Death Master Spell
         The death mage inscribes non-euclidean runes
         upon a book, binding necromantic power
         within its pages.
-
+    effects:
+        roar:
+            position: caster
+            effect: sound
+            sound: mob.ghast.scream
 
 bone_carving:
     permission-name: death
@@ -81,10 +66,23 @@ bone_carving:
     cast-icon: bone
     items:
         - death_wand 1
+    cast-time: 200
     cost:
         - bone 1
+        - rotten_flesh 4
         - levels 10
-    str-cost: A bone and ten levels.
+    str-cost: A bone, four rotten flesh, and ten levels.
+    str-cast-start: You begin marking the bone with symbols in blood...
+    str-cast-self: The wand grows eerily cold to the touch.  The work is done.
+    description: |
+        &5Bone Carving: 5 memory death spell
+        Carve a bone to channel necromantic magic,
+        enhancing the casting of death spells.
+    effects:
+        grawr:
+            position: caster
+            effect: sound
+            sound: mob.ghast.affectionate_scream
 
 # Low-level: 1-5 memory
 
@@ -209,6 +207,7 @@ rupture:
     description: |
         &5Rupture: 5 Memory Death Spell
         Charge up power to create an explosion at a target point.
+
 #  Medium level: 6-10 memory
 
 necrotic_claw:
