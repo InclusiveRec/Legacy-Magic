@@ -194,7 +194,7 @@ bloom:
     memory: 3
     cost:
         - mana 40
-        - sun_concoction 2
+        - seeds 128
     cooldown: 1
     cast-time: 60
     radius: 8
