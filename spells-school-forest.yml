@@ -71,51 +71,64 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     description: |
-            &2Woodland Lore: 20 Memory Forest Spell
+            &2Woodland Lore: Forest Masters' Spell
             Creates a woodland grimoire.
-            Requires woodland concoction, woodland gardener, and oakenstaff spells.
     spell-icon: enchanted_book
-    prerequisites: woodland_concotion,woodland_gardener,oakenstaff
-    memory: 20
+    memory: 10
     cost:
       - book 1
+      - levels 30
+      - sapling 1
       - forest_concoction 12
-      - mana 100
     items:
       - forest_grimoire
-    str-cost: A book, 100 mana, and 12 woodland concoctions.
+    str-cost: 30 levels, a book, a sapling, and 12 woodland concoction.
 
 # Cast items
 
 woodland_gardener:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: shears
+    cast-item: forest_grimoire
     spell-icon: shears
-    bindable: false
     prerequisites:
       - woodland_concoction
       - scroll
     memory: 2
     cost:
-        - mana 50
+        - 5 levels
         - shears 1
+    str-cost: 5 levels and a pair of shears
     items:
       - forest_sickle
     description: |
         &2Woodland Gardener: 2 Memory Forest Spell
         Creates herbalist's enchanted sickle.
         Requires the &2woodland concoction&3 spell.
-    str-missing-reagents: "You need 50 mana to enchant your shears."
     effects:
         sound:
           position: caster
           effect: sound
           sound: ambient.cave.1
 
+woodland_wand:
+    permission-name: forest
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_grimoire
+    spell-icon: stick
+    prerequisites:
+        - woodland_gardener
+        - scroll
+    memory: 5
+    cost:
+        - levels 10
+        - "6:0 1"
+    str-cost: 10 levels and an oak sapling.
+    items:
+        - forest_wand
 hunting_knife:
     permission-name: forest
-    memory: 5
+    memory: 3
     prerequisites:
         - scroll
         - stalking
@@ -123,11 +136,12 @@ hunting_knife:
     cast-item: book
     cost:
         - iron_sword 1
-        - levels 10
+        - levels 5
+    str-cost: 5 levels and an iron sword.
     items:
         - forest_sword 1
     description: |
-            &2Hunting Knife: 5 memory Forest Spell.
+            &2Hunting Knife: 3 memory Forest Spell.
             Creates a fine tool for carving up one's prey...
 # Base concoction
 
@@ -136,7 +150,6 @@ woodland_concoction:
     spell-class: ".instant.ConjureSpell"
     spell-icon: "351:2"
     cast-item: forest_sickle
-    bindable: false
     cost:
       - mana 5
       - 39 1        # 1 brown mushroom
@@ -147,26 +160,10 @@ woodland_concoction:
       - forest_concoction 2-4
     description: |
             &2Herbal Concoction: 1 Memory Forest Spell
-            Prepare a woodland concoction from a red and yellow flower, and
-            a brown mushroom.
-            Requires knowledge of the &2forage&3 spell.
-    str-cast-self: You prepare a druidic concoction.
+            Prepare a woodland concoction.
 
 # Cast item(s)
 
-woodland_wand:
-    permission-name: forest
-    spell-class: ".instant.ConjureSpell"
-    cast-item: forest_grimoire
-    spell-icon: stick
-    prerequisites: woodland_gardener,scroll
-    memory: 5
-    cost:
-        - stick 1
-        - "6:0 1"
-    items:
-        - forest_wand
-    str-missing-reagents: This spell requires a stick, an oak sapling, and 50 mana.
 
 
 #####################
@@ -432,21 +429,18 @@ fang:
     spell-icon: flint
     prerequisites:
         - wolf
-        - bind
-        - unbind
         - scroll
     memory: 2
     cost:
         - bone 6
-        - forest_concoction 4
-        - mana 80
+        - forest_concoction 3
+        - levels 10
     items:
         - wolf_fang
     description: |
             &2Fang: 2 Memory Forest Spell
             Creates a wolf's fang to channel wilderness magic.
-            Requires the wolf, bind, unbind, and scroll spells.
-    str-cost: 6 bones, 4 woodland concoction, and 80 mana.
+    str-cost: 10 levels, 6 bones, and 3 woodland concoction.
 
 
 

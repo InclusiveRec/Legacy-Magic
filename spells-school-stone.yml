@@ -59,15 +59,14 @@ lore_of_the_rock:
             Creates a stone grimoire.
             Requires mix_mortar, trowel, and magic_pickaxe spells.
     spell-icon: enchanted_book
-    prerequisites: mix_mortar,trowel,magic_pickaxe
-    memory: 20
+    memory: 10
     cost:
       - book 1
-      - mortar 12
-      - mana 100
+      - levels 30
+      - 1 obsidian
     items:
       - stone_grimoire
-    str-cost: A book, 100 mana, and 12 mortar.
+    str-cost: A book, 30 levels, and 1 obsidian.
 
     # 
     #   Cast items 
@@ -76,33 +75,33 @@ lore_of_the_rock:
 magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     permission-name: stone
-    memory: 5
+    memory: 3
     cast-item: stone_grimoire
     spell-icon: 257
     description: |
-        &8Magic Pickaxe: 5 Memory Stone Spell
+        &8Magic Pickaxe: 3 Memory Stone Spell
     cost:
-        - mana 20
-        - 257 1
-        - levels 3
+        - levels 10
+        - iron_pickaxe 1
     items:
       - minepick
-    str-cost: 100 mana, 15 experience levels, and an iron pickaxe to be enchanted.
-    
+    str-cost: 10 levels and an iron pick.
 
 masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
     spell-icon: IRON_SPADE
     cost:
-        - mana 20
         - iron_spade 1
         - levels 5
     memory: 2
+    prerequisites:
+        - scroll
+        - mix_mortar
     description: |
         &rTrowel   2 Memory Stone Spell
         &3Crafts an iron trowel.
-    str-cost: 20 mana, 5 experience levels, and an iron shovel.
+    str-cost: 5 experience levels and an iron shovel.
     items:
         - iron_trowel 1       
 
@@ -113,29 +112,23 @@ masons_trowel:
 mix_mortar:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
-    name: mix_mortar
+    memory: 1
     spell-icon: "351:7"
+    cast-item: stick, iron_trowel
+    cooldown: 1
+    str-on-cooldown: ""
     cost:
-        - mana 10
+        - mana 4
         - sand 16
         - "351:15 8"
-    memory: 1
+    str-cost: 4 mana, 16 sand, and 8 bone meal.
     items:
         - mortar 64
-    cast-item: iron_trowel
-    bindable: false
-    cast-time: 200
+    modifiers:
+        - holding "256|&8Mason's Trowel" cooldown 0.1
     description: |
             &rMix Mortar  1 Memory Stone Spell
             &3Mixes mortar out of raw materials.
-            The process takes some time.
-    str-cast-start: You begin mixing a batch of mortar...
-    str-cast-self: The mortar is prepared.  Sticky!
-    str-cost: 10 mana, 16 sand, and 8 bone meal.
-    interrupt-on-damage: true
-    interrupt-on-cast: true
-    str-interrupted: The mixing process has been disrupted, and the materials have been ruined.
-
 
 ##########################
 #                        #

@@ -34,47 +34,48 @@ lore_of_oceans:
     cast-item: book
     spell-icon: "enchanted_book"
     cost:
-        - mana 100
+        - levels 30
         - book 1
-        - diamond 1
-    memory: 15
+        - prismarine_crystals 3
+    memory: 10
     items:
         - water_grimoire
     description: |
-            &1Lore of Water: 15 Memory Water Spell
+            &1Lore of Water: Water Masters' Spell
             Create a grimoire of Hydromantic lore.
-    str-cost: 100 mana, a book, and a diamond.
+    str-cost: 30 levels, a book, and 3 prismarine crystals.
 hydromantic_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
     cost:
-        - mana 50
-        - diamond 3
-    memory: 3
+        - levels 10
+        - prismarine_crystals 6
+    memory: 5
     prerequisites:
         - scroll
         - geyser
     items:
         - water_focus
     description: |
-            &1Hydromantic Focus: 3 Memory Water Spell
+            &1Hydromantic Focus: 5 Memory Water Spell
             Create a hydromantic focus to direct water spells.
-    str-cost: 50 mana and 3 diamonds.
+    str-cost: 10 levels and 6 prismarine crystals.
 dowsing_rod:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
     cost:
-        - mana 50
-        - diamond 2
+        - levels 5
+        - prismarine_crystals 3
+        - stick 1
     memory: 2
     prerequisites:
         - scroll
         - water
-    str-cost: 50 mana and 2 diamonds.
+    str-cost: 5 levels, 3 prismarine crystals, and a stick.
     items:
         - water_rod
 
