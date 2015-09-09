@@ -22,20 +22,17 @@ lore_of_storms:
     cast-item: book
     spell-icon: enchanted_book
     cost:
-        - mana 100
         - book 1
-        - snow_block 4
-    prerequisites:
-        - tome
-        - stormhammer
-    memory: 15
+        - levels 30
+        - diamond_block 1
+        - snowball 6
+    memory: 10
     items:
         - storm_grimoire 1
     description: |
             &9Lore of Storms: 15 Memory Storm Spell
             Creates a book of storms.
-            Requires tome and stormhammer spells.
-    str-cost: 100 mana, a book, and 4 snow blocks.
+    str-cost: A book, 30 levels, a diamond block, and six snowballs.
 
 
 stormhammer:
@@ -44,9 +41,9 @@ stormhammer:
     cast-item: storm_grimoire
     spell-icon: diamond_axe
     cost:
-        - mana 50
         - diamond 3
-        - feather 3
+        - levels 10
+        - snow 1
     memory: 5
     prerequisites:
         - scroll
@@ -54,7 +51,7 @@ stormhammer:
     description: |
         &rStormrod   5 Memory   Storm School
         &3You craft a storm rod.
-    str-cost: 50 mana, 3 feathers, and 3 diamonds.
+    str-cost: 3 diamonds, 10 levels, and a snow block.
     str-cast-self: You create a stormhammer.
     items:
       - stormhammer 1
