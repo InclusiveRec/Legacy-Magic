@@ -44,17 +44,18 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    memory: 15
+    memory: 10
     cost:
-        - mana 100
+        - levels 30
         - book 1
-        - sun_concoction 12
+        - gold_block 1
+        - sun_concoction 3
     items:
         - sun_grimoire
     description: |
             &eLore of the Sun: 15 Memory Solar Spell
             Creates an Almanac, the grimoire of the Solar school.
-    str-cost: "A book, 100 mana, and 12 solar concoction."
+    str-cost: "A book, 30 levels, a gold block, and 3 solar concoction."
 
 # Item creation spells
 
@@ -64,12 +65,11 @@ solar_staff:
     cast-item: sun_grimoire
     prerequisites:
         - scroll
-        - solar_ray
+        - bloom
     cost:
-        - mana 100
-        - 266 2
-        - stick 2
-        - sun_concoction 6
+        - levels 10
+        - gold_ingot 1
+        - sun_concoction 1
     memory: 5
     items:
         - sun_staff 1
@@ -154,7 +154,6 @@ solar_concoction:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
     spell-icon: "351:11"
-    prerequisites: woodland_concoction
     memory: 1
     items:
         - sun_concoction 4-6
@@ -184,31 +183,38 @@ lightwalk:
         &eLightwalk: 3 Memory Solar Spell
         Light your path.
     str-cost: 25 mana and 2 solar concoction, plus 1 solar concoction occasionally.
-    str-cast-self: Light appears at your feet.
-    str-fade: The light at your feet goes out.
 bloom:
+    # Overview
     permission-name: solar
     spell-class: ".targeted.FarmSpell"
     cast-item: stick,forest_sickle
-    prerequisites: woodland_concoction
+    spell-icon: seeds
+    # Learning
     memory: 3
+    # Casting
     cost:
-        - mana 40
-        - sun_concoction 2
-    cooldown: 1
-    cast-time: 60
-    radius: 8
-    growth: 2
+        - mana 2
+        - seeds 4
+    cooldown: 3
+    # Effects
+    radius: 1
+    growth: 1
     modifiers:
+        - holding "359|&2Magic Sickle" cooldown 0.1
         - outside continue
-        - day addpower 2
-        - holding "359|&2Magic Sickle" power 2
+        - day power 1.5
+
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
+    # Strings
     description: |
         &eBloom: 3 Memory Solar Spell
         Greatly accelerate crop growth.
         Requires the &2woodland concoction&3 spell.
-    str-cost: 40 mana and 2 solar concoction.
-    str-cast-self: The crops around you burst into bloom!
+    str-cost: 2 mana and 4 seeds.
+    str-on-cooldown: ""
 
 
 
@@ -242,8 +248,13 @@ banish:
         &eBanish: 4 Memory Solar Spell
         Destroy all monsters near you.
     str-cost: 50 mana.
-    str-cast-self: You banish the encroaching forces of darkness.
-    str-cast-others: "%a banishes the encroaching forces of darkness."
+    effects:
+        showdonttell:
+            position: caster
+            effect: nova
+            type: 41
+            radius: 2
+
 cleanse:
     permission-name: solar
     spell-class: ".targeted.CleanseSpell"
