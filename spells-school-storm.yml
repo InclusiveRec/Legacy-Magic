@@ -30,8 +30,8 @@ lore_of_storms:
     items:
         - storm_grimoire 1
     description: |
-            &9Lore of Storms: 15 Memory Storm Spell
-            Creates a book of storms.
+            &9Lore of Storms: Storm Masters' Spell
+            Creates a Storm grimoire.
     str-cost: A book, 30 levels, a diamond block, and six snowballs.
 
 
