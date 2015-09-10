@@ -38,7 +38,7 @@ lore_of_flame:
     items:
         - fire_grimoire 1
     description: |
-            &4Lore of Flame: 10 Memory Fire Spell
+            &4Lore of Flame: Fire Masters' Spell
             Creates a fiery grimoire.
     str-cost: A book, 30 levels, and five blaze rods.
     effects: []
