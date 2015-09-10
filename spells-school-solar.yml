@@ -53,7 +53,7 @@ lore_of_the_sun:
     items:
         - sun_grimoire
     description: |
-            &eLore of the Sun: 15 Memory Solar Spell
+            &eLore of the Sun: Solar Masters' Spell
             Creates an Almanac, the grimoire of the Solar school.
     str-cost: "A book, 30 levels, a gold block, and 3 solar concoction."
 
