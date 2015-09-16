@@ -55,8 +55,8 @@ lore_of_the_rock:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     description: |
-            &2Stone Lore: 20 Memory Stone Spell
-            Creates a stone grimoire.
+            &2Stone Lore: Stone Masters' Spell
+            Creates a Stone grimoire.
             Requires mix_mortar, trowel, and magic_pickaxe spells.
     spell-icon: enchanted_book
     memory: 10
