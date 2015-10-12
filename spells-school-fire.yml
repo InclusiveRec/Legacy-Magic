@@ -177,6 +177,7 @@ fireball:
         - blaze_powder 1
     prerequisites:
         - fiery_staff
+        - spark
     memory: 5
     cooldown: 10
     target-players: true

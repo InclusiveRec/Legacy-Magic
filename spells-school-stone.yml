@@ -63,7 +63,7 @@ lore_of_the_rock:
     cost:
       - book 1
       - levels 30
-      - 1 obsidian
+      - obsidian 1
     items:
       - stone_grimoire
     str-cost: A book, 30 levels, and 1 obsidian.

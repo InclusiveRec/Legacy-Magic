@@ -96,7 +96,7 @@ woodland_gardener:
       - scroll
     memory: 2
     cost:
-        - 5 levels
+        - levels 5
         - shears 1
     str-cost: 5 levels and a pair of shears
     items:

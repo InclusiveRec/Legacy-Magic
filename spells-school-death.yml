@@ -97,7 +97,6 @@ sacrifice:
     mana: 25
     cost:
         - health 4
-
     str-cost: 2 hearts
     str-cast-self: You feel a surge of magical power!
     str-no-reagents: "If you cast that any more, you'll kill yourself."
@@ -136,24 +135,23 @@ blood_for_blood:
 drain:
     permission-name: death
     spell-class: ".targeted.DrainlifeSpell"
-    memory: 3
+    memory: 2
     spell-icon: ghast_tear
     cast-item: bone, death_wand
     can-cast-by-command: false
     cooldown: 0.2
     str-on-cooldown: ""
-    range: 6	
+    range: 6
     take-type: health
     take-amt: 3
     give-type: health
     give-amt: 2
-    obey-los: 2
     ignore-armor: true
     target-players: true
     check-plugins: true
     cost:
         - mana 20
-    str-cost: 25 mana
+    str-cost: 20 mana
     str-cast-self: You drain life from your enemy.
     str-cast-others: "%a sucks the life from %t!"
     str-cast-target: "%a sucks some of your life away!"
@@ -174,15 +172,6 @@ drain:
     description: |
         &5Drain: 3 Memory Death Spell
         Suck the life out of your enemy.
-
-paralysis:
-    permission-name: death
-    spell-class: ".targeted.StunSpell"
-    cast-item: bone, death_wand
-    duration: 20
-    power-affects-duration: true
-    cost:
-        - mana 50
 
 rupture:
     permission-name: death
@@ -212,10 +201,11 @@ rupture:
 
 necrotic_claw:
     permission-name: death
+    spell-class: ".TargetedMultiSpell"
+    spell-icon: "397:1"
     prerequisites:
         - drain
-    memory: 6
-    spell-class: ".TargetedMultiSpell"
+    memory: 5
     range: 2
     spells:
         - paralysis
@@ -224,7 +214,9 @@ necrotic_claw:
         - drain
         - DELAY 20
         - drain
-
+    cooldown: 20
+    cost:
+        - mana 80
 
 
 # High level: 10+ memory
@@ -259,7 +251,7 @@ awakening:
     str-cast-self: The dead have risen at your claw!
     str-cast-others: Undead creatures start clawing their way up through the ground...
     description: |
-            &5Awakening: X memory Death spell
+            &5Awakening: 12 memory Death spell
             You awaken a horde of the dead!
             Hope you know what you're doing...
     str-cost: 80 mana
@@ -331,7 +323,7 @@ spite:
 
 paralysis:
     spell-class: ".targeted.StunSpell"
-    duration: 2.5
+    duration: 3
 
 spawn_random:
     spell-class: ".TargetedMultiSpell"

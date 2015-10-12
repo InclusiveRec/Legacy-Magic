@@ -25,7 +25,7 @@ lore_of_storms:
         - book 1
         - levels 30
         - diamond_block 1
-        - snowball 6
+        - 332 6     # snowballs
     memory: 10
     items:
         - storm_grimoire 1
