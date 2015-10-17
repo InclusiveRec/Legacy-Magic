@@ -248,12 +248,8 @@ banish:
         &eBanish: 4 Memory Solar Spell
         Destroy all monsters near you.
     str-cost: 50 mana.
-    effects:
-        showdonttell:
-            position: caster
-            effect: nova
-            type: 41
-            radius: 2
+    str-cast-self: You banish the encroaching forces of darkness.
+    str-cast-others: "%a banishes the encroaching forces of darkness."
 
 cleanse:
     permission-name: solar
