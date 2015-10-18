@@ -158,6 +158,7 @@ woodland_concoction:
     memory: 1
     items:
       - forest_concoction 2-4
+    str-cost: 5 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower.
     description: |
             &2Herbal Concoction: 1 Memory Forest Spell
             Prepare a woodland concoction.
@@ -373,8 +374,8 @@ entangle:
     memory: 4
     cost:
         - mana 12
-        - forest_concoction 4
-    cooldown: 0.5
+        - forest_concoction 1
+    cooldown: 0.2
     spells:
       - getvined
     range: 10
@@ -385,8 +386,8 @@ entangle:
     description:  |
             &2Entangle:  4 Memory Forest Spell
             Vines and thorns whip out at your enemies!
-    str-cost: 12 mana and 4 woodland concoction.
-    
+    str-cost: 12 mana and 1 woodland concoction.
+    str-on-cooldown: ""
 hedge:
     permission-name: forest
     spell-class: ".instant.WallSpell"
@@ -395,7 +396,7 @@ hedge:
     memory: 5
     cost:
         - mana 15
-        - forest_concoction 2
+        - forest_concoction 1
     cooldown: 4
     wall-duration: 30
     range: 10
@@ -410,7 +411,7 @@ hedge:
             &2Hedge: 5 Memory Forest Spell
             Sprouts a hedge to impede your foes.
             Requires the &2lifewalk&3 spell.
-    str-cost: 15 mana and 2 druidic concoction.
+    str-cost: 15 mana and 1 woodland concoction.
     str-no-target: You cannot create a hedge there.
     
 
