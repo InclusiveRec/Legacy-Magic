@@ -90,7 +90,7 @@ gills:
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
-    glass-head-effect: true
+    glass-head-effect: false
     cooldown: 60
     duration: 300
     num-uses: 5
