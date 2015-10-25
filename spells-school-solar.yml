@@ -195,9 +195,9 @@ bloom:
     cost:
         - mana 2
         - seeds 4
-    cooldown: 3
+    cooldown: 2
     # Effects
-    radius: 1
+    radius: 3
     growth: 1
     modifiers:
         - holding "359|&2Magic Sickle" cooldown 0.1
