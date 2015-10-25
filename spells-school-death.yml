@@ -75,7 +75,7 @@ bone_carving:
     str-cast-start: You begin marking the bone with symbols in blood...
     str-cast-self: The wand grows eerily cold to the touch.  The work is done.
     description: |
-        &5Bone Carving: 5 memory death spell
+        &5Bone Carving: 4 memory death spell
         Carve a bone to channel necromantic magic,
         enhancing the casting of death spells.
     effects:
@@ -127,7 +127,7 @@ blood_for_blood:
     cancel-on-death: true
     cancel-on-logout: true
     description: |
-        &5Blood for Blood: 5 memory Death spell
+        &5Blood for Blood: 7 memory Death spell
         While this spell is active, your mana regeneration will
         be increased.  However, at each mana tick, you must sacrifice
         some of your life essence.
