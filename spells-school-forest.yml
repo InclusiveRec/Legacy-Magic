@@ -497,7 +497,7 @@ wolf:
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
 
 call_of_the_wild:
-    enabled: false
+    enabled: true
     permission-name: forest
     spell-class: ".targeted.PulserSpell"
     cast-item: wolf_fang

@@ -1,7 +1,6 @@
 blind:
     permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
-    name: blind
     spell-icon: ink_sack:0
     cast-item: bone
     cooldown: 15
@@ -40,7 +39,7 @@ invisibility:
     prevent-pickups: true
     cancel-on-give-damage: true
     cancel-on-logout: true
-    duration: 15
+    duration:
     cost:
         - mana 25
     use-cost:
@@ -73,3 +72,35 @@ nightvision:
     str-cost: 20 mana and a spider eye
     cooldown: 30
     beneficial: true
+dim:
+    permission-name: shadow
+    spell-class: ".targeted.ZapSpell"
+    cast-item: stick
+    check-plugins: false
+    #transmutable-types: [ 50 ]
+    #transmute-type: 0
+    # As a zap spell
+    allowed-block-types:
+       - "50:0"
+       - "50:1"
+       - "50:2"
+       - "50:3"
+       - "50:4"
+       - "50:5"
+    str-cant-zap: You can only extinguish torches.
+    range: 20
+    spell-power-affects-range: true
+    str-cast-self: You put out a light.
+    str-cast-others: A light goes out.
+    str-no-target: No target!
+lightsout:
+    permission-name: shadow
+    spell-class: ".targeted.AreaEffectSpell"
+    cast-item: stick
+    horizontal-radius: 10
+    vertical-radius: 5
+    spells:
+      - dim
+    str-cast-self: You put out the lights.
+    str-cast-others: The lights go out!
+    spell-power-affects-range: true

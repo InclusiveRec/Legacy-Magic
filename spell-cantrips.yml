@@ -48,6 +48,7 @@ forget:
 # Teleportation spells
 
 gate:
+    enabled: true
     permission-name: cantrip
     spell-class: ".instant.GateSpell"
     cast-item: book
@@ -72,6 +73,7 @@ gate:
         &rGate   -   Cantrip
         &3Teleport to spawn.
 recall:
+    enabled: false
     permission-name: cantrip
     spell-class: ".instant.RecallSpell"
     spell-icon: bed
@@ -99,6 +101,7 @@ recall:
 
 
 summon_helper:
+    enabled: false
     permission-name: cantrip
     name: summon
     spell-class: ".targeted.SummonSpell"

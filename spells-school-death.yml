@@ -8,24 +8,31 @@
 #  Claws of some sort snatch a player, paralyzing and damaging them.  Hold until caster's mana runs out
 
 predefined-items:
-    death_grimoire:
-        type: "enchanted_book"
-        name: "&5Necronomicon"
-        lore:
-            - "Peruse this tome with care."
-            - "Reading just one page can"
-            - "rob a person of their senses,"
-            - "so dark are the secrets it contains."
+  death_grimoire:
+    type: "enchanted_book"
+    name: "&5Necronomicon"
+    lore:
+      - "Peruse this tome with care."
+      - "Reading just one page can"
+      - "rob a person of their senses,"
+      - "so dark are the secrets it contains."
 
-    death_wand:
-        type: bone
-        name: "&5Carved bone"
-        lore:
-            - "A wand carved from a bone"
-            - "with eldritch sigils"
-            - "stained with the blood"
-            - "of sacrificial animals."
+  death_wand:
+    type: bone
+    name: "&5Carved bone"
+    lore:
+      - "A wand carved from a bone"
+      - "with eldritch sigils"
+      - "stained with the blood"
+      - "of sacrificial animals."
 
+  death_knife:
+    type: iron_sword
+    name: "&5Sacrificial knife"
+    lore:
+      - "A bloodstained knife wielded"
+      - "by death mages making"
+      - "offerings to dark forces..."
 #
 #   Item factory
 #
@@ -58,22 +65,24 @@ lore_of_death:
 bone_carving:
     permission-name: death
     spell-class: ".instant.ConjureSpell"
+    cast-item: death_grimoire
     memory: 4
     prerequisites:
       - blood_for_blood
       - scroll
-    cast-item: death_grimoire
-    cast-icon: bone
+    spell-icon: bone
     items:
         - death_wand 1
-    cast-time: 200
     cost:
-        - bone 1
-        - rotten_flesh 4
-        - levels 10
+      - bone 1
+      - rotten_flesh 2
+      - health 4
+      - levels 3
     str-cost: A bone, four rotten flesh, and ten levels.
-    str-cast-start: You begin marking the bone with symbols in blood...
     str-cast-self: The wand grows eerily cold to the touch.  The work is done.
+    casttime: 240 # server ticks; 12 seconds
+    modifiers:
+      - holding "403|&5Necronomicon" casttime 1 # seconds
     description: |
         &5Bone Carving: 5 memory death spell
         Carve a bone to channel necromantic magic,
@@ -83,6 +92,23 @@ bone_carving:
             position: caster
             effect: sound
             sound: mob.ghast.affectionate_scream
+
+stain_steel:
+  permission-name: death
+  spell-class: ".instant.ConjureSpell"
+  cast-item: death_grimoire
+  spell-icon: iron_sword
+  memory: 3
+  prerequisites:
+    - drain
+    - scroll
+  items:
+    - death_knife 1
+  cost:
+    - iron_sword 1
+    - rotten_flesh 3
+    - levels 6
+    - health 4
 
 # Low-level: 1-5 memory
 
@@ -94,12 +120,12 @@ sacrifice:
     cast-item: bone,death_wand
     cooldown: 1
     str-on-cooldown: ""
-    mana: 25
+    mana: 50
     cost:
-        - health 4
-    str-cost: 2 hearts
+        - health 6
+    str-cost: 3 hearts
     str-cast-self: You feel a surge of magical power!
-    str-no-reagents: "If you cast that any more, you'll kill yourself."
+    str-missing-reagents: "If you cast that any more, you'll kill yourself."
     modifiers:
         - potioneffect 17 continue
         - holding "352|&5Carved bone" power 2
@@ -114,14 +140,14 @@ blood_for_blood:
     prerequisites:
         - sacrifice
     cast-item: bone, death_wand
-    cast-icon: redstone_dust
+    spell-icon: redstone
     regen-mod-amt: 20
     use-cost:
-        - health 2
+        - health 4
     use-cost-interval: 1
     cost:
         - health 2
-    str-cost: 1 heart to cast, and 1 heart at each mana tick.
+    str-cost: 2 hearts to cast, and 1 heart at each mana tick.
     str-cast-self: You have made a dark bargain...
     str-fade: Enough!
     cancel-on-death: true
@@ -141,23 +167,24 @@ drain:
     can-cast-by-command: false
     cooldown: 0.2
     str-on-cooldown: ""
-    range: 6
-    take-type: health
-    take-amt: 3
-    give-type: health
-    give-amt: 2
     ignore-armor: true
     target-players: true
     check-plugins: true
+    range: 6
+    take-type: health
+    take-amt: 1
+    give-type: health
+    give-amt: 1
+    modifiers:
+        - potioneffect 17 power 2
+        - holding "352|&5Carved bone" power 2
     cost:
-        - mana 20
-    str-cost: 20 mana
+        - mana 10
+    str-cost: 10 mana
     str-cast-self: You drain life from your enemy.
     str-cast-others: "%a sucks the life from %t!"
     str-cast-target: "%a sucks some of your life away!"
     str-no-target: No source of life energy found.
-    modifiers:
-        - potioneffect 17 power 2
     effects:
         ouch:
             position: target
@@ -202,7 +229,8 @@ rupture:
 necrotic_claw:
     permission-name: death
     spell-class: ".TargetedMultiSpell"
-    spell-icon: "397:1"
+    spell-icon: "367"
+    cast-item: death_wand
     prerequisites:
         - drain
     memory: 5
@@ -216,42 +244,47 @@ necrotic_claw:
         - drain
     cooldown: 20
     cost:
-        - mana 80
+        - mana 40
 
+deathray:
+    permission-name: death
+    spell-class: ".instant.ParticleProjectileSpell"
+    cast-item: death_wand
+    spell-icon: "381"
+    memory: 7
+    prerequisites:
+      - rupture
+    spell: pain
+    projectile-velocity: 20
+    max-distance: 80
+    tick-interval: 10
+    particle-name: witchMagic
+    particle-count: 10
+    hit-players: true
+    hit-non-players: true
+    hit-ground: false
+    cost:
+      - mana 50
 
 # High level: 10+ memory
 
 awakening:
     permission-name: death
-    spell-class: ".TargetedMultiSpell"
-    memory: 12
+    spell-class: ".targeted.PulserSpell"
+    spell-icon: "397:1"
+    cast-item: death_grimoire
+    memory: 10
+    prerequisites:
+      - lore_of_death
     spells:
-        - spawn_zombie
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-        - DELAY 20
-        - spawn_random
-    cast-time: 60
-    interrupt-on-move: false
-    str-cast-start: You call upon the forces of darkness...
-    str-cast-self: The dead have risen at your claw!
+      - spawn_random
+    cap-per-player: 3
+    interval: 20
+    block-type: skull
+    str-cast-self: You call upon the forces of darkness...
     str-cast-others: Undead creatures start clawing their way up through the ground...
     description: |
-            &5Awakening: 12 memory Death spell
+            &5Awakening: 10 memory Death spell
             You awaken a horde of the dead!
             Hope you know what you're doing...
     str-cost: 80 mana
@@ -259,8 +292,8 @@ awakening:
 revenant:
     permission-name: death
     spell-class: ".buff.MinionSpell"
-    spell-icon: monster_egg:54
-    cast-item: bone
+    spell-icon: "383:54"
+    cast-item: death_grimoire
     cooldown: 10
     duration: 60
     mob-chances:
@@ -287,6 +320,8 @@ revenant:
 
 spite:
     permission-name: death
+    prerequisites:
+      - blind # Shadow
     spell-class: ".targeted.AreaEffectSpell"
     spell-icon: 375
     cast-item: bone
@@ -321,10 +356,25 @@ spite:
 #                     #
 #######################
 
+pain:
+    spell-class: ".targeted.PainSpell"
+    spell-damage-type: death
+    damage: 4
+    ignore-armor: true
+    str-cast-others: "%t was hit by a death ray!"
+    str-cast-target: "You were hit by a death ray!"
+    effects:
+        hit:
+            position: target
+            effect: smoke
+        ouch:
+            position: target
+            effect: sound
+            sound: game.hostile.hurt.fall.big
+            volume: 2
 paralysis:
     spell-class: ".targeted.StunSpell"
     duration: 3
-
 spawn_random:
     spell-class: ".TargetedMultiSpell"
     spells:
@@ -334,9 +384,10 @@ spawn_random:
         - spawn_zombie
         - spawn_skeleton
     cast-random-spell-instead: true
-    modifiers:
-        - potioneffect 17 stop
-        - chance 50 required
+    effect:
+        heckfire:
+            position: target
+            effect: particles
 spawn_zombie:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: zombie
