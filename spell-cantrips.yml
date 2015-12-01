@@ -252,8 +252,8 @@ tome:
     cancel-read-on-learn: false
     consume-book: false
     allow-overwrite: false
-    max-uses: -1
-    default-uses: -1
+    max-uses: 3
+    default-uses: 3
     require-teach-perm: true
     str-usage: "Usage: Write and sign a book describing the spell's usage; while holding it, type /cast tome <spell>"
     str-no-spell: You do not know a spell with that name.
