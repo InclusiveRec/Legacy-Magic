@@ -130,6 +130,12 @@ smoke:
         - nauseate
         - poison
     str-cast-self: Casty
+    cost:
+        - levels 3
+        - mana 10
+    description: |
+        &2Smoke: 3 Memory Fire Spell
+        Uses 3 memory slots.
     effects:
       smokey:
         position: special
