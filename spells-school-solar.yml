@@ -125,6 +125,7 @@ skycalm:
     cost:
         - mana 50
         - sun_concoction 3
+        - levels 5
     command-to-execute:
         - "weather clear"
     execute-on-console-instead: true
@@ -134,7 +135,7 @@ skycalm:
     description: |
             &eSunstaff: 5 Memory Solar Spell
             You clear the skies of bad weather.
-    str-cost: 50 mana and 3 solar concoctions.
+    str-cost: 50 mana, 5 xp and 3 solar concoctions.
     str-modifier-failed: The sky is already clear!
     str-cast-start: You begin to calm the skies...
     str-cast-self: The weather clears!
