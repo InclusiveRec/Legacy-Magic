@@ -190,7 +190,7 @@ forage:
     description: |
             &2Forage: 1 Memory Forest Spell
             You discover sources of food in the wilderness.
-    str-cost: 5 mana.  Uses 1 memory slot.
+    str-cost: 5 mana and 2 seeds.  Uses 1 memory slot.
     str-cast-self: You feel less hungry.
     str-on-cooldown: ""
     effects:
