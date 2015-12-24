@@ -181,6 +181,7 @@ forage:
     memory: 1
     cost:
         - mana 5
+        - seeds 2
     cooldown: 0.5
     food: 1
     saturation: 2
