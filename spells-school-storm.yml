@@ -144,8 +144,9 @@ storm:
     cost:
         - mana 80
         - wool 3
+        - levels 5
     memory: 8
-    str-cost: 80 mana and 3 fleeces to channel the power.
+    str-cost: 80 mana, 5 xp and 3 fleeces to channel the power.
     command-to-execute:
         - weather thunder
     execute-on-console-instead: true
