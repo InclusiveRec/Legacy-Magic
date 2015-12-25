@@ -181,17 +181,18 @@ forage:
     memory: 1
     cost:
         - mana 5
-        - seeds 2
     cooldown: 0.5
     food: 1
     saturation: 2
     modifiers:
         - holding "359|&2Magic Sickle" power 2
+        - storm denied
     description: |
             &2Forage: 1 Memory Forest Spell
             You discover sources of food in the wilderness.
-    str-cost: 5 mana and 2 seeds.  Uses 1 memory slot.
+    str-cost: 5 mana.  Uses 1 memory slot.
     str-cast-self: You feel less hungry.
+    str-modifier-failed: It's dangerous to forage in a storm! Wait for the weather to clear.
     str-on-cooldown: ""
     effects:
         munch:
