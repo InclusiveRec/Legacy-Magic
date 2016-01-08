@@ -22,7 +22,7 @@ only-cycle-to-castable-spells: true
 allow-cast-with-fist: true
 cast-with-left-click: true
 cast-with-right-click: true
-ops-have-all-spells: false
+ops-have-all-spells: true
 ops-ignore-reagents: true
 ops-ignore-cooldowns: true
 ops-ignore-cast-times: false
