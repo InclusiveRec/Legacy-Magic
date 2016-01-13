@@ -51,12 +51,12 @@ sunrise:
     execute-on-console-instead: true
     command-to-execute:
         - "time set 0"
-storm-helper:
+stormy-helper:
     spell-class: ".ExternalCommandSpell"
     execute-on-console-instead: true
     command-to-execute:
         - "weather thunder"
-skycalm-helper:
+sunny-helper:
     spell-class: ".ExternalCommandSpell"
     execute-on-console-instead: true
     command-to-execute:

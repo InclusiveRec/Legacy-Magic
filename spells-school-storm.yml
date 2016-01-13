@@ -141,10 +141,9 @@ lightning:
     str-cast-others: "%a calls down lightning."
     str-on-cooldown: ""
     str-modifier-failed: You can only target areas outside.
-storm:
+stormy:
     permission-name: storm
     spell-class: ".instant.RitualSpell"
-    name: storm
     cooldown: 300
     cast-item: stormhammer
     ritual-duration: 100
@@ -154,7 +153,7 @@ storm:
         - levels 5
     memory: 8
     str-cost: 80 mana, 5 xp and 3 storm concoction to channel the power.
-    spell: storm-helper
+    spell: stormy-helper
     req-participants: 2
     need-spell-to-participate: true
     modifiers:
