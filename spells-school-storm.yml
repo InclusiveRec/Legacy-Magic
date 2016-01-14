@@ -16,7 +16,13 @@ predefined-items:
           - "with static electricity."
         enchants:
           - "knockback 1"
-
+    storm_concoction:
+        type: "351:7"
+        name: "&7Storm Concoction"
+        lore:
+            - "The concentrated power"
+            - "of a storm is contained"
+            - "within this concoction."
 lore_of_storms:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
@@ -137,29 +143,32 @@ lightning:
     str-modifier-failed: You can only target areas outside.
 storm:
     permission-name: storm
-    spell-class: ".ExternalCommandSpell"
+    spell-class: ".instant.RitualSpell"
     name: storm
     cooldown: 300
-    cast-time: 100
+    cast-item: stormhammer
+    ritual-duration: 100
     cost:
         - mana 80
-        - wool 3
+        - storm_concoction 3
         - levels 5
     memory: 8
-    str-cost: 80 mana, 5 xp and 3 fleeces to channel the power.
-    command-to-execute:
-        - weather thunder
-    execute-on-console-instead: true
+    str-cost: 80 mana, 5 xp and 3 storm concoction to channel the power.
+    spell: storm-helper
+    req-participants: 2
+    need-spell-to-participate: true
     modifiers:
         - outside required
+    charge-reagents-immediately: true
     description: |
         &rStorm   8 Memory   Storm School
         &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
         All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
-    str-cast-start: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
-    str-interrupted: Your concentration has been disturbed!  The mat is consumed in a crackle of energy, and you are left feeling drained.
+    str-ritual-joined: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
+    str-cast-self: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
+    str-ritual-interrupted: You are not able not strong enough to summon the storm and your ingrediants are consumed!
     always-activate: true
-    str-cast-self: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
+    str-ritual-success: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
     str-modifier-failed: You must have a view of the sky to cast this spell.
 windwalk:
@@ -189,3 +198,24 @@ windwalk:
     str-fade: The winds cease to support you, and you descend...
     fly-speed: 0.3
     launch-speed: 5
+storm_concoction:
+    permission-name: storm
+    spell-class: ".instant.ConjureSpell"
+    cast-item: stormhammer,storm_grimoire
+    spell-icon: "351:7"
+    memory: 1
+    items:
+        - storm_concoction 4-6
+        - empty_bucket 3
+    cost:
+        - wool 8
+        - water_bucket 3
+        - mana 20
+    modifiers:
+        - outside required
+        - storm required
+    description: |
+            &7Storm Concoction: 1 Memory Storm Spell
+            Concentrates some storm concoction.
+    str-cost: "During a storm, mix three water buckets and 8 wool, using 20 mana in the process."
+    str-modifier-failed: You must be in a storm cast this spell.
