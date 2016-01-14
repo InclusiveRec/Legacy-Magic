@@ -25,6 +25,31 @@ blind:
       victim:
         position: target
         effect: smoke
+blink:
+    permission-name: cantrip
+    spell-class: ".targeted.BlinkSpell"
+    memory: 3
+    spell-icon: ender_pearl
+    description: |
+        &rBlink   3 Memory   Shadow School
+        &3Teleport a short distance.
+    cast-item: stick
+    cooldown: 3
+    range: 6
+    spell-power-affects-range: true
+    pass-through-ceiling: false
+    smoke-trail: true
+    effects:
+        - pos1 ender
+        - pos2 ender
+    cost:
+        - mana 15
+    str-cost: 15 mana
+    str-cast-self: You blink away!
+    str-cast-others: "%a blinks away!"
+    str-cant-blink: You cannot blink there.
+    modifiers:
+      - lightlevelbelow 8 power 2
 invisibility:
     permission-name: shadow
     spell-class: ".buff.InvisibilitySpell"
