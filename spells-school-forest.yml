@@ -175,25 +175,39 @@ woodland_concoction:
 
 forage:
     permission-name: forest
-    spell-class: ".instant.FoodSpell"
+    spell-class: ".instant.ConjureSpell"
     cast-item: stick,forest_sickle
     spell-icon: apple
-    memory: 1
+    memory: 4
+    prerequisites:
+        - woodland_concoction
     cost:
-        - mana 5
+        - mana 10
+        - seeds 6
     cooldown: 0.5
-    food: 1
-    saturation: 2
+    calculate-drops-individually: false
+    power-affects-quantity: true
+    items:
+        - wheat 1-6 20%
+        - apple 2-6 15%
+        - carrot 3-9 18%
+        - potato 4-8 17%
+        - brown_mushroom 1-4 14%
+        - red_mushroom 1-2 6%
+        - pumpkin 1 5%
+        - melon_block 1 3%
+        - egg 1 2%
     modifiers:
-        - holding "359|&2Magic Sickle" power 2
-        - storm denied
+        - holding "359|&2Magic Sickle" power 2.5
+        - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,SUNFLOWER_PLAINS,FLOWER_FOREST,JUNGLE,JUNGLE_HILLS,JUNGLE_EDGE required
+        - elevationabove 62 required
     description: |
-            &2Forage: 1 Memory Forest Spell
+            &2Forage: 4 Memory Forest Spell
             You discover sources of food in the wilderness.
-    str-cost: 5 mana.  Uses 1 memory slot.
-    str-cast-self: You feel less hungry.
-    str-modifier-failed: It's dangerous to forage in a storm! Wait for the weather to clear.
-    str-on-cooldown: ""
+            This will only work in certain biomes, and not underground.
+    str-cost: 10 mana and 6 seeds.
+    str-modifier-failed: This is not good foraging terrain.
+    str-on-cooldown: "Rummage..."
     effects:
         munch:
             position: caster
