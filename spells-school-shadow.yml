@@ -121,7 +121,7 @@ duskrite:
     modifiers:
         - day required
     description: |
-            &eDawnrite: 6 Memory Shadow Spell
+            &7Dusk Rite&3: 6 Memory Shadow Spell
             A ritual which will cause the sun to set.
             This ritual requires three participants and takes 20 seconds of concentration to cast.
             Moving will disrupt the ritual.  Requires the &eLights Out&3 spell.
