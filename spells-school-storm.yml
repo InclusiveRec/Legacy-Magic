@@ -150,12 +150,11 @@ stormy:
     cost:
         - mana 80
         - storm_concoction 3
-        - levels 5
     memory: 8
-    str-cost: 80 mana, 5 xp and 3 storm concoction to channel the power.
+    str-cost: 80 mana and 3 storm concoction to channel the power.
     spell: stormy-helper
     req-participants: 2
-    need-spell-to-participate: true
+    need-spell-to-participate: false
     modifiers:
         - outside required
     charge-reagents-immediately: true
