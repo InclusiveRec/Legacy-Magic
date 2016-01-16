@@ -170,6 +170,7 @@ stormy:
     str-ritual-success: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
     str-modifier-failed: You must have a view of the sky to cast this spell.
+    str-cast-others: "%a has begun a ritual to summon rain.  Right-click to participate."
 windwalk:
     permission-name: storm
     spell-class: ".buff.WindwalkSpell"
