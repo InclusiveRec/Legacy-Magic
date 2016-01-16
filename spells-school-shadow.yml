@@ -129,3 +129,32 @@ lightsout:
     str-cast-self: You put out the lights.
     str-cast-others: The lights go out!
     spell-power-affects-range: true
+duskrite:
+    permission-name: shadow
+    spell-class: ".instant.RitualSpell"
+    cast-item: bone
+    prerequisites:
+        - lightsout
+    memory: 6
+    cost:
+        - mana 100
+        - 266 1
+    ritual-duration: 400
+    charge-reagents-immediately: false
+    cooldown: 1800
+    spell: sunset
+    modifiers:
+        - day required
+    description: |
+            &7Dusk Rite&3: 6 Memory Shadow Spell
+            A ritual which will cause the sun to set.
+            This ritual requires three participants and takes 20 seconds of concentration to cast.
+            Moving will disrupt the ritual.  Requires the &eLights Out&3 spell.
+    str-cost: "100 mana and 1 gold ingot."
+    str-cast-self: You have begun the ritual to summon the dusk.
+    str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
+    str-ritual-joined: You have joined in the dusk rite.
+    str-ritual-interrupted: The dusk rite has been interrupted!
+    str-ritual-fail: The dusk rite has failed.
+    str-ritual-success: The dusk is summoned!
+    str-modifier-failed: You can only begin this ritual during day.

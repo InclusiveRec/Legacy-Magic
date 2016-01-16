@@ -51,3 +51,20 @@ sunrise:
     execute-on-console-instead: true
     command-to-execute:
         - "time set 0"
+sunset:
+    spell-class: ".ExternalCommandSpell"
+    name: sunset
+    description: Makes the sun set.
+    execute-on-console-instead: true
+    command-to-execute:
+        - "time set 12000"
+stormy-helper:
+    spell-class: ".ExternalCommandSpell"
+    execute-on-console-instead: true
+    command-to-execute:
+        - "weather thunder"
+sunny-helper:
+    spell-class: ".ExternalCommandSpell"
+    execute-on-console-instead: true
+    command-to-execute:
+        - "weather clear"

@@ -116,29 +116,35 @@ dawnrite:
     str-ritual-fail: The dawn rite has failed.
     str-ritual-success: The dawn is summoned!
     str-modifier-failed: You can only begin this ritual at night.
-skycalm:
+sunny:
     permission-name: solar
-    spell-class: ".ExternalCommandSpell"
+    spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
-    memory: 5
+    req-participants: 2
+    need-spell-to-participate: true
+    memory: 8
     cooldown: 300
+    prerequisites:
+        - solar_concoction
     cost:
         - mana 50
         - sun_concoction 3
         - levels 5
-    command-to-execute:
-        - "weather clear"
-    execute-on-console-instead: true
-    cast-time: 100
+    ritual-duration: 400
+    charge-reagents-immediately: true
+    spell: sunny-helper
     modifiers:
         - storm required
     description: |
-            &eSunstaff: 5 Memory Solar Spell
+            &eSunny: 5 Memory Solar Spell
             You clear the skies of bad weather.
     str-cost: 50 mana, 5 xp and 3 solar concoctions.
     str-modifier-failed: The sky is already clear!
-    str-cast-start: You begin to calm the skies...
-    str-cast-self: The weather clears!
+    str-ritual-joined: You begin to calm the skies...
+    str-ritual-success: The weather clears!
+    str-ritual-failed: You are not able to dispel the storm, and your ingredients are consumed!
+    str-cast-self: You begin to calm the skies...
+    str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
 
 #########################################
 #           Magic Shears                #
