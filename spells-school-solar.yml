@@ -142,7 +142,7 @@ sunny:
     str-modifier-failed: The sky is already clear!
     str-ritual-joined: You begin to calm the skies...
     str-ritual-success: The weather clears!
-    str-ritual-failed: You are not able to dispel the storm, and your ingrediants are consumed!
+    str-ritual-failed: You are not able to dispel the storm, and your ingredients are consumed!
     str-cast-self: You begin to calm the skies...
     str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
 
