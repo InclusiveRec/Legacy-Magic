@@ -121,24 +121,23 @@ sunny:
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
     req-participants: 2
-    need-spell-to-participate: true
+    need-spell-to-participate: false
     memory: 8
     cooldown: 300
     prerequisites:
         - solar_concoction
     cost:
-        - mana 50
+        - mana 80
         - sun_concoction 3
-        - levels 5
     ritual-duration: 400
     charge-reagents-immediately: true
     spell: sunny-helper
     modifiers:
         - storm required
     description: |
-            &eSunny: 5 Memory Solar Spell
+            &eSunny: 8 Memory Solar Spell
             You clear the skies of bad weather.
-    str-cost: 50 mana, 5 xp and 3 solar concoctions.
+    str-cost: 80 mana and 3 solar concoctions.
     str-modifier-failed: The sky is already clear!
     str-ritual-joined: You begin to calm the skies...
     str-ritual-success: The weather clears!
