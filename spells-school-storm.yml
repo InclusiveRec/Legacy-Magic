@@ -165,7 +165,7 @@ stormy:
         All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
     str-ritual-joined: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
     str-cast-self: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
-    str-ritual-interrupted: You are not able not strong enough to summon the storm and your ingrediants are consumed!
+    str-ritual-interrupted: You are not able not strong enough to summon the storm and your ingredients are consumed!
     always-activate: true
     str-ritual-success: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
