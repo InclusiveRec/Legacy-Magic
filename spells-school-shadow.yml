@@ -104,7 +104,7 @@ lightsout:
     str-cast-self: You put out the lights.
     str-cast-others: The lights go out!
     spell-power-affects-range: true
-dawnrite:
+duskrite:
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
     cast-item: bone
