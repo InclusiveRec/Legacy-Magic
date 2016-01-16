@@ -54,7 +54,7 @@ sunrise:
 sunset:
     spell-class: ".ExternalCommandSpell"
     name: sunrise
-    description: Makes the sun rise.
+    description: Makes the sun set.
     execute-on-console-instead: true
     command-to-execute:
         - "time set 12000"
