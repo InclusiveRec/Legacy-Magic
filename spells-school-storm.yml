@@ -146,7 +146,7 @@ stormy:
     spell-class: ".instant.RitualSpell"
     cooldown: 300
     cast-item: stormhammer
-    ritual-duration: 100
+    ritual-duration: 400
     cost:
         - mana 80
         - storm_concoction 3
