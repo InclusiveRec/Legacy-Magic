@@ -205,7 +205,7 @@ storm_concoction:
     memory: 1
     items:
         - storm_concoction 4-6
-        - empty_bucket 3
+        - bucket 3
     cost:
         - wool 8
         - water_bucket 3
