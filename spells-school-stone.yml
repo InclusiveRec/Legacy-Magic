@@ -197,7 +197,6 @@ statue:
     permission-name: stone
     spell-icon: stone
     spell-class: ".targeted.MultiSpell"
-    memory: 1000
     description: |
         &rStatue   1000 Memory: &4Stone Spell
         &3Turns you to stone
@@ -281,7 +280,7 @@ stonevision:
 #Effects
 statuestun:
     spell-class: ".targeted.StunSpell"
-    duration: 60
+    duration: 1200
     terget-self: true
 statuesilence:
     spell-class: ".targeted.SilenceSpell"
@@ -312,4 +311,4 @@ statieinvulnerable:
         - suffocation
         - void
         - wither
-    duration: 60
+    duration: 1200
