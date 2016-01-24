@@ -195,7 +195,7 @@ repair:
     str-nothing-to-repair: You have nothing to repair.
 statue:
     permission-name: stone
-    spell-icon: bedrock
+    spell-icon: stone
     spell-class: ".targeted.MultiSpell"
     memory: 1000
     description: |
