@@ -194,6 +194,8 @@ repair:
     str-cast-self: "You've repaired your gear!"
     str-nothing-to-repair: You have nothing to repair.
 statue:
+    permission-name: stone
+    spell-icon: bedrock
     spell-class: ".targeted.MultiSpell"
     memory: 1000
     description: |
