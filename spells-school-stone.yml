@@ -193,10 +193,25 @@ repair:
     str-cost: 50 mana and 1 diamond block
     str-cast-self: "You've repaired your gear!"
     str-nothing-to-repair: You have nothing to repair.
+statue:
+    spell-class: ".MultiSpell"
+    memory: 1000
+    description: |
+        &rStatue   1000 Memory: &4Stone Spell
+        &3Turns you to stone
+    str-cast: "%a has turned to stone!"
+    str-cast-self: "You turn to stone!"
+    cost:
+        - mortar 10
+        - cobblestone 16
+    spells:
+        - statuestun
+        - statuesilence
+        - statieinvulnerable
    
 #####################
 #                   #
-#       Minepick        #
+#       Minepick    #
 #                   #
 #####################
 
@@ -259,3 +274,38 @@ stonevision:
     range: 5
     duration: 60
     str-cast-self: The stone around you flickers and fades away...
+#Effects
+statuestun:
+    spell-class: ".targeted.StunSpell"
+    duration: 60
+    terget-self: true
+statuesilence:
+    spell-class: "targeted.SilenceSpell"
+    prevent-chat: true
+    prevent-commands: true
+    duration: 60
+    target-self: true
+    str-silenced: "Statues cannot speak!"
+statieinvulnerable:
+    spell-class: ".buff.InvulnerabilitySpell"
+    toggle: false
+    damage-causes:
+        - block explosion
+        - contact
+        - custom
+        - drowning
+        - entity attack
+        - entity explosion
+        - fall
+        - fire
+        - fire tick
+        - lava
+        - lightning
+        - magic
+        - poison
+        - projectile
+        - starvation
+        - suffocation
+        - void
+        - wither
+    duration: 60
