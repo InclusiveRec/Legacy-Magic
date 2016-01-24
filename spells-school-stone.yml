@@ -285,7 +285,7 @@ statuetargeted:
 statuestun:
     spell-class: ".targeted.StunSpell"
     duration: 1200
-    terget-self: true
+    target-self: true
 statuesilence:
     spell-class: ".targeted.SilenceSpell"
     prevent-chat: true
