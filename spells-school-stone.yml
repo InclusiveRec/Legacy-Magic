@@ -194,7 +194,7 @@ repair:
     str-cast-self: "You've repaired your gear!"
     str-nothing-to-repair: You have nothing to repair.
 statue:
-    spell-class: ".MultiSpell"
+    spell-class: ".targeted.MultiSpell"
     memory: 1000
     description: |
         &rStatue   1000 Memory: &4Stone Spell
@@ -208,6 +208,7 @@ statue:
         - statuestun
         - statuesilence
         - statieinvulnerable
+    target-caster: true
    
 #####################
 #                   #
@@ -280,7 +281,7 @@ statuestun:
     duration: 60
     terget-self: true
 statuesilence:
-    spell-class: "targeted.SilenceSpell"
+    spell-class: ".targeted.SilenceSpell"
     prevent-chat: true
     prevent-commands: true
     duration: 60
