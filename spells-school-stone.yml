@@ -211,7 +211,8 @@ statue:
         - statuesilence
         - statieinvulnerable
     target-caster: true
-   
+    memory: 3
+    
 #####################
 #                   #
 #       Minepick    #
