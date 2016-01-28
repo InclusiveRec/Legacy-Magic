@@ -19,7 +19,7 @@ predefined-items:
 
 
 
-                     &oThird edition
+                     &oFourth edition
             -  |
               &lTable of Contents
 
@@ -41,10 +41,10 @@ predefined-items:
             - |
               &nII.  Towns
               
-              &r  If you wish, you can set off on your own into the wilderness to establish your home.  However, you may wish to join many of the servers' players in one of the server's towns.
-            - When you first join the server, you will start off in the town of Sunfield.  Sunfield is the server's most central town. Sunfield offers protections to prevent pvp, fire spread and explosions.
-            - In time, you may wish to resettle yourself in a different part of town, or in another town entirely.  If you find two other players to join you, you can even start your own town.
-            - Many towns offer plots for sale.  They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.
+              &r  If you wish, you can set off on your own into the wilderness to establish your home.  However, you may wish to join many of the server's players in one of the server's towns.
+            - When you first join the server, you will start off in the town of Sunfield.  Sunfield offers protections from monsters, pvp, fire spread and explosions.
+            - In time, you may wish to resettle yourself in a different part of town, or in another town entirely.  If you find four other players to join you, you can even start your own town.
+            - Many towns offer plots for sale.  They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.  You can safely travel to other towns by riding a dragon.
             - |
               &nIII.  The Economy
 
@@ -66,9 +66,8 @@ predefined-items:
                 You can also cast many spells with /cast <spell name>.  Try these out:
                 /cast list
                 /cast help gate
-                /cast help mark
             -  You might notice that many spells have costs.  Mana is an energy that recharges over time, or by consuming (right-clicking) lapis lazuli or glowstone dust.  It can be checked with the /mana command.  Others consume various items or resources.
-            -  There are several ways to gain magic.  Some shops sell scrolls which allow for a set number of casts, or tomes which teach the spell.  More can be learnt by joining a guild, or a school of magic.
+            -  There are several ways to gain magic.  Some shops sell scrolls which allow for a set number of casts, or tomes which teach the spell.  More can be learnt by joining a school of magic.
             - |
               &nV.  Roleplaying&r
 
