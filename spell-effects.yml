@@ -2,6 +2,51 @@ cripple:
     spell-class: ".targeted.CrippleSpell"
     effect-strength: 2
     effect-duration: 100
+fireworkblast:
+    spell-class: ".TargetedMultiSpell"
+    cast-random-spell-instead: true
+    check-individual-cooldowns: false
+    spells:
+        - fwblast1
+        - fwblast2
+        - fwblast3
+        - fwblast4
+        - fwblast5
+fwblast1:
+    spell-class: ".targeted.ExplodeSpell"
+    prevent-block-damage:  true
+    prevent-player-damage:  true
+    explosion-size: 0
+    effects:
+        - pos2 fireworks yes yes 0 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
+fwblast2:
+    spell-class: ".targeted.ExplodeSpell"
+    prevent-block-damage:  true
+    prevent-player-damage:  true
+    explosion-size: 0
+    effects:
+        - pos2 fireworks yes yes 1 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
+fwblast3:
+    spell-class: ".targeted.ExplodeSpell"
+    prevent-block-damage:  true
+    prevent-player-damage:  true
+    explosion-size: 0
+    effects:
+        - pos2 fireworks yes yes 2 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
+fwblast4:
+    spell-class: ".targeted.ExplodeSpell"
+    prevent-block-damage:  true
+    prevent-player-damage:  true
+    explosion-size: 0
+    effects:
+        - pos2 fireworks yes yes 3 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
+fwblast5:
+    spell-class: ".targeted.ExplodeSpell"
+    prevent-block-damage:  true
+    prevent-player-damage:  true
+    explosion-size: 0
+    effects:
+        - pos2 fireworks yes yes 4 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 nauseate:
     spell-class: ".targeted.PotionEffectSpell"
     type: 9
