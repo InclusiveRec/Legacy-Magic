@@ -149,7 +149,32 @@ enderchest:
         - 368 1
     str-cost: 50 mana and an enderpearl.
 
-
+firework:
+    enabled: false
+    permission-name: cantrip
+    spell-class: ".instant.ParticleProjectileSpell"
+    always-granted:  true
+    spell-icon: firework
+    despription:  |
+        &rFirework: Cantrip
+        &3Shoots a firework from fingertips.
+    cast-item: torch
+    cooldown:  0
+    projectile-vert-offset: 1.5
+    max-distance: 20
+    max-duration: 20
+    cost:
+        - mana 10
+    str-cost:  10 mana
+    modifiers:
+        - outside required
+    projectile-velocity: 20
+    tick-interval: 2
+    hit-air-at-end: true
+    projectile-gravity: .05
+    effects:
+        - caster sound fireworks.launch 1.0 1.0
+    spell: fireworkblast
 
 
 # Apprentice level
