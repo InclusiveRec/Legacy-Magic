@@ -57,7 +57,7 @@ predefined-items:
                 /money pay
                 /money deposit
                 /money withdraw
-            - You can gain emeralds by mining, trading with villagers, or selling things to player shops.  If you want to start a shop of your own, you will need to find a town plot that allows it, and put a sign on a chest with &o[Shop]&r on the first line.
+            - You can gain emeralds by mining, trading with villagers, or selling things to merchants.  If you want to start a shop of your own, you will need to find a town plot that allows it, and put a sign on a chest with &o[Shop]&r on the first line.
             - |
               &nIV.  Magic&r
               
