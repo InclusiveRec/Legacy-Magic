@@ -3,12 +3,10 @@ predefined-items:
         type: "written_book"
         title: "Galdur"
         author: "Inclusive Recreation"
-        lore:
-          -  "&0&kMS$:tome:gate,-1"
         pages:
             - |
 
-              &l     Galdur
+              &l       Galdur
 
                      &rA Guide
 
