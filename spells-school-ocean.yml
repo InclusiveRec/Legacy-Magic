@@ -124,7 +124,10 @@ water:
     memory: 1
     description: |
         &rWater   1 Memory   Water School
-        &3Summons a water spring into existence.
+        &3Summons a water spring into existence..
+    modifiers:
+        - world world required
+    str-modifier-failed: You cannot cast that spell here.
     str-cost: 15 mana
     str-no-target: No target found.
 waterwalk:
