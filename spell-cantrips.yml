@@ -54,7 +54,6 @@ gate:
     cast-item: book
     spell-icon: 358
     always-granted: true
-    world: "world"
     coordinates: SPAWN
     effects:
         - pos1 ender
@@ -66,12 +65,15 @@ gate:
     shared-cooldowns:
         - summon_helper 120
         - recall 120
-    str-cast-self: You have teleported to spawn.
-    str-cast-others: "%a teleports!"
+    modifiers:
+        - world world required
+    str-modifier-failed: You cannot cast that spell here.
+    str-cast-self: You have teleported to Sunfield.
+    str-cast-others: "%a appears!"
     str-gate-failed: Unable to teleport.
     description: |
         &rGate   -   Cantrip
-        &3Teleport to spawn.
+        &3Teleport to Sunfield.
 recall:
     enabled: false
     permission-name: cantrip
