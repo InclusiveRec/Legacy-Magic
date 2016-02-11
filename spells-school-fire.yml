@@ -171,13 +171,19 @@ lava:
    spell-icon: lava_bucket
    cost:
       - mana 10
-      - blaze_powder 5
-    memory: 1
+      - blaze_powder 10
+      - magma_cream 2
+    memory: 2
     allow-command-casting: false
     cooldown: 120
     range: 5
     block-type: lava
     apply-physics: true
+    description: |
+        &rLava  2 memory Fire school
+        &3Rises Lave from the core..
+    str-cast-self: "Sumions Molten Lava"
+    str-cast-others: "%aSumions Molten Lava"
 
     #########################
     #  Intermediate Spells  #
