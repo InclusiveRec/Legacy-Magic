@@ -20,6 +20,14 @@ predefined-items:
           - "This wand is hot to the"
           - "touch, and smokes and sparks"
           - "with pyromantic magics."
+    
+    flame_concotion:
+      type: "351:1"
+      name: "&4Flame Concotion"
+      lore:
+        - "The Hotest Substance"
+        - "known to Galdur"
+        - "Used to harness the power of the Center Core" 
 
 
 #######################
@@ -78,18 +86,18 @@ fire_concoction:
     spell-icon: "351:1"
     memory: 1
     items:
-        - flaim_concoction 4-6
+        - flame_concoction 4-6
     cost:
         - mana 10
         - 378 1
-        - soler_concoction 4
+        - solar_concoction 4
         - 87 4
         - 115 3
     description: |
             &eFire Concoction: 1 Memory Fire Spell
-            Mixes a Flaim concoction.
-            Requires knowledge of the &2solar concoction&3 spell.
-    str-cost: "Add 3 Nether Wort, 1 Magma Cream to 4 Woler concoction with 4 Netherrack, using 10 mana."
+            Mixes a Flame concoction.
+            Requires knowledge of the &2Solar concoction&3 spell.
+    str-cost: "Add 3 Nether Wort, 1 Magma Cream to 4 Solar concoction with 4 Netherrack, using 10 mana."
 
 
 
