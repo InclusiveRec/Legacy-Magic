@@ -70,6 +70,26 @@ fiery_staff:
             Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
     str-cost: 50 mana, 2 blaze rods.
     str-cast-self: You create a fiery staff.
+    
+fire_concoction:
+    permission-name: fire
+    spell-class: ".instant.ConjureSpell"
+    cast-item: fire_staff
+    spell-icon: "351:1"
+    memory: 1
+    items:
+        - flaim_concoction 4-6
+    cost:
+        - mana 10
+        - 378 1
+        - soler_concoction 4
+        - 87 4
+        - 115 3
+    description: |
+            &eFire Concoction: 1 Memory Fire Spell
+            Mixes a Flaim concoction.
+            Requires knowledge of the &2solar concoction&3 spell.
+    str-cost: "Add 3 Nether Wort, 1 Magma Cream to 4 Woler concoction with 4 Netherrack, using 10 mana."
 
 
 
