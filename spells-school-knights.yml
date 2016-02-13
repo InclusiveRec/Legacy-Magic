@@ -167,6 +167,27 @@ equip_spurs:
     spell-class: ".buff.ArmorSpell"
     boots:  knightly_sabatons
     duration: 180
+armarmour_upgrade
+     permission-name: knights
+     spell-class: ".buff.ArmorSpell"
+     cast-item: #TBC
+     spell-icon: 311
+     memory: 4
+     items:
+         - 310
+         - 311
+         - 312
+         - 313
+     cot: 
+         - mana 50
+         - 306
+         - 307
+         - 308
+         - 309
+     description: |
+         &eArmour upgrade: 4 memory Knight spell
+         takes the Iron forms it to Diamond.
+    
 
 #              Guard spells
 #
