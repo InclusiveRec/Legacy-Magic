@@ -117,7 +117,10 @@ firebreathing:
     spell: combust
     cost:
         - mana 10
+        - flame_concotion 4
     memory: 3
+    prerequisites:
+        - scroll
     description: |
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
@@ -159,6 +162,10 @@ smoke:
     spells:
         - nauseate
         - poison
+    cost: 
+         - flame_concotion 5
+    prerequisites:
+        - scroll
     str-cast-self: Casty
     effects:
       smokey:
@@ -176,7 +183,10 @@ spark:
     spell-icon: fireball
     cost:
         - mana 20
-        - blaze_powder 1
+        - blaze_powder 5
+        - flame_concotion 3
+    prerequisites:
+        - scroll 
     memory: 3
     allow-command-casting: false
     cooldown: 1
@@ -199,7 +209,7 @@ lava:
    spell-icon: lava_bucket
    cost:
       - mana 10
-      - blaze_powder 10
+      - flame_concotion 5
       - magma_cream 2
     memory: 2
     allow-command-casting: false
@@ -217,7 +227,6 @@ lava:
     #  Intermediate Spells  #
     #########################
 fireball:
-    enabled: false
     permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
@@ -225,8 +234,10 @@ fireball:
     cost:
         - mana 50
         - blaze_powder 1
+        - flame_concotion 5
     prerequisites:
         - fiery_staff
+        - scroll
     memory: 5
     cooldown: 10
     target-players: true
@@ -235,7 +246,7 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    str-cost: 50 mana and one blaze powder.
+    str-cost: 50 mana, one blaze powder and 5 Fire Concotions.
 
 fire_nova:
     enabled: false
@@ -269,7 +280,7 @@ fire_shield:
 combust:
     permission-name: fire
     spell-class: ".targeted.CombustSpell"
-    fire-tick-damage: 4
+    fire-tick-damage: 5
     check-plugins: false
 
 
