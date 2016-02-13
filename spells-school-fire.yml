@@ -114,12 +114,13 @@ firebreathing:
     spell: combust
     cost:
         - mana 10
+        - flame_concoction 4
     memory: 3
     description: |
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-    str-cost: 10 mana
+    str-cost: 10 mana and 4 flame concoctions
 fireproof:
     permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
@@ -197,6 +198,7 @@ spark:
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
 lava:
+    enabled: false
    permission-name: fire
    spell-class: ".targeted.MaterializeSpell"
    cast-item: fire_staff,377
@@ -213,9 +215,9 @@ lava:
     apply-physics: true
     description: |
         &rLava  2 memory Fire school
-        &3Rises Lave from the core..
-    str-cast-self: "Sumions Molten Lava"
-    str-cast-others: "%aSumions Molten Lava"
+        &3Rises Lava from the core..
+    str-cast-self: "Summons Molten Lava"
+    str-cast-others: "%aSummons Molten Lava"
 
     #########################
     #  Intermediate Spells  #
