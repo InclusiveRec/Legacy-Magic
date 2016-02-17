@@ -39,16 +39,20 @@ lore_of_flame:
     cast-item: book
     spell-icon: "enchanted_book"
     cost:
+        - mana 50
         - book 1
-        - levels 30
-        - blaze_rod 5
+        - blaze_powder 6
     memory: 10
+    prerequisites:
+        - fiery_staff
+        - fiery_potion
     items:
         - fire_grimoire 1
     description: |
-            &4Lore of Flame: Fire Masters' Spell
+            &4Lore of Flame: 10 Memory Fire Spell
             Creates a fiery grimoire.
-    str-cost: A book, 30 levels, and five blaze rods.
+            Requires fiery staff and fiery potion spells.
+    str-cost: 50 mana, 1 book, 6 blaze powder.
     effects: []
 
 fiery_staff:
@@ -62,18 +66,17 @@ fiery_staff:
     prerequisites:
         - scroll
         - spark
-    memory: 5
+    memory: 10
     cost:
-        - levels 10
-        - blaze_rod 1
+        - mana 50
+        - blaze_rod 2
     items:
         - fire_staff 1
         - blaze_powder 6-10
     description: |
             Firestaff:  10 Memory   Fire School.
-            Creates a powerful wand of fire magic.
-            Requires the spark spell.
-    str-cost: A blaze rod and 10 levels.
+            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
+    str-cost: 50 mana, 2 blaze rods.
     str-cast-self: You create a fiery staff.
     
 fire_concoction:
@@ -114,15 +117,16 @@ firebreathing:
     spell: combust
     cost:
         - mana 10
-        - flame_concoction 4
+        - flame_concotion 3
     memory: 3
+    prerequisites:
+        - scroll
     description: |
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-    str-cost: 10 mana and 4 flame concoctions
+    str-cost: 10 mana
 fireproof:
-    permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
     spell-icon: magma_cream
     description: |
@@ -158,13 +162,11 @@ smoke:
     spells:
         - nauseate
         - poison
+    cost: 
+         - flame_concotion 5
+    prerequisites:
+        - scroll
     str-cast-self: Casty
-    cost:
-        - levels 3
-        - mana 10
-    description: |
-        &2Smoke: 3 Memory Fire Spell
-        Uses 3 memory slots.
     effects:
       smokey:
         position: special
@@ -181,7 +183,10 @@ spark:
     spell-icon: fireball
     cost:
         - mana 20
-        - blaze_powder 1
+        - blaze_powder 5
+        - flame_concotion 3
+    prerequisites:
+        - scroll 
     memory: 3
     allow-command-casting: false
     cooldown: 1
@@ -198,14 +203,13 @@ spark:
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
 lava:
-    enabled: false
    permission-name: fire
    spell-class: ".targeted.MaterializeSpell"
    cast-item: fire_staff,377
    spell-icon: lava_bucket
    cost:
       - mana 10
-      - blaze_powder 10
+      - flame_concotion 5
       - magma_cream 2
     memory: 2
     allow-command-casting: false
@@ -215,15 +219,14 @@ lava:
     apply-physics: true
     description: |
         &rLava  2 memory Fire school
-        &3Rises Lava from the core..
-    str-cast-self: "Summons Molten Lava"
-    str-cast-others: "%aSummons Molten Lava"
+        &3Rises Lave from the core..
+    str-cast-self: "Sumions Molten Lava"
+    str-cast-others: "%aSumions Molten Lava"
 
     #########################
     #  Intermediate Spells  #
     #########################
 fireball:
-    enabled: false
     permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
@@ -231,9 +234,10 @@ fireball:
     cost:
         - mana 50
         - blaze_powder 1
+        - flame_concotion 5
     prerequisites:
         - fiery_staff
-        - spark
+        - scroll
     memory: 5
     cooldown: 10
     target-players: true
@@ -242,14 +246,22 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    str-cost: 50 mana and one blaze powder.
+    str-cost: 50 mana, one blaze powder and 5 Fire Concotions.
+    str-cast-self: "You Summon a Fiery Flair!"
+    str-cast-others: "%a Summon a Fiery Flair!"
 
 fire_nova:
-    enabled: false
     permission-name: fire
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff,377
     spell-icon: blaze_powder
+    cost:
+         - mana 20
+         - blaze_powder 2
+         - flaim_concotion 3
+    prerequisites:
+        - fiery_staff
+        - scroll
 warmth:
     enabled: false
     permission-name: fire
@@ -276,7 +288,7 @@ fire_shield:
 combust:
     permission-name: fire
     spell-class: ".targeted.CombustSpell"
-    fire-tick-damage: 4
+    fire-tick-damage: 5
     check-plugins: false
 
 
