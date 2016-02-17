@@ -116,7 +116,7 @@ dawnrite:
     str-ritual-fail: The dawn rite has failed.
     str-ritual-success: The dawn is summoned!
     str-modifier-failed: You can only begin this ritual at night.
-sunny:
+skycalm:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
@@ -218,7 +218,6 @@ bloom:
     description: |
         &eBloom: 3 Memory Solar Spell
         Greatly accelerate crop growth.
-        Requires the &2woodland concoction&3 spell.
     str-cost: 2 mana and 4 seeds.
     str-on-cooldown: ""
 
@@ -293,6 +292,9 @@ prayer:
     description: |
         &ePrayer: 3 Memory Solar Spell
         &3Heals yourself for five hearts.
+    modifiers:
+        - world world required
+    str-modifier-failed: Prayers can't help you here.
     str-cost: 30 mana
     str-cast-self: You have healed yourself.
     str-at-full-health: You are already at full health.
