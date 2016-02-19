@@ -39,20 +39,16 @@ lore_of_flame:
     cast-item: book
     spell-icon: "enchanted_book"
     cost:
-        - mana 50
         - book 1
-        - blaze_powder 6
+        - levels 30
+        - blaze_rod 5
     memory: 10
-    prerequisites:
-        - fiery_staff
-        - fiery_potion
     items:
         - fire_grimoire 1
     description: |
-            &4Lore of Flame: 10 Memory Fire Spell
+            &4Lore of Flame: Fire Masters' Spell
             Creates a fiery grimoire.
-            Requires fiery staff and fiery potion spells.
-    str-cost: 50 mana, 1 book, 6 blaze powder.
+    str-cost: A book, 30 levels, and five blaze rods.
     effects: []
 
 fiery_staff:
@@ -66,16 +62,17 @@ fiery_staff:
     prerequisites:
         - scroll
         - spark
-    memory: 10
+    memory: 5
     cost:
+        - levels 10
         - mana 50
-        - blaze_rod 2
+        - blaze_rod 1
     items:
         - fire_staff 1
         - blaze_powder 6-10
     description: |
-            Firestaff:  10 Memory   Fire School.
-            Requires 10 memory, and the scroll, spark, smoke and firebreathing spells.
+            Firestaff:  5 Memory   Fire School.
+            Requires 5 memory, and the scroll, spark, smoke and firebreathing spells.
     str-cost: 50 mana, 2 blaze rods.
     str-cast-self: You create a fiery staff.
     
@@ -117,7 +114,7 @@ firebreathing:
     spell: combust
     cost:
         - mana 10
-        - flame_concotion 3
+        - flame_concoction 3
     memory: 3
     prerequisites:
         - scroll
@@ -185,7 +182,7 @@ spark:
     cost:
         - mana 20
         - blaze_powder 5
-        - flame_concotion 3
+        - flame_concoction 3
     prerequisites:
         - scroll 
     memory: 3
@@ -259,7 +256,7 @@ fire_nova:
     cost:
          - mana 20
          - blaze_powder 2
-         - flaim_concotion 3
+         - flaim_concoction 3
     prerequisites:
         - fiery_staff
         - scroll
