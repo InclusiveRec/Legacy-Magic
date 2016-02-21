@@ -251,7 +251,7 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    str-cost: 50 mana, one blaze powder and fore flame concoction.
+    str-cost: 50 mana, one blaze powder and four flame concoction.
     str-cast-self: "You summon a fiery flare!"
     str-cast-others: "%a summons a fiery flare!"
 fire_nova:
