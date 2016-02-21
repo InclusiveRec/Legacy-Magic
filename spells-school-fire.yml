@@ -20,14 +20,6 @@ predefined-items:
           - "This wand is hot to the"
           - "touch, and smokes and sparks"
           - "with pyromantic magics."
-    
-    flame_concotion:
-      type: "351:1"
-      name: "&4Flame Concotion"
-      lore:
-        - "The Hotest Substance"
-        - "known to Galdur"
-        - "Used to harness the power of the Center Core" 
 
 
 #######################
@@ -75,26 +67,6 @@ fiery_staff:
             Requires the spark spell.
     str-cost: A blaze rod and 10 levels.
     str-cast-self: You create a fiery staff.
-    
-fire_concoction:
-    permission-name: fire
-    spell-class: ".instant.ConjureSpell"
-    cast-item: fire_staff
-    spell-icon: "351:1"
-    memory: 1
-    items:
-        - flame_concoction 4-6
-    cost:
-        - mana 10
-        - 378 1
-        - solar_concoction 4
-        - 87 4
-        - 115 3
-    description: |
-            &eFire Concoction: 1 Memory Fire Spell
-            Mixes a Flame concoction.
-            Requires knowledge of the &2Solar concoction&3 spell.
-    str-cost: "Add 3 Nether Wort, 1 Magma Cream to 4 Solar concoction with 4 Netherrack, using 10 mana."
 
 
 
@@ -114,16 +86,12 @@ firebreathing:
     spell: combust
     cost:
         - mana 10
-        - flame_concoction 4
     memory: 3
     description: |
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "Breath like that belongs in the nether!"
-    str-cost: 10 mana and 4 flame concoctions
+    str-cost: 10 mana
 fireproof:
     permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
@@ -197,36 +165,9 @@ spark:
     description: |
         &rSpark:    3 Memory   Fire School
         &3Cast a fiery bolt at monsterous foes.
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "You can't cast that in this world."
     str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
-lava:
-    enabled: false
-   permission-name: fire
-   spell-class: ".targeted.MaterializeSpell"
-   cast-item: fire_staff,377
-   spell-icon: lava_bucket
-   cost:
-      - mana 10
-      - blaze_powder 10
-      - magma_cream 2
-    memory: 2
-    allow-command-casting: false
-    cooldown: 120
-    range: 5
-    block-type: lava
-    apply-physics: true
-    description: |
-        &rLava  2 memory Fire school
-        &3Rises Lava from the core..
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "You can't cast that in this world."
-    str-cast-self: "Summons Molten Lava"
-    str-cast-others: "%aSummons Molten Lava"
 
     #########################
     #  Intermediate Spells  #
@@ -251,9 +192,6 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "You can't cast that in this world."
     str-cost: 50 mana and one blaze powder.
 
 fire_nova:
@@ -262,9 +200,6 @@ fire_nova:
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff,377
     spell-icon: blaze_powder
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "You can't cast that in this world."
 warmth:
     enabled: false
     permission-name: fire
