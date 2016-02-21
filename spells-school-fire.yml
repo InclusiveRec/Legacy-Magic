@@ -204,7 +204,7 @@ spark:
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
 lava:
-    enabled: true
+    enabled: false
    permission-name: fire
    spell-class: ".targeted.MaterializeSpell"
    cast-item: fire_staff,377
