@@ -91,6 +91,9 @@ firebreathing:
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
+    modifiers:
+        - world world_nether required
+    str-modifier-failed: "Breath like that belongs in the nether!"
     str-cost: 10 mana
 fireproof:
     permission-name: fire
@@ -166,6 +169,9 @@ spark:
         &rSpark:    3 Memory   Fire School
         &3Cast a fiery bolt at monsterous foes.
     str-cost: 10 mana and 1 blaze powder.  Uses 3 memory slots.
+    modifiers:
+        - world world_nether required
+    str-modifier-failed: "You can't cast that in this world."
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
 
@@ -192,6 +198,9 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
+    modifiers:
+        - world world_nether required
+    str-modifier-failed: "You can't cast that in this world."
     str-cost: 50 mana and one blaze powder.
 
 fire_nova:
