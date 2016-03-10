@@ -51,25 +51,6 @@ warhorse:
 #   made using knightly swords.  Some swords are 
 #   tied to other schools of magic.
 #
-
-sword_template:
-    enabled: false
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    memory: 0
-    triggers:
-        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
-    modifiers:
-        - chance 5 required
-    cost:
-        - mana 10
-    spells:
-        - stun
-    str-cast-self: "A description of the attack."
-    str-cast-others: "A description of the attack."
-    description: "Detail effects of this attack."
-    str-cost: "10 mana; 0 memory; bound to all knightly swords."
-
 stunning_blow:
     permission-name: knights
     spell-class: ".PassiveSpell"
@@ -85,20 +66,6 @@ stunning_blow:
         owie:
             effect: splash
             pot: slowness
-
-
-charge:
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    triggers:
-        - sprint
-    cooldown: 5
-    spells:
-        - shove
-    modifiers:
-        - holding "267|&eElvensteel Blade" stop
-        - holding "267|&8Broadsword" required
-
 #
 #           The knightly_harness spell.
 #
@@ -106,67 +73,20 @@ charge:
 
 knightly_harness:
     permission-name: knights
-    spell-class: ".MultiSpell"
+    spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
-    target-self: true
-    spells:
-        - en_garde
-        - DELAY 1
-        - equip_knightly_armour
+    toggle: false
+    helmet: knightly_helm
+    chestplate: knightly_hauberk
+    leggings: knightly_greaves
+    boots: knightly_sabatons
     cost:
         - mana 50
         - 42 1
     description: "You ready your guard and summon a suit of armour."
     str-cost: "1 iron block and 50 mana."
+    str-cast-self: "En garde!"
 
-en_garde:
-    permission-name: knights
-    spell-class: ".buff.DummySpell"
-    str-cast-self: "You drop into your guard..."
-    str-cast-self: ""
-    duration: 180
-
-burnished_cuirass:
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    triggers:
-        - spellcast en_garde
-    spells:
-        - equip_burnished_cuirass
-equip_burnished_cuirass:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    chestplae: burnished_cuirass
-    str-cast-self: "You conjure a burnished cuirass!"
-
-equip_knightly_armour:
-    permission-name: knights
-    spell-class: ".MultiSpell"
-    spells:
-        - equip_helm
-        - equip_hauberk
-        - equip_leggings
-        - equip_spurs
-equip_helm:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    helmet: knightly_helm
-    duration: 180
-equip_hauberk:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    chestplate: knightly_hauberk
-    duration: 180
-equip_leggings:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    leggings: knightly_greaves
-    duration: 180
-equip_spurs:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    boots:  knightly_sabatons
-    duration: 180
 
 #              Guard spells
 #
@@ -175,24 +95,6 @@ equip_spurs:
 #   mana-hungry.
 #
 
-guard_template:
-    enabled: false
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    triggers:
-        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
-    modifiers:
-        - buffactive en_garde required
-        - wearing "303|Some armour" power 2
-    spells:
-        - stun
-    cost:
-        - mana 10
-    description: "You deflect a blow."
-    str-cost: "10 mana; 0 memory.  [Enhanced when wearing...]"
-    str-cast-self: "You deflect %t's blow."
-    str-cast-target: "%c deflects your blow."
-
 grim_determination:
     permission-name: knights
     spell-class: ".PassiveSpell"
@@ -200,7 +102,6 @@ grim_determination:
     triggers:
         - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
     modifiers:
-        - buffactive en_garde required
         - healthbelow 5 required
         - wearing "303|&8Hauberk" power 2
     spells:
@@ -212,10 +113,31 @@ grim_determination:
     str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
     str-no-reagents:  "Your strength is failing you..."
 
+#   Effects
+second_wind:
+    spell-class: ".instant.PrayerSpell"
+    amount-healed: 10
+
 #   Item factory
 
-#   TODO: Conjure spells
-
+lore_of_knighthood:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    items:
+      - knight_grimoire 1
+forge_knightly_saddle:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: knight_grimoire
+    items:
+      - knight_saddle 1
+forge_knightly_sword:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: knight_grimoire
+    items:
+      - knight_sword 1
 #
 #               Items
 #
@@ -227,17 +149,6 @@ grim_determination:
 #
 
 predefined-items:
-
-
-
-#
-#           Item factory
-#
-#   Grimoire for creating swords and saddles.
-#
-#
-#
-
 
     # Grimoire
 
@@ -272,6 +183,7 @@ predefined-items:
             - damage_all 2
             - durability 2
 
+    # Elven blade will form part of solar expansion.  Coming soon.
     elven_blade:
         type: iron_sword
         name: "&eElvensteel Blade"
@@ -306,14 +218,4 @@ predefined-items:
     knightly_sabatons:
         type: 305
         name: "&8Spurs"
-
-
-    #   Solar aligned.
-
-    burnished_cuirass:
-        type: 315
-        name: "&eBurnished Cuirass"
-        enchants:
-            - PROTECTION_FIRE
-
 
