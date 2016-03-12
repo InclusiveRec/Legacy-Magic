@@ -56,7 +56,7 @@ stunning_blow:
     triggers:
         - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
     spells:
-        - stun
+        - cripple
     modifiers:
         - chance 4 required
     str-cast-self: "You lash out at %t with your blade, briefly stunning them."
