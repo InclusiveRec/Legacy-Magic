@@ -110,6 +110,33 @@ stain_steel:
     - levels 6
     - health 4
 
+bottle_soul:
+    permission-name: death
+    spell-class: ".MultiSpell"
+    cast-item: death_grimoire
+    bindable: false
+    can-cast-by-command: false
+    memory: 3
+    prerequisites:
+      - drain
+      - scroll
+    spell-icon: 384
+    cost:
+      - 374 1
+      - xp 10
+    description: |
+        &5Bottle Soul: 3 memory Death spell
+        The mage bottles a small portion of their soul... for later use.
+        The process is not very efficient.
+    str-cost: A small glass bottle to contain the experience you wish to store.
+    str-cast-self: "This can't be good for your health..."
+    spells:
+      - xp_pot
+      - idontfeelsogood
+    effects:
+      slurp:
+        type: sound
+        sound: item.bottle.fill
 # Low-level: 1-5 memory
 
 sacrifice:
@@ -394,3 +421,16 @@ spawn_zombie:
 spawn_skeleton:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: skeleton
+
+idontfeelsogood:
+    spell-class: ".targeted.PotionEffectSpell"
+    targeted: false
+    type: 9
+    duration: 60
+    strength: 1
+
+xp_pot:
+    spell-class: ".instant.ConjureSpell"
+    items:
+      - 384 1
+    add-to-inventory: true
