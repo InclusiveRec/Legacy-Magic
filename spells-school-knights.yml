@@ -20,8 +20,9 @@ warhorse:
     str-cost: 20 mana and a golden carrot.
     str-cast-self: You summon a knightly warhorse!
     str-cast-others: "%c summons a knightly warhorse!"
-    str-cost: "20 mana and a golden carrot; uses the War Saddle; 5 memory."
+    str-cost: "20 mana and a golden carrot; uses the War Saddle; 2 memory."
     description: "Summons a mount to aid you in battle."
+    armor: iron_horse_armor
 
 #
 #                       Sword spells
@@ -62,6 +63,7 @@ knightly_harness:
     chestplate: knightly_hauberk
     leggings: knightly_greaves
     boots: knightly_sabatons
+    duration: 360
     cost:
         - mana 50
         - 42 1
@@ -106,21 +108,36 @@ lore_of_knighthood:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    can-cast-by-command: false
+    bindable: false
+    cost:
+      - levels 30
+      - book 1
+      - iron_block 3
     items:
       - knight_grimoire 1
 forge_knightly_saddle:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: knight_grimoire
+    can-cast-by-command: false
+    bindable: false
     items:
       - knight_saddle 1
+    cost:
+      - levels 15
+      - saddle 1
 forge_knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: knight_grimoire
+    can-cast-by-command: false
+    bindable: false
     items:
       - knight_sword 1
-
+    cost:
+      - levels 10
+      - iron_sword 1
 #
 #               Items
 #
