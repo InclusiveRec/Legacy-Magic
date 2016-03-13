@@ -123,7 +123,7 @@ bottle_soul:
     spell-icon: 384
     cost:
       - 374 1
-      - xp 10
+      - experience 10
     description: |
         &5Bottle Soul: 3 memory Death spell
         The mage bottles a small portion of their soul... for later use.
