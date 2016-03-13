@@ -110,6 +110,10 @@ lore_of_knighthood:
     cast-item: book
     can-cast-by-command: false
     bindable: false
+    cost:
+      - levels 30
+      - book 1
+      - iron_block 3
     items:
       - knight_grimoire 1
 forge_knightly_saddle:
@@ -120,6 +124,9 @@ forge_knightly_saddle:
     bindable: false
     items:
       - knight_saddle 1
+    cost:
+      - levels 15
+      - saddle 1
 forge_knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
@@ -128,7 +135,9 @@ forge_knightly_sword:
     bindable: false
     items:
       - knight_sword 1
-
+    cost:
+      - levels 10
+      - iron_sword 1
 #
 #               Items
 #
