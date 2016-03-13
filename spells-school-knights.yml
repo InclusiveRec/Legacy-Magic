@@ -204,7 +204,7 @@ predefined-items:
     #       Basic knightly armour
 
     knightly_helm:
-        type: 306
+        type: 302
         name: "&8Great Helm"
         enchants:
             - PROTECTION_PROJECTILE 2
@@ -212,7 +212,7 @@ predefined-items:
         type: 303
         name: "&8Hauberk"
     knightly_greaves:
-        type: 316
+        type: 304
         name: "&8Banded Greaves"
     knightly_sabatons:
         type: 305
