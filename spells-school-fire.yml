@@ -228,15 +228,6 @@ fire_shield:
     prerequisites:
         - fiery_grimoire
 
-    #################
-    # effect spells #
-    #################
-
-combust:
-    permission-name: fire
-    spell-class: ".targeted.CombustSpell"
-    fire-tick-damage: 4
-    check-plugins: false
 
 
 # warmth
