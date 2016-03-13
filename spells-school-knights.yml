@@ -7,9 +7,8 @@
 warhorse:
     permission-name: knights
     spell-class: ".instant.SteedSpell"
-    permission-name: knight_school
     memory: 2
-    cast-item: knight-saddle
+    cast-item: knight_saddle
     can-cast-by-command: false
     bindable: false
     color: BLACK
