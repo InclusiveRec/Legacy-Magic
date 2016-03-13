@@ -55,6 +55,8 @@ knightly_harness:
     permission-name: knights
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
+    can-cast-by-command: false
+    bindable: false
     toggle: false
     helmet: knightly_helm
     chestplate: knightly_hauberk
