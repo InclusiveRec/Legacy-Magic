@@ -41,16 +41,16 @@ lore_of_death:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: 403
-    memory: 10
-    items:
-      - death_grimoire 1
     cost:
         - book 1
         - levels 30
         - 397 1 # a skull
         - bone 13
-    str-cost: "A book, 30 levels, 13 bones and a skull."
+    memory: 10
+    items:
+      - death_grimoire 1
     str-cast-self: "You have created a Necronomicon.  The secrets of death magic are yours to command."
+    str-cost: "A book, 30 levels, 13 bones and a skull."
     description: |
         &5Lore of Death: Death Master Spell
         The death mage inscribes non-euclidean runes
@@ -66,23 +66,23 @@ bone_carving:
     permission-name: death
     spell-class: ".instant.ConjureSpell"
     cast-item: death_grimoire
-    memory: 4
-    prerequisites:
-      - blood_for_blood
-      - scroll
     spell-icon: bone
-    items:
-        - death_wand 1
     cost:
       - bone 1
       - rotten_flesh 2
       - health 4
       - levels 3
-    str-cost: A bone, four rotten flesh, and ten levels.
-    str-cast-self: The wand grows eerily cold to the touch.  The work is done.
-    casttime: 240 # server ticks; 12 seconds
+    prerequisites:
+      - blood_for_blood
+      - scroll
+    memory: 4
+    items:
+        - death_wand 1
     modifiers:
       - holding "403|&5Necronomicon" casttime 1 # seconds
+    str-cast-self: "The wand grows eerily cold to the touch.  The work is done."
+    str-cost: "A bone, four rotten flesh, and ten levels."
+    casttime: 240 # server ticks; 12 seconds
     description: |
         &5Bone Carving: 4 memory death spell
         Carve a bone to channel necromantic magic,
@@ -98,41 +98,41 @@ stain_steel:
   spell-class: ".instant.ConjureSpell"
   cast-item: death_grimoire
   spell-icon: iron_sword
-  memory: 3
-  prerequisites:
-    - drain
-    - scroll
-  items:
-    - death_knife 1
   cost:
     - iron_sword 1
     - rotten_flesh 3
     - levels 6
     - health 4
+  prerequisites:
+    - drain
+    - scroll
+  memory: 3
+  items:
+    - death_knife 1
 
 bottle_soul:
     permission-name: death
     spell-class: ".MultiSpell"
     cast-item: death_grimoire
-    bindable: false
-    can-cast-by-command: false
-    memory: 3
-    prerequisites:
-      - drain
-      - scroll
-    spell-icon: 384
     cost:
       - 374 1
       - experience 10
+    prerequisites:
+      - drain
+      - scroll
+    memory: 3
+    bindable: false
+    can-cast-by-command: false
+    spell-icon: 384
+    spells:
+      - xp_pot
+      - idontfeelsogood
+    str-cast-self: "This can't be good for your health..."
+    str-cost: "A small glass bottle to contain the experience you wish to store."
     description: |
         &5Bottle Soul: 3 memory Death spell
         The mage bottles a small portion of their soul... for later use.
         The process is not very efficient.
-    str-cost: A small glass bottle to contain the experience you wish to store.
-    str-cast-self: "This can't be good for your health..."
-    spells:
-      - xp_pot
-      - idontfeelsogood
     effects:
       slurp:
         type: sound
@@ -142,20 +142,20 @@ bottle_soul:
 sacrifice:
     permission-name: death
     spell-class: ".instant.ManaSpell"
-    memory: 2
-    spell-icon: potion:8193
     cast-item: bone,death_wand
-    cooldown: 1
-    str-on-cooldown: ""
-    mana: 50
+    spell-icon: potion:8193
     cost:
         - health 6
-    str-cost: 3 hearts
-    str-cast-self: You feel a surge of magical power!
-    str-missing-reagents: "If you cast that any more, you'll kill yourself."
+    memory: 2
+    cooldown: 1
+    mana: 50
     modifiers:
         - potioneffect 17 continue
         - holding "352|&5Carved bone" power 2
+    str-cast-self: "You feel a surge of magical power!"
+    str-cost: "3 hearts"
+    str-missing-reagents: "If you cast that any more, you'll kill yourself."
+    str-on-cooldown: ""
     description: |
         &5Sacrifice: 2 Memory Death Spell
         Restores mana at the cost of life.
@@ -163,22 +163,22 @@ sacrifice:
 blood_for_blood:
     permission-name: death
     spell-class: ".buff.ManaRegenSpell"
-    memory: 7
-    prerequisites:
-        - sacrifice
     cast-item: bone, death_wand
     spell-icon: redstone
-    regen-mod-amt: 20
+    prerequisites:
+        - sacrifice
+    memory: 7
     use-cost:
         - health 4
+    cancel-on-death: true
+    cancel-on-logout: true
+    regen-mod-amt: 20
     use-cost-interval: 1
     cost:
         - health 2
-    str-cost: 2 hearts to cast, and 1 heart at each mana tick.
-    str-cast-self: You have made a dark bargain...
-    str-fade: Enough!
-    cancel-on-death: true
-    cancel-on-logout: true
+    str-cast-self: "You have made a dark bargain..."
+    str-cost: "2 hearts to cast, and 1 heart at each mana tick."
+    str-fade: "Enough!"
     description: |
         &5Blood for Blood: 7 memory Death spell
         While this spell is active, your mana regeneration will
@@ -188,30 +188,30 @@ blood_for_blood:
 drain:
     permission-name: death
     spell-class: ".targeted.DrainlifeSpell"
-    memory: 2
-    spell-icon: ghast_tear
     cast-item: bone, death_wand
+    spell-icon: ghast_tear
+    cost:
+        - mana 10
+    memory: 2
     can-cast-by-command: false
-    cooldown: 0.2
-    str-on-cooldown: ""
-    ignore-armor: true
-    target-players: true
     check-plugins: true
-    range: 6
-    take-type: health
-    take-amt: 1
-    give-type: health
+    cooldown: 0.2
     give-amt: 1
+    give-type: health
+    ignore-armor: true
+    range: 6
+    take-amt: 1
+    take-type: health
+    target-players: true
     modifiers:
         - potioneffect 17 power 2
         - holding "352|&5Carved bone" power 2
-    cost:
-        - mana 10
-    str-cost: 10 mana
-    str-cast-self: You drain life from your enemy.
     str-cast-others: "%a sucks the life from %t!"
+    str-cast-self: "You drain life from your enemy."
     str-cast-target: "%a sucks some of your life away!"
-    str-no-target: No source of life energy found.
+    str-cost: "10 mana"
+    str-no-target: "No source of life energy found."
+    str-on-cooldown: ""
     effects:
         ouch:
             position: target
@@ -230,23 +230,23 @@ drain:
 rupture:
     permission-name: death
     spell-class: ".targeted.ExplodeSpell"
-    spell-icon: 289
     cast-item: bone, death_wand
+    spell-icon: 289
     cost:
         - mana 15
         - 289 1
-    memory: 5
-    cooldown: 10
-    range: 25
-    explosion-size: 4
-    backfire-chance: 3
     cast-time: 60
-    str-cast-start: You begin charging your power...
-    str-cast-self: You strike out destructive energy!
-    str-cast-others: "%a strikes out with destructive energy!"
-    str-cost: 15 mana and 1 gunpowder
-    interrupt-on-move: false
+    cooldown: 10
+    memory: 5
+    backfire-chance: 3
     can-cast-by-command: false
+    explosion-size: 4
+    interrupt-on-move: false
+    range: 25
+    str-cast-others: "%a strikes out with destructive energy!"
+    str-cast-self: "You strike out destructive energy!"
+    str-cast-start: "You begin charging your power..."
+    str-cost: "15 mana and 1 gunpowder"
     description: |
         &5Rupture: 5 Memory Death Spell
         Charge up power to create an explosion at a target point.
@@ -256,8 +256,11 @@ rupture:
 necrotic_claw:
     permission-name: death
     spell-class: ".TargetedMultiSpell"
-    spell-icon: "367"
     cast-item: death_wand
+    spell-icon: "367"
+    cost:
+        - mana 40
+    cooldown: 20
     prerequisites:
         - drain
     memory: 5
@@ -269,47 +272,44 @@ necrotic_claw:
         - drain
         - DELAY 20
         - drain
-    cooldown: 20
-    cost:
-        - mana 40
 
 deathray:
     permission-name: death
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: death_wand
     spell-icon: "381"
-    memory: 7
-    prerequisites:
-      - rupture
-    spell: pain
-    projectile-velocity: 20
-    max-distance: 80
-    tick-interval: 10
-    particle-name: witchMagic
-    particle-count: 10
-    hit-players: true
-    hit-non-players: true
-    hit-ground: false
     cost:
       - mana 50
+    prerequisites:
+      - rupture
+    memory: 7
+    hit-ground: false
+    hit-non-players: true
+    hit-players: true
+    max-distance: 80
+    particle-count: 10
+    particle-name: witchMagic
+    projectile-velocity: 20
+    spell: pain
+    tick-interval: 10
 
 # High level: 10+ memory
 
 awakening:
     permission-name: death
     spell-class: ".targeted.PulserSpell"
-    spell-icon: "397:1"
     cast-item: death_grimoire
-    memory: 10
+    spell-icon: "397:1"
     prerequisites:
       - lore_of_death
-    spells:
-      - spawn_random
+    memory: 10
+    block-type: skull
     cap-per-player: 3
     interval: 20
-    block-type: skull
-    str-cast-self: You call upon the forces of darkness...
-    str-cast-others: Undead creatures start clawing their way up through the ground...
+    spells:
+      - spawn_random
+    str-cast-self: "You call upon the forces of darkness..."
+    str-cast-others: "Undead creatures start clawing their way up through the ground..."
     description: |
             &5Awakening: 10 memory Death spell
             You awaken a horde of the dead!
@@ -319,9 +319,15 @@ awakening:
 revenant:
     permission-name: death
     spell-class: ".buff.MinionSpell"
-    spell-icon: "383:54"
     cast-item: death_grimoire
+    spell-icon: "383:54"
+    cost:
+        - mana 30
+        - rotten_flesh 2
+        - bone 2
     cooldown: 10
+    memory: 6
+    cancel-on-death: true
     duration: 60
     mob-chances:
         - Zombie 73
@@ -329,45 +335,39 @@ revenant:
         - Wither_Skeleton 2
     prevent-sun-burn: true
     target-players: false
-    cancel-on-death: true
-    cost:
-        - mana 30
-        - rotten_flesh 2
-        - bone 2
-    memory: 6
+    str-cast-others: "%a has summoned an undead minion."
+    str-cast-self: "You summon an undead minion."
+    str-cost: "30 mana, 2 rotten flesh and 2 bones"
+    str-fade: "Your undead minion dies."
     description: |
         &rMinion:   6 Memory   Death School
         &3Summons an undead minion to aid you.
-    str-cost: 30 mana, 2 rotten flesh and 2 bones
-    str-cast-self: You summon an undead minion.
-    str-cast-others: "%a has summoned an undead minion."
-    str-fade: Your undead minion dies.
 
 # Cross-school spells
 
 spite:
     permission-name: death
-    prerequisites:
-      - blind # Shadow
     spell-class: ".targeted.AreaEffectSpell"
-    spell-icon: 375
     cast-item: bone
+    spell-icon: 375
     cost:
         - mana 60
         - 375 6
     cooldown: 60
+    prerequisites:
+      - blind # Shadow
     memory: 5
-    description: |
-        &rSpite:   5 Memory   Death School
-        &3Unleash an burst of dark energy, blinding your foes and draining their life energy.
-    str-cost: 60 mana and six spider eyes.
-    vertical-radius: 3
+    fail-if-no-targets: false
     horizontal-radius: 4
     point-blank: false
     range: 20
-    target-players: true
-    target-non-players: false
-    fail-if-no-targets: false
     spells:
         - blind
         - drain
+    target-non-players: false
+    target-players: true
+    vertical-radius: 3
+    str-cost: "60 mana and six spider eyes."
+    description: |
+        &rSpite:   5 Memory   Death School
+        &3Unleash an burst of dark energy, blinding your foes and draining their life energy.
