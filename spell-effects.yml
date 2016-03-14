@@ -108,6 +108,19 @@ stormy-helper:
     execute-on-console-instead: true
     command-to-execute:
         - "weather thunder"
+    effects:
+      sound:
+        effect: sound
+        position: caster
+        sound: block.grass.break
+        volume: 1.2
+      fury:
+        effect: particles
+        particle-name: snowshovel
+        horiz-spread: 0.8
+        vert-spread: 0.2
+        speed: 0.7
+        count: 50
 sunny-helper:
     spell-class: ".ExternalCommandSpell"
     execute-on-console-instead: true
