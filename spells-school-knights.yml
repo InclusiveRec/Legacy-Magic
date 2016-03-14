@@ -97,11 +97,6 @@ grim_determination:
     str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
     str-no-reagents:  "Your strength is failing you..."
 
-#   Effects
-second_wind:
-    spell-class: ".instant.PrayerSpell"
-    amount-healed: 10
-
 #   Item factory
 
 lore_of_knighthood:

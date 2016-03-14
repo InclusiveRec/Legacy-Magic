@@ -1,3 +1,26 @@
+bleeding:
+    spell-class: ".targeted.PainSpell"
+    damage: 3
+    spell-damage-type: animal
+    target-players: true
+    str-on-cooldown: Cooldown
+    effects:
+        sound:
+            position: target
+            effect: sound
+            sound: mob.slime.big
+        visual:
+            position: target
+            effect: particles
+            particle-name: spell
+            count: 20
+            horiz-spread: 1.5
+            vert-spread: 1.2
+combust:
+    permission-name: fire
+    spell-class: ".targeted.CombustSpell"
+    fire-tick-damage: 4
+    check-plugins: false
 cripple:
     spell-class: ".targeted.CrippleSpell"
     effect-strength: 2
@@ -47,6 +70,17 @@ fwblast5:
     explosion-size: 0
     effects:
         - pos2 fireworks yes yes 4 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
+getvined:
+    spell-class: ".TargetedMultiSpell"
+    spells:
+      - viney
+      - cripple
+idontfeelsogood:
+    spell-class: ".targeted.PotionEffectSpell"
+    targeted: false
+    type: 9
+    duration: 60
+    strength: 1
 nauseate:
     spell-class: ".targeted.PotionEffectSpell"
     type: 9
@@ -54,6 +88,15 @@ nauseate:
     duration: 60
     targeted: true
     target-players: true
+monster_invisibility:
+    spell-class: ".buff.InvisibilitySpell"
+    prevent-pickups: false
+    invisible-to-players: false
+    duration: 30
+    str-fade: "You have emerged from cover!"
+    cancel-on-give-damage: true
+    cancel-on-logout: true
+    cancel-on-spell-cast: true
 poison:
     spell-class: ".targeted.PotionEffectSpell"
     type: 19
@@ -61,6 +104,25 @@ poison:
     duration: 60
     targeted: true
     target-players: true
+pain:
+    spell-class: ".targeted.PainSpell"
+    spell-damage-type: death
+    damage: 4
+    ignore-armor: true
+    str-cast-others: "%t was hit by a death ray!"
+    str-cast-target: "You were hit by a death ray!"
+    effects:
+        hit:
+            position: target
+            effect: smoke
+        ouch:
+            position: target
+            effect: sound
+            sound: game.hostile.hurt.fall.big
+            volume: 2
+paralysis:
+    spell-class: ".targeted.StunSpell"
+    duration: 3
 punch:
     spell-class: ".targeted.ForcetossSpell"
     horizontal-force: 25
@@ -72,10 +134,37 @@ punch:
             position: target
             effect: explosion
 second_wind:
+    spell-class: ".TargetedMultiSpell"
+    spells:
+        - second_wind1
+        - second_wind2
+second_wind1:
     spell-class: ".targeted.PotionEffectSpell"
     duration: 40
     type: 10
     strength: 1
+second_wind2:
+    spell-class: ".instant.PrayerSpell"
+    amount-healed: 10
+spawn_random:
+    spell-class: ".TargetedMultiSpell"
+    spells:
+        - spawn_zombie
+        - spawn_zombie
+        - spawn_zombie
+        - spawn_zombie
+        - spawn_skeleton
+    cast-random-spell-instead: true
+    effect:
+        heckfire:
+            position: target
+            effect: particles
+spawn_skeleton:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: skeleton
+spawn_zombie:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: zombie
 shove:
     spell-class: ".instant.ForcepushSpell"
     pushback-force: 6
@@ -113,3 +202,66 @@ sunny-helper:
     execute-on-console-instead: true
     command-to-execute:
         - "weather clear"
+tempwolf:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: wolf
+    duration: 400
+    allow-spawn-in-midair: true
+    tamed: true
+    cost:
+        - mana 50
+        - bone 3
+    memory: 3
+    requires: wolf
+    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
+    modifiers:
+        - chance 50 required
+    effects:
+        woosh:
+            position: target
+            type: splash
+            pot: 6
+trycow:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: cow
+    modifiers:
+        - biome PLAINS,SAVANNA,SAVANNA_PLATEAU,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS required
+trysheep:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: sheep
+    modifiers:
+        - biome EXTREME_HILLS,EXTREME_HILLS_PLUS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+trypig:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: pig
+    modifiers:
+        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS required
+tryrabbit:
+    spell-class: ".targeted.SpawnMonsterSpell"
+    entity-type: rabbit
+    modifiers:
+        - biome SUNFLOWER_PLAINS,FLOWER_FOREST required
+viney:
+    spell-class: ".targeted.GeyserSpell"
+    damage: 1
+    animation-speed: 1
+    geyser-height: 6
+    velocity: 0
+    geyser-type: 106
+watersee_effect: 
+     spell-class: ".targeted.PotionEffectSpell" 
+     duration: 600
+     targeted: false 
+     type: 16 
+     cost: 
+         - mana 601
+     memory: 1000
+     description: See in the dark!
+     str-cost: 120 mana!
+     cooldown: 30 
+     beneficial: true 
+xp_pot:
+    spell-class: ".instant.ConjureSpell"
+    items:
+      - 384 1
+    add-to-inventory: true
