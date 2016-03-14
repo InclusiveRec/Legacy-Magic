@@ -3,103 +3,97 @@
 list:
     permission-name: cantrip
     spell-class: ".command.ListSpell"
-    name: list
     always-granted: true
-    description: |
-        &rList   -   Cantrip
-        &3List all the spells you know.
     only-show-castable-spells: true
     reload-granted-spells: true
     spells-to-hide: []
+    str-no-spells: "You do not know any spells."
     str-prefix: "Known spells:"
-    str-no-spells: You do not know any spells.
+    description: |
+        &rList   -   Cantrip
+        &3List all the spells you know.
 help:
     permission-name: cantrip
     spell-class: ".command.HelpSpell"
-    name: help
     always-granted: true
+    require-known-spell: true
+    str-cost-line: "Cost: %c"
+    str-desc-line: "%d"
+    str-no-spell: "You do not know a spell by that name."
+    str-usage: "Usage: /cast help <spell>"
     description: |
         &rHelp   -   Cantrip
         &3Get information about a specified spell that you already know.
-    require-known-spell: true
-    str-usage: "Usage: /cast help <spell>"
-    str-no-spell: You do not know a spell by that name.
-    str-desc-line: "%d"
-    str-cost-line: "Cost: %c"
 forget:
     permission-name: cantrip
     spell-class: ".command.ForgetSpell"
-    name: forget
     always-granted: true
+    allow-self-forget: true
+    str-doesnt-know: "That person does not know that spell."
+    str-no-spell: "You do not know a spell by that name."
+    str-no-target: "No such player."
+    str-cast-self: "You made %t forget the %s spell."
+    str-cast-self-target: "You have forgotten the %s spell."
+    str-cast-target: "%a has made you forget the %s spell."
+    str-reset-self: "You have forgotten all of your spells."
+    str-reset-target: "You have reset %t's spellbook."
+    str-usage: "Usage: /cast forget <target> <spell>"
     description: |
         &rForget   -   Cantrip
         &3Make a player forget a spell.
-    allow-self-forget: true
-    str-usage: "Usage: /cast forget <target> <spell>"
-    str-no-target: No such player.
-    str-no-spell: You do not know a spell by that name.
-    str-doesnt-know: That person does not know that spell.
-    str-cast-self: You made %t forget the %s spell.
-    str-cast-target: "%a has made you forget the %s spell."
-    str-cast-self-target: "You have forgotten the %s spell."
-    str-reset-target: "You have reset %t's spellbook."
-    str-reset-self: "You have forgotten all of your spells."
 
 # Teleportation spells
 
 gate:
-    enabled: true
     permission-name: cantrip
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
-    always-granted: true
-    coordinates: SPAWN
-    effects:
-        - pos1 ender
-        - pos2 ender
     cost:
         - mana 30
-    str-cost: 30 mana
     cooldown: 30
     shared-cooldowns:
         - summon_helper 120
         - recall 120
+    always-granted: true
+    coordinates: SPAWN
     modifiers:
         - world world required
-    str-modifier-failed: You cannot cast that spell here.
-    str-cast-self: You have teleported to Sunfield.
+    str-cost: "30 mana"
+    str-modifier-failed: "You cannot cast that spell here."
     str-cast-others: "%a appears!"
-    str-gate-failed: Unable to teleport.
+    str-cast-self: "You have teleported to Sunfield."
+    str-gate-failed: "Unable to teleport."
     description: |
         &rGate   -   Cantrip
         &3Teleport to Sunfield.
+    effects:
+        - pos1 ender
+        - pos2 ender
 recall:
-    enabled: true
     permission-name: cantrip
     spell-class: ".instant.RecallSpell"
-    spell-icon: bed
     cast-item: book
+    spell-icon: bed
     always-granted: true
-    allow-cross-world: false
-    description: |
-        &rRecall   -   Cantrip
-        &3Teleports you to the last bed you slept in.
+    cost:
+        - mana 50
     cooldown: 120
     shared-cooldowns:
         - summon_helper 120
         - gate 30
-    max-range: 1000
     allow-cross-world: false
+    max-range: 1000
     use-bed-location: true
-    cost:
-        - mana 50
-    str-cost: 50 mana
-    str-cast-self: You teleport back home.
-    str-no-mark: You have no bed to return to.
-    str-other-world: You cannot recall to another world.
-    str-too-far: Your bed is too far away.
     str-cast-others: "%a disappears!"
+    str-cost: "50 mana"
+    str-cast-self: "You teleport back home."
+    str-no-mark: "You have no bed to return to."
+    str-other-world: "You cannot recall to another world."
+    str-too-far: "Your bed is too far away."
+    description: |
+        &rRecall   -   Cantrip
+        &3Teleports you to the last bed you slept in.
 
 
 summon_helper:
