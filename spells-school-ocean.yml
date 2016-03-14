@@ -40,10 +40,10 @@ lore_of_oceans:
     memory: 10
     items:
         - water_grimoire
+    str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
             Create a grimoire of Hydromantic lore.
-    str-cost: 30 levels, a book, and 3 prismarine crystals.
 hydromantic_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
@@ -52,16 +52,16 @@ hydromantic_focus:
     cost:
         - levels 10
         - prismarine_crystals 6
-    memory: 5
     prerequisites:
         - scroll
         - geyser
+    memory: 5
     items:
         - water_focus
+    str-cost: "10 levels and 6 prismarine crystals."
     description: |
             &1Hydromantic Focus: 5 Memory Water Spell
             Create a hydromantic focus to direct water spells.
-    str-cost: 10 levels and 6 prismarine crystals.
 dowsing_rod:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
@@ -71,13 +71,13 @@ dowsing_rod:
         - levels 5
         - prismarine_crystals 3
         - stick 1
-    memory: 2
     prerequisites:
         - scroll
         - water
-    str-cost: 5 levels, 3 prismarine crystals, and a stick.
+    memory: 2
     items:
         - water_rod
+    str-cost: "5 levels, 3 prismarine crystals, and a stick."
 
 #########################
 #                       #
@@ -90,68 +90,68 @@ gills:
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
-    glass-head-effect: false
-    cooldown: 60
-    duration: 300
-    num-uses: 5
     cost:
         - mana 50
         - sugar_cane 1
     use-cost:
         - sugar_cane 1
+    cooldown: 60
     memory: 5
+    duration: 300
+    glass-head-effect: false
+    num-uses: 5
     use-cost-interval: 1
+    str-cast-self: "You form gills on your neck!"
+    str-cost: "50 mana and 1 sugar cane, plus 1 sugar cane every few seconds."
+    str-fade: "Your gills disappear."
     description: |
         &rGills   5 Memory   Water School
         &3Allows you to breathe underwater.
-    str-cost: 50 mana and 1 sugar cane, plus 1 sugar cane every few seconds
-    str-cast-self: You form gills on your neck!
-    str-fade: Your gills disappear.
 water:
     permission-name: ocean
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
     cast-item: book
-    cooldown: 120
-    range: 8
-    block-type: water
-    reset-delay: 200
-    apply-physics: true
-    check-plugins: true
     cost:
         - mana 15
+    cooldown: 120
     memory: 1
+    apply-physics: true
+    block-type: water
+    check-plugins: true
+    range: 8
+    reset-delay: 200
+    modifiers:
+        - world world required
+    str-cost: "15 mana"
+    str-modifier-failed: "You cannot cast that spell here."
+    str-no-target: "No target found."
     description: |
         &rWater   1 Memory   Water School
         &3Summons a water spring into existence..
-    modifiers:
-        - world world required
-    str-modifier-failed: You cannot cast that spell here.
-    str-cost: 15 mana
-    str-no-target: No target found.
 waterwalk:
     permission-name: ocean
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
-    speed: 0.05
-    duration: 60
-    cancel-on-logout: true
-    cancel-on-teleport: true
     cost:
         - mana 25
         - boat 1
-    memory: 3
     use-cost:
         - mana 10
+    memory: 3
+    cancel-on-logout: true
+    cancel-on-teleport: true
+    duration: 60
+    speed: 0.05
     use-cost-interval: 20
+    str-cost: "5 mana and 1 boat, plus 10 mana every 20 blocks moved."
+    str-cast-self: "You can now walk on water!"
+    str-fade: "You can no longer walk on water."
     description: |
         &rWaterwalk   3 Memory   Water School
         &3Walk across the water.
-    str-cost: 25 mana and 1 boat, plus 10 mana every 20 blocks moved
-    str-cast-self: You can now walk on water!
-    str-fade: You can no longer walk on water.
 
 
 #########################
@@ -166,38 +166,38 @@ geyser:
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
-    range: 20
-    damage: 3
-    velocity: 10
-    require-entity-target: false
+    cost:
+        - mana 15
+    cooldown: 3
+    memory: 4
     animation-speed: 3
+    damage: 3
     geyser-height: 9
     geyser-type: water
     ignore-armor: false
     obey-los: true
+    range: 20
+    require-entity-target: false
     target-players: true
-    cost:
-        - mana 15
-    memory: 4
+    velocity: 10
+    str-cast-self: "You call up a geyser."
+    str-cost: "15 mana"
+    str-no-target: "No target found."
     description: |
         &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
-    str-cost: 15 mana
-    cooldown: 3
-    str-cast-self: You call up a geyser.
-    str-no-target: No target found.
 watersee:
     permission-name: ocean
     spell-class: ".PassiveSpell"
+    cooldown: 40
     triggers: 
         - stopsneak
     chance: 30
-    cooldown: 40
     spells:
         - watersee_effect
-    description: Night vision on sneak (Only works one third of the time... What did I do now?)!
-    str-cost: Night vision needs Mana, more psecifically, 120!
-    str-cast: Night vision for you!
-    str-cast-self: Night vision! Yay!
     modifiers:
       - inblock 8,9 required
+    str-cost: "Night vision needs 120 mana!"
+    str-cast: "Night vision for you!"
+    str-cast-self: "Night vision! Yay!"
+    description: "Night vision on sneak!"
