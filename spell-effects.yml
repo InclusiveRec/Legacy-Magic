@@ -133,17 +133,7 @@ punch:
         bang:
             position: target
             effect: explosion
-second_wind:
-    spell-class: ".TargetedMultiSpell"
-    spells:
-        - second_wind1
-        - second_wind2
 second_wind1:
-    spell-class: ".targeted.PotionEffectSpell"
-    duration: 40
-    type: 10
-    strength: 1
-second_wind2:
     spell-class: ".instant.PrayerSpell"
     amount-healed: 10
 spawn_random:
