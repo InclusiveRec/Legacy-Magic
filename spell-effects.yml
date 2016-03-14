@@ -133,7 +133,7 @@ punch:
         bang:
             position: target
             effect: explosion
-second_wind1:
+second_wind:
     spell-class: ".instant.PrayerSpell"
     amount-healed: 10
 spawn_random:
