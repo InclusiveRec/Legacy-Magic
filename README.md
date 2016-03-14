@@ -24,9 +24,7 @@ ORGANISATIONAL TASKS:
     - casting costs (cost, cast time, cooldown, shared cooldowns)
     - learning requirements (prerequisites, precludes, replaces, and memory)
     - spell-specific configuration (range, damage, etc) in alphabetical order. The following vital flags take priority
-       - Items
        - Spells
-       - Coordinates
     - modifiers
     - strings (Alphabetical)
     - descritpin
