@@ -44,18 +44,18 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    memory: 10
     cost:
         - levels 30
         - book 1
         - gold_block 1
         - sun_concoction 3
+    memory: 10
     items:
         - sun_grimoire
+    str-cost: "A book, 30 levels, a gold block, and 3 solar concoction."
     description: |
             &eLore of the Sun: Solar Masters' Spell
             Creates an Almanac, the grimoire of the Solar school.
-    str-cost: "A book, 30 levels, a gold block, and 3 solar concoction."
 
 # Item creation spells
 
@@ -63,21 +63,21 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
-    prerequisites:
-        - scroll
-        - bloom
     cost:
         - levels 10
         - gold_ingot 1
         - sun_concoction 1
+    prerequisites:
+        - scroll
+        - bloom
     memory: 5
     items:
         - sun_staff 1
+    str-cast-self: "With a flash, the gold shapes itself into a shining golden staff."
+    str-cost: "100 mana, 2 gold ingots, 2 sticks, and 6 solar concoction."
     description: |
         &eSolar Staff  -   5 Memory Solar Spell
         Infuse your wand with the life-giving energy of the sun.
-    str-cost: 100 mana, 2 gold ingots, 2 sticks, and 6 solar concoction.
-    str-cast-self: With a flash, the gold shapes itself into a shining golden staff.
     effects:
         kazam:
             position: caster
@@ -91,59 +91,59 @@ dawnrite:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
-    prerequisites:
-        - solar_staff
-    memory: 6
     cost:
         - mana 100
         - 266 1
-    ritual-duration: 400
+    prerequisites:
+        - solar_staff
+    memory: 6
     charge-reagents-immediately: false
     cooldown: 1800
+    ritual-duration: 400
     spell: sunrise
     modifiers:
         - night required
+    str-cast-others: "%a has begun a ritual to summon dawn.  Right-click to participate."
+    str-cast-self: "You have begun the ritual to summon the dawn."
+    str-cost: "100 mana and 1 gold ingot."
+    str-modifier-failed: "You can only begin this ritual at night."
+    str-ritual-fail: "The dawn rite has failed."
+    str-ritual-interrupted: "The dawn rite has been interrupted!"
+    str-ritual-joined: "You have joined in the dawn rite."
+    str-ritual-success: "The dawn is summoned!"
     description: |
             &eDawnrite: 6 Memory Solar Spell
             A ritual which will cause the sun to rise.
             This ritual requires three participants and takes 20 seconds of concentration to cast.
             Moving will disrupt the ritual.  Requires the &eSolar Staff&3 spell.
-    str-cost: "100 mana and 1 gold ingot."
-    str-cast-self: You have begun the ritual to summon the dawn.
-    str-cast-others: "%a has begun a ritual to summon dawn.  Right-click to participate."
-    str-ritual-joined: You have joined in the dawn rite.
-    str-ritual-interrupted: The dawn rite has been interrupted!
-    str-ritual-fail: The dawn rite has failed.
-    str-ritual-success: The dawn is summoned!
-    str-modifier-failed: You can only begin this ritual at night.
 skycalm:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
-    req-participants: 2
-    need-spell-to-participate: false
-    memory: 8
-    cooldown: 300
-    prerequisites:
-        - solar_concoction
     cost:
         - mana 80
         - sun_concoction 3
-    ritual-duration: 400
+    cooldown: 300
+    prerequisites:
+        - solar_concoction
+    memory: 8
     charge-reagents-immediately: true
+    need-spell-to-participate: false
+    req-participants: 2
+    ritual-duration: 400
     spell: sunny-helper
     modifiers:
         - storm required
-    description: |
-            &eSunny: 8 Memory Solar Spell
-            You clear the skies of bad weather.
-    str-cost: 80 mana and 3 solar concoctions.
-    str-modifier-failed: The sky is already clear!
-    str-ritual-joined: You begin to calm the skies...
-    str-ritual-success: The weather clears!
-    str-ritual-failed: You are not able to dispel the storm, and your ingredients are consumed!
-    str-cast-self: You begin to calm the skies...
     str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
+    str-cast-self: "You begin to calm the skies..."
+    str-cost: "80 mana and 3 solar concoctions."
+    str-modifier-failed: "The sky is already clear!"
+    str-ritual-failed: "You are not able to dispel the storm, and your ingredients are consumed!"
+    str-ritual-joined: "You begin to calm the skies..."
+    str-ritual-success: "The weather clears!"
+    description: |
+            &eSkycalm: 8 Memory Solar Spell
+            You clear the skies of bad weather.
 
 #########################################
 #           Magic Shears                #
@@ -160,66 +160,61 @@ solar_concoction:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
     spell-icon: "351:11"
-    memory: 1
-    items:
-        - sun_concoction 4-6
     cost:
         - mana 10
         - 175 2
         - forest_concoction 6
+    memory: 1
+    items:
+        - sun_concoction 4-6
+    str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
     description: |
             &eSolar Concoction: 1 Memory Solar Spell
             Mixes a solar concoction.
             Requires knowledge of the &2woodland concoction&3 spell.
-    str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
 lightwalk:
     permission-name: solar
     spell-class: ".buff.LightwalkSpell"
     cast-item: stick,forest_sickle
     spell-icon: glowstone
-    memory: 3
     cost:
         - mana 25
         - sun_concoction 2
     use-cost:
         - sun_concoction 1
-    memory: 1
+    #ERROR: Two memories, inferring based on description
+    #memory: 1
+    memory: 3
     use-cost-interval: 25
+    str-cost: "25 mana and 2 solar concoction, plus 1 solar concoction occasionally."
     description: |
         &eLightwalk: 3 Memory Solar Spell
         Light your path.
-    str-cost: 25 mana and 2 solar concoction, plus 1 solar concoction occasionally.
 bloom:
-    # Overview
     permission-name: solar
     spell-class: ".targeted.FarmSpell"
     cast-item: stick,forest_sickle
     spell-icon: seeds
-    # Learning
-    memory: 3
-    # Casting
     cost:
         - mana 2
         - seeds 4
     cooldown: 2
-    # Effects
-    radius: 3
+    memory: 3
     growth: 1
+    radius: 3
     modifiers:
         - holding "359|&2Magic Sickle" cooldown 0.1
         - outside continue
         - day power 1.5
-
+    str-cost: "2 mana and 4 seeds."
+    str-on-cooldown: ""
+    description: |
+        &eBloom: 3 Memory Solar Spell
+        Greatly accelerate crop growth.
     effects:
         huzzah:
             effect: greensparkle
             position: caster
-    # Strings
-    description: |
-        &eBloom: 3 Memory Solar Spell
-        Greatly accelerate crop growth.
-    str-cost: 2 mana and 4 seeds.
-    str-on-cooldown: ""
 
 
 
@@ -228,13 +223,12 @@ bloom:
 banish:
     permission-name: solar
     spell-class: ".instant.PurgeSpell"
-    spell-icon: 377
     cast-item: sun_staff
-    memory: 4
-    range: 8
-    cooldown: 10
+    spell-icon: 377
     cost:
         - mana 50
+    memory: 4
+    cooldown: 10
     can-target:
       - blaze
       - cave_spider
@@ -249,155 +243,153 @@ banish:
       - witch
       - zombie
       - pigzombie
+    range: 8
+    str-cast-self: "You banish the encroaching forces of darkness."
+    str-cost: "50 mana."
+    str-cast-others: "%a banishes the encroaching forces of darkness."
     description: |
         &eBanish: 4 Memory Solar Spell
         Destroy all monsters near you.
-    str-cost: 50 mana.
-    str-cast-self: You banish the encroaching forces of darkness.
-    str-cast-others: "%a banishes the encroaching forces of darkness."
 
 cleanse:
     permission-name: solar
     spell-class: ".targeted.CleanseSpell"
-    name: cleanse
     cast-item: sun_staff
+    cost:
+        - mana 20
+        - 175 1
     cooldown: 60
+    memory: 3
+    beneficial: true
     remove:
       - fire
       - 17
       - 19
       - 20
     target-self: true
-    beneficial: true
-    cost:
-        - mana 20
-        - 175 1
-    memory: 3
+    str-cost: "20 mana and a sunflower."
+    str-cast-self: "You cleanse yourself of negative effects."
     description: |
         &eCleanse: 3 Memory Solar Spell
         Remove negative effects from yourself.
-    str-cost: 20 mana and a sunflower.
-    str-cast-self: You cleanse yourself of negative effects.
 prayer:
     permission-name: solar
     spell-class: ".instant.PrayerSpell"
-    cast-item: sun_staff
+    cast-item: sun_staff, stick
     spell-icon: yellow_flower
-    cast-item: stick
-    cooldown: 3
-    amount-healed: 10
     cost:
         - mana 30
+    cooldown: 3
     memory: 3
+    amount-healed: 10
+    modifiers:
+        - world world required
+    str-at-full-health: "You are already at full health."
+    str-cast-self: "You have healed yourself."
+    str-cost: "30 mana"
+    str-modifier-failed: "rayers can't help you here."
     description: |
         &ePrayer: 3 Memory Solar Spell
         &3Heals yourself for five hearts.
-    modifiers:
-        - world world required
-    str-modifier-failed: Prayers can't help you here.
-    str-cost: 30 mana
-    str-cast-self: You have healed yourself.
-    str-at-full-health: You are already at full health.
 heal:
     permission-name: solar
     spell-class: ".targeted.HealSpell"
     cast-item: sun_staff
     spell-icon: red_rose
-    heal-amount: 4
-    cancel-if-full: true
-    can-target: players,wolf,cat,horse
-    obey-los: true
-    range: 12
     cost:
         - mana 10
     memory: 4
+    can-target: players,wolf,cat,horse
+    cancel-if-full: true
+    heal-amount: 4
+    obey-los: true
+    range: 12
+    str-cost: "10 mana"
+    str-cast-self: "You have healed %t."
+    str-cast-target: "%a has healed you."
+    str-no-target: "No target to heal."
+    str-max-health: "%t is already at max health."
     description: |
         &eHeal: 4 Memory Solar Spell
         Heals a nearby target player.
-    str-cost: 10 mana
-    str-cast-self: You have healed %t.
-    str-cast-target: "%a has healed you."
-    str-no-target: No target to heal.
-    str-max-health: "%t is already at max health."
     effects:
         - target potion FF0000 40
 soothe:
     permission-name: solar
     spell-class: ".targeted.ChainSpell"
     cast-item: sun_staff
-    prerequisites:
-        - heal
-    memory: 6
-    spell: heal
-    range: 20
-    cooldown: 30
-    bounces: 5
-    bounce-range: 8
-    interval: 15
-    beneficial: true
-    target-players: true
-    target-non-players: false
-    cast-item: sunstaff
     cost:
         - mana 25
         - sun_concoction
-    description: |
-        &eSoothe: 6 Memory Solar Spell
-        A wave of healing energy emanates from the caster, passing
-        through nearby individuals and restoring their health.
-    str-cost: 25 mana and one solar concoction.
-    str-cast-self: You send forth a wave of soothing energy.
-    str-cast-others: A wave of soothing energy emanates from %a.
+    prerequisites:
+        - heal
+    memory: 6
+    beneficial: true
+    bounce-range: 8
+    bounces: 5
+    cooldown: 30
+    interval: 15
+    range: 20
+    spell: heal
+    target-non-players: false
+    target-players: true
     modifiers:
         - wearing "314|&eKnight's Helm" continue
         - wearing "315|&eKnight's Cuirass" continue
         - wearing "316|&eKnight's Greaves" continue
-        - wearing "317|&eKnight's Sabatons" power 1.
+        - wearing "317|&eKnight's Sabatons" power 1
+    str-cast-others: "A wave of soothing energy emanates from %a."
+    str-cast-self: "You send forth a wave of soothing energy."
+    str-cost: "25 mana and one solar concoction."
+    description: |
+        &eSoothe: 6 Memory Solar Spell
+        A wave of healing energy emanates from the caster, passing
+        through nearby individuals and restoring their health.
 
 
 solar_ray:
     permission-name: solar
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: sun_staff
-    bindable: false
     spell-icon: 377
-    memory: 4
     cost:
       - mana 40
       - 175 1
-    str-cost: 40 mana and a sunflower
+    memory: 4
+    bindable: false
     cooldown: 5
+    hit-players: true
+    max-distance: 120
     particle-name: mobSpell
     particle-velocity: 40
     projectile-gravity: 0.1
-    max-distance: 120
-    hit-players: true
+    spell: punch
     stop-on-hit-entity: false
+    str-no-target: "No target found."
+    str-cast-others: "%a blasts %t with a ray of solar energy!"
+    str-cast-target: "%a blasts you with a ray of solar energy!"
+    str-cast: "You blast %t with a ray of solar energy!"
+    str-cost: "40 mana and a sunflower"
     description: |
             &eSolar Ray: 4 Memory Solar Spell
             Blasts your enemy with solar energy, forcing them back and disorienting them.
             Requires the &eSolar Staff&3 spell.
-    spell: punch
-    str-no-target: No target found.
-    str-cast: You blast %t with a ray of solar energy!
-    str-cast-target: "%a blasts you with a ray of solar energy!"
-    str-cast-others: "%a blasts %t with a ray of solar energy!"
 
 # Passive spells
 
 solar_guard:
     permission-name: solar
     spell-class: ".PassiveSpell"
-    triggers:
-        - takedamage ENTITY_ATTACK
-        - takedamage PROJECTILE
-        - takedamage MAGIC
-    spells:
-        - solar_ray
     cost:
         - mana 20
         - 175 1
     memory: 7
+    spells:
+        - solar_ray
+    triggers:
+        - takedamage ENTITY_ATTACK
+        - takedamage PROJECTILE
+        - takedamage MAGIC
 
 
 # Settlement Magic
@@ -407,17 +399,17 @@ populate:
     spell-class: ".targeted.SpawnMonsterSpell"
     cast-item: book
     spell-icon: emerald
-    entity-type: villager
-    memory: 6
     cost:
         - mana 20
         - 133 1
+    memory: 6
+    entity-type: villager
+    range: 10
+    str-cast-self: "You summon a villager."
+    str-cost: "20 mana and an emerald block."
     description: |
         &rPopulate   6 Memory   Solar Spell
         &3Spawns a random villager.
-    str-cost: 20 mana and an emerald block.
-    str-cast-self: You summon a villager.
-    range: 10
     effects:
         spit:
             position: line
