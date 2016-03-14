@@ -1,26 +1,26 @@
 blind:
     permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
-    spell-icon: ink_sack:0
     cast-item: bone
-    cooldown: 15
-    range: 20
-    type: 15
-    strength: 0
-    duration: 600
-    targeted: true
-    can-target: players
-    obey-los: true
+    spell-icon: ink_sack:0
     cost:
         - mana 20
         - 375 1
+    cooldown: 15
     memory: 4
+    can-target: players
+    duration: 600
+    obey-los: true
+    range: 20
+    strength: 0
+    targeted: true
+    type: 15
+    str-cast-self: "You have blinded %t!"
+    str-cost: "20 mana and spider's eye"
+    str-no-target: "No target found."
     description: |
         &rBlind   4 Memory   Shadow School
         &3Blind your target.
-    str-cost: "20 mana and spider's eye"
-    str-cast-self: You have blinded %t!
-    str-no-target: No target found.
     effects:
       victim:
         position: target
@@ -28,83 +28,77 @@ blind:
 blink:
     permission-name: cantrip
     spell-class: ".targeted.BlinkSpell"
-    memory: 3
-    spell-icon: ender_pearl
-    description: |
-        &rBlink   3 Memory   Shadow School
-        &3Teleport a short distance.
     cast-item: stick
-    cooldown: 3
-    range: 6
-    spell-power-affects-range: true
-    pass-through-ceiling: false
-    smoke-trail: true
-    effects:
-        - pos1 ender
-        - pos2 ender
+    spell-icon: ender_pearl
     cost:
         - mana 15
+    cooldown: 3
+    memory: 3
+    pass-through-ceiling: false
+    range: 6
+    smoke-trail: true
+    spell-power-affects-range: true
+    modifiers:
+      - lightlevelbelow 8 power 2
     str-cost: 15 mana
     str-cast-self: You blink away!
     str-cast-others: "%a blinks away!"
     str-cant-blink: You cannot blink there.
-    modifiers:
-      - lightlevelbelow 8 power 2
+    description: |
+        &rBlink   3 Memory   Shadow School
+        &3Teleport a short distance.
+    effects:
+        - pos1 ender
+        - pos2 ender
 invisibility:
     permission-name: shadow
     spell-class: ".buff.InvisibilitySpell"
-    name: invisibility
-    spell-icon: record_11
     cast-item: bone
-    cooldown: 60
-    effects:
-        - caster spawn
-        - disabled spawn
-    toggle: true
-    prevent-pickups: true
-    cancel-on-give-damage: true
-    cancel-on-logout: true
-    duration:
+    spell-icon: record_11
     cost:
         - mana 25
     use-cost:
         - mana 15
+    cooldown: 60
     memory: 5
+    cancel-on-give-damage: true
+    cancel-on-logout: true
+    duration: 180
+    prevent-pickups: true
+    toggle: true
     use-cost-interval: 5
+    str-cast-others: "%a vanishes!"
+    str-cast-self: "You vanish!"
+    str-cost: "25 mana, plus 15 mana every 5 seconds"
+    str-fade: "You are visible again."
     description: |
         &rInvisibility   5 Memory   Shadow School
         &3Makes you invisible to players and monsters.
-    str-cost: 25 mana, plus 15 mana every 5 seconds
-    str-cast-self: You vanish!
-    str-cast-others: "%a vanishes!"
-    str-fade: You are visible again.
+    effects:
+        - caster spawn
+        - disabled spawn
 nightvision:
     permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
-    name: nightvision
-    spell-icon: 381
     cast-item: stick
-    duration: 600
-    targeted: false
-    type: 16
+    spell-icon: 381
     cost:
         - mana 20
         - 375 1
+    cooldown: 30
     memory: 4
+    beneficial: true
+    duration: 600
+    targeted: false
+    type: 16
+    str-cost: "20 mana and a spider eye"
     description: |
         &rNightvision   4 Memory   Shadow School
         &3You can see in the dark!
-    str-cost: 20 mana and a spider eye
-    cooldown: 30
-    beneficial: true
 dim:
     permission-name: shadow
     spell-class: ".targeted.ZapSpell"
     cast-item: stick
-    check-plugins: false
-    #transmutable-types: [ 50 ]
-    #transmute-type: 0
-    # As a zap spell
     allowed-block-types:
        - "50:0"
        - "50:1"
@@ -112,49 +106,50 @@ dim:
        - "50:3"
        - "50:4"
        - "50:5"
-    str-cant-zap: You can only extinguish torches.
+    check-plugins: false
     range: 20
     spell-power-affects-range: true
-    str-cast-self: You put out a light.
-    str-cast-others: A light goes out.
-    str-no-target: No target!
+    str-cant-zap: "You can only extinguish torches."
+    str-cast-others: "A light goes out."
+    str-cast-self: "You put out a light."
+    str-no-target: "No target!"
 lightsout:
     permission-name: shadow
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: stick
     horizontal-radius: 10
-    vertical-radius: 5
+    spell-power-affects-range: true
     spells:
       - dim
-    str-cast-self: You put out the lights.
-    str-cast-others: The lights go out!
-    spell-power-affects-range: true
+    vertical-radius: 5
+    str-cast-self: "You put out the lights."
+    str-cast-others: "The lights go out!"
 duskrite:
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
     cast-item: bone
-    prerequisites:
-        - lightsout
-    memory: 6
     cost:
         - mana 100
         - 266 1
-    ritual-duration: 400
+    prerequisites:
+        - lightsout
+    memory: 6
     charge-reagents-immediately: false
     cooldown: 1800
+    ritual-duration: 400
     spell: sunset
     modifiers:
-        - day required
+        - day required.
+    str-cost: "100 mana and 1 gold ingot."
+    str-cast-self: "You have begun the ritual to summon the dusk."
+    str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
+    str-ritual-joined: "You have joined in the dusk rite."
+    str-ritual-interrupted: "The dusk rite has been interrupted!"
+    str-ritual-fail: "The dusk rite has failed."
+    str-ritual-success: "The dusk is summoned!"
+    str-modifier-failed: "You can only begin this ritual during day."
     description: |
             &7Dusk Rite&3: 6 Memory Shadow Spell
             A ritual which will cause the sun to set.
             This ritual requires three participants and takes 20 seconds of concentration to cast.
-            Moving will disrupt the ritual.  Requires the &eLights Out&3 spell.
-    str-cost: "100 mana and 1 gold ingot."
-    str-cast-self: You have begun the ritual to summon the dusk.
-    str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
-    str-ritual-joined: You have joined in the dusk rite.
-    str-ritual-interrupted: The dusk rite has been interrupted!
-    str-ritual-fail: The dusk rite has failed.
-    str-ritual-success: The dusk is summoned!
-    str-modifier-failed: You can only begin this ritual during day.
+            Moving will disrupt the ritual.  Requires the &eLights Out&3 spell
