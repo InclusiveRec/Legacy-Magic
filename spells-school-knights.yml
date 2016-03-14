@@ -9,6 +9,7 @@ warhorse:
     spell-class: ".instant.SteedSpell"
     memory: 2
     cast-item: knight_saddle
+    spell-icon: iron_horse_armor
     can-cast-by-command: false
     bindable: false
     color: BLACK
@@ -56,6 +57,7 @@ knightly_harness:
     permission-name: knights
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
+    spell_icon: iron_helmet
     can-cast-by-command: false
     bindable: false
     toggle: false
@@ -103,6 +105,7 @@ lore_of_knighthood:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    spell-icon: enchanted_book
     can-cast-by-command: false
     bindable: false
     cost:
@@ -115,6 +118,7 @@ forge_knightly_saddle:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: knight_grimoire
+    spell-icon: saddle
     can-cast-by-command: false
     bindable: false
     items:
@@ -126,6 +130,7 @@ forge_knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: knight_grimoire
+    spell-icon: iron_sword
     can-cast-by-command: false
     bindable: false
     items:
