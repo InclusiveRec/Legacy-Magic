@@ -40,33 +40,32 @@ lore_of_flame:
     description: |
             &4Lore of Flame: Fire Masters' Spell
             Creates a fiery grimoire.
-    str-cost: A book, 30 levels, and five blaze rods.
-    effects: []
+    str-cost: "A book, 30 levels, and five blaze rods."
 
 fiery_staff:
     permission-name: fire
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
     spell-icon: blaze_rod
-    allow-command-casting: false
-    bindable: false
-    add-to-inventory: false
+    cost:
+        - levels 10
+        - blaze_rod 1
     prerequisites:
         - scroll
         - spark
     memory: 5
-    cost:
-        - levels 10
-        - blaze_rod 1
+    add-to-inventory: false
+    allow-command-casting: false
+    bindable: false
     items:
         - fire_staff 1
         - blaze_powder 6-10
+    str-cast-self: "You create a fiery staff."
+    str-cost: "A blaze rod and 10 levels."
     description: |
             Firestaff:  10 Memory   Fire School.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
-    str-cost: A blaze rod and 10 levels.
-    str-cast-self: You create a fiery staff.
 
 
 
@@ -77,65 +76,65 @@ fiery_staff:
 firebreathing:
     permission-name: fire
     spell-class: ".instant.ParticleProjectileSpell"
-    projectile-spread: 0.1
     cast-item: fire_staff,blaze_powder
     spell-icon: blaze_powder
-    hit-players: true
-    hit-non-players: true
-    particle-name: lava
-    spell: combust
     cost:
         - mana 10
     memory: 3
+    hit-non-players: true
+    hit-players: true
+    particle-name: lava
+    projectile-spread: 0.1
+    spell: combust
+    modifiers:
+        - world world_nether required
+    str-modifier-failed: "Breath like that belongs in the nether!"
     description: |
             Firebreathing:  3 Memory   Fire School
             Breath fire upon your foes!
             Uses 3 memory slots.
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "Breath like that belongs in the nether!"
     str-cost: 10 mana
 fireproof:
     permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
-    spell-icon: magma_cream
-    description: |
-        &2Fireproof: 3 Memory Fire Spell
-        Apply magma cream to protect yourself from fire and lava.
     cast-item: blaze_rod,fire_staff
-    cooldown: 30
-    type: 12
-    strength: 1 
-    duration: 1200
-    target-self: true
-    beneficial: true
-    memory: 3
+    spell-icon: magma_cream
     cost:
         - mana 30
         - 378 1
-    str-cost: 30 mana and a dollop of magma cream.
-    str-cast-self: You apply magma cream to protect yourself from fire and lava!
-    str-fade: The protection of the magma cream wears off.
+    cooldown: 30
+    memory: 3
+    beneficial: true
+    duration: 1200
+    strength: 1 
+    target-self: true
+    type: 12
+    str-cost: "30 mana and a dollop of magma cream."
+    str-cast-self: "You apply magma cream to protect yourself from fire and lava!"
+    str-fade: "The protection of the magma cream wears off."
+    description: |
+        &2Fireproof: 3 Memory Fire Spell
+        Apply magma cream to protect yourself from fire and lava.
 smoke:
     permission-name: fire
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: fire_staff,blaze_powder
     spell-icon: "160:8"
+    cost:
+        - levels 3
+        - mana 10
     memory: 3
     fail-if-no-targets: false
     horizontal-radius: 5
-    vertical-radius: 2
-    target-players: true
-    target-caster: true
     point-blank: false
     spell-source-in-center: true
     spells:
         - nauseate
         - poison
-    str-cast-self: Casty
-    cost:
-        - levels 3
-        - mana 10
+    target-caster: true
+    target-players: true
+    vertical-radius: 2
+    str-cast-self: "Casty"
     description: |
         &2Smoke: 3 Memory Fire Spell
         Uses 3 memory slots.
@@ -156,15 +155,15 @@ spark:
     cost:
         - mana 20
         - blaze_powder 1
+    cooldown: 1
     memory: 3
     allow-command-casting: false
-    cooldown: 1
+    check-plugins: true
+    no-explosion: true
     range: 20
     require-entity-target: false
-    target-players: true
-    no-explosion: true
-    check-plugins: true
     small-fireball: true
+    target-players: true
     description: |
         &rSpark:    3 Memory   Fire School
         &3Cast a fiery bolt at monsterous foes.
@@ -187,21 +186,21 @@ fireball:
     cost:
         - mana 50
         - blaze_powder 1
+    cooldown: 10
     prerequisites:
         - fiery_staff
         - spark
     memory: 5
-    cooldown: 10
-    target-players: true
     damage-multiplier: 2
+    target-players: true
+    modifiers:
+        - world world_nether required
+    str-modifier-failed: "You can't cast that in this world."
+    str-cost: "50 mana and one blaze powder."
     description: |
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    modifiers:
-        - world world_nether required
-    str-modifier-failed: "You can't cast that in this world."
-    str-cost: 50 mana and one blaze powder.
 
 fire_nova:
     enabled: false
