@@ -77,19 +77,18 @@ manual:
     spell-class: ".instant.ConjureSpell"
     name: manual
     spell-icon: 387
-    description: |
-        &rManual   -   Arcane Art
-        &3Create a server manual.
-    str-cost: 10 mana, and a book and quill.
+    cost:
+      - mana 10
+      - 386 1
+    add-to-inventory: true
+    always-granted: true
+    items:
+        - server_manual 1
     str-cast-self: |
         The quill rises in the air, moves quickly over
         the rapidly flipping pages, and pens a guide
         to the magical world of Galdur.
-    cost:
-      - mana 10
-      - 386 1
-    items:
-        - server_manual 1
-    add-to-inventory: true
-    always-granted: true
-
+    str-cost: "10 mana, and a book and quill."
+    description: |
+        &rManual   -   Arcane Art
+        &3Create a server manual.
