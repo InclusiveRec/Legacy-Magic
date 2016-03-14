@@ -1,139 +1,4 @@
 #
-#               Steed spells
-#   Cast from a war saddle.  Summon steeds
-#   for limited durations.
-#
-
-warhorse:
-    permission-name: knights
-    spell-class: ".instant.SteedSpell"
-    memory: 2
-    cast-item: knight_saddle
-    can-cast-by-command: false
-    bindable: false
-    color: BLACK
-    style: WHITE
-    variant: HORSE
-    cost:
-        - 396 1
-        - mana 20
-    str-cost: 20 mana and a golden carrot.
-    str-cast-self: You summon a knightly warhorse!
-    str-cast-others: "%c summons a knightly warhorse!"
-    str-cost: "20 mana and a golden carrot; uses the War Saddle; 2 memory."
-    description: "Summons a mount to aid you in battle."
-    armor: iron_horse_armor
-
-#
-#                       Sword spells
-#
-#   These are effects randomly applied to attacks
-#   made using knightly swords.  Some swords are 
-#   tied to other schools of magic.
-#
-
-stunning_blow:
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    triggers:
-        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
-    spells:
-        - cripple
-    modifiers:
-        - chance 4 required
-    str-cast-self: "You lash out at %t with your blade, briefly stunning them."
-    str-cast-target: "You have been stunned by %c's attack!"
-    effects:
-        owie:
-            effect: splash
-            pot: slowness
-
-#
-#           The knightly_harness spell.
-#
-
-knightly_harness:
-    permission-name: knights
-    spell-class: ".buff.ArmorSpell"
-    cast-item: knight_saddle
-    can-cast-by-command: false
-    bindable: false
-    toggle: false
-    helmet: knightly_helm
-    chestplate: knightly_hauberk
-    leggings: knightly_greaves
-    boots: knightly_sabatons
-    duration: 360
-    cost:
-        - mana 50
-        - 42 1
-    description: "You ready your guard and summon a suit of armour."
-    str-cost: "1 iron block and 50 mana."
-    str-cast-self: "En garde!"
-
-
-#              Guard spells
-#
-#   Guard spells are passively triggered
-#   by enemy attacks.  They are quite
-#   mana-hungry.
-#
-
-grim_determination:
-    permission-name: knights
-    spell-class: ".PassiveSpell"
-    memory: 5
-    triggers:
-        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
-    modifiers:
-        - healthbelow 5 required
-        - wearing "303|&8Hauberk" power 2
-    spells:
-        - second_wind
-    cost:
-        - mana 40
-    description: "When near death, you find the strength to continue fighting."
-    str-cost: "40 mana; 5 memory; must be wearing your knightly hardness."
-    str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
-    str-no-reagents:  "Your strength is failing you..."
-
-#   Item factory
-
-lore_of_knighthood:
-    permission-name: knights
-    spell-class: ".instant.ConjureSpell"
-    cast-item: book
-    can-cast-by-command: false
-    bindable: false
-    cost:
-      - levels 30
-      - book 1
-      - iron_block 3
-    items:
-      - knight_grimoire 1
-forge_knightly_saddle:
-    permission-name: knights
-    spell-class: ".instant.ConjureSpell"
-    cast-item: knight_grimoire
-    can-cast-by-command: false
-    bindable: false
-    items:
-      - knight_saddle 1
-    cost:
-      - levels 15
-      - saddle 1
-forge_knightly_sword:
-    permission-name: knights
-    spell-class: ".instant.ConjureSpell"
-    cast-item: knight_grimoire
-    can-cast-by-command: false
-    bindable: false
-    items:
-      - knight_sword 1
-    cost:
-      - levels 10
-      - iron_sword 1
-#
 #               Items
 #
 #  The armoury of the knightly school is generated
@@ -210,5 +75,138 @@ predefined-items:
         name: "&8Banded Greaves"
     knightly_sabatons:
         type: 305
-        name: "&8Spurs"
+        name: "&8Spurs"#
+#               Steed spells
+#   Cast from a war saddle.  Summon steeds
+#   for limited durations.
+#
 
+warhorse:
+    permission-name: knights
+    spell-class: ".instant.SteedSpell"
+    cast-item: knight_saddle
+    cost:
+        - 396 1
+        - mana 20
+    memory: 2
+    armor: iron_horse_armor
+    bindable: false
+    can-cast-by-command: false
+    color: BLACK
+    style: WHITE
+    variant: HORSE
+    str-cast-others: "%c summons a knightly warhorse!"
+    str-cast-self: "You summon a knightly warhorse!"
+    str-cost: "20 mana and a golden carrot."
+    str-cost: "20 mana and a golden carrot; uses the War Saddle; 2 memory."
+    description: "Summons a mount to aid you in battle."
+
+#
+#                       Sword spells
+#
+#   These are effects randomly applied to attacks
+#   made using knightly swords.  Some swords are 
+#   tied to other schools of magic.
+#
+
+stunning_blow:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    spells:
+        - cripple
+    triggers:
+        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
+    modifiers:
+        - chance 4 required
+    str-cast-self: "You lash out at %t with your blade, briefly stunning them."
+    str-cast-target: "You have been stunned by %c's attack!"
+    effects:
+        owie:
+            effect: splash
+            pot: slowness
+
+#
+#           The knightly_harness spell.
+#
+
+knightly_harness:
+    permission-name: knights
+    spell-class: ".buff.ArmorSpell"
+    cast-item: knight_saddle
+    cost:
+        - mana 50
+        - 42 1
+    bindable: false
+    boots: knightly_sabatons
+    can-cast-by-command: false
+    chestplate: knightly_hauberk
+    duration: 360
+    helmet: knightly_helm
+    leggings: knightly_greaves
+    toggle: false
+    str-cast-self: "En garde!"
+    str-cost: "1 iron block and 50 mana."
+    description: "You ready your guard and summon a suit of armour."
+
+
+#              Guard spells
+#
+#   Guard spells are passively triggered
+#   by enemy attacks.  They are quite
+#   mana-hungry.
+#
+
+grim_determination:
+    permission-name: knights
+    spell-class: ".PassiveSpell"
+    cost:
+        - mana 40
+    memory: 5
+    triggers:
+        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
+    modifiers:
+        - healthbelow 5 required
+        - wearing "303|&8Hauberk" power 2
+    spells:
+        - second_wind
+    str-cost: "40 mana; 5 memory; must be wearing your knightly hardness."
+    description: "When near death, you find the strength to continue fighting."
+    str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
+    str-no-reagents:  "Your strength is failing you..."
+
+#   Item factory
+
+lore_of_knighthood:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    cost:
+      - levels 30
+      - book 1
+      - iron_block 3
+    can-cast-by-command: false
+    bindable: false
+    items:
+      - knight_grimoire 1
+forge_knightly_saddle:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: knight_grimoire
+    cost:
+      - levels 15
+      - saddle 1
+    can-cast-by-command: false
+    bindable: false
+    items:
+      - knight_saddle 1
+forge_knightly_sword:
+    permission-name: knights
+    spell-class: ".instant.ConjureSpell"
+    cast-item: knight_grimoire
+    cost:
+      - levels 10
+      - iron_sword 1
+    can-cast-by-command: false
+    bindable: false
+    items:
+      - knight_sword 1
