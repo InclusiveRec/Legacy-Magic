@@ -17,12 +17,14 @@ ORGANISATIONAL TASKS:
     - Enabled
     - Permission
     - spell-class
+    - name
     - cast-item
     - spell-icon
-    - [automatically-granted]
+    - automatically-granted
     - casting costs (cost, cast time, cooldown, shared cooldowns)
     - learning requirements (prerequisites, precludes, replaces, and memory)
-    - spell-specific configuration (range, damage, etc) in alphabetical order, though the spells, items or other very vital flags can take priority.
+    - spell-specific configuration (range, damage, etc) in alphabetical order. The following vital flags take priority
+       - Spells
     - modifiers
     - strings (Alphabetical)
     - descritpin
