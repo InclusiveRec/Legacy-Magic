@@ -1,9 +1,9 @@
 bleeding:
     spell-class: ".targeted.PainSpell"
     damage: 3
-    spell-damage-type: animal
     target-players: true
-    str-on-cooldown: Cooldown
+    spell-damage-type: animal
+    str-on-cooldown: "Cooldown"
     effects:
         sound:
             position: target
@@ -19,12 +19,12 @@ bleeding:
 combust:
     permission-name: fire
     spell-class: ".targeted.CombustSpell"
-    fire-tick-damage: 4
     check-plugins: false
+    fire-tick-damage: 4
 cripple:
     spell-class: ".targeted.CrippleSpell"
-    effect-strength: 2
     effect-duration: 100
+    effect-strength: 2
 fireworkblast:
     spell-class: ".TargetedMultiSpell"
     cast-random-spell-instead: true
@@ -37,37 +37,37 @@ fireworkblast:
         - fwblast5
 fwblast1:
     spell-class: ".targeted.ExplodeSpell"
+    explosion-size: 0
     prevent-block-damage:  true
     prevent-player-damage:  true
-    explosion-size: 0
     effects:
         - pos2 fireworks yes yes 0 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 fwblast2:
     spell-class: ".targeted.ExplodeSpell"
+    explosion-size: 0
     prevent-block-damage:  true
     prevent-player-damage:  true
-    explosion-size: 0
     effects:
         - pos2 fireworks yes yes 1 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 fwblast3:
     spell-class: ".targeted.ExplodeSpell"
+    explosion-size: 0
     prevent-block-damage:  true
     prevent-player-damage:  true
-    explosion-size: 0
     effects:
         - pos2 fireworks yes yes 2 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 fwblast4:
     spell-class: ".targeted.ExplodeSpell"
+    explosion-size: 0
     prevent-block-damage:  true
     prevent-player-damage:  true
-    explosion-size: 0
     effects:
         - pos2 fireworks yes yes 3 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 fwblast5:
     spell-class: ".targeted.ExplodeSpell"
+    explosion-size: 0
     prevent-block-damage:  true
     prevent-player-damage:  true
-    explosion-size: 0
     effects:
         - pos2 fireworks yes yes 4 FF0000,00FF00,0000FF FFFF00,FF00FF,00FFFF
 getvined:
@@ -77,38 +77,38 @@ getvined:
       - cripple
 idontfeelsogood:
     spell-class: ".targeted.PotionEffectSpell"
+    duration: 60
+    strength: 1
     targeted: false
     type: 9
-    duration: 60
-    strength: 1
 nauseate:
     spell-class: ".targeted.PotionEffectSpell"
-    type: 9
-    strength: 1
     duration: 60
-    targeted: true
+    strength: 1
     target-players: true
+    targeted: true
+    type: 9
 monster_invisibility:
     spell-class: ".buff.InvisibilitySpell"
-    prevent-pickups: false
-    invisible-to-players: false
-    duration: 30
-    str-fade: "You have emerged from cover!"
     cancel-on-give-damage: true
     cancel-on-logout: true
     cancel-on-spell-cast: true
+    duration: 30
+    invisible-to-players: false
+    prevent-pickups: false
+    str-fade: "You have emerged from cover!"
 poison:
     spell-class: ".targeted.PotionEffectSpell"
-    type: 19
-    strength: 1
     duration: 60
-    targeted: true
+    strength: 1
     target-players: true
+    targeted: true
+    type: 19
 pain:
     spell-class: ".targeted.PainSpell"
-    spell-damage-type: death
     damage: 4
     ignore-armor: true
+    spell-damage-type: death
     str-cast-others: "%t was hit by a death ray!"
     str-cast-target: "You were hit by a death ray!"
     effects:
@@ -126,9 +126,9 @@ paralysis:
 punch:
     spell-class: ".targeted.ForcetossSpell"
     horizontal-force: 25
-    vertical-force: 10
     range: 5
     target-players: true
+    vertical-force: 10
     effects:
         bang:
             position: target
@@ -138,13 +138,13 @@ second_wind:
     amount-healed: 10
 spawn_random:
     spell-class: ".TargetedMultiSpell"
+    cast-random-spell-instead: true
     spells:
         - spawn_zombie
         - spawn_zombie
         - spawn_zombie
         - spawn_zombie
         - spawn_skeleton
-    cast-random-spell-instead: true
     effect:
         heckfire:
             position: target
@@ -157,9 +157,9 @@ spawn_zombie:
     entity-type: zombie
 shove:
     spell-class: ".instant.ForcepushSpell"
-    pushback-force: 6
     additional-vertical-force: 3
     max-vertical-force: 6
+    pushback-force: 6
     effects:
         haha:
             position: caster
@@ -170,42 +170,40 @@ stun:
     duration: 3
 sunrise:
     spell-class: ".ExternalCommandSpell"
-    name: sunrise
-    description: Makes the sun rise.
-    execute-on-console-instead: true
     command-to-execute:
         - "time set 0"
+    execute-on-console-instead: true
+    description: "Makes the sun rise."
 sunset:
     spell-class: ".ExternalCommandSpell"
-    name: sunset
-    description: Makes the sun set.
-    execute-on-console-instead: true
     command-to-execute:
         - "time set 12000"
+    execute-on-console-instead: true
+    description: "Makes the sun set."
 stormy-helper:
     spell-class: ".ExternalCommandSpell"
-    execute-on-console-instead: true
     command-to-execute:
         - "weather thunder"
+    execute-on-console-instead: true
 sunny-helper:
     spell-class: ".ExternalCommandSpell"
-    execute-on-console-instead: true
     command-to-execute:
         - "weather clear"
+    execute-on-console-instead: true
 tempwolf:
     spell-class: ".targeted.SpawnMonsterSpell"
-    entity-type: wolf
-    duration: 400
-    allow-spawn-in-midair: true
-    tamed: true
     cost:
         - mana 50
         - bone 3
+    duration: 400
+    allow-spawn-in-midair: true
+    entity-type: wolf
     memory: 3
     requires: wolf
-    str-cost: 50 mana and 3 bones.  Uses 3 memory slots.
+    tamed: true
     modifiers:
         - chance 50 required
+    str-cost: "50 mana and 3 bones.  Uses 3 memory slots."
     effects:
         woosh:
             position: target
@@ -233,25 +231,20 @@ tryrabbit:
         - biome SUNFLOWER_PLAINS,FLOWER_FOREST required
 viney:
     spell-class: ".targeted.GeyserSpell"
-    damage: 1
     animation-speed: 1
+    damage: 1
     geyser-height: 6
-    velocity: 0
     geyser-type: 106
+    velocity: 0
 watersee_effect: 
      spell-class: ".targeted.PotionEffectSpell" 
+     beneficial: true 
+     cooldown: 30 
      duration: 600
      targeted: false 
-     type: 16 
-     cost: 
-         - mana 601
-     memory: 1000
-     description: See in the dark!
-     str-cost: 120 mana!
-     cooldown: 30 
-     beneficial: true 
+     type: 16
 xp_pot:
     spell-class: ".instant.ConjureSpell"
+    add-to-inventory: true
     items:
       - 384 1
-    add-to-inventory: true
