@@ -240,9 +240,3 @@ combust:
     check-plugins: true
     target-damage-cause: ENTITY_ATTACK
     particle-name: lava
-
-
-# warmth
-# fire shield
-# FireballSpell
-# Roaring Flames

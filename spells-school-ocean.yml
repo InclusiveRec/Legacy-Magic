@@ -201,21 +201,3 @@ watersee:
     str-cast-self: Night vision! Yay!
     modifiers:
       - inblock 8,9 required
-
-
-######################
-#      Effects       #
-######################
-
-watersee_effect: 
-     spell-class: ".targeted.PotionEffectSpell" 
-     duration: 600 
-     targeted: false 
-     type: 16 
-     cost: 
-         - mana 601
-     memory: 1000
-     description: See in the dark!
-     str-cost: 120 mana!
-     cooldown: 30 
-     beneficial: true 
