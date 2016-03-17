@@ -8,6 +8,7 @@ blind:
         - 375 1
     cooldown: 15
     memory: 4
+    check-plugins: true
     can-target: players
     duration: 600
     obey-los: true
@@ -139,7 +140,7 @@ duskrite:
     ritual-duration: 400
     spell: sunset
     modifiers:
-        - day required.
+        - day required
     str-cost: "100 mana and 1 gold ingot."
     str-cast-self: "You have begun the ritual to summon the dusk."
     str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
