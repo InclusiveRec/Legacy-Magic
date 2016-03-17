@@ -79,6 +79,7 @@ freeze:
     snowballs: 25
     spell-power-affects-range: true
     target-players: true
+    check-plugins: true
     vertical-spread: 5
     modifiers:
         - onblock 78,79,80,174 power 2
@@ -101,6 +102,7 @@ gust:
     horizontal-force: 30
     vertical-force: 10
     target-players: true
+    check-plugins: true
     memory: 4
     modifiers:
         - outside continue
@@ -128,6 +130,7 @@ lightning:
     require-entity-target: false
     spell-power-affects-range: true
     target-players: true
+    check-plugins: true
     modifiers:
         - outside required
         - storm cooldown 0.3
