@@ -389,6 +389,7 @@ entangle:
         - forest_concoction 1
     cooldown: 0.2
     memory: 4
+    check-plugins: true
     range: 10
     spell-power-affects-range: true
     spell-source-in-center: true
@@ -464,6 +465,7 @@ rend:
     cast-item: wolf_fang
     spell-icon: 423
     memory: 2
+    check-plugins: true
     debug: true
     point-blank: true
     range: 1
