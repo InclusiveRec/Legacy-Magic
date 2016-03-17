@@ -147,6 +147,8 @@ sacrifice:
     cost:
         - health 6
     memory: 2
+    allow-command-casting: false
+    check-plugins: true
     cooldown: 1
     mana: 50
     modifiers:
@@ -168,6 +170,8 @@ blood_for_blood:
     prerequisites:
         - sacrifice
     memory: 7
+    allow-command-casting: false
+    check-plugins: true
     use-cost:
         - health 4
     cancel-on-death: true
@@ -239,7 +243,8 @@ rupture:
     cooldown: 10
     memory: 5
     backfire-chance: 3
-    can-cast-by-command: false
+    allow-command-casting: false
+    check-plugins: true
     explosion-size: 4
     interrupt-on-move: false
     range: 25
@@ -264,6 +269,8 @@ necrotic_claw:
     prerequisites:
         - drain
     memory: 5
+    allow-command-casting: false
+    check-plugins: true
     range: 2
     spells:
         - paralysis
@@ -283,6 +290,8 @@ deathray:
     prerequisites:
       - rupture
     memory: 7
+    allow-command-casting: false
+    check-plugins: true
     hit-ground: false
     hit-non-players: true
     hit-players: true
@@ -357,6 +366,8 @@ spite:
     prerequisites:
       - blind # Shadow
     memory: 5
+    allow-command-casting: false
+    check-plugins: true
     fail-if-no-targets: false
     horizontal-radius: 4
     point-blank: false
