@@ -81,6 +81,8 @@ firebreathing:
     cost:
         - mana 10
     memory: 3
+    allow-command-casting: false
+    check-plugins: true
     hit-non-players: true
     hit-players: true
     particle-name: lava
@@ -124,6 +126,8 @@ smoke:
         - levels 3
         - mana 10
     memory: 3
+    allow-command-casting: false
+    check-plugins: true
     fail-if-no-targets: false
     horizontal-radius: 5
     point-blank: false
@@ -191,6 +195,8 @@ fireball:
         - fiery_staff
         - spark
     memory: 5
+    allow-command-casting: false
+    check-plugins: true
     damage-multiplier: 2
     target-players: true
     modifiers:
