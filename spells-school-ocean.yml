@@ -170,6 +170,7 @@ geyser:
         - mana 15
     cooldown: 3
     memory: 4
+    check-plugins: true
     animation-speed: 3
     damage: 3
     geyser-height: 9
