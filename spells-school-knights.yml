@@ -85,6 +85,7 @@ warhorse:
     permission-name: knights
     spell-class: ".instant.SteedSpell"
     cast-item: knight_saddle
+    spell-icon: iron_horse_armor
     cost:
         - 396 1
         - mana 20
@@ -133,6 +134,7 @@ knightly_harness:
     permission-name: knights
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
+    spell_icon: iron_helmet
     cost:
         - mana 50
         - 42 1
@@ -180,6 +182,7 @@ lore_of_knighthood:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    spell-icon: enchanted_book
     cost:
       - levels 30
       - book 1
