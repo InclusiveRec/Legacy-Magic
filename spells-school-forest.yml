@@ -182,8 +182,6 @@ forage:
         - mana 10
         - seeds 6
     cooldown: 0.5
-    prerequisites:
-        - woodland_concoction
     memory: 4
     calculate-drops-individually: false
     power-affects-quantity: true
@@ -197,7 +195,7 @@ forage:
         - egg 1 12%
     modifiers:
         - holding "359|&2Magic Sickle" power 2.5
-        - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,SUNFLOWER_PLAINS,FLOWER_FOREST,JUNGLE,JUNGLE_HILLS,JUNGLE_EDGE required
+        - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,JUNGLE_HILLS,JUNGLE_EDGE required
         - elevationabove 62 required
     str-cost: "10 mana and 6 seeds."
     str-modifier-failed: "This is not good foraging terrain."
@@ -265,7 +263,7 @@ trapper:
         - trypig
         - tryrabbit
     modifiers:
-        - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,EXTREME_HILLS_PLUS,SAVANNA,SAVANNA_PLATEAU,SUNFLOWER_PLAINS,FLOWER_FOREST,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+        - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,SAVANNA required
     str-missing-reagents: "It takes 1 experience level and 6 woodland concoction to trap an animal."
     str-modifier-failed: "You can't manage to trap any creatures in this biome."
     description: |
@@ -502,7 +500,7 @@ wolf:
     range: 5
     tamed: true
     modifiers:
-        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST required
     str-cast-self: "A wolf appears!"
     str-cost: "3 bones and 20 experience levels."
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
@@ -526,7 +524,7 @@ call_of_the_wild:
         - tempwolf
     total-pulses: 20
     modifiers:
-        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,COLD_TAIGA,COLD_TAIGA_HILLS,MEGA_TAIGA,MEGA_TAIGA_HILLS,FLOWER_FOREST,TAIGA_MOUNTAINS,COLD_TAIGA_MOUNTAINS,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS,MEGA_SPRUCE_TAIGA,MEGA_SPRUCE_TAIGA_HILLS required
+        - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST required
     str-at-cap: "You cannot summon a larger pack!"
     str-cast-self: "You summon wolves!"
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
