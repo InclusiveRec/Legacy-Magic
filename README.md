@@ -27,7 +27,7 @@ ORGANISATIONAL TASKS:
        - Spells
     - modifiers
     - strings (Alphabetical)
-    - descritpin
+    - description
     - effects (particles, sound effects, etc)
 - Most vital strings to write:
     - Descriptions
@@ -35,7 +35,7 @@ ORGANISATIONAL TASKS:
     - str-modifier-failed (if spell has require/denied modifiers)
 - Vital formatting
     - Use quotation marks around ALL strings
-    - Do NOT use tabs. GItHub treats four spaces as tabs, so it's hard to tell. Just don't hit tab.
+    - Do NOT use tabs. GitHub treats four spaces as tabs, so it's hard to tell. Just don't hit tab.
     - No flags automatically given.
 
 DESIGN TASKS:
