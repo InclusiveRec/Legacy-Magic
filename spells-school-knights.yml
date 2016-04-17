@@ -75,7 +75,8 @@ predefined-items:
         name: "&8Banded Greaves"
     knightly_sabatons:
         type: 305
-        name: "&8Spurs"#
+        name: "&8Spurs"
+        
 #               Steed spells
 #   Cast from a war saddle.  Summon steeds
 #   for limited durations.
@@ -213,3 +214,33 @@ forge_knightly_sword:
     bindable: false
     items:
       - knight_sword 1
+
+
+# Transportation
+
+gate:
+    permission-name: knights
+    spell-class: ".instant.GateSpell"
+    cast-item: book
+    spell-icon: 358
+    cost:
+        - mana 30
+    memory: 7
+    cooldown: 30
+    shared-cooldowns:
+        - summon_helper 120
+        - recall 120
+    always-granted: true
+    can-cast-with-item: false
+    world: CURRENT
+    coordinates: SPAWN
+    str-cost: "30 mana"
+    str-cast-others: "%a appears!"
+    str-cast-self: "You have teleported."
+    str-gate-failed: "Unable to teleport."
+    description: |
+        &rGate   7   Knights
+        &3Teleport to Sunfield.
+    effects:
+        - pos1 ender
+        - pos2 ender
