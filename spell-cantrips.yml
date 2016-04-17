@@ -44,32 +44,7 @@ forget:
 
 # Teleportation spells
 
-gate:
-    permission-name: cantrip
-    spell-class: ".instant.GateSpell"
-    cast-item: book
-    spell-icon: 358
-    cost:
-        - mana 30
-    cooldown: 30
-    shared-cooldowns:
-        - summon_helper 120
-        - recall 120
-    always-granted: true
-    coordinates: SPAWN
-    modifiers:
-        - world world required
-    str-cost: "30 mana"
-    str-modifier-failed: "You cannot cast that spell here."
-    str-cast-others: "%a appears!"
-    str-cast-self: "You have teleported to Sunfield."
-    str-gate-failed: "Unable to teleport."
-    description: |
-        &rGate   -   Cantrip
-        &3Teleport to Sunfield.
-    effects:
-        - pos1 ender
-        - pos2 ender
+
 recall:
     permission-name: cantrip
     spell-class: ".instant.RecallSpell"
