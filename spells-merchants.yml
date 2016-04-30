@@ -1,0 +1,22 @@
+predefined-items:
+    magic_clay:
+        type: "clay_ball"
+        name: "&7Magical Clay"
+        lore:
+            - "Clay enchanced by Magic"
+    magic_brick:
+        type: "336"
+        name: "&7Magical Brick"
+        lore:
+            - "A brick enchanced by Magic"
+    magic_nether_brick:
+        type: "405"
+        name: "&7Magical Nether Brick"
+        lore:
+            - "A nether brick enchanced by Magic"
+makeitems:
+    spell-class: ".instant.ConjureSpell"
+    items:
+        - magic_brick 64
+        - magic_clay 64
+        - magic_nether_brick 64
