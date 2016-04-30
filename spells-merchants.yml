@@ -5,12 +5,12 @@ predefined-items:
         lore:
             - "Clay enchanced by Magic"
     magic_brick:
-        type: "brick"
+        type: "336"
         name: "&7Magical Brick"
         lore:
             - "A brick enchanced by Magic"
     magic_nether_brick:
-        type: "netherbrick"
+        type: "405"
         name: "&7Magical Nether Brick"
         lore:
             - "A nether brick enchanced by Magic"
