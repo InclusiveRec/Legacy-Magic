@@ -213,22 +213,22 @@ trycow:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: cow
     modifiers:
-        - biome PLAINS,SAVANNA,SAVANNA_PLATEAU,SAVANNA_MOUNTAINS,SAVANNA_PLATEAU_MOUNTAINS required
+        - biome PLAINS,SAVANNA required
 trysheep:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: sheep
     modifiers:
-        - biome EXTREME_HILLS,EXTREME_HILLS_PLUS,EXTREME_HILLS_MOUNTAINS,EXTREME_HILLS_PLUS_MOUNTAINS required
+        - biome EXTREME_HILLS, EXTREME_HILLS_WITH_TREES required
 trypig:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: pig
     modifiers:
-        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,BIRCH_FOREST_MOUNTAINS,BIRCH_FOREST_HILLS_MOUNTAINS,ROOFED_FOREST_MOUNTAINS required
+        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST required
 tryrabbit:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: rabbit
     modifiers:
-        - biome SUNFLOWER_PLAINS,FLOWER_FOREST required
+        - biome MUTATED_PLAINS,MUTATED_FOREST required
 viney:
     spell-class: ".targeted.GeyserSpell"
     animation-speed: 1
