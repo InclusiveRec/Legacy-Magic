@@ -60,7 +60,7 @@ stormhammer:
     str-cost: "3 diamonds, 10 levels, and a snow block."
     description: |
         &rStormrod   5 Memory   Storm School
-        &3You craft a storm rod.
+        &3You craft a mighty stormhammer.
 freeze:
     permission-name: storm
     spell-class: ".instant.FreezeSpell"
