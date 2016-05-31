@@ -354,8 +354,10 @@ solar_ray:
     spell-icon: 377
     cost:
       - mana 40
-      - 175 1
+      - sun_concoction 6
     memory: 4
+    prerequisites:
+        - solar_staff
     bindable: false
     cooldown: 5
     hit-players: true
@@ -369,7 +371,7 @@ solar_ray:
     str-cast-others: "%a blasts %t with a ray of solar energy!"
     str-cast-target: "%a blasts you with a ray of solar energy!"
     str-cast: "You blast %t with a ray of solar energy!"
-    str-cost: "40 mana and a sunflower"
+    str-cost: "40 mana and 6 solar concoction"
     description: |
             &eSolar Ray: 4 Memory Solar Spell
             Blasts your enemy with solar energy, forcing them back and disorienting them.
@@ -384,12 +386,18 @@ solar_guard:
         - mana 20
         - 175 1
     memory: 7
+    prerequisites:
+        - solar_ray
     spells:
         - solar_ray
     triggers:
         - takedamage ENTITY_ATTACK
         - takedamage PROJECTILE
         - takedamage MAGIC
+    description: |
+            &eSolar Guard: 7 Memory Solar Spell
+            Passively protect yourself with solar energy, forcing foes back and disorienting them.
+            Requires the &eSolar Ray&3 spell.
 
 
 # Settlement Magic
