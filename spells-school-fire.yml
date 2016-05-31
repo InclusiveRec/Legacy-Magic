@@ -74,14 +74,14 @@ fiery_staff:
             Creates a powerful wand of fire magic.
             Requires the spark spell.
 
-fire_concoction:
+flame_concoction:
     permission-name: fire
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
     memory: 1
     items:
-        - flame_concoction 4-6
+        - fire_concoction 4-6
     cost:
         - mana 10
         - 377 1
@@ -105,7 +105,8 @@ firebreathing:
     cast-item: fire_staff,blaze_powder
     spell-icon: blaze_powder
     cost:
-        - mana 10
+        - mana 30
+        - fire_concoction 3
     memory: 3
     allow-command-casting: false
     check-plugins: true
