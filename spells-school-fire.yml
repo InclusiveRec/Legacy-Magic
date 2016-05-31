@@ -11,7 +11,7 @@ predefined-items:
           - "by a Master of the"
           - "fire school of magic."
 
-    flame_concotion:
+    fire_concotion:
       type: "351:1"
       name: "&4Flame Concotion"
       lore:
