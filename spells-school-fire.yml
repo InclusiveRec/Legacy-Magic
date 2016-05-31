@@ -11,13 +11,6 @@ predefined-items:
           - "by a Master of the"
           - "fire school of magic."
 
-    fire_concotion:
-      type: "351:1"
-      name: "&4Flame Concotion"
-      lore:
-        - "The Hotest Substance"
-        - "known to Galdur"
-        - "Used to harness the power of the Center Core" 
     # Cast item to amplify spells
 
     fire_staff:
@@ -73,28 +66,6 @@ fiery_staff:
             Firestaff:  10 Memory   Fire School.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
-
-flame_concoction:
-    permission-name: fire
-    spell-class: ".instant.ConjureSpell"
-    cast-item: fire_staff
-    spell-icon: "351:1"
-    memory: 1
-    items:
-        - fire_concoction 4-6
-    cost:
-        - mana 10
-        - 377 1
-        - 87 4
-        - 115 3
-    description: |
-            &eFire Concoction: 1 Memory Fire Spell
-            Mixes a Flame concoction.
-            Requires knowledge of the &2Solar concoction&3 spell.
-    str-cost: "Add 3 Nether Wort, 1 Blaze Powder with 4 Netherrack, using 10 mana."
-
-
-
 ################
 # Basic spells #
 ################
@@ -105,8 +76,7 @@ firebreathing:
     cast-item: fire_staff,blaze_powder
     spell-icon: blaze_powder
     cost:
-        - mana 30
-        - fire_concoction 3
+        - mana 10
     memory: 3
     allow-command-casting: false
     check-plugins: true
@@ -225,7 +195,6 @@ fireball:
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-
 fire_nova:
     enabled: false
     permission-name: fire
