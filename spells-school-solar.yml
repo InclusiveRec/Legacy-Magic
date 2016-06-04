@@ -277,17 +277,15 @@ prayer:
     spell-class: ".instant.PrayerSpell"
     cast-item: sun_staff, stick
     spell-icon: yellow_flower
+    precludes: sacrifice
     cost:
         - mana 30
     cooldown: 3
     memory: 3
     amount-healed: 10
-    modifiers:
-        - world world required
     str-at-full-health: "You are already at full health."
     str-cast-self: "You have healed yourself."
     str-cost: "30 mana"
-    str-modifier-failed: "rayers can't help you here."
     description: |
         &ePrayer: 3 Memory Solar Spell
         &3Heals yourself for five hearts.
