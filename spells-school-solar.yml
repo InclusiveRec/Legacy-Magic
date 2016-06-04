@@ -182,13 +182,11 @@ lightwalk:
         - sun_concoction 2
     use-cost:
         - sun_concoction 1
-    #ERROR: Two memories, inferring based on description
-    #memory: 1
-    memory: 3
+    memory: 1
     use-cost-interval: 25
     str-cost: "25 mana and 2 solar concoction, plus 1 solar concoction occasionally."
     description: |
-        &eLightwalk: 3 Memory Solar Spell
+        &eLightwalk: 1 Memory Solar Spell
         Light your path.
 bloom:
     permission-name: solar
@@ -277,7 +275,10 @@ prayer:
     spell-class: ".instant.PrayerSpell"
     cast-item: sun_staff, stick
     spell-icon: yellow_flower
-    precludes: sacrifice
+    precludes:
+        - sacrifice
+    prerequisites:
+        - heal
     cost:
         - mana 30
     cooldown: 3
