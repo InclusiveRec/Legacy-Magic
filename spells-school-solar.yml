@@ -382,8 +382,8 @@ solar_guard:
     permission-name: solar
     spell-class: ".PassiveSpell"
     cost:
-        - mana 20
-        - 175 1
+      - mana 40
+      - sun_concoction 6
     memory: 7
     prerequisites:
         - solar_ray
