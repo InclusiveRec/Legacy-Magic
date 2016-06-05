@@ -144,6 +144,9 @@ sacrifice:
     spell-class: ".instant.ManaSpell"
     cast-item: bone,death_wand
     spell-icon: potion:8193
+    precludes:
+        - prayer
+        - cleanse
     cost:
         - health 6
     memory: 2
