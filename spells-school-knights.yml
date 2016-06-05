@@ -100,8 +100,7 @@ warhorse:
     str-cast-others: "%c summons a knightly warhorse!"
     str-cast-self: "You summon a knightly warhorse!"
     str-cost: "20 mana and a golden carrot."
-    str-cost: "20 mana and a golden carrot; uses the War Saddle; 2 memory."
-    description: "Summons a mount to aid you in battle."
+    description: "Summons a mount to aid you in battle. 20 mana and a golden carrot; uses the War Saddle; 2 memory Knights spell."
 
 #
 #                       Sword spells
