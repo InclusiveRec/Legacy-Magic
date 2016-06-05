@@ -253,6 +253,8 @@ cleanse:
     permission-name: solar
     spell-class: ".targeted.CleanseSpell"
     cast-item: sun_staff
+    precludes:
+        - sacrifice
     cost:
         - mana 20
         - 175 1
