@@ -8,35 +8,50 @@ str-cast-usage: |
     Usage: /cast <spell>. 
     Use /cast list to see a list of spells.
 str-unknown-spell: You do not know a spell with that name.
-str-spell-change: You are now using %s&3.
-str-on-cooldown: "You can't cast that spell again for another %c seconds."
-str-cant-cast: "You can't cast that spell right now."
-str-wrong-world: "That spell doesn't work in this dimension."
-str-console-name: Arcana
+str-spell-change: You are now using the %s spell.
+str-spell-change-empty: You are no longer using a spell.
+str-on-cooldown: That spell is on cooldown (%c seconds remaining).
+str-missing-reagents: You do not have the required reagents for that spell.
+str-cant-cast: You can't cast that spell right now.
+str-wrong-world: You cannot cast that spell here.
+str-console-name: Wizard
 text-color: 3
 broadcast-range: 20
 spell-icon-slot: 8
 separate-player-spells-per-world: false
-always-show-message-on-cycle: true
+allow-cycle-to-no-spell: true
+always-show-message-on-cycle: false
 only-cycle-to-castable-spells: true
-allow-cast-with-fist: true
+allow-cast-with-fist: false
 cast-with-left-click: true
-cast-with-right-click: true
-ops-have-all-spells: false
+cast-with-right-click: false
+ops-have-all-spells: true
 ops-ignore-reagents: true
 ops-ignore-cooldowns: true
-ops-ignore-cast-times: false
-default-all-perms-false: true
-ignore-cast-item-enchants: false
+ops-ignore-cast-times: true
+default-all-perms-false: false
+ignore-default-bindings: false
+ignore-cast-item-enchants: true
 ignore-cast-item-names: false
-ignore-cast-item-durability: [256, 257, 267, 268, 269, 270, 271, 279, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317, 359 ]
+ignore-cast-item-durability: [ 268, 269, 270, 271, 283, 284, 285, 286, 290, 294, 314, 315, 316, 317 ]
 los-transparent-blocks: [ 0, 27, 28, 31, 32, 37, 38, 39, 40, 50, 51, 55, 63, 65, 66, 68, 69, 70, 72, 75, 76, 77, 78, 93, 94, 106, 111 ]
-global-cooldown: 100
+global-cooldown: 500
 check-world-pvp-flag: true
 cast-on-animate: false
 use-exp-bar-as-cast-time-bar: false
 cooldowns-persist-through-reload: true
-
+enable-magic-xp: true
+str-xp-learned: "You have learned the %s spell!"
+magic-schools:
+    death: "  &0Death&f"
+    fire: "   &4Fire&f"
+    forest: "   &2Forest&f"
+    knights: "  &eKnights&f"
+    ocean: "   &bOcean&f"
+    shadow: "   &8Shadow&f"
+    solar: "   &eSolar&f"
+    stone: "   &7Stone&f"
+    storm: "   &3Storm&f"
 entity-names:
     zombie: an ugly zombie
     skeleton: a scary skeleton
