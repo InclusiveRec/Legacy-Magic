@@ -28,7 +28,7 @@ lore_of_storms:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - storm 
+      - storm 1
     cost:
         - book 1
         - levels 30
