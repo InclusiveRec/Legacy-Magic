@@ -44,6 +44,8 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-granted:
+      - solar 1
     cost:
         - levels 30
         - book 1
@@ -63,6 +65,8 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
+    xp-granted:
+      - solar 1
     cost:
         - levels 10
         - gold_ingot 1
@@ -91,6 +95,9 @@ dawnrite:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
+    xp-granted:
+      - solar 1
+      - shadow -1
     cost:
         - mana 100
         - 266 1
@@ -120,6 +127,9 @@ skycalm:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
+    xp-granted:
+      - solar 1
+      - storm -1 
     cost:
         - mana 80
         - sun_concoction 3
@@ -160,6 +170,9 @@ solar_concoction:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
     spell-icon: "351:11"
+    xp-granted:
+      - solar 1
+      - forest 1
     cost:
         - mana 10
         - 175 2
@@ -177,6 +190,9 @@ lightwalk:
     spell-class: ".buff.LightwalkSpell"
     cast-item: stick,forest_sickle
     spell-icon: glowstone
+    xp-granted:
+      - solar 1
+      - shadow -1
     cost:
         - mana 25
         - sun_concoction 2
@@ -193,6 +209,9 @@ bloom:
     spell-class: ".targeted.FarmSpell"
     cast-item: stick,forest_sickle
     spell-icon: seeds
+    xp-granted:
+      - solar 1
+      - forest 1
     cost:
         - mana 2
         - seeds 4
@@ -223,6 +242,9 @@ banish:
     spell-class: ".instant.PurgeSpell"
     cast-item: sun_staff
     spell-icon: 377
+    xp-granted:
+      - solar 1
+      - death -1 
     cost:
         - mana 50
     memory: 4
@@ -253,6 +275,9 @@ cleanse:
     permission-name: solar
     spell-class: ".targeted.CleanseSpell"
     cast-item: sun_staff
+    xp-granted:
+      - death -1 
+      - fire -1 
     precludes:
         - sacrifice
     cost:
@@ -277,6 +302,8 @@ prayer:
     spell-class: ".instant.PrayerSpell"
     cast-item: sun_staff, stick
     spell-icon: yellow_flower
+    xp-granted:
+      - death -1 
     precludes:
         - sacrifice
     prerequisites:
@@ -297,6 +324,10 @@ heal:
     spell-class: ".targeted.HealSpell"
     cast-item: sun_staff
     spell-icon: red_rose
+    xp-granted:
+      - solar 1
+      - knight 1
+      - death -1 
     cost:
         - mana 10
     memory: 4
@@ -319,6 +350,10 @@ soothe:
     permission-name: solar
     spell-class: ".targeted.ChainSpell"
     cast-item: sun_staff
+    xp-granted:
+      - solar 1
+      - knight 1
+      - death -1 
     cost:
         - mana 25
         - sun_concoction
@@ -353,6 +388,8 @@ solar_ray:
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: sun_staff
     spell-icon: 377
+    xp-granted:
+      - death -1 
     cost:
       - mana 40
       - sun_concoction 6
@@ -383,6 +420,8 @@ solar_ray:
 solar_guard:
     permission-name: solar
     spell-class: ".PassiveSpell"
+    xp-granted:
+      - death -1 
     cost:
       - mana 40
       - sun_concoction 6
@@ -408,6 +447,9 @@ populate:
     spell-class: ".targeted.SpawnMonsterSpell"
     cast-item: book
     spell-icon: emerald
+    xp-granted:
+      - solar 1
+      - death -1 
     cost:
         - mana 20
         - 133 1
