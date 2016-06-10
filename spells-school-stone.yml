@@ -55,6 +55,8 @@ lore_of_the_rock:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-granted:
+      - stone 1 
     cost:
       - book 1
       - levels 30
@@ -77,6 +79,8 @@ magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 257
+    xp-granted:
+      - stone 1 
     cost:
         - levels 10
         - iron_pickaxe 1
@@ -91,6 +95,8 @@ masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
     spell-icon: IRON_SPADE
+    xp-granted:
+      - stone 1 
     cost:
         - iron_spade 1
         - levels 5
@@ -113,6 +119,8 @@ mix_mortar:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
     spell-icon: "351:7"
+    xp-granted:
+      - stone 1 
     cast-item: stick, iron_trowel
     cost:
         - mana 4
@@ -147,6 +155,8 @@ mix_mortar:
 patchwork:
     permission-name: stone 
     spell-class: ".targeted.ReplaceSpell"
+    xp-granted:
+      - stone 1 
     cast-item: iron_trowel
     cost:
         - mana 10
@@ -171,6 +181,8 @@ repair:
     spell-class: ".instant.RepairSpell"
     cast-item: iron_trowel
     spell-icon: workbench
+    xp-granted:
+      - stone 1 
     cost:
         - mana 50
         - diamond_block 1
@@ -205,6 +217,8 @@ dowse:
     spell-class: ".instant.DowseSpell"
     cast-item: minepick
     spell-icon: compass
+    xp-granted:
+      - stone 1 
     cost:
         - mana 20
         - mortar 2
@@ -221,9 +235,11 @@ dowse:
     description: |
         &rDowse   2 Memory: &4Stone Spell
         &3Dowse for iron ore.
-mighty_swing_i:
+mighty_swing:
     permission-name: stone 
     spell-class: ".targeted.PotionEffectSpell"
+    xp-granted:
+      - stone 1 
     cast-item: minepick
     cost:
         - mana 15
@@ -243,6 +259,8 @@ mighty_swing_i:
 stonevision:
     permission-name: stone
     spell-class: ".buff.StonevisionSpell"
+    xp-granted:
+      - stone 1 
     cast-item: minepick
     cost:
         - mana 30
