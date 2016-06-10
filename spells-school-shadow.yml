@@ -3,6 +3,9 @@ blind:
     spell-class: ".targeted.PotionEffectSpell"
     cast-item: bone
     spell-icon: ink_sack:0
+    xp-granted:
+      - shadow 1 
+      - solar -1  
     cost:
         - mana 20
         - 375 1
@@ -31,6 +34,10 @@ blink:
     spell-class: ".targeted.BlinkSpell"
     cast-item: stick
     spell-icon: ender_pearl
+    xp-granted:
+      - shadow 1 
+      - knight 1 
+      - stone -1 
     cost:
         - mana 15
     cooldown: 3
@@ -56,6 +63,9 @@ invisibility:
     spell-class: ".buff.InvisibilitySpell"
     cast-item: bone
     spell-icon: record_11
+    xp-granted:
+      - shadow 1 
+      - forest 1 
     cost:
         - mana 25
     use-cost:
@@ -83,6 +93,9 @@ nightvision:
     spell-class: ".targeted.PotionEffectSpell"
     cast-item: stick
     spell-icon: 381
+    xp-granted:
+      - shadow 1 
+      - solar -1 
     cost:
         - mana 20
         - 375 1
@@ -99,6 +112,9 @@ nightvision:
 dim:
     permission-name: shadow
     spell-class: ".targeted.ZapSpell"
+    xp-granted:
+      - shadow 1 
+      - solar -1 
     cast-item: stick
     allowed-block-types:
        - "50:0"
@@ -117,6 +133,9 @@ dim:
 lightsout:
     permission-name: shadow
     spell-class: ".targeted.AreaEffectSpell"
+    xp-granted:
+      - shadow 1 
+      - solar -1 
     cast-item: stick
     horizontal-radius: 10
     spell-power-affects-range: true
@@ -128,6 +147,9 @@ lightsout:
 duskrite:
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
+    xp-granted:
+      - shadow 1 
+      - solar -1 
     cast-item: bone
     cost:
         - mana 100
