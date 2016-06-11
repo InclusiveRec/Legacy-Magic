@@ -30,6 +30,8 @@ lore_of_flame:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
+    xp-granted:
+      - fire 1
     cost:
         - book 1
         - levels 30
@@ -47,6 +49,8 @@ fiery_staff:
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
     spell-icon: blaze_rod
+    xp-granted:
+      - fire 1
     cost:
         - levels 10
         - blaze_rod 1
@@ -75,6 +79,8 @@ firebreathing:
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: fire_staff,blaze_powder
     spell-icon: blaze_powder
+    xp-granted:
+      - fire 1
     cost:
         - mana 10
     memory: 3
@@ -95,6 +101,8 @@ fireproof:
     spell-class: ".targeted.PotionEffectSpell"
     cast-item: blaze_rod,fire_staff
     spell-icon: magma_cream
+    xp-granted:
+      - death -1 
     cost:
         - mana 30
         - 378 1
@@ -116,6 +124,8 @@ smoke:
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: fire_staff,blaze_powder
     spell-icon: "160:8"
+    xp-granted:
+      - fire 1
     cost:
         - levels 3
         - mana 10
@@ -150,6 +160,8 @@ spark:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff,377
     spell-icon: fireball
+    xp-granted:
+      - fire 1
     cost:
         - mana 20
         - blaze_powder 1
@@ -178,6 +190,8 @@ fireball:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
+    xp-granted:
+      - fire 1
     cost:
         - mana 50
         - blaze_powder 1
@@ -201,10 +215,14 @@ fire_nova:
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff,377
     spell-icon: blaze_powder
+    xp-granted:
+      - fire 1
 warmth:
     enabled: false
     permission-name: fire
     spell-class: ".targeted.DummySpell"
+    xp-granted:
+      - fire 1
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
@@ -216,6 +234,8 @@ warmth:
 fire_shield:
     permission-name: fire
     spell-class: ".instant.DummySpell"
+    xp-granted:
+      - fire 1
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
