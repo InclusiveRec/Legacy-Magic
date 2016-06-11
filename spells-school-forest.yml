@@ -71,6 +71,8 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-granted:
+      - forest 1
     cost:
       - book 1
       - levels 30
@@ -91,6 +93,9 @@ woodland_gardener:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: shears
+    xp-granted:
+      - forest 1
+      - solar 1 
     cost:
         - levels 5
         - shears 1
@@ -116,6 +121,9 @@ woodland_wand:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: stick
+    xp-granted:
+      - forest 1
+      - solar 1 
     cost:
         - levels 10
         - "6:0 1"
@@ -130,6 +138,9 @@ hunting_knife:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    xp-granted:
+      - forest 1
+      - death 1 
     cost:
         - iron_sword 1
         - levels 5
@@ -150,6 +161,9 @@ woodland_concoction:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
     spell-icon: "351:2"
+    xp-granted:
+      - forest 1
+      - solar 1 
     cost:
       - mana 5
       - 39 1        # 1 brown mushroom
@@ -178,6 +192,9 @@ forage:
     spell-class: ".instant.ConjureSpell"
     cast-item: stick,forest_sickle
     spell-icon: apple
+    xp-granted:
+      - forest 1
+      - solar 1 
     cost:
         - mana 10
         - seeds 6
@@ -214,6 +231,10 @@ lifewalk:
     spell-class: ".buff.LifewalkSpell"
     cast-item: stick,forest_sickle
     spell-icon: yellow_flower
+    xp-granted:
+      - forest 1
+      - solar 1 
+      - death -1 
     cost:
         - mana 10
         - forest_concoction 2
@@ -233,6 +254,9 @@ mulch:
     spell-class: ".instant.ConjureSpell"
     cast-item: stick,forest_sickle
     spell-icon: "31:1"
+    xp-granted:
+      - forest 1
+      - solar 1 
     cost:
         - mana 5
         - "31:1 12"
@@ -252,6 +276,8 @@ trapper:
     spell-class: ".MultiSpell"
     cast-item: stick,forest_sickle
     spell-icon: 420
+    xp-granted:
+      - forest 1
     cost:
         - levels 1
         - forest_concoction 6
@@ -272,6 +298,9 @@ trapper:
 stalking:
     permission-name: forest
     spell-class: ".PassiveSpell"
+    xp-granted:
+      - forest 1
+      - shadow 1 
     cost:
         - mana 10
     cooldown: 20
@@ -299,6 +328,9 @@ haste:
     spell-class: ".buff.HasteSpell"
     cast-item: stick,forest_wand
     spell-icon: gold_boots
+    xp-granted:
+      - forest 1
+      - stone -1 
     cost:
         - mana 20
     memory: 3
@@ -334,6 +366,9 @@ leap:
     spell-class: ".instant.LeapSpell"
     cast-item: stick,forest_wand
     spell-icon: diamond_boots
+    xp-granted:
+      - forest 1
+      - stone -1 
     cost:
         - mana 10
     cooldown: 1.8
@@ -359,6 +394,8 @@ safefall:
     spell-class: ".buff.InvulnerabilitySpell"
     cast-item: stick,forest_wand
     spell-icon: feather
+    xp-granted:
+      - forest 1
     cost:
         - mana 30
     cooldown: 3
@@ -382,6 +419,8 @@ entangle:
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: stick,forest_wand
     spell-icon: 106
+    xp-granted:
+      - forest 1
     cost:
         - mana 12
         - forest_concoction 1
@@ -405,6 +444,8 @@ hedge:
     spell-class: ".instant.WallSpell"
     cast-item: stick,forest_wand
     spell-icon: 184
+    xp-granted:
+      - forest 1
     cost:
         - mana 15
         - forest_concoction 1
@@ -439,6 +480,8 @@ fang:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: flint
+    xp-granted:
+      - forest 1
     cost:
         - bone 6
         - forest_concoction 3
@@ -461,6 +504,9 @@ rend:
     spell-class: ".TargetedMultiSpell"
     cast-item: wolf_fang
     spell-icon: 423
+    xp-granted:
+      - forest 1
+      - death 1 
     memory: 2
     check-plugins: true
     debug: true
@@ -486,6 +532,8 @@ wolf:
     spell-class: ".targeted.SpawnMonsterSpell"
     cast-item: wolf_fang
     spell-icon: 352
+    xp-granted:
+      - forest 1
     cost:
         - levels 20
         - bone 3
@@ -513,6 +561,8 @@ call_of_the_wild:
     spell-class: ".targeted.PulserSpell"
     cast-item: wolf_fang
     spell-icon: "6:1"
+    xp-granted:
+      - forest 1
     cost:
         - mana 60
     memory: 6
