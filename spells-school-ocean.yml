@@ -33,6 +33,9 @@ lore_of_oceans:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cost:
         - levels 30
         - book 1
@@ -49,6 +52,9 @@ hydromantic_focus:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cost:
         - levels 10
         - prismarine_crystals 6
@@ -67,6 +73,9 @@ dowsing_rod:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cost:
         - levels 5
         - prismarine_crystals 3
@@ -90,6 +99,9 @@ gills:
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cost:
         - mana 50
         - sugar_cane 1
@@ -112,6 +124,9 @@ water:
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cast-item: book
     cost:
         - mana 15
@@ -135,6 +150,9 @@ waterwalk:
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
+    xp-granted:
+      - ocean 1 
+      - stone -1 
     cost:
         - mana 25
         - boat 1
@@ -166,6 +184,9 @@ geyser:
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
+    xp-granted:
+      - ocean 1 
+      - fire -1 
     cost:
         - mana 15
     cooldown: 3
@@ -190,6 +211,9 @@ geyser:
 watersee:
     permission-name: ocean
     spell-class: ".PassiveSpell"
+    xp-granted:
+      - ocean 1 
+      - shadow -1 
     cooldown: 40
     triggers: 
         - stopsneak
