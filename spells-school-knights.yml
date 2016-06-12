@@ -242,9 +242,6 @@ gate:
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
-    xp-granted:
-      - knights 1 
-      - stone -1 
     cost:
         - mana 30
     memory: 7
