@@ -245,13 +245,13 @@ gate:
     cost:
         - mana 30
     memory: 7
-    cooldown: 30
+    cooldown: 60
     shared-cooldowns:
         - summon_helper 120
         - recall 120
     always-granted: true
     can-cast-with-item: false
-    world: CURRENT
+    world: WORLD
     coordinates: SPAWN
     str-cost: "30 mana"
     str-cast-others: "%a appears!"
