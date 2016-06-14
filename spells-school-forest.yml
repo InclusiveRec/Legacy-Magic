@@ -378,6 +378,7 @@ leap:
     upward-velocity: 6
     modifiers:
         - holding "280|&2Oak wand" power 2
+        - wearing 443 power .34
     str-cost: "10 mana."
     str-cast-self: "You leap forward!"
     str-cast-others: "%a leaps forward!"
