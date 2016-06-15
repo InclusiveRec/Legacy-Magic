@@ -42,6 +42,7 @@ use-exp-bar-as-cast-time-bar: false
 cooldowns-persist-through-reload: true
 enable-magic-xp: true
 str-xp-learned: "You have learned the %s spell!"
+str-xp-header: "Magic Experience:"
 magic-schools:
     death: "  &0Death&f"
     fire: "   &4Fire&f"
