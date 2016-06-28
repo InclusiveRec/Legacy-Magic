@@ -92,7 +92,7 @@ warhorse:
     cost:
         - 396 1
         - mana 20
-    memory: 2
+    memory: 5
     armor: iron_horse_armor
     bindable: false
     can-cast-by-command: false
@@ -145,7 +145,7 @@ knightly_harness:
     cost:
         - mana 50
         - 42 1
-    memory: 2
+    memory: 4
     bindable: false
     boots: knightly_sabatons
     can-cast-by-command: false
@@ -200,7 +200,7 @@ lore_of_knighthood:
       - levels 30
       - book 1
       - iron_block 3
-    memory: 2
+    memory: 10
     can-cast-by-command: false
     bindable: false
     items:
@@ -214,7 +214,7 @@ forge_knightly_saddle:
     cost:
       - levels 15
       - saddle 1
-    memory: 2
+    memory: 5
     can-cast-by-command: false
     bindable: false
     items:
@@ -228,7 +228,7 @@ forge_knightly_sword:
     cost:
       - levels 10
       - iron_sword 1
-    memory: 2
+    memory: 5
     can-cast-by-command: false
     bindable: false
     items:
