@@ -14,12 +14,12 @@ predefined-items:
 
     # Custom reagent
 
-    sun_concoction:
+    sun_amalgam:
         type: "351:11"
-        name: "&eSolar Concoction"
+        name: "&eSolar Amalgam"
         lore:
             - "The elves combine sunflowers"
-            - "with a druidic concoction"
+            - "with a druidic amalgam"
             - "to create this special mixture"
 
     # Defensive casting
@@ -50,11 +50,11 @@ lore_of_the_sun:
         - levels 30
         - book 1
         - gold_block 1
-        - sun_concoction 3
+        - sun_amalgam 3
     memory: 10
     items:
         - sun_grimoire
-    str-cost: "A book, 30 levels, a gold block, and 3 solar concoction."
+    str-cost: "A book, 30 levels, a gold block, and 3 solar amalgam."
     description: |
             &eLore of the Sun: Solar Masters' Spell
             Creates an Almanac, the grimoire of the Solar school.
@@ -70,7 +70,7 @@ solar_staff:
     cost:
         - levels 10
         - gold_ingot 1
-        - sun_concoction 1
+        - sun_amalgam 1
     prerequisites:
         - scroll
         - bloom
@@ -78,7 +78,7 @@ solar_staff:
     items:
         - sun_staff 1
     str-cast-self: "With a flash, the gold shapes itself into a shining golden staff."
-    str-cost: "100 mana, 2 gold ingots, 2 sticks, and 6 solar concoction."
+    str-cost: "100 mana, 2 gold ingots, 2 sticks, and 6 solar amalgam."
     description: |
         &eSolar Staff  -   5 Memory Solar Spell
         Infuse your wand with the life-giving energy of the sun.
@@ -132,10 +132,10 @@ skycalm:
       - storm -1 
     cost:
         - mana 80
-        - sun_concoction 3
+        - sun_amalgam 3
     cooldown: 300
     prerequisites:
-        - solar_concoction
+        - solar_amalgam
     memory: 8
     charge-reagents-immediately: true
     need-spell-to-participate: false
@@ -146,7 +146,7 @@ skycalm:
         - storm required
     str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
     str-cast-self: "You begin to calm the skies..."
-    str-cost: "80 mana and 3 solar concoctions."
+    str-cost: "80 mana and 3 solar amalgam."
     str-modifier-failed: "The sky is already clear!"
     str-ritual-failed: "You are not able to dispel the storm, and your ingredients are consumed!"
     str-ritual-joined: "You begin to calm the skies..."
@@ -165,7 +165,7 @@ skycalm:
 #   variants require lightwalk.         #
 #########################################
 
-solar_concoction:
+solar_amalgam:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
@@ -176,15 +176,15 @@ solar_concoction:
     cost:
         - mana 10
         - 175 2
-        - forest_concoction 6
+        - forest_amalgam 6
     memory: 1
     items:
-        - sun_concoction 4-6
-    str-cost: "Add 2 sunflowers to 6 woodland concoction, using 10 mana."
+        - sun_amalgam 4-6
+    str-cost: "Add 2 sunflowers to 6 woodland amalgam, using 10 mana."
     description: |
-            &eSolar Concoction: 1 Memory Solar Spell
-            Mixes a solar concoction.
-            Requires knowledge of the &2woodland concoction&3 spell.
+            &eSolar Amalgam: 1 Memory Solar Spell
+            Mixes a solar amalgam.
+            Requires knowledge of the &2woodland amalgam&3 spell.
 lightwalk:
     permission-name: solar
     spell-class: ".buff.LightwalkSpell"
@@ -195,12 +195,12 @@ lightwalk:
       - shadow -1
     cost:
         - mana 25
-        - sun_concoction 2
+        - sun_amalgam 2
     use-cost:
-        - sun_concoction 1
+        - sun_amalgam 1
     memory: 1
     use-cost-interval: 25
-    str-cost: "25 mana and 2 solar concoction, plus 1 solar concoction occasionally."
+    str-cost: "25 mana and 2 solar amalgam, plus 1 solar amalgam occasionally."
     description: |
         &eLightwalk: 1 Memory Solar Spell
         Light your path.
@@ -356,7 +356,7 @@ soothe:
       - death -1 
     cost:
         - mana 25
-        - sun_concoction
+        - sun_amalgam
     prerequisites:
         - heal
     memory: 6
@@ -376,7 +376,7 @@ soothe:
         - wearing "317|&eKnight's Sabatons" power 1
     str-cast-others: "A wave of soothing energy emanates from %a."
     str-cast-self: "You send forth a wave of soothing energy."
-    str-cost: "25 mana and one solar concoction."
+    str-cost: "25 mana and one solar amalgam."
     description: |
         &eSoothe: 6 Memory Solar Spell
         A wave of healing energy emanates from the caster, passing
@@ -392,7 +392,7 @@ solar_ray:
       - death -1 
     cost:
       - mana 40
-      - sun_concoction 6
+      - sun_amalgam 6
     memory: 4
     prerequisites:
         - solar_staff
@@ -409,7 +409,7 @@ solar_ray:
     str-cast-others: "%a blasts %t with a ray of solar energy!"
     str-cast-target: "%a blasts you with a ray of solar energy!"
     str-cast: "You blast %t with a ray of solar energy!"
-    str-cost: "40 mana and 6 solar concoction"
+    str-cost: "40 mana and 6 solar amalgam"
     description: |
             &eSolar Ray: 4 Memory Solar Spell
             Blasts your enemy with solar energy, forcing them back and disorienting them.
@@ -424,7 +424,7 @@ solar_guard:
       - death -1 
     cost:
       - mana 40
-      - sun_concoction 6
+      - sun_amalgam 6
     memory: 7
     prerequisites:
         - solar_ray
