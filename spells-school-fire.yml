@@ -116,7 +116,6 @@ fireproof:
         - 378 1
     cooldown: 30
     memory: 3
-    beneficial: true
     duration: 1200
     strength: 1 
     target-self: true

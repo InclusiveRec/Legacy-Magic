@@ -42,35 +42,6 @@ forget:
         &rForget   -   Cantrip
         &3Make a player forget a spell.
 
-# Teleportation spells
-
-
-recall:
-    permission-name: cantrip
-    spell-class: ".instant.RecallSpell"
-    cast-item: book
-    spell-icon: bed
-    always-granted: true
-    cost:
-        - mana 50
-    cooldown: 120
-    shared-cooldowns:
-        - summon_helper 120
-        - gate 60
-    allow-cross-world: false
-    max-range: 1000
-    use-bed-location: true
-    str-cast-others: "%a disappears!"
-    str-cost: "50 mana"
-    str-cast-self: "You teleport back home."
-    str-no-mark: "You have no bed to return to."
-    str-other-world: "You cannot recall to another world."
-    str-too-far: "Your bed is too far away."
-    description: |
-        &rRecall   -   Cantrip
-        &3Teleports you to the last bed you slept in.
-
-
 # Bonus spells
 
 enderchest:

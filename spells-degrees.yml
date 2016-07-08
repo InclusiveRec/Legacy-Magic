@@ -21,7 +21,7 @@ death_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - death 25000
@@ -46,7 +46,7 @@ promote_death:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item:  death_grimoire
     spell-icon: 386
     xp-required:
       - death 2500
@@ -69,7 +69,7 @@ fire_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - fire 25000
@@ -94,7 +94,7 @@ promote_fire:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: fire_grimoire
     spell-icon: 386
     xp-required:
       - fire 2500
@@ -117,7 +117,7 @@ forest_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - forest 25000
@@ -142,7 +142,7 @@ promote_forest:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: forest_grimoire
     spell-icon: 386
     xp-required:
       - forest 2500
@@ -165,7 +165,7 @@ knight_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - knights 25000
@@ -190,7 +190,7 @@ promote_knight:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: knight_grimoire
     spell-icon: 386
     xp-required:
       - knight 2500
@@ -213,7 +213,7 @@ ocean_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: water_grimoire
     spell-icon: 386
     xp-required:
       - ocean 25000
@@ -237,7 +237,7 @@ promote_ocean:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: water_grimoire
     spell-icon: 386
     xp-required:
       - ocean 2500
@@ -260,7 +260,7 @@ shadow_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - shadow 25000
@@ -285,7 +285,7 @@ promote_shadow:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: shadow_grimoire
     spell-icon: 386
     xp-required:
       - shadow 2500
@@ -307,7 +307,7 @@ solar_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - solar 25000
@@ -332,7 +332,7 @@ promote_solar:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: sun_grimoire
     spell-icon: 386
     xp-required:
       - solar 2500
@@ -355,7 +355,7 @@ stone_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - stone 25000
@@ -380,7 +380,7 @@ promote_stone:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: stone_grimoire
     spell-icon: 386
     xp-required:
       - stone 2500
@@ -397,30 +397,30 @@ promote_stone:
             &2Stone Promotion Spell
             Increase another's Mage Rank with your Stone Magic Mastery. Cast with Book & Quill.
             
-storm_education:
+dragon_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
-      - storm 25000
+      - dragon 25000
     xp-granted:
-      - storm -25000
+      - dragon -25000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Storm MagicXP."
+    str-cost: "30 levels, a book, and 25000 Dragon MagicXP."
     description: |
-            &2Storm Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Storm Magic. Cast with Book & Quill.
+            &2Stone Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with Book & Quill.
 
-promote_storm:
+promote_dragon:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
@@ -428,22 +428,23 @@ promote_storm:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: 386
+    cast-item: dragon_grimoire
     spell-icon: 386
     xp-required:
-      - storm 2500
+      - dragon 2500
     xp-granted:
-      - storm -2500
+      - dragon -2500
     cost:
       - book 1
       - levels 5
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Storm MagicXP."
+    str-cost: "5 levels, a book, and 2500 dragon MagicXP."
     description: |
-            &2Storm Promotion Spell
-            Increase another's Mage Rank with your Storm Magic Mastery. Cast with Book & Quill.
+            &2Stone Promotion Spell
+            Increase another's Mage Rank with your dragon Magic Mastery. Cast with Book & Quill.
+            
             
 test_education:
     spell-class: ".ExternalCommandSpell"
@@ -451,7 +452,7 @@ test_education:
     execute-on-console-instead: true
     command-to-execute:
         - "pex promote %a mage"
-    cast-item: 386
+    cast-item: book
     spell-icon: 386
     xp-required:
       - test 1

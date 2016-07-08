@@ -293,7 +293,6 @@ cleanse:
         - 175 1
     cooldown: 60
     memory: 3
-    beneficial: true
     remove:
       - fire
       - 17
@@ -368,7 +367,6 @@ soothe:
     prerequisites:
         - heal
     memory: 6
-    beneficial: true
     bounce-range: 8
     bounces: 5
     cooldown: 30

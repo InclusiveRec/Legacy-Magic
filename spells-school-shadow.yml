@@ -1,3 +1,29 @@
+predefined-items:
+    shadow_grimoire:
+        type: enchanted_book
+        name: "&7Book of Shadows"
+        lore: |
+            Any and all shadows
+            are recorded in this
+            magical book.
+lore_of_shadow:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: enchanted_book
+    xp-granted:
+      - shadow 1 
+    cost:
+        - book 1
+        - levels 30
+        - diamond_block 1
+        - ink_sack 6
+    memory: 10
+    items:
+        - shadow_grimoire 1
+    str-cost: "A book, 30 levels, a diamond block, and six ink sacks."
+    description: |
+            &7Lore of Shadow: Shadow Masters' Spell
+            Creates a Shadow grimoire.
 blind:
     permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
@@ -101,7 +127,6 @@ nightvision:
         - 375 1
     cooldown: 30
     memory: 4
-    beneficial: true
     duration: 600
     targeted: false
     type: 16
