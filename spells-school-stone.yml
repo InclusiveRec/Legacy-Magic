@@ -246,7 +246,6 @@ mighty_swing:
         - 17 1
     cooldown: 30
     memory: 5
-    beneficial: true
     duration: 200
     strength: 1
     target-self: true

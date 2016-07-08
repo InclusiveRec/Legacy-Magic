@@ -3,8 +3,8 @@ hideouts/
 spellbooks/
 errors/
 special/
+xp/
 
 # Unwanted files
 *.txt
 zones.yml
-spells_EVENTS.yml

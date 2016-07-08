@@ -135,7 +135,7 @@ stunning_blow:
 #           The knightly_harness spell.
 #
 
-knightly_harness:
+knight_harness:
     permission-name: knights
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
@@ -166,11 +166,10 @@ knightly_harness:
 #   mana-hungry.
 #
 
-grim_determination:
+determination:
     permission-name: knights
     spell-class: ".PassiveSpell"
     xp-granted:
-      - knights 1 
       - death -1 
     cost:
         - mana 40
@@ -205,7 +204,7 @@ lore_of_knighthood:
     bindable: false
     items:
       - knight_grimoire 1
-forge_knightly_saddle:
+knightly_saddle:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     xp-granted:
@@ -219,7 +218,7 @@ forge_knightly_saddle:
     bindable: false
     items:
       - knight_saddle 1
-forge_knightly_sword:
+knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     xp-granted:
@@ -234,32 +233,3 @@ forge_knightly_sword:
     items:
       - knight_sword 1
 
-
-# Transportation
-
-gate:
-    permission-name: knights
-    spell-class: ".instant.GateSpell"
-    cast-item: book
-    spell-icon: 358
-    cost:
-        - mana 30
-    memory: 7
-    cooldown: 60
-    shared-cooldowns:
-        - summon_helper 120
-        - recall 120
-    always-granted: true
-    can-cast-with-item: false
-    world: WORLD
-    coordinates: SPAWN
-    str-cost: "30 mana"
-    str-cast-others: "%a appears!"
-    str-cast-self: "You have teleported."
-    str-gate-failed: "Unable to teleport."
-    description: |
-        &rGate   7   Knights
-        &3Teleport to Sunfield.
-    effects:
-        - pos1 ender
-        - pos2 ender

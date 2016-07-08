@@ -42,65 +42,6 @@ forget:
         &rForget   -   Cantrip
         &3Make a player forget a spell.
 
-# Teleportation spells
-
-
-recall:
-    permission-name: cantrip
-    spell-class: ".instant.RecallSpell"
-    cast-item: book
-    spell-icon: bed
-    always-granted: true
-    cost:
-        - mana 50
-    cooldown: 120
-    shared-cooldowns:
-        - summon_helper 120
-        - gate 30
-    allow-cross-world: false
-    max-range: 1000
-    use-bed-location: true
-    str-cast-others: "%a disappears!"
-    str-cost: "50 mana"
-    str-cast-self: "You teleport back home."
-    str-no-mark: "You have no bed to return to."
-    str-other-world: "You cannot recall to another world."
-    str-too-far: "Your bed is too far away."
-    description: |
-        &rRecall   -   Cantrip
-        &3Teleports you to the last bed you slept in.
-
-
-summon_helper:
-    enabled: false
-    permission-name: cantrip
-    spell-class: ".targeted.SummonSpell"
-    name: summon
-    cost:
-        - mana 30
-    cooldown: 120
-    shared-cooldowns:
-        - gate 30
-        - recall 120
-    always-granted: true
-    max-accept-delay: 90
-    range: 1000
-    require-acceptance: true
-    require-exact-name: false
-    accept-command: "accept"
-    str-cost: "30 mana"
-    str-summon-accepted: "You have been summoned."
-    str-summon-expired: "The summon has expired."
-    str-no-target: "Target player not found."
-    str-summon-pending: "%a is summoning you! Type /accept to teleport."
-    str-usage: |
-        Usage: /cast summon <playername>, or /cast summon
-        while looking at a sign with a player name on the first line.
-    description: |
-        Summon   -   Cantrip
-        Summons an ally to your location.
-
-
 # Bonus spells
 
 enderchest:
@@ -119,11 +60,13 @@ enderchest:
         &3Opens your ender chest inventory.
 
 firework:
-    enabled: false
+    enabled: true
     permission-name: cantrip
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: torch
     spell-icon: firework
+    xp-granted:
+      - test 10 
     always-granted:  true
     cost:
         - mana 10
@@ -181,7 +124,7 @@ scroll:
     spell-class: ".command.ScrollSpell"
     cast-item: book
     spell-icon: paper
-    default-uses: 5
+    default-uses: 1 
     charge-reagents-for-spell-per-charge: true
     ignore-cast-perm: true
     item-id: 339
@@ -203,7 +146,7 @@ scroll:
         and type /cast scroll <spell> <uses>.
     str-use-fail: "Unable to use this scroll right now."
     description: |
-        Scroll: L10 Cantrip
+        Scroll:  Cantrip
         Create a limited use spell scroll.
 
 

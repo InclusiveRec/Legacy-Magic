@@ -53,6 +53,7 @@ magic-schools:
     solar: "   &eSolar&f"
     stone: "   &7Stone&f"
     storm: "   &3Storm&f"
+    dragon: "   &5Dragon&f"
 entity-names:
     zombie: an ugly zombie
     skeleton: a scary skeleton

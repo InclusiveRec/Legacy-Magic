@@ -1,0 +1,121 @@
+predefined-items:
+    dragon_grimoire:
+        type: enchanted_book
+        name: "&5Dragon Grimoire"
+        lore: |
+            A detailed account
+            of every type of dragon.
+lore_of_dragons:
+    spell-class: ".instant.ConjureSpell"
+    cast-item: book
+    spell-icon: enchanted_book
+    xp-granted:
+      - dragon 1 
+    cost:
+        - book 1
+        - levels 30
+        - diamond_block 1
+        - dragon_egg 5
+    memory: 10
+    items:
+        - dragon_grimoire 1
+    str-cost: "A book, 30 levels, a diamond block, and six dragon eggs."
+    description: |
+            &5Lore of Dragons: Dragon Masters' Spell
+            Creates a Dragon grimoire.
+gate:
+    permission-name: dragon
+    spell-class: ".instant.GateSpell"
+    cast-item: book
+    spell-icon: 358
+    automatically-granted: true
+    xp-granted:
+      - dragon 1
+      - knights -1 
+      - stone -1 
+    cost:
+        - mana 30
+    cooldown: 60
+    shared-cooldowns:
+        - summon_helper 120
+        - recall 120
+    can-cast-with-item: false
+    world: WORLD
+    coordinates: SPAWN
+    str-cost: "30 mana"
+    str-cast-others: "%a appears!"
+    str-cast-self: "You have teleported."
+    str-gate-failed: "Unable to teleport."
+    description: |
+        &rGate   7   Dragon
+        &3Teleport to Sunfield.
+    effects:
+        - pos1 ender
+        - pos2 ender
+
+recall:
+    permission-name: dragon
+    spell-class: ".instant.RecallSpell"
+    cast-item: book
+    spell-icon: bed
+    always-granted: true
+    xp-granted:
+      - dragon 1
+      - knights -1 
+      - stone -1 
+    cost:
+        - mana 50
+    cooldown: 120
+    shared-cooldowns:
+        - summon_helper 120
+        - gate 60
+    allow-cross-world: false
+    max-range: 1000
+    use-bed-location: true
+    str-cast-others: "%a disappears!"
+    str-cost: "50 mana"
+    str-cast-self: "You teleport back home."
+    str-no-mark: "You have no bed to return to."
+    str-other-world: "You cannot recall to another world."
+    str-too-far: "Your bed is too far away."
+    description: |
+        &rRecall   -   Dragon
+        &3Teleports you to the last bed you slept in.
+
+
+summon_helper:
+    enabled: false
+    permission-name: dragon
+    spell-class: ".targeted.SummonSpell"
+    name: summon
+    spell-icon: 358
+    xp-granted:
+      - dragon 1
+      - knights -1 
+      - stone -1 
+    cost:
+        - mana 60
+    memory: 7
+    prerequisites:
+        - gate
+        - recall
+    cooldown: 120
+    shared-cooldowns:
+        - gate 30
+        - recall 120
+    max-accept-delay: 90
+    range: 1000
+    require-acceptance: true
+    require-exact-name: false
+    accept-command: "accept"
+    str-cost: "60 mana"
+    str-summon-accepted: "You have been summoned."
+    str-summon-expired: "The summon has expired."
+    str-no-target: "Target player not found."
+    str-summon-pending: "%a is summoning you! Type /accept to teleport."
+    str-usage: |
+        Usage: /cast summon <playername>, or /cast summon
+        while looking at a sign with a player name on the first line.
+    description: |
+        Summon   7   Dragon
+        Summons an ally to your location.

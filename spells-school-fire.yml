@@ -30,6 +30,8 @@ lore_of_flame:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
+    xp-required:
+      - fire 500
     xp-granted:
       - fire 1
     cost:
@@ -39,6 +41,8 @@ lore_of_flame:
     memory: 10
     items:
         - fire_grimoire 1
+    allow-command-casting: false
+    bindable: false
     description: |
             &4Lore of Flame: Fire Masters' Spell
             Creates a fiery grimoire.
@@ -49,6 +53,8 @@ fiery_staff:
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
     spell-icon: blaze_rod
+    xp-required:
+      - fire 500
     xp-granted:
       - fire 1
     cost:
@@ -96,6 +102,7 @@ firebreathing:
             Breathe fire upon your foes!
             Uses 3 memory slots.
     str-cost: 10 mana
+    
 fireproof:
     permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
@@ -103,12 +110,12 @@ fireproof:
     spell-icon: magma_cream
     xp-granted:
       - death -1 
+      - fire -1 
     cost:
         - mana 30
         - 378 1
     cooldown: 30
     memory: 3
-    beneficial: true
     duration: 1200
     strength: 1 
     target-self: true

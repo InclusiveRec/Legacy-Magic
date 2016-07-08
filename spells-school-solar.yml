@@ -44,8 +44,12 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-required:
+      - solar 500
     xp-granted:
       - solar 1
+    bindable: false
+    can-cast-by-command: false
     cost:
         - levels 30
         - book 1
@@ -65,8 +69,12 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
+    xp-required:
+      - solar 500
     xp-granted:
       - solar 1
+    bindable: false
+    can-cast-by-command: false
     cost:
         - levels 10
         - gold_ingot 1
@@ -285,7 +293,6 @@ cleanse:
         - 175 1
     cooldown: 60
     memory: 3
-    beneficial: true
     remove:
       - fire
       - 17
@@ -360,7 +367,6 @@ soothe:
     prerequisites:
         - heal
     memory: 6
-    beneficial: true
     bounce-range: 8
     bounces: 5
     cooldown: 30
