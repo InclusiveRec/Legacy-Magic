@@ -135,7 +135,7 @@ stunning_blow:
 #           The knightly_harness spell.
 #
 
-knightly_harness:
+knight_harness:
     permission-name: knights
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
@@ -166,11 +166,10 @@ knightly_harness:
 #   mana-hungry.
 #
 
-grim_determination:
+determination:
     permission-name: knights
     spell-class: ".PassiveSpell"
     xp-granted:
-      - knights 1 
       - death -1 
     cost:
         - mana 40
@@ -205,7 +204,7 @@ lore_of_knighthood:
     bindable: false
     items:
       - knight_grimoire 1
-forge_knightly_saddle:
+knightly_saddle:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     xp-granted:
@@ -219,7 +218,7 @@ forge_knightly_saddle:
     bindable: false
     items:
       - knight_saddle 1
-forge_knightly_sword:
+knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
     xp-granted:
@@ -242,6 +241,9 @@ gate:
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
+    xp-granted:
+      - knights 1 
+      - stone -1 
     cost:
         - mana 30
     memory: 7
@@ -249,7 +251,6 @@ gate:
     shared-cooldowns:
         - summon_helper 120
         - recall 120
-    always-granted: true
     can-cast-with-item: false
     world: WORLD
     coordinates: SPAWN
@@ -263,3 +264,37 @@ gate:
     effects:
         - pos1 ender
         - pos2 ender
+
+
+summon_helper:
+    enabled: false
+    permission-name: knights
+    spell-class: ".targeted.SummonSpell"
+    name: summon
+    spell-icon: 358
+    xp-granted:
+      - knights 1 
+      - stone -1 
+    cost:
+        - mana 60
+    memory: 7
+    cooldown: 120
+    shared-cooldowns:
+        - gate 30
+        - recall 120
+    max-accept-delay: 90
+    range: 1000
+    require-acceptance: true
+    require-exact-name: false
+    accept-command: "accept"
+    str-cost: "60 mana"
+    str-summon-accepted: "You have been summoned."
+    str-summon-expired: "The summon has expired."
+    str-no-target: "Target player not found."
+    str-summon-pending: "%a is summoning you! Type /accept to teleport."
+    str-usage: |
+        Usage: /cast summon <playername>, or /cast summon
+        while looking at a sign with a player name on the first line.
+    description: |
+        Summon   7   Knights
+        Summons an ally to your location.

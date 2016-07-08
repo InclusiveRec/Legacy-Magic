@@ -26,9 +26,9 @@ predefined-items:
     # Reagents
     # Custom spell components consumed by some spells.
 
-    forest_concoction:
+    forest_amalgam:
         type: "351:2"
-        name: "&2Woodland Concoction"
+        name: "&2Woodland Amalgam"
         lore:
           - "A mix of various"
           - "wildflowers and"
@@ -71,28 +71,32 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-required:
+      - forest 500
     xp-granted:
       - forest 1
     cost:
       - book 1
       - levels 30
       - sapling 1
-      - forest_concoction 12
+      - forest_amalgam 12
     memory: 10
     items:
       - forest_grimoire
-    str-cost: "30 levels, a book, a sapling, and 12 woodland concoction."
+    str-cost: "30 levels, a book, a sapling, and 12 woodland amalgam."
     description: |
             &2Woodland Lore: Forest Masters' Spell
             Creates a woodland grimoire.
 
 # Cast items
 
-woodland_gardener:
+gardener:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: shears
+    xp-required:
+      - forest 500
     xp-granted:
       - forest 1
       - solar 1 
@@ -100,7 +104,7 @@ woodland_gardener:
         - levels 5
         - shears 1
     prerequisites:
-      - woodland_concoction
+      - woodland_amalgam
       - scroll
     memory: 2
     items:
@@ -109,7 +113,7 @@ woodland_gardener:
     description: |
         &2Woodland Gardener: 2 Memory Forest Spell
         Creates herbalist's enchanted sickle.
-        Requires the &2woodland concoction&3 spell.
+        Requires the &2woodland amalgam&3 spell.
     effects:
         sound:
           position: caster
@@ -121,6 +125,8 @@ woodland_wand:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: stick
+    xp-required:
+      - forest 500
     xp-granted:
       - forest 1
       - solar 1 
@@ -138,6 +144,8 @@ hunting_knife:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: book
+    xp-required:
+      - forest 500
     xp-granted:
       - forest 1
       - death 1 
@@ -154,9 +162,9 @@ hunting_knife:
     description: |
             &2Hunting Knife: 3 memory Forest Spell.
             Creates a fine tool for carving up one's prey...
-# Base concoction
+# Base amalgam
 
-woodland_concoction:
+woodland_amalgam:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_sickle
@@ -171,11 +179,11 @@ woodland_concoction:
       - 38 1        # 1 red flower
     memory: 1
     items:
-      - forest_concoction 2-4
+      - forest_amalgam 2-4
     str-cost: "5 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
     description: |
-            &2Herbal Concoction: 1 Memory Forest Spell
-            Prepare a woodland concoction.
+            &2Herbal Amalgam: 1 Memory Forest Spell
+            Prepare a woodland amalgam.
 
 # Cast item(s)
 
@@ -237,13 +245,13 @@ lifewalk:
       - death -1 
     cost:
         - mana 10
-        - forest_concoction 2
+        - forest_amalgam 2
     memory: 2
     bindable: false
     use-cost:
-        - forest_concoction 1
+        - forest_amalgam 1
     use-cost-interval: 10
-    str-cost: "10 mana and 2 forest concoction, plus 1 forest concoction every 10 steps."
+    str-cost: "10 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
     str-cast-self: "Flowers spring up in your footsteps."
     str-fade: "Your steps no longer cause flowers to grow."
     description: |
@@ -261,7 +269,6 @@ mulch:
         - mana 5
         - "31:1 12"
     bindable: false
-    prerequisites: druidic_concoction
     memory: 3
     items:
         - "351:15 8-10"
@@ -270,7 +277,6 @@ mulch:
     description: |
             &2Mulch: 3 Memory Forest spell
             Turns cut grass into bone meal.
-            Requires the &2druidic concoction&3 spell.
 trapper:
     permission-name: forest
     spell-class: ".MultiSpell"
@@ -280,7 +286,7 @@ trapper:
       - forest 1
     cost:
         - levels 1
-        - forest_concoction 6
+        - forest_amalgam 6
     memory: 4
     check-individual-modifiers: true
     spells:
@@ -290,7 +296,7 @@ trapper:
         - tryrabbit
     modifiers:
         - biome FOREST,PLAINS,EXTREME_HILLS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,SAVANNA required
-    str-missing-reagents: "It takes 1 experience level and 6 woodland concoction to trap an animal."
+    str-missing-reagents: "It takes 1 experience level and 6 woodland amalgam to trap an animal."
     str-modifier-failed: "You can't manage to trap any creatures in this biome."
     description: |
             &2Trapper: 4 Memory Forest spell
@@ -307,7 +313,7 @@ stalking:
     memory: 2
     send-failure-messages: true
     spells:
-        - monster_invisibility
+        - invisibility
     triggers:
         - sneak
     modifiers:
@@ -424,7 +430,7 @@ entangle:
       - forest 1
     cost:
         - mana 12
-        - forest_concoction 1
+        - forest_amalgam 1
     cooldown: 0.2
     memory: 4
     check-plugins: true
@@ -435,7 +441,7 @@ entangle:
       - getvined
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "12 mana and 1 woodland concoction."
+    str-cost: "12 mana and 1 woodland amalgam."
     str-on-cooldown: ""
     description:  |
             &2Entangle:  4 Memory Forest Spell
@@ -449,7 +455,7 @@ hedge:
       - forest 1
     cost:
         - mana 15
-        - forest_concoction 1
+        - forest_amalgam 1
     cooldown: 4
     memory: 5
     range: 10
@@ -461,7 +467,7 @@ hedge:
     wall-width: 6
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "15 mana and 1 woodland concoction."
+    str-cost: "15 mana and 1 woodland amalgam."
     str-no-target: "You cannot create a hedge there."
     description: |
             &2Hedge: 5 Memory Forest Spell
@@ -481,11 +487,13 @@ fang:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: flint
+    xp-required:
+      - forest 500
     xp-granted:
       - forest 1
     cost:
         - bone 6
-        - forest_concoction 3
+        - forest_amalgam 3
         - levels 10
     prerequisites:
         - wolf
@@ -493,7 +501,7 @@ fang:
     memory: 2
     items:
         - wolf_fang
-    str-cost: "10 levels, 6 bones, and 3 woodland concoction."
+    str-cost: "10 levels, 6 bones, and 3 woodland amalgam."
     description: |
             &2Fang: 2 Memory Forest Spell
             Creates a wolf's fang to channel wilderness magic.
@@ -509,6 +517,8 @@ rend:
       - forest 1
       - death 1 
     memory: 2
+    bindable: false
+    can-cast-by-command: false
     check-plugins: true
     debug: true
     point-blank: true

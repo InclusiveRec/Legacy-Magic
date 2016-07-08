@@ -1,5 +1,6 @@
 bleeding:
     spell-class: ".targeted.PainSpell"
+    check-plugins: true
     damage: 3
     target-players: true
     spell-damage-type: animal
@@ -19,7 +20,7 @@ bleeding:
 combust:
     permission-name: fire
     spell-class: ".targeted.CombustSpell"
-    check-plugins: false
+    check-plugins: true
     fire-tick-damage: 4
 cripple:
     spell-class: ".targeted.CrippleSpell"
@@ -99,6 +100,7 @@ monster_invisibility:
     str-fade: "You have emerged from cover!"
 poison:
     spell-class: ".targeted.PotionEffectSpell"
+    check-plugins: true
     duration: 60
     strength: 1
     target-players: true
@@ -125,6 +127,7 @@ paralysis:
     duration: 3
 punch:
     spell-class: ".targeted.ForcetossSpell"
+    check-plugins: true
     horizontal-force: 25
     range: 5
     target-players: true
@@ -218,17 +221,16 @@ trysheep:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: sheep
     modifiers:
-        - biome EXTREME_HILLS, EXTREME_HILLS_WITH_TREES required
+        - biome EXTREME_HILLS required
 trypig:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: pig
     modifiers:
-        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST required
+        - biome FOREST,FOREST_HILLS,BIRCH_FOREST,ROOFED_FOREST required
 tryrabbit:
     spell-class: ".targeted.SpawnMonsterSpell"
     entity-type: rabbit
-    modifiers:
-        - biome MUTATED_PLAINS,MUTATED_FOREST required
+
 viney:
     spell-class: ".targeted.GeyserSpell"
     animation-speed: 1

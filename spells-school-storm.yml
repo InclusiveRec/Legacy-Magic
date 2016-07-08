@@ -16,19 +16,19 @@ predefined-items:
           - "with static electricity."
         enchants:
           - "knockback 1"
-    storm_concoction:
+    storm_amalgam:
         type: "351:7"
-        name: "&7Storm Concoction"
+        name: "&7Storm Amalgam"
         lore:
             - "The concentrated power"
             - "of a storm is contained"
-            - "within this concoction."
+            - "within this amalgam."
 lore_of_storms:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - storm 1
+      - storm 1 
     cost:
         - book 1
         - levels 30
@@ -71,8 +71,8 @@ freeze:
     cast-item: water_focus,stick
     spell-icon: snow_ball
     xp-granted:
-      - storm 1
-      - solar -1
+      - storm 1 
+      - solar -1  
     cost:
         - mana 15
         - snow_ball 1
@@ -101,7 +101,7 @@ gust:
     cast-item: stormhammer
     spell-icon: feather
     xp-granted:
-      - storm 1
+      - storm 1 
     cost:
         - mana 10
         - feather 1
@@ -127,8 +127,8 @@ lightning:
     cast-item: stormhammer
     spell-icon: gold_sword
     xp-granted:
-      - storm 1
-      - fire -1
+      - storm 1 
+      - fire 1 
     cost:
         - mana 25
         - wool 1
@@ -158,13 +158,13 @@ stormy:
     spell-class: ".instant.RitualSpell"
     cast-item: stormhammer
     xp-granted:
-      - storm 1
-      - ocean 1
-      - solar -1
-      - fire -1
+      - storm 1 
+      - solar -1 
+      - ocean 1 
+      - fire -1 
     cost:
         - mana 80
-        - storm_concoction 3
+        - storm_amalgam 3
     cooldown: 300
     memory: 8
     always-activate: true
@@ -178,7 +178,7 @@ stormy:
     str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
     str-cast-others: "%a has begun a ritual to summon rain.  Right-click to participate."
     str-cast-self: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
-    str-cost: "80 mana and 3 storm concoction to channel the power."
+    str-cost: "80 mana and 3 storm amalgam to channel the power."
     str-modifier-failed: You must have a view of the sky to cast this spell.
     str-ritual-interrupted: You are not able not strong enough to summon the storm and your ingredients are consumed!
     str-ritual-joined: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
@@ -193,8 +193,8 @@ windwalk:
     cast-item: stormhammer
     spell-icon: diamond_boots
     xp-granted:
-      - storm 1
-      - stone -1
+      - storm 1 
+      - stone -1 
     cost:
         - mana 25
         - feather 2
@@ -217,17 +217,17 @@ windwalk:
     description: |
         &rWindwalk   7 Memory   Storm School
         The caster rides the winds of a raging storm.
-storm_concoction:
+storm_amalgam:
     permission-name: storm
     spell-class: ".instant.ConjureSpell"
     cast-item: stormhammer,storm_grimoire
     spell-icon: "351:7"
     xp-granted:
-      - storm 1
-      - ocean 1
+      - storm 1 
+      - ocean 1 
     memory: 1
     items:
-        - storm_concoction 4-6
+        - storm_amalgam 4-6
         - bucket 3
     cost:
         - wool 8
@@ -239,5 +239,5 @@ storm_concoction:
     str-cost: "During a storm, mix three water buckets and 8 wool, using 20 mana in the process."
     str-modifier-failed: "You must be in a storm cast this spell."
     description: |
-            &7Storm Concoction: 1 Memory Storm Spell
-            Concentrates some storm concoction.
+            &7Storm Amalgam: 1 Memory Storm Spell
+            Concentrates some storm amalgam.

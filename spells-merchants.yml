@@ -14,9 +14,22 @@ predefined-items:
         name: "&7Magical Nether Brick"
         lore:
             - "A nether brick enchanced by Magic"
+    smoked_salmon:
+        type: "350:1"
+        name: "&7Smoked Salmon"
+        lore:
+            - "Delicious but salty smoked salmon."
+    wonder_bread:
+        type: "297"
+        name: "&7Wonder Bread"
+        lore:
+            - "Soft and tasty bread with little nutritional value."
 makeitems:
     spell-class: ".instant.ConjureSpell"
+    permission-name: cantrip
     items:
         - magic_brick 64
         - magic_clay 64
         - magic_nether_brick 64
+        - smoked_salmon 64
+        - wonder_bread 64

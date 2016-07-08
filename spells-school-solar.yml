@@ -44,8 +44,12 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-required:
+      - solar 500
     xp-granted:
       - solar 1
+    bindable: false
+    can-cast-by-command: false
     cost:
         - levels 30
         - book 1
@@ -65,8 +69,12 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
+    xp-required:
+      - solar 500
     xp-granted:
       - solar 1
+    bindable: false
+    can-cast-by-command: false
     cost:
         - levels 10
         - gold_ingot 1

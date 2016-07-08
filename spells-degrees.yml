@@ -1,0 +1,487 @@
+#
+#
+# Spells to award Degrees of Magical Ability and increase Mage rank.
+#
+#
+
+#Changelog 7/7/16 by The Best Coder Ever (Aka MrCodeGuy)
+# - Added range to all spells
+
+#Changelog 7/2/16 by Connierific
+# - Added promote versions of each spell to be granted allowing school masters to rank up others.
+
+#Changelog 6/27/2016 by SuperDragonite2172
+# - Added inablilty to cast through commands to all spells.
+# - Added inablilty to bind to all spells
+# - Added a little to spell descriptions for all spells. (Potentially redundant detail and could be removed without effect)
+
+death_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - death 25000
+    xp-granted:
+      - death -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Death MagicXP."
+    description: |
+            &2Death Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with Book & Quill.
+
+promote_death:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - death 2500
+    xp-granted:
+      - death -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Death MagicXP."
+    description: |
+            &2Death Promotion Spell
+            Increase another's Mage Rank with your Death Magic Mastery. Cast with Book & Quill.
+
+fire_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - fire 25000
+    xp-granted:
+      - fire -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Fire MagicXP."
+    description: |
+            &2Fire Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with Book & Quill.
+
+promote_fire:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - fire 2500
+    xp-granted:
+      - fire -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Fire MagicXP."
+    description: |
+            &2Fire Promotion Spell
+            Increase another's Mage Rank with your Fire Magic Mastery. Cast with Book & Quill.
+            
+forest_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - forest 25000
+    xp-granted:
+      - forest -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Forest MagicXP."
+    description: |
+            &2Forest Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with Book & Quill.
+
+promote_forest:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - forest 2500
+    xp-granted:
+      - forest -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Forest MagicXP."
+    description: |
+            &2Forest Promotion Spell
+            Increase another's Mage Rank with your Forest Magic Mastery. Cast with Book & Quill.
+            
+knight_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - knights 25000
+    xp-granted:
+      - knights -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Knights MagicXP."
+    description: |
+            &2Knights Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Knights Magic. Cast with Book & Quill.
+
+promote_knight:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - knight 2500
+    xp-granted:
+      - knight -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Knight MagicXP."
+    description: |
+            &2Knight Promotion Spell
+            Increase another's Mage Rank with your Knight Magic Mastery. Cast with Book & Quill.
+            
+ocean_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - ocean 25000
+    xp-granted:
+      - ocean -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    
+    str-cost: "30 levels, a book, and 25000 Ocean MagicXP."
+    description: |
+            &2Ocean Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with Book & Quill.
+
+promote_ocean:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - ocean 2500
+    xp-granted:
+      - ocean -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Ocean MagicXP."
+    description: |
+            &2Ocean Promotion Spell
+            Increase another's Mage Rank with your Ocean Magic Mastery. Cast with Book & Quill.
+            
+shadow_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - shadow 25000
+    xp-granted:
+      - shadow -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Shadow MagicXP."
+    description: |
+            &2Shadow Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with Book & Quill.
+
+promote_shadow:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - shadow 2500
+    xp-granted:
+      - shadow -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Shadow MagicXP."
+    description: |
+            &2Shadow Promotion Spell
+            Increase another's Mage Rank with your Shadow Magic Mastery. Cast with Book & Quill.
+solar_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - solar 25000
+    xp-granted:
+      - solar -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Solar MagicXP."
+    description: |
+            &2Solar Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with Book & Quill.
+
+promote_solar:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - solar 2500
+    xp-granted:
+      - solar -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Solar MagicXP."
+    description: |
+            &2Solar Promotion Spell
+            Increase another's Mage Rank with your Solar Magic Mastery. Cast with Book & Quill.
+            
+stone_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - stone 25000
+    xp-granted:
+      - stone -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Stone MagicXP."
+    description: |
+            &2Stone Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with Book & Quill.
+
+promote_stone:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - stone 2500
+    xp-granted:
+      - stone -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Stone MagicXP."
+    description: |
+            &2Stone Promotion Spell
+            Increase another's Mage Rank with your Stone Magic Mastery. Cast with Book & Quill.
+            
+storm_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - storm 25000
+    xp-granted:
+      - storm -25000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 25000 Storm MagicXP."
+    description: |
+            &2Storm Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Storm Magic. Cast with Book & Quill.
+
+promote_storm:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - storm 2500
+    xp-granted:
+      - storm -2500
+    cost:
+      - book 1
+      - levels 5
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "5 levels, a book, and 2500 Storm MagicXP."
+    description: |
+            &2Storm Promotion Spell
+            Increase another's Mage Rank with your Storm Magic Mastery. Cast with Book & Quill.
+            
+test_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: 386
+    spell-icon: 386
+    xp-required:
+      - test 1
+    xp-granted:
+      - test -1 
+    cost:
+      - mana 1
+    str-cost: "a pinch of mana and test MagicXP."
+    description: |
+            &2Test Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in test Magic. Cast with Book & Quill.
+
+promote_test:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: torch
+    spell-icon: 386
+    xp-required:
+      - test 1 
+    xp-granted:
+      - test -1  
+    cost:
+      - mana 1
+    range: 7
+    power: 100
+    str-cost: "a pinch of mana and test MagicXP."
+    description: |
+            &2Test Promotion Spell
+            Increase another's Mage Rank with your Test Magic Mastery. Cast with Book & Quill.
