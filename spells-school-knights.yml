@@ -193,6 +193,8 @@ lore_of_knighthood:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-required:
+      - knight 500
     xp-granted:
       - knights 1
     cost:
@@ -207,6 +209,8 @@ lore_of_knighthood:
 knightly_saddle:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
+    xp-required:
+      - knight 500
     xp-granted:
       - knights 1 
     cast-item: knight_grimoire
@@ -221,6 +225,8 @@ knightly_saddle:
 knightly_sword:
     permission-name: knights
     spell-class: ".instant.ConjureSpell"
+    xp-required:
+      - knight 500
     xp-granted:
       - knights 1
     cast-item: knight_grimoire
