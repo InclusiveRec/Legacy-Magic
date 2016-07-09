@@ -91,6 +91,7 @@ firebreathing:
         - mana 10
     memory: 3
     allow-command-casting: false
+    cooldown: 10
     check-plugins: true
     hit-non-players: true
     hit-players: true
@@ -137,6 +138,7 @@ smoke:
         - levels 3
         - mana 10
     memory: 3
+    cooldown: 10
     allow-command-casting: false
     check-plugins: true
     fail-if-no-targets: false
@@ -174,6 +176,7 @@ spark:
         - blaze_powder 1
     cooldown: 1
     memory: 3
+    cooldown: 10
     allow-command-casting: false
     check-plugins: true
     no-explosion: true
