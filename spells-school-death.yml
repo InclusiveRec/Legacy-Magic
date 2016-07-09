@@ -41,6 +41,8 @@ lore_of_death:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: 403
+    xp-required:
+      - death 500
     cost:
         - book 1
         - levels 30
@@ -67,6 +69,8 @@ bone_carving:
     spell-class: ".instant.ConjureSpell"
     cast-item: death_grimoire
     spell-icon: bone
+    xp-required:
+      - death 500
     cost:
       - bone 1
       - rotten_flesh 2
@@ -98,6 +102,8 @@ stain_steel:
   spell-class: ".instant.ConjureSpell"
   cast-item: death_grimoire
   spell-icon: iron_sword
+    xp-required:
+      - death 500
   cost:
     - iron_sword 1
     - rotten_flesh 3
