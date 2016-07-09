@@ -36,7 +36,7 @@ death_education:
     str-cost: "30 levels, a book, and 25000 Death MagicXP."
     description: |
             &2Death Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with a book.
 
 promote_death:
     spell-class: ".ExternalCommandSpell"
@@ -61,7 +61,7 @@ promote_death:
     str-cost: "5 levels, a book, and 2500 Death MagicXP."
     description: |
             &2Death Promotion Spell
-            Increase another's Mage Rank with your Death Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Death Magic Mastery. Cast with the school's grimoire.
 
 fire_education:
     spell-class: ".ExternalCommandSpell"
@@ -84,7 +84,7 @@ fire_education:
     str-cost: "30 levels, a book, and 25000 Fire MagicXP."
     description: |
             &2Fire Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with a book.
 
 promote_fire:
     spell-class: ".ExternalCommandSpell"
@@ -109,7 +109,7 @@ promote_fire:
     str-cost: "5 levels, a book, and 2500 Fire MagicXP."
     description: |
             &2Fire Promotion Spell
-            Increase another's Mage Rank with your Fire Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Fire Magic Mastery. Cast with the school's grimoire.
             
 forest_education:
     spell-class: ".ExternalCommandSpell"
@@ -132,7 +132,7 @@ forest_education:
     str-cost: "30 levels, a book, and 25000 Forest MagicXP."
     description: |
             &2Forest Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with a book.
 
 promote_forest:
     spell-class: ".ExternalCommandSpell"
@@ -157,7 +157,7 @@ promote_forest:
     str-cost: "5 levels, a book, and 2500 Forest MagicXP."
     description: |
             &2Forest Promotion Spell
-            Increase another's Mage Rank with your Forest Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Forest Magic Mastery. Cast with the school's grimoire.
             
 knight_education:
     spell-class: ".ExternalCommandSpell"
@@ -180,7 +180,7 @@ knight_education:
     str-cost: "30 levels, a book, and 25000 Knights MagicXP."
     description: |
             &2Knights Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Knights Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Knights Magic. Cast with a book.
 
 promote_knight:
     spell-class: ".ExternalCommandSpell"
@@ -205,7 +205,7 @@ promote_knight:
     str-cost: "5 levels, a book, and 2500 Knight MagicXP."
     description: |
             &2Knight Promotion Spell
-            Increase another's Mage Rank with your Knight Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Knight Magic Mastery. Cast with the school's grimoire.
             
 ocean_education:
     spell-class: ".ExternalCommandSpell"
@@ -227,7 +227,7 @@ ocean_education:
     str-cost: "30 levels, a book, and 25000 Ocean MagicXP."
     description: |
             &2Ocean Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with a book.
 
 promote_ocean:
     spell-class: ".ExternalCommandSpell"
@@ -252,7 +252,7 @@ promote_ocean:
     str-cost: "5 levels, a book, and 2500 Ocean MagicXP."
     description: |
             &2Ocean Promotion Spell
-            Increase another's Mage Rank with your Ocean Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
             
 shadow_education:
     spell-class: ".ExternalCommandSpell"
@@ -275,7 +275,7 @@ shadow_education:
     str-cost: "30 levels, a book, and 25000 Shadow MagicXP."
     description: |
             &2Shadow Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with a book.
 
 promote_shadow:
     spell-class: ".ExternalCommandSpell"
@@ -300,7 +300,7 @@ promote_shadow:
     str-cost: "5 levels, a book, and 2500 Shadow MagicXP."
     description: |
             &2Shadow Promotion Spell
-            Increase another's Mage Rank with your Shadow Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
 solar_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
@@ -322,7 +322,7 @@ solar_education:
     str-cost: "30 levels, a book, and 25000 Solar MagicXP."
     description: |
             &2Solar Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with a book.
 
 promote_solar:
     spell-class: ".ExternalCommandSpell"
@@ -347,7 +347,7 @@ promote_solar:
     str-cost: "5 levels, a book, and 2500 Solar MagicXP."
     description: |
             &2Solar Promotion Spell
-            Increase another's Mage Rank with your Solar Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Solar Magic Mastery. Cast with the school's grimoire.
             
 stone_education:
     spell-class: ".ExternalCommandSpell"
@@ -370,7 +370,7 @@ stone_education:
     str-cost: "30 levels, a book, and 25000 Stone MagicXP."
     description: |
             &2Stone Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with a book.
 
 promote_stone:
     spell-class: ".ExternalCommandSpell"
@@ -395,7 +395,7 @@ promote_stone:
     str-cost: "5 levels, a book, and 2500 Stone MagicXP."
     description: |
             &2Stone Promotion Spell
-            Increase another's Mage Rank with your Stone Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
             
 dragon_education:
     spell-class: ".ExternalCommandSpell"
@@ -418,7 +418,7 @@ dragon_education:
     str-cost: "30 levels, a book, and 25000 Dragon MagicXP."
     description: |
             &2Stone Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
 
 promote_dragon:
     spell-class: ".ExternalCommandSpell"
@@ -443,7 +443,7 @@ promote_dragon:
     str-cost: "5 levels, a book, and 2500 dragon MagicXP."
     description: |
             &2Stone Promotion Spell
-            Increase another's Mage Rank with your dragon Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
             
             
 test_education:
@@ -463,7 +463,7 @@ test_education:
     str-cost: "a pinch of mana and test MagicXP."
     description: |
             &2Test Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in test Magic. Cast with Book & Quill.
+            Increase your Mage Rank with a Magical Ability Degree in test Magic. Cast with a book.
 
 promote_test:
     spell-class: ".ExternalCommandSpell"
@@ -485,4 +485,4 @@ promote_test:
     str-cost: "a pinch of mana and test MagicXP."
     description: |
             &2Test Promotion Spell
-            Increase another's Mage Rank with your Test Magic Mastery. Cast with Book & Quill.
+            Increase another's Mage Rank with your Test Magic Mastery. Cast with a torch.
