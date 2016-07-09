@@ -33,6 +33,8 @@ lore_of_oceans:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
+    xp-required:
+      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
@@ -52,6 +54,8 @@ hydromantic_focus:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
+    xp-required:
+      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
@@ -73,6 +77,8 @@ dowsing_rod:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
+    xp-required:
+      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
