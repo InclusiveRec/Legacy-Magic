@@ -9,6 +9,8 @@ lore_of_dragons:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    xp-required:
+      - dragon 500
     xp-granted:
       - dragon 1 
     cost:
@@ -47,7 +49,7 @@ gate:
     str-cast-self: "You have teleported."
     str-gate-failed: "Unable to teleport."
     description: |
-        &rGate   7   Dragon
+        &rGate   Dragon
         &3Teleport to Sunfield.
     effects:
         - pos1 ender
@@ -101,7 +103,7 @@ summon_helper:
         - recall
     cooldown: 120
     shared-cooldowns:
-        - gate 30
+        - gate 60
         - recall 120
     max-accept-delay: 90
     range: 1000
