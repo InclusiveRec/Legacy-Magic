@@ -47,7 +47,7 @@ magic-schools:
     death: "  &0Death&f"
     fire: "   &4Fire&f"
     forest: "   &2Forest&f"
-    knights: "  &eKnights&f"
+    knight: "  &eKnight&f"
     ocean: "   &bOcean&f"
     shadow: "   &8Shadow&f"
     solar: "   &eSolar&f"
