@@ -83,12 +83,12 @@ predefined-items:
 #
 
 warhorse:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".instant.SteedSpell"
     cast-item: knight_saddle
     spell-icon: iron_horse_armor
     xp-granted:
-      - knights 1 
+      - knight 1 
     cost:
         - 396 1
         - mana 20
@@ -102,7 +102,7 @@ warhorse:
     str-cast-others: "%c summons a knightly warhorse!"
     str-cast-self: "You summon a knightly warhorse!"
     str-cost: "20 mana and a golden carrot."
-    description: "Summons a mount to aid you in battle. 20 mana and a golden carrot; uses the War Saddle; 2 memory Knights spell."
+    description: "Summons a mount to aid you in battle. 20 mana and a golden carrot; uses the War Saddle; 2 memory Knight spell."
 
 #
 #                       Sword spells
@@ -113,10 +113,10 @@ warhorse:
 #
 
 stunning_blow:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".PassiveSpell"
     xp-granted:
-      - knights 1 
+      - knight 1 
     memory: 2
     spells:
         - cripple
@@ -136,12 +136,12 @@ stunning_blow:
 #
 
 knight_harness:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".buff.ArmorSpell"
     cast-item: knight_saddle
     spell_icon: iron_helmet
     xp-granted:
-      - knights 1 
+      - knight 1 
     cost:
         - mana 50
         - 42 1
@@ -167,7 +167,7 @@ knight_harness:
 #
 
 determination:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".PassiveSpell"
     xp-granted:
       - death -1 
@@ -189,14 +189,12 @@ determination:
 #   Item factory
 
 lore_of_knighthood:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    xp-required:
-      - knight 500
     xp-granted:
-      - knights 1
+      - knight 1
     cost:
       - levels 30
       - book 1
@@ -207,12 +205,10 @@ lore_of_knighthood:
     items:
       - knight_grimoire 1
 knightly_saddle:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".instant.ConjureSpell"
-    xp-required:
-      - knight 500
     xp-granted:
-      - knights 1 
+      - knight 1 
     cast-item: knight_grimoire
     cost:
       - levels 15
@@ -223,12 +219,10 @@ knightly_saddle:
     items:
       - knight_saddle 1
 knightly_sword:
-    permission-name: knights
+    permission-name: knight
     spell-class: ".instant.ConjureSpell"
-    xp-required:
-      - knight 500
     xp-granted:
-      - knights 1
+      - knight 1
     cast-item: knight_grimoire
     cost:
       - levels 10
