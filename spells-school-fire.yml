@@ -10,6 +10,14 @@ predefined-items:
           - "A Grimoire written"
           - "by a Master of the"
           - "fire school of magic."
+    
+    flame_concotion:
+      type: "351:1"
+      name: "&4Flame Concotion"
+      lore:
+        - "The Hotest Substance"
+        - "known to Galdur"
+        - "Used to harness the power of the Center Core"
 
     # Cast item to amplify spells
 
@@ -76,6 +84,28 @@ fiery_staff:
             Firestaff:  10 Memory   Fire School.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
+    
+fire_concoction:
+    permission-name: fire
+    spell-class: ".instant.ConjureSpell"
+    cast-item: fire_staff
+    spell-icon: "351:1"
+    xp-required:
+      - fire 500
+    xp-granted:
+      - fire 1
+    memory: 1
+    items:
+        - flame_concoction 4-6
+    cost:
+        - mana 10
+        - 377 1
+        - 87 4
+        - 115 3
+    description: |
+            &eFire Concoction: 1 Memory Fire Spell
+            Mixes a Flame concoction.
+    str-cost: "Add 3 Nether Wort, 1 Blaze Powder with 4 Netherrack, using 10 mana."
 ################
 # Basic spells #
 ################
