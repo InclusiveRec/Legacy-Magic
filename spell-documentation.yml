@@ -65,7 +65,7 @@ predefined-items:
                 /cast list
                 /cast help gate
             -  You might notice that many spells have costs.  Mana is an energy that recharges over time, or by consuming (right-clicking) lapis lazuli or glowstone dust.  It can be checked with the /mana command.  Others consume various items or resources.
-            -  There are several ways to gain magic.  Some shops sell scrolls which allow for a set number of casts, or tomes which teach the spell.  More can be learnt by joining a school of magic.
+            -  There are several ways to gain magic.  Some shops sell scrolls which allow for a set number of casts, or tomes which teach the spell.  More can be learnt by joining a college of magic.
             - |
               &nV.  Roleplaying&r
 
