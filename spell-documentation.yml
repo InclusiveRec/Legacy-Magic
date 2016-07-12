@@ -42,11 +42,11 @@ predefined-items:
               &r  If you wish, you can set off on your own into the wilderness to establish your home.  However, you may wish to join many of the server's players in one of the server's towns.
             - When you first join the server, you will start off in the town of Sunfield.  Sunfield offers protections from monsters, pvp, fire spread and explosions.
             - In time, you may wish to resettle yourself in a different part of town, or in another town entirely.  If you find four other players to join you, you can even start your own town.
-            - Place a chest to start your claim.  They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.  You can safely travel to other towns by riding a dragon.
+            - They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.  You can safely travel to other towns by riding a dragon.
             - |
               &nIII.  The Economy
 
-              &r  On &oGaldur, &rcommerce is carried out with an emerald currency.  Gaining emeralds will let you buy items and supplies, rent or purchase land, and pay rent or taxes.
+              &r  On &oGaldur, &rcommerce is carried out with an emerald currency.  Gaining emeralds will let you buy items, supplies, and magic spells.
             - There are some useful tools for managing your treasure.  If you place a sign on a chest with &o[Vault] &ron the first line, the server will use it to store your emeralds.
             - |
                 The following self-explanatory commands can be used to measure and manipulate your emeralds:
@@ -76,8 +76,7 @@ predefined-items:
             - Asterisks "*" are used to signify your character taking an action.  For example, if you want to block the door so another character can't get out, you would type "*blocks the door*"
             - Parenthesis "()" denote whispering.  Your character might be trying to hide, but get the attention of another character.  They could whisper the following "(Psst, I'm over here.)"
             - As long as we're considerate of each other, and trust others to be considerate of us, we can have a lot of fun.  Great to have you in our world, and may you have many exciting adventures!
-            - |
-              &nV.  Roleplaying&r
+              
 manual:
     spell-class: ".instant.ConjureSpell"
     name: manual
