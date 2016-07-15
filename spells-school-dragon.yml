@@ -5,7 +5,10 @@ predefined-items:
         lore: |
             A detailed account
             of every type of dragon.
+            
+    # Item factory        
 lore_of_dragons:
+    permission-name: dragon
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
@@ -23,13 +26,15 @@ lore_of_dragons:
     description: |
             &5Lore of Dragons: Dragon Masters' Spell
             Creates a Dragon grimoire.
-            
+    
+#Bonus Spells
+    
 enderchest:
-    permission-name: cantrip
+    permission-name: dragon
     spell-class: ".instant.EnderchestSpell"
     cast-item: book
     spell-icon: ender_chest
-    always-granted: true
+    memory: 5
     cost:
         - mana 50
         - 368 1
