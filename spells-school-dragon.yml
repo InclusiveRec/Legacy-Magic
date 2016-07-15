@@ -23,6 +23,24 @@ lore_of_dragons:
     description: |
             &5Lore of Dragons: Dragon Masters' Spell
             Creates a Dragon grimoire.
+            
+enderchest:
+    permission-name: cantrip
+    spell-class: ".instant.EnderchestSpell"
+    cast-item: book
+    spell-icon: ender_chest
+    always-granted: true
+    cost:
+        - mana 50
+        - 368 1
+    cooldown: 300
+    str-cost: "50 mana and an enderpearl."
+    description: |
+        &rEnderchest: Cantrip
+        &3Opens your ender chest inventory.
+        
+# Transportation Spells
+
 gate:
     permission-name: dragon
     spell-class: ".instant.GateSpell"
