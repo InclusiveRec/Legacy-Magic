@@ -102,25 +102,25 @@ bone_carving:
             sound: mob.ghast.affectionate_scream
 
 stain_steel:
-  permission-name: death
-  spell-class: ".instant.ConjureSpell"
-  cast-item: death_grimoire
-  spell-icon: iron_sword
+    permission-name: death
+    spell-class: ".instant.ConjureSpell"
+    cast-item: death_grimoire
+    spell-icon: iron_sword
     xp-required:
       - death 500
     xp-granted:
       - death 1 
-  cost:
-    - iron_sword 1
-    - rotten_flesh 3
-    - levels 6
-    - health 4
-  prerequisites:
-    - drain
-    - scroll
-  memory: 3
-  items:
-    - death_knife 1
+    cost:
+      - iron_sword 1
+      - rotten_flesh 3
+      - levels 6
+      - health 4
+    prerequisites:
+      - drain
+      - scroll
+    memory: 3
+    items:
+      - death_knife 1
 
 bottle_soul:
     permission-name: death
