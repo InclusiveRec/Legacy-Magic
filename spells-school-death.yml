@@ -43,6 +43,8 @@ lore_of_death:
     spell-icon: 403
     xp-required:
       - death 500
+    xp-granted:
+      - death 1 
     cost:
         - book 1
         - levels 30
@@ -71,6 +73,8 @@ bone_carving:
     spell-icon: bone
     xp-required:
       - death 500
+    xp-granted:
+      - death 1 
     cost:
       - bone 1
       - rotten_flesh 2
@@ -104,6 +108,8 @@ stain_steel:
   spell-icon: iron_sword
     xp-required:
       - death 500
+    xp-granted:
+      - death 1 
   cost:
     - iron_sword 1
     - rotten_flesh 3
@@ -120,6 +126,9 @@ bottle_soul:
     permission-name: death
     spell-class: ".MultiSpell"
     cast-item: death_grimoire
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
       - 374 1
       - experience 10
@@ -150,6 +159,9 @@ sacrifice:
     spell-class: ".instant.ManaSpell"
     cast-item: bone,death_wand
     spell-icon: potion:8193
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
         - health 6
     memory: 2
@@ -173,6 +185,9 @@ blood_for_blood:
     spell-class: ".buff.ManaRegenSpell"
     cast-item: bone, death_wand
     spell-icon: redstone
+    xp-granted:
+      - death 1  
+      - solar -1 
     prerequisites:
         - sacrifice
     memory: 7
@@ -200,6 +215,9 @@ drain:
     spell-class: ".targeted.DrainlifeSpell"
     cast-item: bone, death_wand
     spell-icon: ghast_tear
+    xp-granted:
+      - death 1 
+      - solar -1  
     cost:
         - mana 10
     memory: 2
@@ -242,6 +260,9 @@ rupture:
     spell-class: ".targeted.ExplodeSpell"
     cast-item: bone, death_wand
     spell-icon: 289
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
         - mana 15
         - 289 1
@@ -269,6 +290,9 @@ necrotic_claw:
     spell-class: ".TargetedMultiSpell"
     cast-item: death_wand
     spell-icon: "367"
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
         - mana 40
     cooldown: 20
@@ -291,6 +315,9 @@ deathray:
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: death_wand
     spell-icon: "381"
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
       - mana 50
     prerequisites:
@@ -315,6 +342,9 @@ awakening:
     spell-class: ".targeted.PulserSpell"
     cast-item: death_grimoire
     spell-icon: "397:1"
+    xp-granted:
+      - death 1  
+      - solar -1 
     prerequisites:
       - lore_of_death
     memory: 10
@@ -336,6 +366,9 @@ revenant:
     spell-class: ".buff.MinionSpell"
     cast-item: death_grimoire
     spell-icon: "383:54"
+    xp-granted:
+      - death 1  
+      - solar -1 
     cost:
         - mana 30
         - rotten_flesh 2
@@ -365,6 +398,10 @@ spite:
     spell-class: ".targeted.AreaEffectSpell"
     cast-item: bone
     spell-icon: 375
+    xp-granted:
+      - death 1 
+      - shadow 1 
+      - solar -1 
     cost:
         - mana 60
         - 375 6
