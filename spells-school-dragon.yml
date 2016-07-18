@@ -51,7 +51,7 @@ gate:
     spell-class: ".instant.GateSpell"
     cast-item: book
     spell-icon: 358
-    always-granted: true
+    memory: 7
     xp-granted:
       - dragon 1
       - knights -1 
@@ -81,7 +81,7 @@ recall:
     spell-class: ".instant.RecallSpell"
     cast-item: book
     spell-icon: bed
-    always-granted: true
+    memory: 7
     xp-granted:
       - dragon 1
       - knights -1 
@@ -107,7 +107,6 @@ recall:
 
 
 summon_helper:
-    enabled: false
     permission-name: dragon
     spell-class: ".targeted.SummonSpell"
     name: summon
@@ -118,6 +117,7 @@ summon_helper:
       - stone -1 
     cost:
         - mana 60
+        - emerald_block 1
     memory: 7
     prerequisites:
         - gate
@@ -131,7 +131,7 @@ summon_helper:
     require-acceptance: true
     require-exact-name: false
     accept-command: "accept"
-    str-cost: "60 mana"
+    str-cost: "60 mana and an emerald blocks"
     str-summon-accepted: "You have been summoned."
     str-summon-expired: "The summon has expired."
     str-no-target: "Target player not found."
