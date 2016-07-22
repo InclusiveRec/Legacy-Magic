@@ -44,13 +44,28 @@ forget:
 
 # Bonus spells
 
+enderchest:
+    permission-name: cantrip
+    spell-class: ".instant.EnderchestSpell"
+    cast-item: book
+    spell-icon: ender_chest
+    always-granted: true
+    cost:
+        - mana 50
+        - 368 1
+    cooldown: 300
+    str-cost: "50 mana and an enderpearl."
+    description: |
+        &rEnderchest: Cantrip
+        &3Opens your ender chest inventory.
 
 firework:
     enabled: true
     permission-name: cantrip
     spell-class: ".instant.ParticleProjectileSpell"
-    cast-item: torch
     spell-icon: firework
+    xp-granted:
+      - test 10 
     always-granted:  true
     cost:
         - mana 10
