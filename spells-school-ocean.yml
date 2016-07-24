@@ -49,7 +49,7 @@ lore_of_oceans:
     description: |
             &1Lore of Water: Water Masters' Spell
             Create a grimoire of Hydromantic lore.
-hydromantic_focus:
+hydro_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
@@ -215,6 +215,7 @@ geyser:
         &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
 watersee:
+    enabled: false
     permission-name: ocean
     spell-class: ".PassiveSpell"
     xp-granted:
