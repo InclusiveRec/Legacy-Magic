@@ -256,6 +256,7 @@ banish:
     cost:
         - mana 50
     memory: 4
+    power: 1
     cooldown: 10
     can-target:
       - blaze
