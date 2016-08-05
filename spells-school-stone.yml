@@ -20,6 +20,17 @@ predefined-items:
           - "efficiency 5"
           - "unbreaking 3"
 
+    stonecutter_pick:
+        type: 270
+        name: "&8Stonecutter's Pick"
+        lore:
+          - "This pick is used by stonecutters"
+          - "stonecutters to cut through large"
+          - "areas of stone and not much else."
+        enchants:
+          - "efficiency 20"
+          - "unbreaking 10"
+
     iron_trowel:
         name: "&8Mason's Trowel"
         lore: 
@@ -90,6 +101,23 @@ magic_pickaxe:
     str-cost: "10 levels and an iron pick."
     description: |
         &8Magic Pickaxe: 3 Memory Stone Spell
+
+cutter_pickaxe:
+    permission-name: stone
+    spell-class: ".instant.ConjureSpell"
+    cast-item: stone_grimoire
+    spell-icon: 270
+    xp-granted:
+      - stone 1 
+    cost:
+        - levels 10
+        - wood_pickaxe 1
+    memory: 3
+    items:
+      - stonecutter_pick
+    str-cost: "10 levels and a wood pick."
+    description: |
+        &8Cutter Pickaxe: 3 Memory Stone Spell
 
 masons_trowel:
     permission-name: stone
