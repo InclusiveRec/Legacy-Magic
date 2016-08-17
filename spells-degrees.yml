@@ -17,16 +17,16 @@ death_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - death 25000
+      - death 5000
     xp-granted:
-      - death -25000
+      - death -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Death MagicXP."
+    str-cost: "30 levels, a book, and 5000 Death MagicXP."
     description: |
             &2Death Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with a book.
@@ -51,7 +51,7 @@ promote_death:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Death MagicXP."
+    str-cost: "5 levels, a book, and 250 Death MagicXP."
     description: |
             &2Death Promotion Spell
             Increase another's Mage Rank with your Death Magic Mastery. Cast with the school's grimoire.
@@ -65,16 +65,16 @@ fire_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - fire 25000
+      - fire 5000
     xp-granted:
-      - fire -25000
+      - fire -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Fire MagicXP."
+    str-cost: "30 levels, a book, and 5000 Fire MagicXP."
     description: |
             &2Fire Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with a book.
@@ -99,7 +99,7 @@ promote_fire:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Fire MagicXP."
+    str-cost: "5 levels, a book, and 250 Fire MagicXP."
     description: |
             &2Fire Promotion Spell
             Increase another's Mage Rank with your Fire Magic Mastery. Cast with the school's grimoire.
@@ -113,16 +113,16 @@ forest_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - forest 25000
+      - forest 5000
     xp-granted:
-      - forest -25000
+      - forest -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Forest MagicXP."
+    str-cost: "30 levels, a book, and 5000 Forest MagicXP."
     description: |
             &2Forest Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with a book.
@@ -147,7 +147,7 @@ promote_forest:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Forest MagicXP."
+    str-cost: "5 levels, a book, and 250 Forest MagicXP."
     description: |
             &2Forest Promotion Spell
             Increase another's Mage Rank with your Forest Magic Mastery. Cast with the school's grimoire.
@@ -161,16 +161,16 @@ knight_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - knights 25000
+      - knights 5000
     xp-granted:
-      - knights -25000
+      - knights -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Knights MagicXP."
+    str-cost: "30 levels, a book, and 5000 Knights MagicXP."
     description: |
             &2Knights Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Knights Magic. Cast with a book.
@@ -195,7 +195,7 @@ promote_knight:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Knight MagicXP."
+    str-cost: "5 levels, a book, and 250 Knight MagicXP."
     description: |
             &2Knight Promotion Spell
             Increase another's Mage Rank with your Knight Magic Mastery. Cast with the school's grimoire.
@@ -209,15 +209,15 @@ ocean_education:
     cast-item: water_grimoire
     spell-icon: 386
     xp-required:
-      - ocean 25000
+      - ocean 5000
     xp-granted:
-      - ocean -25000
+      - ocean -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     
-    str-cost: "30 levels, a book, and 25000 Ocean MagicXP."
+    str-cost: "30 levels, a book, and 5000 Ocean MagicXP."
     description: |
             &2Ocean Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with a book.
@@ -242,7 +242,7 @@ promote_ocean:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Ocean MagicXP."
+    str-cost: "5 levels, a book, and 250 Ocean MagicXP."
     description: |
             &2Ocean Promotion Spell
             Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
@@ -256,16 +256,16 @@ shadow_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - shadow 25000
+      - shadow 5000
     xp-granted:
-      - shadow -25000
+      - shadow -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Shadow MagicXP."
+    str-cost: "30 levels, a book, and 5000 Shadow MagicXP."
     description: |
             &2Shadow Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with a book.
@@ -290,7 +290,7 @@ promote_shadow:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Shadow MagicXP."
+    str-cost: "5 levels, a book, and 250 Shadow MagicXP."
     description: |
             &2Shadow Promotion Spell
             Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
@@ -303,16 +303,16 @@ solar_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - solar 25000
+      - solar 5000
     xp-granted:
-      - solar -25000
+      - solar -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Solar MagicXP."
+    str-cost: "30 levels, a book, and 5000 Solar MagicXP."
     description: |
             &2Solar Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with a book.
@@ -337,7 +337,7 @@ promote_solar:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Solar MagicXP."
+    str-cost: "5 levels, a book, and 250 Solar MagicXP."
     description: |
             &2Solar Promotion Spell
             Increase another's Mage Rank with your Solar Magic Mastery. Cast with the school's grimoire.
@@ -351,16 +351,16 @@ stone_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - stone 25000
+      - stone 5000
     xp-granted:
-      - stone -25000
+      - stone -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Stone MagicXP."
+    str-cost: "30 levels, a book, and 5000 Stone MagicXP."
     description: |
             &2Stone Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with a book.
@@ -385,7 +385,7 @@ promote_stone:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 Stone MagicXP."
+    str-cost: "5 levels, a book, and 250 Stone MagicXP."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
@@ -399,16 +399,16 @@ dragon_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - dragon 25000
+      - dragon 5000
     xp-granted:
-      - dragon -25000
+      - dragon -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 25000 Dragon MagicXP."
+    str-cost: "30 levels, a book, and 5000 Dragon MagicXP."
     description: |
             &2Stone Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
@@ -433,7 +433,7 @@ promote_dragon:
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 2500 dragon MagicXP."
+    str-cost: "5 levels, a book, and 250 dragon MagicXP."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
