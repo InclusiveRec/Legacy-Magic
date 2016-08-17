@@ -4,8 +4,8 @@
 #
 #
 
-#Changelog 7/7/16 by The Best Coder Ever (Aka MrCodeGuy)
-# - Added range to all spells
+#Changelog 8/17/16 by Connie
+# - Fixed magicxp cost and requirements
 
 
 death_education:
@@ -17,7 +17,7 @@ death_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - death 5000
+      - death 15000
     xp-granted:
       - death -5000
     cost:
@@ -65,7 +65,7 @@ fire_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - fire 5000
+      - fire 15000
     xp-granted:
       - fire -5000
     cost:
@@ -113,7 +113,7 @@ forest_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - forest 5000
+      - forest 15000
     xp-granted:
       - forest -5000
     cost:
@@ -161,7 +161,7 @@ knight_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - knights 5000
+      - knights 15000
     xp-granted:
       - knights -5000
     cost:
@@ -209,7 +209,7 @@ ocean_education:
     cast-item: water_grimoire
     spell-icon: 386
     xp-required:
-      - ocean 5000
+      - ocean 15000
     xp-granted:
       - ocean -5000
     cost:
@@ -256,7 +256,7 @@ shadow_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - shadow 5000
+      - shadow 15000
     xp-granted:
       - shadow -5000
     cost:
@@ -303,7 +303,7 @@ solar_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - solar 5000
+      - solar 15000
     xp-granted:
       - solar -5000
     cost:
@@ -351,7 +351,7 @@ stone_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - stone 5000
+      - stone 15000
     xp-granted:
       - stone -5000
     cost:
@@ -399,7 +399,7 @@ dragon_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - dragon 5000
+      - dragon 15000
     xp-granted:
       - dragon -5000
     cost:
@@ -439,43 +439,4 @@ promote_dragon:
             Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
             
             
-test_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - test 1
-    xp-granted:
-      - test -1 
-    cost:
-      - mana 1
-    str-cost: "a pinch of mana and test MagicXP."
-    description: |
-            &2Test Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in test Magic. Cast with a book.
 
-promote_test:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: torch
-    spell-icon: 386
-    xp-required:
-      - test 1 
-    xp-granted:
-      - test -1  
-    cost:
-      - mana 1
-    range: 7
-    power: 100
-    str-cost: "a pinch of mana and test MagicXP."
-    description: |
-            &2Test Promotion Spell
-            Increase another's Mage Rank with your Test Magic Mastery. Cast with a torch.
