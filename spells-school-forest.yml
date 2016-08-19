@@ -26,7 +26,7 @@ predefined-items:
     # Reagents
     # Custom spell components consumed by some spells.
 
-    forest_amalgam:
+    forest_concoction:
         type: "351:2"
         name: "&2Woodland Amalgam"
         lore:
