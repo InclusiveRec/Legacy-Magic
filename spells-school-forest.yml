@@ -28,7 +28,7 @@ predefined-items:
 
     forest_concoction:
         type: "351:2"
-        name: "&2Woodland Amalgam"
+        name: "&2Woodland concoction"
         lore:
           - "A mix of various"
           - "wildflowers and"
