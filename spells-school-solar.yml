@@ -16,10 +16,10 @@ predefined-items:
 
     sun_concoction:
         type: "351:11"
-        name: "&eSolar Amalgam"
+        name: "&eSolar Concoction"
         lore:
             - "The elves combine sunflowers"
-            - "with a druidic amalgam"
+            - "with a druidic concoction"
             - "to create this special mixture"
 
     # Defensive casting
