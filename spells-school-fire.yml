@@ -20,7 +20,14 @@ predefined-items:
           - "This wand is hot to the"
           - "touch, and smokes and sparks"
           - "with pyromantic magics."
-
+    
+    flame_concotion:
+      type: "351:1"
+      name: "&4Fire Concotion"
+      lore:
+        - "The Hotest Substance"
+        - "known to Galdur"
+        - "Used to harness the power of the Center Core"
 
 #######################
 #    Item Creation    #
@@ -76,6 +83,29 @@ fiery_staff:
             Firestaff:  10 Memory   Fire School.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
+    
+    fire_amalgam:
+    permission-name: fire
+    spell-class: ".instant.ConjureSpell"
+    cast-item: fire_staff
+    spell-icon: "351:1"
+    xp-required:
+      - fire 500
+    xp-granted:
+      - fire 1
+    memory: 1
+    items:
+        - flame_concoction 4-6
+    cost:
+        - mana 10
+        - 377 1
+        - 87 4
+        - 115 3
+    description: |
+            &eFire Concoction: 1 Memory Fire Spell
+            Mixes a Flame concoction.
+    str-cost: "Add 3 Nether Wort, 1 Blaze Powder with 4 Netherrack, using 10 mana."
+
 ################
 # Basic spells #
 ################
