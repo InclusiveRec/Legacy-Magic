@@ -187,7 +187,7 @@ solar_amalgam:
         - forest_amalgam 6
     memory: 1
     items:
-        - sun_amalgam 4-6
+        - sun_concoction 4-6
     str-cost: "Add 2 sunflowers to 6 woodland amalgam, using 10 mana."
     description: |
             &eSolar Amalgam: 1 Memory Solar Spell
