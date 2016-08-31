@@ -187,6 +187,9 @@ obsidian:
     spell-icon: IRON_SPADE
     bindable: false
     allow-command-casting: false
+    prerequisites:
+       - water
+       - lava
     range: 8
     radius-up: 2
     radius-down: 2
