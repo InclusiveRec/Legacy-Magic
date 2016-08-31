@@ -133,9 +133,9 @@ water:
     xp-granted:
       - ocean 1 
       - fire -1 
-    cast-item: book
     cost:
-        - mana 15
+       - mana 10
+       - ocean_amalgam 4
     cooldown: 120
     memory: 1
     apply-physics: true
@@ -145,7 +145,7 @@ water:
     reset-delay: 200
     modifiers:
         - world world required
-    str-cost: "15 mana"
+    str-cost: "10 mana and 4 Ocean Amalgam"
     str-modifier-failed: "You cannot cast that spell here."
     str-no-target: "No target found."
     description: |
