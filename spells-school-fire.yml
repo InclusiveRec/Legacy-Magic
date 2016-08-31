@@ -81,7 +81,7 @@ fiery_staff:
     str-cast-self: "You create a fiery staff."
     str-cost: "A blaze rod and 10 levels."
     description: |
-            Firestaff:  10 Memory   Fire School.
+            Firestaff:  10 Memory   Fire Spell.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
     
@@ -90,8 +90,6 @@ fire_amalgam:
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
-    xp-required:
-      - fire 500
     xp-granted:
       - fire 1
     memory: 1
@@ -245,9 +243,15 @@ lava:
         &3Rises Lava from the core..
     str-cast-self: "Summons Molten Lava"
     str-cast-others: "%aSummons Molten Lava"
-LavaCooling:
+    
+lava_cooling:
+    enabled: false
     permission-name: fire
     spell-class: ".targeted.ReplaceSpell"
+    cast-item: fire_staff
+    spell-icon: blaze_rod
+    bindable: false
+    allow-command-casting: false
     range: 12
     radius-up: 4
     radius-down: 4
@@ -256,7 +260,9 @@ LavaCooling:
         - lava
     replace-with:
         - obsidian
-        xp-granted:
+    xp-required:
+      - stone 500
+    xp-granted:
       - fire -1
     memory: 3
     cost:
@@ -266,8 +272,6 @@ LavaCooling:
             &rLavaCooling 3 Memory Fire Spell
             &3rCooling lava to obsidian.
     str-cost: 10 mana and 2 Flame Amalgam.
-    cast-item: fire_staff
-    bindable: false
 
     #########################
     #  Intermediate Spells  #
