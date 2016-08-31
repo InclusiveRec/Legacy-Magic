@@ -179,6 +179,37 @@ mix_mortar:
 #   costs and cooldowns  #
 #                        #
 ##########################
+    
+obsidian:
+    permission-name: ocean
+    spell-class: ".targeted.ReplaceSpell"
+    cast-item: iron_trowel
+    spell-icon: IRON_SPADE
+    bindable: false
+    allow-command-casting: false
+    range: 12
+    radius-up: 4
+    radius-down: 4
+    radius-horiz: 4
+    replace-blocks:
+        - lava
+    replace-with:
+        - obsidian
+    xp-required:
+      - stone 500
+    xp-granted:
+      - fire -1
+      - stone 1
+    memory: 5
+    cost:
+        - mana 10
+        - mortar 2
+        - 2 flame_amalgam
+        - 2 ocean_amalgam
+    description: |
+            &rObsidian 5 Memory Stone Spell
+            &3rCooling lava to obsidian.
+    str-cost: 10 mana, 2 mortar, plus 2 Flame Amalgam and 2 Ocean Amalgam.
 
 patchwork:
     permission-name: stone 
