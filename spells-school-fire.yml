@@ -20,6 +20,14 @@ predefined-items:
           - "This wand is hot to the"
           - "touch, and smokes and sparks"
           - "with pyromantic magics."
+    
+    flame_amalgam:
+         type: "351:1"
+         name: "&4Fire Amalgam"
+         lore:
+            - "The Hottest Substance"
+            - "known to Galdur"
+            - "Used to harness the power of the Center Core
 
 
 #######################
@@ -76,6 +84,29 @@ fiery_staff:
             Firestaff:  10 Memory   Fire School.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
+    
+fire_amalgam:
+    permission-name: fire
+    spell-class: ".instant.ConjureSpell"
+    cast-item: fire_staff
+    spell-icon: "351:1"
+    xp-required:
+      - fire 500
+    xp-granted:
+      - fire 1
+    memory: 1
+    items:
+        - flame_amalgam 4-6
+    cost:
+        - mana 10
+        - 377 1
+        - 87 4
+        - 372 4
+    description: |
+            &eFire Amalgam: 1 Memory Fire Spell
+            Mixes a Flame amalgam.
+    str-cost: "Add 3 Nether Wart, 1 Blaze Powder with 4 Netherrack, using 10 mana."
+
 ################
 # Basic spells #
 ################
@@ -190,6 +221,53 @@ spark:
     str-cost: 20 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
+    
+lava:
+    permission-name: fire
+    spell-class: ".targeted.MaterializeSpell"
+    cast-item: fire_staff,377
+    spell-icon: lava_bucket
+    xp-granted:
+      - fire 1
+    cost:
+       - mana 10
+       - flame_amalgam 4
+    prerequisites:
+       - fire_amalgam
+    memory: 2
+    allow-command-casting: false
+    cooldown: 10
+    range: 10
+    block-type: lava
+    apply-physics: true
+    description: |
+        &rLava  2 memory Fire school
+        &3Rises Lava from the core..
+    str-cast-self: "Summons Molten Lava"
+    str-cast-others: "%aSummons Molten Lava"
+LavaCooling:
+    permission-name: fire
+    spell-class: ".targeted.ReplaceSpell"
+    range: 12
+    radius-up: 4
+    radius-down: 4
+    radius-horiz: 4
+    replace-blocks:
+        - lava
+    replace-with:
+        - obsidian
+        xp-granted:
+      - fire -1
+    memory: 3
+    cost:
+        - mana 10
+        - 2 flame_amalgam
+    description: |
+            &rLavaCooling 3 Memory Fire Spell
+            &3rCooling lava to obsidian.
+    str-cost: 10 mana and 2 Flame Amalgam.
+    cast-item: fire_staff
+    bindable: false
 
     #########################
     #  Intermediate Spells  #
