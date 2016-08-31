@@ -243,35 +243,6 @@ lava:
         &3Rises Lava from the core..
     str-cast-self: "Summons Molten Lava"
     str-cast-others: "%aSummons Molten Lava"
-    
-lava_cooling:
-    enabled: false
-    permission-name: fire
-    spell-class: ".targeted.ReplaceSpell"
-    cast-item: fire_staff
-    spell-icon: blaze_rod
-    bindable: false
-    allow-command-casting: false
-    range: 12
-    radius-up: 4
-    radius-down: 4
-    radius-horiz: 4
-    replace-blocks:
-        - lava
-    replace-with:
-        - obsidian
-    xp-required:
-      - stone 500
-    xp-granted:
-      - fire -1
-    memory: 3
-    cost:
-        - mana 10
-        - 2 flame_amalgam
-    description: |
-            &rLavaCooling 3 Memory Fire Spell
-            &3rCooling lava to obsidian.
-    str-cost: 10 mana and 2 Flame Amalgam.
 
     #########################
     #  Intermediate Spells  #
