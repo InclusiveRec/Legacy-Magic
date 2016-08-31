@@ -227,22 +227,27 @@ lava:
     spell-icon: lava_bucket
     xp-granted:
       - fire 1
+      - forest -1
     cost:
        - mana 10
        - flame_amalgam 4
     prerequisites:
        - fire_amalgam
-    memory: 2
+    memory: 1
     allow-command-casting: false
-    cooldown: 10
-    range: 10
+    cooldown: 120
+    range: 8
+    reset-delay: 200
+    modifiers:
+        - world nether required
     block-type: lava
     apply-physics: true
     description: |
-        &rLava  2 memory Fire school
+        &rLava  1 memory Fire school
         &3Rises Lava from the core..
     str-cast-self: "Summons Molten Lava"
-    str-cast-others: "%aSummons Molten Lava"
+    str-cast-others: "%a Summons Molten Lava"
+    str-modifier-failed: "You cannot cast that spell here."
 
     #########################
     #  Intermediate Spells  #
