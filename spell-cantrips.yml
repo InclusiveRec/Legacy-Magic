@@ -164,8 +164,9 @@ spellbook:
     permission-name: master
     spell-class: ".command.SpellbookSpell"
     default-uses: 10
-    destroy-when-used-up: false
+    destroy-when-used-up: true
     spellbook-block: 116
+    require-teach-perm: true
     str-already-known: "You already know the %s spell."
     str-cant-destroy: "You cannot destroy an enchanting table with a spellbook."
     str-cant-learn: "Try as you might, you fail to learn the %s spell."
