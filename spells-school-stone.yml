@@ -187,16 +187,16 @@ obsidian:
     spell-icon: IRON_SPADE
     bindable: false
     allow-command-casting: false
-    range: 12
-    radius-up: 4
-    radius-down: 4
-    radius-horiz: 4
+    range: 8
+    radius-up: 2
+    radius-down: 2
+    radius-horiz: 2
     replace-blocks:
         - lava
     replace-with:
         - obsidian
     xp-required:
-      - stone 500
+      - stone 50
     xp-granted:
       - fire -1
       - stone 1
