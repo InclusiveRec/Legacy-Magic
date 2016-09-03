@@ -104,7 +104,7 @@ fire_amalgam:
         - outside required
     description: |
             &eFire Amalgam: 1 Memory Fire Spell
-            Mixes a Flame amalgam.
+            Mixes some Flame Amalgam.
     str-cost: "Under a clear sky, mix three lava buckets and 8 netherrack, using 20 mana in the process."
 
 ################
@@ -247,7 +247,7 @@ lava:
     description: |
         &rLava  1 memory Fire school
         &3Rises Lava from the core..
-    str-cast-self: "Summons Molten Lava"
+    str-cast-self: "You summon Molten Lava"
     str-cast-others: "%a Summons Molten Lava"
     str-modifier-failed: "You cannot cast that spell here."
 
