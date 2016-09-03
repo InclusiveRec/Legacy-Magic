@@ -94,16 +94,16 @@ fire_amalgam:
       - fire 1
     memory: 1
     items:
-        - flame_amalgam 4-6
+        - flame_amalgam 2-4
     cost:
-        - mana 10
+        - mana 5
         - 377 1
-        - 87 4
-        - 372 4
+        - 87 1
+        - 372 1
     description: |
             &eFire Amalgam: 1 Memory Fire Spell
             Mixes a Flame amalgam.
-    str-cost: "Add 3 Nether Wart, 1 Blaze Powder with 4 Netherrack, using 10 mana."
+    str-cost: "Add A Nether Wart, A Blaze Powder with Netherrack, using 10 mana."
 
 ################
 # Basic spells #
