@@ -77,7 +77,6 @@ fiery_staff:
     bindable: false
     items:
         - fire_staff 1
-        - blaze_powder 6-10
     str-cast-self: "You create a fiery staff."
     str-cost: "A blaze rod and 10 levels."
     description: |
