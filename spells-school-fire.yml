@@ -27,7 +27,7 @@ predefined-items:
          lore:
             - "The Hottest Substance"
             - "known to Galdur"
-            - "Used to harness the power of the Center Core
+            - "Used to harness the power of the Center Core"
 
 
 #######################
@@ -92,18 +92,21 @@ fire_amalgam:
     spell-icon: "351:1"
     xp-granted:
       - fire 1
+      - forest -1
     memory: 1
     items:
-        - flame_amalgam 2-4
+        - flame_amalgam 4-6
+        - bucket 3
     cost:
-        - mana 5
-        - 377 1
-        - 87 1
-        - 372 1
+        - mana 20
+        - lava_bucket 3
+        - 87 8
+    modifiers:
+        - outside required
     description: |
             &eFire Amalgam: 1 Memory Fire Spell
             Mixes a Flame amalgam.
-    str-cost: "Add A Nether Wart, A Blaze Powder with Netherrack, using 10 mana."
+    str-cost: "Under a clear sky, mix three lava buckets and 8 netherrack, using 20 mana in the process."
 
 ################
 # Basic spells #
