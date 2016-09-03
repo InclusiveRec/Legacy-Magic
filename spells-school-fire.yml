@@ -105,6 +105,7 @@ fire_amalgam:
     description: |
             &eFire Amalgam: 1 Memory Fire Spell
             Mixes some Flame Amalgam.
+    str-modifier-failed: "Stand under a clear sky to cast this spell."
     str-cost: "Under a clear sky, mix three lava buckets and 8 netherrack, using 20 mana in the process."
 
 ################
