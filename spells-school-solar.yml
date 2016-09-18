@@ -246,6 +246,7 @@ bloom:
 # Solar staff
 
 banish:
+    enabled: false
     permission-name: solar
     spell-class: ".instant.PurgeSpell"
     cast-item: sun_staff
@@ -459,12 +460,12 @@ populate:
       - death -1 
     cost:
         - mana 20
-        - 133 1
+        - 388 1
     memory: 6
     entity-type: villager
     range: 10
     str-cast-self: "You summon a villager."
-    str-cost: "20 mana and an emerald block."
+    str-cost: "20 mana and an emerald."
     description: |
         &rPopulate   6 Memory   Solar Spell
         &3Spawns a random villager.
