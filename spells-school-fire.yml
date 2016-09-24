@@ -251,43 +251,76 @@ lava:
     str-cast-self: "You summon Molten Lava"
     str-cast-others: "%a Summons Molten Lava"
     str-modifier-failed: "You cannot cast that spell here."
+    
+extinguish:
+    permission-name: fire 
+    spell-class: ".targeted.ReplaceSpell"
+    xp-granted:
+      - fire -1 
+    cast-item: fire_staff
+    cost:
+        - mana 10
+        - flame_amalgam 2
+    memory: 3
+    radius-down: 2
+    radius-horiz: 2
+    radius-up: 2
+    range: 8
+    replace-blocks:
+        - fire
+    replace-with:
+        - air
+    str-cost: "10 mana and 2 flame_amalgam."
+    bindable: false
+    description: |
+            &rExtinguish Fire   5 Memory fire Spell.
 
     #########################
     #  Intermediate Spells  #
     #########################
 fireball:
-    enabled: false
     permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
-    xp-granted:
-      - fire 1
     cost:
         - mana 50
         - blaze_powder 1
-    cooldown: 10
-    prerequisites:
-        - fiery_staff
-        - spark
+        - flame_amalgam 4
     memory: 5
-    allow-command-casting: false
-    check-plugins: true
-    damage-multiplier: 2
+    xp-granted:
+      - fire 1
+    cooldown: 10
     target-players: true
-    str-cost: "50 mana and one blaze powder."
+    damage-multiplier: 2
     description: |
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
+    str-cost: 50 mana, one blaze powder and four flame amalgam.
+    str-cast-self: "You summon a fiery flare!"
+    str-cast-others: "%a summons a fiery flare!"
+
 fire_nova:
-    enabled: false
     permission-name: fire
     spell-class: ".instant.FirenovaSpell"
-    cast-item: fire_staff,377
+    cast-item: fire_staff
     spell-icon: blaze_powder
+    cost:
+        - mana 30
+        - blaze_powder 1
+        - flame_amalgam 4
     xp-granted:
       - fire 1
+    memory: 4
+    bindable: false
+    can-cast-by-command: false
+    description: |
+            &4FireNova: Lv04 Fire Spell
+            Makes a ring of fire.
+    str-cost: 30 mana, one blaze powder and four flame amalgam.
+    str-cast-self: "You summon a Supper Nova!"
+    str-cast-others: "%a Crates a Super Nova!"
 warmth:
     enabled: false
     permission-name: fire
