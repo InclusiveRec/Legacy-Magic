@@ -319,8 +319,8 @@ fire_nova:
             &4FireNova: Lv04 Fire Spell
             Makes a ring of fire.
     str-cost: 30 mana, one blaze powder and four flame amalgam.
-    str-cast-self: "You summon a Supper Nova!"
-    str-cast-others: "%a Crates a Super Nova!"
+    str-cast-self: "You summon a Super Nova!"
+    str-cast-others: "%a Creates a Super Nova!"
 warmth:
     enabled: false
     permission-name: fire
