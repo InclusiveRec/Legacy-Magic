@@ -47,11 +47,11 @@ promote_death:
       - death -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Death MagicXP."
+    str-cost: "30 levels, a book, and 250 Death MagicXP."
     description: |
             &2Death Promotion Spell
             Increase another's Mage Rank with your Death Magic Mastery. Cast with the school's grimoire.
@@ -95,11 +95,11 @@ promote_fire:
       - fire -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Fire MagicXP."
+    str-cost: "30 levels, a book, and 250 Fire MagicXP."
     description: |
             &2Fire Promotion Spell
             Increase another's Mage Rank with your Fire Magic Mastery. Cast with the school's grimoire.
@@ -143,11 +143,11 @@ promote_forest:
       - forest -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Forest MagicXP."
+    str-cost: "30 levels, a book, and 250 Forest MagicXP."
     description: |
             &2Forest Promotion Spell
             Increase another's Mage Rank with your Forest Magic Mastery. Cast with the school's grimoire.
@@ -191,11 +191,11 @@ promote_knight:
       - knight -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Knight MagicXP."
+    str-cost: "30 levels, a book, and 250 Knight MagicXP."
     description: |
             &2Knight Promotion Spell
             Increase another's Mage Rank with your Knight Magic Mastery. Cast with the school's grimoire.
@@ -238,11 +238,11 @@ promote_ocean:
       - ocean -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Ocean MagicXP."
+    str-cost: "30 levels, a book, and 250 Ocean MagicXP."
     description: |
             &2Ocean Promotion Spell
             Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
@@ -286,11 +286,11 @@ promote_shadow:
       - shadow -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Shadow MagicXP."
+    str-cost: "30 levels, a book, and 250 Shadow MagicXP."
     description: |
             &2Shadow Promotion Spell
             Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
@@ -333,11 +333,11 @@ promote_solar:
       - solar -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Solar MagicXP."
+    str-cost: "30 levels, a book, and 250 Solar MagicXP."
     description: |
             &2Solar Promotion Spell
             Increase another's Mage Rank with your Solar Magic Mastery. Cast with the school's grimoire.
@@ -381,11 +381,11 @@ promote_stone:
       - stone -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 Stone MagicXP."
+    str-cost: "30 levels, a book, and 250 Stone MagicXP."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
@@ -429,11 +429,11 @@ promote_dragon:
       - dragon -250
     cost:
       - book 1
-      - levels 5
+      - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "5 levels, a book, and 250 dragon MagicXP."
+    str-cost: "30 levels, a book, and 250 dragon MagicXP."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
