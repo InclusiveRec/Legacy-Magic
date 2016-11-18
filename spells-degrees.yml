@@ -4,10 +4,58 @@
 #
 #
 
-#Changelog 8/17/16 by Connie
-# - Fixed magicxp cost and requirements
+#Changelog 11/17/16 by Connie
+# - Added spells for storm
 
 
+dragon_education:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    command-to-execute:
+        - "pex promote %a mage"
+    cast-item: book
+    spell-icon: 386
+    xp-required:
+      - dragon 15000
+    xp-granted:
+      - dragon -5000
+    cost:
+      - book 1
+      - levels 30
+    memory: 10
+    bindable: false
+    can-cast-by-command: false
+    str-cost: "30 levels, a book, and 5000 Dragon MagicXP."
+    description: |
+            &2Stone Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
+
+promote_dragon:
+    spell-class: ".ExternalCommandSpell"
+    permission-name: degree
+    execute-on-console-instead: true
+    require-player-target: true
+    obey-los: true
+    command-to-execute:
+        - "pex promote %t mage"
+    cast-item: dragon_grimoire
+    spell-icon: 386
+    xp-required:
+      - dragon 500
+    xp-granted:
+      - dragon -250
+    cost:
+      - book 1
+      - levels 30
+    bindable: false
+    can-cast-by-command: false
+    range: 7
+    str-cost: "30 levels, a book, and 250 dragon MagicXP."
+    description: |
+            &2Stone Promotion Spell
+            Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
+            
 death_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
@@ -294,6 +342,7 @@ promote_shadow:
     description: |
             &2Shadow Promotion Spell
             Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
+            
 solar_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
@@ -390,7 +439,7 @@ promote_stone:
             &2Stone Promotion Spell
             Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
             
-dragon_education:
+storm_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
@@ -399,21 +448,21 @@ dragon_education:
     cast-item: book
     spell-icon: 386
     xp-required:
-      - dragon 15000
+      - storm 15000
     xp-granted:
-      - dragon -5000
+      - storm -5000
     cost:
       - book 1
       - levels 30
     memory: 10
     bindable: false
     can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Dragon MagicXP."
+    str-cost: "30 levels, a book, and 5000 Storm MagicXP."
     description: |
-            &2Stone Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
-
-promote_dragon:
+            &2Storm Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Storm Magic. Cast with a book.  
+            
+promote_storm:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
@@ -421,22 +470,21 @@ promote_dragon:
     obey-los: true
     command-to-execute:
         - "pex promote %t mage"
-    cast-item: dragon_grimoire
+    cast-item: storm_grimoire
     spell-icon: 386
     xp-required:
-      - dragon 500
+      - storm 500
     xp-granted:
-      - dragon -250
+      - storm -250
     cost:
       - book 1
       - levels 30
     bindable: false
     can-cast-by-command: false
     range: 7
-    str-cost: "30 levels, a book, and 250 dragon MagicXP."
+    str-cost: "30 levels, a book, and 250 Storm MagicXP."
     description: |
-            &2Stone Promotion Spell
-            Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
-            
+            &2Fire Promotion Spell
+            Increase another's Mage Rank with your Storm Magic Mastery. Cast with the school's grimoire.
             
 
