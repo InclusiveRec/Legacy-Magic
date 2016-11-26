@@ -1,0 +1,304 @@
+predefined-items:
+    ##Scales go in respective schools
+    scale:
+        type: "409"
+        name: "&6Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - This scale is useless
+          - on it's own. Imbue it
+          - with magic to unlock
+          - its potential.
+    scale_water:
+        type: "409"
+        name: "&6Water Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbued with the 
+          - waves of water.
+    scale_fire:
+        type: "409"
+        name: "&6Fire Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbued with the
+          - flames of fire.
+    scale_forest:
+        type: "409"
+        name: "&6Forest Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbued with the
+          - essence of the forest.
+    scale_death:
+        type: "409"
+        name: "&6Death Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbueded with the
+          - essence of death.
+    scale_shadow:
+        type: "409"
+        name: "&6Shadow Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbueded with the
+          - darkness of shadow.
+    scale_solar:
+        type: "409"
+        name: "&6Solar Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbueded with the
+          - light with solar.
+    scale_storm:
+        type: "409"
+        name: "&6Storm Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbued with the
+          - fury of storm.
+    scale_stone:
+        type: "409"
+        name: "&6Stone Dragon Scale"
+        lore:
+          - Scale of a dragon.
+          - Imbued with the
+          - might of stone.
+##Same pattern
+getscale:
+    always-granted: trie
+    name: salvage_scale
+    spell-class: ".instant.ConjureSpell"
+    permission-name: master
+    spell-icon: "409"
+    cost:
+        - mana 300
+        - sand 512
+    cooldown: 72000
+    prerequisites:
+        - tome
+    memory: 10
+    description: |
+        &rScale Salvage   10 Memory Stone Spell
+        &3Sifts through sand to find a dragon scale.
+    items:
+        - scale 1
+    str-cost: 300 Mana and 512 sand.
+    
+
+scale-fire:
+    name: scale_imbuement_fire
+    spell-class: ".instant.ConjureSpell"
+    permission-name: fire
+    cast-item: fire_staff
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - blaze_rod 32
+    cooldown: 6000
+    prerequisites: getscale
+    memory: 10
+    description: |
+        &rScale Imbuement: Fire   10 Memory Fire Spell
+        &3Imbues a dragon scale with fire.
+    items:
+        - scale_fire 1
+    str-cost: 200 Mana, a dragon scale, and 32 blaze rods.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: 51
+        2:
+            position: caster
+            effect: sound
+            sound: fire.fire
+
+scale-water:
+    name: scale_imbuement_water
+    spell-class: ".instant.ConjureSpell"
+    permission-name: ocean
+    cast-item: water_focus
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - 326 8
+    cooldown: 6000
+    prerequisites: getscale
+    memeory: 10
+    description: |
+        &rScale Imbuement: Water   10 Memory Ocean Spell
+        &3Imbues a dragon scale with water.
+    items:
+        - scale_water 1
+        - bucket 8
+    str-cost: 200 Mana, a dragon scale, and 8 water buckets.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: 9
+        2:
+            position: caster
+            effect: sound
+            sound: liquid.swim
+
+scale-forest:
+    name: scale_imbuement_forest
+    spell-class: ".instant.ConjureSpell"
+    permission-name: forest
+    cast-item: forest_wand
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - forest_concoction 64
+    cooldown: 6000
+    prerequisites: getscale
+    memeory: 10
+    description: |
+        &rScale Imbuement: Forest   10 Memory Forest Spell
+        &3Imbues a dragon scale with Forest Essence.
+    items:
+        - scale_forest 1
+    str-cost: 200 Mana, a dragon scale, and 64 forest concoction.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: 18
+scale-death:
+    name: scale_imbuement_death
+    spell-class: ".instant.ConjureSpell"
+    permission-name: death
+    cast-item: death_wand
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - bone 64
+        - rotten_flesh 64
+        - scale 1
+    cooldown: 6000
+    prerequisites: getscale
+    memeory: 10
+    description: |
+        &rScale Imbuement: Death   10 Memory Death Spell
+        &3Imbues a dragon scale with Death Essence.
+    items:
+        - scale_death 1
+    str-cost: 200 Mana, a dragon scale, 64 bones, and 64 rotten flesh.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: skull:1
+        2:
+            position: caster
+            effect: sound
+            sound: mob.skeleton.death
+
+scale-solar:
+    name: scale_imbuement_solar
+    spell-class: ".instant.ConjureSpell"
+    permission-name: solar
+    cast-item: solar_staff
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - sun_concoction 32
+    cooldown: 6000
+    prerequisites: getscale
+    memory: 10
+    description: |
+        &rScale Imbuement: Solar   10 Memory Solar Spell
+        &3Imbues a dragon scale with Solar Essence.
+    items:
+        - scale_solar 1
+    str-cost: 200 Mana, a dragon scale, and 32 solar concoction.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: 147
+
+scale-shadow:
+    name: scale_imbuement_shadow
+    spell-class: ".instant.ConjureSpell"
+    permission-name: shadow
+    cast-item: shadow_staff
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - 351:8 128
+    cooldown: 6000
+    prerequisites: getscale
+    memory: 10
+    description: |
+        &rScale Imbuement: Shadow   10 Memory Shadow Spell
+        &3Imbues a dragon scale with Shadow Essence.
+    items:
+        - scale_shadow 1
+    str-cost: 200 Mana, a dragon scale, and 128 gray dye.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: coal_block
+
+scale-stone:
+    name: scale_imbuement_stone
+    spell-class: ".instant.ConjureSpell"
+    permission-name: stone
+    cast-item: spell_hammer
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - stone 256
+    cooldown: 6000
+    prerequisites: getscale
+    memory: 10
+    description: |
+        &rScale Imbuement: Stone   10 Memory Stone Spell
+        &3Imbues a dragon scale with Stone Essence.
+    items:
+        - scale_stone 1
+    str-cost: 200 Mana, a dragon scale, and 256 stone.
+    effects:
+        1:
+            position: caster
+            effect: nova
+            type: 1
+        2:
+            position: caster
+            effect: sound
+            sound: random.anvil_break
+
+scale-storm:
+    name: scale_imbuement_storm
+    spell-class: ".instant.ConjureSpell"
+    permission-name: storm
+    cast-item: stormhammer
+    spell-icon: "409"
+    cost:
+        - mana 200
+        - scale 1
+        - 35:4 192
+    cooldown: 6000
+    prerequisites: getscale
+    memory: 10
+    description: |
+        &rScale Imbuement: Storm   10 Memory Storm Spell
+        &3Imbues a dragon scale with Storm Essence.
+    items:
+        - scale_storm 1
+    str-cost: 200 Mana, a dragon scale, and 192 yellow wool.
+    effects:
+        1:
+            effect: lightning
+            position: caster
