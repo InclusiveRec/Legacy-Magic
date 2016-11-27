@@ -233,3 +233,19 @@ knightly_sword:
     items:
       - knight_sword 1
 
+#    Miscellaneous: Experience
+
+experience: # For now
+    permission-name: knight
+    spell-class: ".instant.ConjureSpell"
+    xp-granted:
+      - knight 1
+    cast-item: knight_grimoire
+    cost:
+      - 351:4 1
+      - mana 10
+    memory: 3
+    can-cast-by-command: true
+    bindable: false
+    items:
+      - 384 3-5 # Exp Bottle
