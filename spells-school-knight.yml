@@ -114,6 +114,7 @@ warhorse:
 
 stunning_blow:
     permission-name: knight
+    enabled: false
     spell-class: ".PassiveSpell"
     xp-granted:
       - knight 1 
