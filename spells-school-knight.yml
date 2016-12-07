@@ -238,6 +238,7 @@ knightly_sword:
 
 experience: # For now
     permission-name: knight
+    enabled: false
     spell-class: ".instant.ConjureSpell"
     xp-granted:
       - knight 1
