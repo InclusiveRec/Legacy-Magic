@@ -1,10 +1,13 @@
 #
+#
 # Spells to award Degrees of Magical Ability and increase Mage rank.
 #
+#
 
-#Changelog by Connie#
-# - 12/6/16 Added magicxp modifiers
-# - 8/17/16 Fixed magicxp cost and requirements
+#Changelog #
+# - 12/7/16 Removed magic-xp required (Connie)
+# - 12/6/16 Added magicxp modifiers (Connie)
+# - 8/17/16 Fixed magicxp cost and requirements (Connie)
 
 
 dragon_education:
@@ -15,8 +18,6 @@ dragon_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - dragon 5000
     xp-granted:
       - dragon -5000
     cost:
@@ -67,8 +68,6 @@ death_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - death 15000
     xp-granted:
       - death -5000
     cost:
@@ -119,8 +118,6 @@ fire_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - fire 15000
     xp-granted:
       - fire -5000
     cost:
@@ -171,8 +168,6 @@ forest_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - forest 15000
     xp-granted:
       - forest -5000
     cost:
@@ -223,8 +218,6 @@ knight_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - knights 15000
     xp-granted:
       - knights -5000
     cost:
@@ -275,8 +268,6 @@ ocean_education:
         - "pex promote %a mage"
     cast-item: water_grimoire
     spell-icon: 386
-    xp-required:
-      - ocean 15000
     xp-granted:
       - ocean -5000
     cost:
@@ -325,8 +316,6 @@ shadow_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - shadow 15000
     xp-granted:
       - shadow -5000
     cost:
@@ -377,8 +366,6 @@ solar_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - solar 15000
     xp-granted:
       - solar -5000
     cost:
@@ -429,8 +416,6 @@ stone_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - stone 15000
     xp-granted:
       - stone -5000
     cost:
@@ -481,8 +466,6 @@ storm_education:
         - "pex promote %a mage"
     cast-item: book
     spell-icon: 386
-    xp-required:
-      - storm 15000
     xp-granted:
       - storm -5000
     cost:
@@ -520,490 +503,6 @@ promote_storm:
     modifiers:
         - magicxpabove storm:5000 required
     str-modifier-failed: "You need 5000 Storm MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 250 Storm MagicXP."
-    description: |
-            &2Fire Promotion Spell
-            Increase another's Mage Rank with your Storm Magic Mastery. Cast with the school's grimoire.
-            
-
-
-# - Added spells for storm
-
-
-dragon_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - dragon 15000
-    xp-granted:
-      - dragon -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Dragon MagicXP."
-    description: |
-            &2Stone Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
-
-promote_dragon:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: dragon_grimoire
-    spell-icon: 386
-    xp-required:
-      - dragon 500
-    xp-granted:
-      - dragon -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 dragon MagicXP."
-    description: |
-            &2Stone Promotion Spell
-            Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
-            
-death_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - death 15000
-    xp-granted:
-      - death -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Death MagicXP."
-    description: |
-            &2Death Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with a book.
-
-promote_death:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item:  death_grimoire
-    spell-icon: 386
-    xp-required:
-      - death 500
-    xp-granted:
-      - death -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Death MagicXP."
-    description: |
-            &2Death Promotion Spell
-            Increase another's Mage Rank with your Death Magic Mastery. Cast with the school's grimoire.
-
-fire_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - fire 15000
-    xp-granted:
-      - fire -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Fire MagicXP."
-    description: |
-            &2Fire Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with a book.
-
-promote_fire:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: fire_grimoire
-    spell-icon: 386
-    xp-required:
-      - fire 500
-    xp-granted:
-      - fire -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Fire MagicXP."
-    description: |
-            &2Fire Promotion Spell
-            Increase another's Mage Rank with your Fire Magic Mastery. Cast with the school's grimoire.
-            
-forest_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - forest 15000
-    xp-granted:
-      - forest -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Forest MagicXP."
-    description: |
-            &2Forest Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with a book.
-
-promote_forest:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: forest_grimoire
-    spell-icon: 386
-    xp-required:
-      - forest 500
-    xp-granted:
-      - forest -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Forest MagicXP."
-    description: |
-            &2Forest Promotion Spell
-            Increase another's Mage Rank with your Forest Magic Mastery. Cast with the school's grimoire.
-            
-knight_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - knights 15000
-    xp-granted:
-      - knights -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Knights MagicXP."
-    description: |
-            &2Knights Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Knights Magic. Cast with a book.
-
-promote_knight:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: knight_grimoire
-    spell-icon: 386
-    xp-required:
-      - knight 500
-    xp-granted:
-      - knight -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Knight MagicXP."
-    description: |
-            &2Knight Promotion Spell
-            Increase another's Mage Rank with your Knight Magic Mastery. Cast with the school's grimoire.
-            
-ocean_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: water_grimoire
-    spell-icon: 386
-    xp-required:
-      - ocean 15000
-    xp-granted:
-      - ocean -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    
-    str-cost: "30 levels, a book, and 5000 Ocean MagicXP."
-    description: |
-            &2Ocean Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with a book.
-
-promote_ocean:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: water_grimoire
-    spell-icon: 386
-    xp-required:
-      - ocean 500
-    xp-granted:
-      - ocean -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Ocean MagicXP."
-    description: |
-            &2Ocean Promotion Spell
-            Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
-            
-shadow_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - shadow 15000
-    xp-granted:
-      - shadow -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Shadow MagicXP."
-    description: |
-            &2Shadow Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with a book.
-
-promote_shadow:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: shadow_grimoire
-    spell-icon: 386
-    xp-required:
-      - shadow 500
-    xp-granted:
-      - shadow -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Shadow MagicXP."
-    description: |
-            &2Shadow Promotion Spell
-            Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
-            
-solar_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - solar 15000
-    xp-granted:
-      - solar -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Solar MagicXP."
-    description: |
-            &2Solar Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with a book.
-
-promote_solar:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: sun_grimoire
-    spell-icon: 386
-    xp-required:
-      - solar 500
-    xp-granted:
-      - solar -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Solar MagicXP."
-    description: |
-            &2Solar Promotion Spell
-            Increase another's Mage Rank with your Solar Magic Mastery. Cast with the school's grimoire.
-            
-stone_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - stone 15000
-    xp-granted:
-      - stone -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Stone MagicXP."
-    description: |
-            &2Stone Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with a book.
-
-promote_stone:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: stone_grimoire
-    spell-icon: 386
-    xp-required:
-      - stone 500
-    xp-granted:
-      - stone -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
-    str-cost: "30 levels, a book, and 250 Stone MagicXP."
-    description: |
-            &2Stone Promotion Spell
-            Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
-            
-storm_education:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    command-to-execute:
-        - "pex promote %a mage"
-    cast-item: book
-    spell-icon: 386
-    xp-required:
-      - storm 15000
-    xp-granted:
-      - storm -5000
-    cost:
-      - book 1
-      - levels 30
-    memory: 10
-    bindable: false
-    can-cast-by-command: false
-    str-cost: "30 levels, a book, and 5000 Storm MagicXP."
-    description: |
-            &2Storm Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Storm Magic. Cast with a book.  
-            
-promote_storm:
-    spell-class: ".ExternalCommandSpell"
-    permission-name: degree
-    execute-on-console-instead: true
-    require-player-target: true
-    obey-los: true
-    command-to-execute:
-        - "pex promote %t mage"
-    cast-item: storm_grimoire
-    spell-icon: 386
-    xp-required:
-      - storm 500
-    xp-granted:
-      - storm -250
-    cost:
-      - book 1
-      - levels 30
-    bindable: false
-    can-cast-by-command: false
-    range: 7
     str-cost: "30 levels, a book, and 250 Storm MagicXP."
     description: |
             &2Fire Promotion Spell
