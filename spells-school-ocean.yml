@@ -135,7 +135,6 @@ water:
       - fire -1 
     cost:
        - mana 10
-       - ocean_amalgam 4
     cooldown: 120
     memory: 1
     apply-physics: true

@@ -207,8 +207,8 @@ obsidian:
     cost:
         - mana 10
         - mortar 2
-        - 2 flame_amalgam
-        - 2 ocean_amalgam
+        - flame_amalgam 2
+        - ocean_amalgam 2
     description: |
             &rObsidian 5 Memory Stone Spell
             &3rCooling lava to obsidian.
