@@ -144,7 +144,7 @@ water:
     reset-delay: 200
     modifiers:
         - world world required
-    str-cost: "10 mana and 4 Ocean Amalgam"
+    str-cost: "10 mana"
     str-modifier-failed: "You cannot cast that spell here."
     str-no-target: "No target found."
     description: |
