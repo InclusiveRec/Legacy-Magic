@@ -336,7 +336,6 @@ haste:
     spell-icon: gold_boots
     xp-granted:
       - forest 1
-      - stone -1 
     cost:
         - mana 20
     memory: 3
@@ -374,7 +373,6 @@ leap:
     spell-icon: diamond_boots
     xp-granted:
       - forest 1
-      - stone -1 
     cost:
         - mana 10
     cooldown: 1.8
