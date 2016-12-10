@@ -119,6 +119,7 @@ firebreathing:
     spell-icon: blaze_powder
     xp-granted:
       - fire 1
+      - forest -1
     cost:
         - mana 10
     memory: 3
@@ -166,6 +167,7 @@ smoke:
     spell-icon: "160:8"
     xp-granted:
       - fire 1
+      - forest -1
     cost:
         - levels 3
         - mana 10
@@ -203,6 +205,7 @@ spark:
     spell-icon: fireball
     xp-granted:
       - fire 1
+      - forest -1
     cost:
         - mana 20
         - blaze_powder 1
@@ -291,6 +294,7 @@ fireball:
     memory: 5
     xp-granted:
       - fire 1
+      - forest -1
     cooldown: 10
     target-players: true
     damage-multiplier: 2
@@ -314,6 +318,7 @@ fire_nova:
         - flame_amalgam 4
     xp-granted:
       - fire 1
+      - forest -1
     memory: 4
     bindable: false
     can-cast-by-command: false
@@ -329,6 +334,7 @@ warmth:
     spell-class: ".targeted.DummySpell"
     xp-granted:
       - fire 1
+      - forest -1
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
