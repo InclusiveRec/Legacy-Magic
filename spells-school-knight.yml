@@ -224,6 +224,7 @@ knightly_sword:
     spell-class: ".instant.ConjureSpell"
     xp-granted:
       - knight 1
+      - stone 1
     cast-item: knight_grimoire
     cost:
       - levels 10
@@ -236,7 +237,7 @@ knightly_sword:
 
 #    Miscellaneous: Experience
 
-experience: # For now
+experience: # For now - needs balancing and description
     permission-name: knight
     enabled: false
     spell-class: ".instant.ConjureSpell"
