@@ -206,7 +206,7 @@ windwalk:
     fly-speed: 0.3
     launch-speed: 5
     requires: storm
-    use-cost-interval: 10
+    use-cost-interval: 5
     modifiers:
         - storm required
         - outside required
