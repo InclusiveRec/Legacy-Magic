@@ -100,6 +100,7 @@ gardener:
     xp-granted:
       - forest 1
       - solar 1 
+      - stone 1 
     cost:
         - levels 5
         - shears 1
@@ -147,8 +148,9 @@ hunting_knife:
     xp-required:
       - forest 500
     xp-granted:
-      - forest 1
       - death 1 
+      - forest 1
+      - stone 1 
     cost:
         - iron_sword 1
         - levels 5
