@@ -8,10 +8,10 @@ ORGANISATIONAL TASKS:
     - [Requires (prerequisites)]
     - [Modifiers]
 - Predefined Items
-    - Set itmes in Alphabetical Order
+    - Set items in Alphabetical Order
     - Type
     - Name
-    - Enchahts
+    - Enchants
     - Lore
 - Standardise spell layouts:
     - Enabled
@@ -21,8 +21,9 @@ ORGANISATIONAL TASKS:
     - cast-item
     - spell-icon
     - automatically-granted
+    - xp-granted
+    - learning requirements (prerequisites, xp-required, precludes, replaces, and memory)
     - casting costs (cost, cast time, cooldown, shared cooldowns)
-    - learning requirements (prerequisites, precludes, replaces, and memory)
     - spell-specific configuration (range, damage, etc) in alphabetical order. The following vital flags take priority
        - Spells
     - modifiers
