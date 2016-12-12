@@ -181,11 +181,11 @@ solar_amalgam:
     xp-granted:
       - solar 1
       - forest 1
+    memory: 1
     cost:
         - mana 10
         - 175 2
         - forest_amalgam 6
-    memory: 1
     items:
         - sun_amalgam 4-6
     str-cost: "Add 2 sunflowers to 6 woodland amalgam, using 10 mana."
@@ -201,12 +201,12 @@ lightwalk:
     xp-granted:
       - solar 1
       - shadow -1
+    memory: 1
     cost:
         - mana 25
         - sun_amalgam 2
     use-cost:
         - sun_amalgam 1
-    memory: 1
     use-cost-interval: 25
     str-cost: "25 mana and 2 solar amalgam, plus 1 solar amalgam occasionally."
     description: |
@@ -220,11 +220,11 @@ bloom:
     xp-granted:
       - solar 1
       - forest 1
+    memory: 3
     cost:
         - mana 2
         - seeds 4
     cooldown: 2
-    memory: 3
     growth: 1
     radius: 3
     modifiers:
@@ -246,7 +246,7 @@ bloom:
 # Solar staff
 
 banish:
-    enabled: false
+    enabled: true
     permission-name: solar
     spell-class: ".instant.PurgeSpell"
     cast-item: sun_staff
@@ -254,10 +254,9 @@ banish:
     xp-granted:
       - solar 1
       - death -1 
+    memory: 4
     cost:
         - mana 50
-    memory: 4
-    power: 1
     cooldown: 10
     can-target:
       - blaze
@@ -273,6 +272,7 @@ banish:
       - witch
       - zombie
       - pigzombie
+    power: 1
     range: 8
     str-cast-self: "You banish the encroaching forces of darkness."
     str-cost: "50 mana."
@@ -288,13 +288,14 @@ cleanse:
     xp-granted:
       - death -1 
       - fire -1 
+      - shadow -1 
+    memory: 3
     precludes:
         - sacrifice
     cost:
         - mana 20
         - 175 1
     cooldown: 60
-    memory: 3
     remove:
       - fire
       - 17
@@ -313,10 +314,9 @@ prayer:
     spell-icon: yellow_flower
     xp-granted:
       - death -1 
+    memory: 3
     precludes:
         - sacrifice
-    prerequisites:
-        - heal
     cost:
         - mana 30
     cooldown: 3
@@ -333,14 +333,15 @@ heal:
     spell-class: ".targeted.HealSpell"
     cast-item: sun_staff
     spell-icon: red_rose
+    can-target: players,wolf,cat,horse
     xp-granted:
       - solar 1
       - knight 1
       - death -1 
+    memory: 4
     cost:
         - mana 10
     memory: 4
-    can-target: players,wolf,cat,horse
     cancel-if-full: true
     heal-amount: 4
     obey-los: true
@@ -363,12 +364,12 @@ soothe:
       - solar 1
       - knight 1
       - death -1 
+    memory: 6
+    prerequisites:
+        - heal
     cost:
         - mana 25
         - sun_amalgam
-    prerequisites:
-        - heal
-    memory: 6
     bounce-range: 8
     bounces: 5
     cooldown: 30
@@ -397,13 +398,13 @@ solar_ray:
     cast-item: sun_staff
     spell-icon: 377
     xp-granted:
-      - death -1 
-    cost:
-      - mana 40
-      - sun_amalgam 6
+      - solar -1 
     memory: 4
     prerequisites:
         - solar_staff
+    cost:
+      - mana 40
+      - sun_amalgam 6
     bindable: false
     cooldown: 5
     hit-players: true
@@ -429,13 +430,14 @@ solar_guard:
     permission-name: solar
     spell-class: ".PassiveSpell"
     xp-granted:
-      - death -1 
-    cost:
-      - mana 40
-      - sun_amalgam 6
+      - death -1
+      - solar -1  
     memory: 7
     prerequisites:
         - solar_ray
+    cost:
+      - mana 40
+      - sun_amalgam 6
     spells:
         - solar_ray
     triggers:
@@ -458,10 +460,10 @@ populate:
     xp-granted:
       - solar 1
       - death -1 
+    memory: 6
     cost:
         - mana 20
         - 388 1
-    memory: 6
     entity-type: villager
     range: 10
     str-cast-self: "You summon a villager."
