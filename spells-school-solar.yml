@@ -44,8 +44,6 @@ lore_of_the_sun:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    xp-required:
-      - solar 500
     xp-granted:
       - solar 1
     bindable: false
@@ -58,6 +56,9 @@ lore_of_the_sun:
     memory: 10
     items:
         - sun_grimoire
+    modifiers:
+        - magicxpabove solar:500 required
+    str-modifier-failed: "You need 500 Solar MagicXP to cast this spell. Do /magicxp"
     str-cost: "A book, 30 levels, a gold block, and 3 solar amalgam."
     description: |
             &eLore of the Sun: Solar Masters' Spell
@@ -69,8 +70,6 @@ solar_staff:
     permission-name: solar
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
-    xp-required:
-      - solar 500
     xp-granted:
       - solar 1
     bindable: false
@@ -85,6 +84,9 @@ solar_staff:
     memory: 5
     items:
         - sun_staff 1
+    modifiers:
+        - magicxpabove solar:500 required
+    str-modifier-failed: "You need 500 Solar MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "With a flash, the gold shapes itself into a shining golden staff."
     str-cost: "100 mana, 2 gold ingots, 2 sticks, and 6 solar amalgam."
     description: |
@@ -253,7 +255,6 @@ banish:
     spell-icon: 377
     xp-granted:
       - solar 1
-      - death -1 
     memory: 4
     cost:
         - mana 50
@@ -414,6 +415,9 @@ solar_ray:
     projectile-gravity: 0.1
     spell: punch
     stop-on-hit-entity: false
+    modifiers:
+        - magicxpabove solar:5000 required
+    str-modifier-failed: "You need 5000 Solar MagicXP to cast this spell. Do /magicxp"
     str-no-target: "No target found."
     str-cast-others: "%a blasts %t with a ray of solar energy!"
     str-cast-target: "%a blasts you with a ray of solar energy!"
