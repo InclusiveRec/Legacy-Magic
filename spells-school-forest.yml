@@ -71,8 +71,6 @@ lore_of_the_woods:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
-    xp-required:
-      - forest 500
     xp-granted:
       - forest 1
     cost:
@@ -83,6 +81,9 @@ lore_of_the_woods:
     memory: 10
     items:
       - forest_grimoire
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, a sapling, and 12 woodland amalgam."
     description: |
             &2Woodland Lore: Forest Masters' Spell
@@ -95,8 +96,6 @@ gardener:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: shears
-    xp-required:
-      - forest 500
     xp-granted:
       - forest 1
       - solar 1 
@@ -110,6 +109,9 @@ gardener:
     memory: 2
     items:
       - forest_sickle
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "5 levels and a pair of shears"
     description: |
         &2Woodland Gardener: 2 Memory Forest Spell
@@ -126,8 +128,6 @@ woodland_wand:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: stick
-    xp-required:
-      - forest 500
     xp-granted:
       - forest 1
       - solar 1 
@@ -140,13 +140,14 @@ woodland_wand:
     memory: 5
     items:
         - forest_wand
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels and an oak sapling."
 hunting_knife:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
     cast-item: book
-    xp-required:
-      - forest 500
     xp-granted:
       - death 1 
       - forest 1
@@ -160,6 +161,9 @@ hunting_knife:
     memory: 3
     items:
         - forest_sword 1
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "5 levels and an iron sword."
     description: |
             &2Hunting Knife: 3 memory Forest Spell.
@@ -487,8 +491,6 @@ fang:
     spell-class: ".instant.ConjureSpell"
     cast-item: forest_grimoire
     spell-icon: flint
-    xp-required:
-      - forest 500
     xp-granted:
       - forest 1
     cost:
@@ -501,6 +503,9 @@ fang:
     memory: 2
     items:
         - wolf_fang
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels, 6 bones, and 3 woodland amalgam."
     description: |
             &2Fang: 2 Memory Forest Spell
