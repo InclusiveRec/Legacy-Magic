@@ -1,10 +1,9 @@
 #
-#
 # Spells to award Degrees of Magical Ability and increase Mage rank.
-#
 #
 
 #Changelog #
+# - 12/22/16 Adjusted modifiers (Connie)
 # - 12/11/16 Added effects (Connie)
 # - 12/7/16 Removed magic-xp required, added strings (Connie)
 # - 12/6/16 Added magicxp modifiers (Connie)
@@ -20,7 +19,7 @@ dragon_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - dragon -5000
+      - dragon -15000
     cost:
       - book 1
       - levels 30
@@ -28,13 +27,17 @@ dragon_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove dragon:5000 required
-    str-modifier-failed: "You need 5000 Dragon MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Dragon MagicXP."
+        - magicxpabove dragon:15000 required
+    str-modifier-failed: "You need 15000 Dragon MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Dragon MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Stone Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Dragon Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_dragon:
     spell-class: ".ExternalCommandSpell"
@@ -55,13 +58,17 @@ promote_dragon:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove dragon:5000 required
-    str-modifier-failed: "You need 5000 Dragon MagicXP to cast this spell. Do /magicxp" 
+        - magicxpabove dragon:15000 required
+    str-modifier-failed: "You need 15000 Dragon MagicXP to cast this spell. Do /magicxp" 
     str-cost: "30 levels, a book, and 250 dragon MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your dragon Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 death_education:
     spell-class: ".ExternalCommandSpell"
@@ -72,7 +79,7 @@ death_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - death -5000
+      - death -15000
     cost:
       - book 1
       - levels 30
@@ -80,13 +87,17 @@ death_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove death:5000 required
-    str-modifier-failed: "You need 5000 Death MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Death MagicXP."
+        - magicxpabove death:15000 required
+    str-modifier-failed: "You need 15000 Death MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Death MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Death Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Death Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_death:
     spell-class: ".ExternalCommandSpell"
@@ -108,12 +119,16 @@ promote_death:
     range: 7
     str-cost: "30 levels, a book, and 250 Death MagicXP."
     modifiers:
-        - magicxpabove death:5000 required
-    str-modifier-failed: "You need 5000 Death MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove death:15000 required
+    str-modifier-failed: "You need 15000 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Death Promotion Spell
             Increase another's Mage Rank with your Death Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
 
 fire_education:
     spell-class: ".ExternalCommandSpell"
@@ -124,7 +139,7 @@ fire_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - fire -5000
+      - fire -15000
     cost:
       - book 1
       - levels 30
@@ -132,13 +147,17 @@ fire_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove fire:5000 required
-    str-modifier-failed: "You need 5000 Fire MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Fire MagicXP."
+        - magicxpabove fire:15000 required
+    str-modifier-failed: "You need 15000 Fire MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Fire MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Fire Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Fire Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_fire:
     spell-class: ".ExternalCommandSpell"
@@ -159,13 +178,17 @@ promote_fire:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove fire:5000 required
-    str-modifier-failed: "You need 5000 Fire MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove fire:15000 required
+    str-modifier-failed: "You need 15000 Fire MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Fire MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Fire Promotion Spell
             Increase another's Mage Rank with your Fire Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 forest_education:
     spell-class: ".ExternalCommandSpell"
@@ -176,7 +199,7 @@ forest_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - forest -5000
+      - forest -15000
     cost:
       - book 1
       - levels 30
@@ -184,13 +207,17 @@ forest_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove forest:5000 required
-    str-modifier-failed: "You need 5000 Forest MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Forest MagicXP."
+        - magicxpabove forest:15000 required
+    str-modifier-failed: "You need 15000 Forest MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Forest MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Forest Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Forest Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_forest:
     spell-class: ".ExternalCommandSpell"
@@ -211,13 +238,17 @@ promote_forest:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove forest:5000 required
-    str-modifier-failed: "You need 5000 Forest MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove forest:15000 required
+    str-modifier-failed: "You need 15000 Forest MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Forest MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Forest Promotion Spell
             Increase another's Mage Rank with your Forest Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 knight_education:
     spell-class: ".ExternalCommandSpell"
@@ -228,7 +259,7 @@ knight_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - knights -5000
+      - knight -15000
     cost:
       - book 1
       - levels 30
@@ -236,13 +267,17 @@ knight_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove knight:5000 required
-    str-modifier-failed: "You need 5000 Knight MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Knight MagicXP."
+        - magicxpabove knight:15000 required
+    str-modifier-failed: "You need 15000 Knight MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Knight MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
-            &2Knights Degree Spell
+            &2Knight Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Knight Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_knight:
     spell-class: ".ExternalCommandSpell"
@@ -263,13 +298,17 @@ promote_knight:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove knight:5000 required
-    str-modifier-failed: "You need 5000 Knight MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove knight:15000 required
+    str-modifier-failed: "You need 15000 Knight MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Knight MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Knight Promotion Spell
             Increase another's Mage Rank with your Knight Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 ocean_education:
     spell-class: ".ExternalCommandSpell"
@@ -280,19 +319,23 @@ ocean_education:
     cast-item: water_grimoire
     spell-icon: 386
     xp-granted:
-      - ocean -5000
+      - ocean -15000
     cost:
       - book 1
       - levels 30
     memory: 10
     modifiers:
-        - magicxpabove ocean:5000 required
+        - magicxpabove ocean:115000 required
     str-modifier-failed: "You need 5000 Ocean MagicXP to cast this spell. Do /magicxp"   
-    str-cost: "30 levels, a book, and 5000 Ocean MagicXP."
+    str-cost: "30 levels, a book, and 15000 Ocean MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Ocean Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_ocean:
     spell-class: ".ExternalCommandSpell"
@@ -313,13 +356,17 @@ promote_ocean:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove ocean:5000 required
-    str-modifier-failed: "You need 5000 Ocean MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove ocean:15000 required
+    str-modifier-failed: "You need 15000 Ocean MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Ocean MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Ocean Promotion Spell
             Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 shadow_education:
     spell-class: ".ExternalCommandSpell"
@@ -330,7 +377,7 @@ shadow_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - shadow -5000
+      - shadow -15000
     cost:
       - book 1
       - levels 30
@@ -338,13 +385,17 @@ shadow_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove shadow:5000 required
-    str-modifier-failed: "You need 5000 Shadow MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Shadow MagicXP."
+        - magicxpabove shadow:15000 required
+    str-modifier-failed: "You need 15000 Shadow MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Shadow MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Shadow Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Shadow Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_shadow:
     spell-class: ".ExternalCommandSpell"
@@ -365,13 +416,17 @@ promote_shadow:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove shadow:5000 required
-    str-modifier-failed: "You need 5000 Shadow MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove shadow:15000 required
+    str-modifier-failed: "You need 15000 Shadow MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Shadow MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Shadow Promotion Spell
             Increase another's Mage Rank with your Shadow Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 solar_education:
     spell-class: ".ExternalCommandSpell"
@@ -382,7 +437,7 @@ solar_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - solar -5000
+      - solar -15000
     cost:
       - book 1
       - levels 30
@@ -390,13 +445,17 @@ solar_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove solar:5000 required
-    str-modifier-failed: "You need 5000 Solar MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Solar MagicXP."
+        - magicxpabove solar:15000 required
+    str-modifier-failed: "You need 15000 Solar MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Solar MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Solar Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Solar Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_solar:
     spell-class: ".ExternalCommandSpell"
@@ -417,13 +476,17 @@ promote_solar:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove solar:5000 required
-    str-modifier-failed: "You need 5000 Solar MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove solar:15000 required
+    str-modifier-failed: "You need 15000 Solar MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Solar MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Solar Promotion Spell
             Increase another's Mage Rank with your Solar Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 stone_education:
     spell-class: ".ExternalCommandSpell"
@@ -434,7 +497,7 @@ stone_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - stone -5000
+      - stone -15000
     cost:
       - book 1
       - levels 30
@@ -442,13 +505,17 @@ stone_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove stone:5000 required
-    str-modifier-failed: "You need 5000 Stone MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Stone MagicXP."
+        - magicxpabove stone:15000 required
+    str-modifier-failed: "You need 15000 Stone MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Stone MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Stone Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Stone Magic. Cast with a book.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
 
 promote_stone:
     spell-class: ".ExternalCommandSpell"
@@ -469,13 +536,17 @@ promote_stone:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove stone:5000 required
-    str-modifier-failed: "You need 5000 Stone MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove stone:15000 required
+    str-modifier-failed: "You need 15000 Stone MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Stone MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Stone Promotion Spell
             Increase another's Mage Rank with your Stone Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 storm_education:
     spell-class: ".ExternalCommandSpell"
@@ -486,7 +557,7 @@ storm_education:
     cast-item: book
     spell-icon: 386
     xp-granted:
-      - storm -5000
+      - storm -15000
     cost:
       - book 1
       - levels 30
@@ -494,13 +565,17 @@ storm_education:
     bindable: false
     can-cast-by-command: false
     modifiers:
-        - magicxpabove storm:5000 required
-    str-modifier-failed: "You need 5000 Storm MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 5000 Storm MagicXP."
+        - magicxpabove storm:15000 required
+    str-modifier-failed: "You need 15000 Storm MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 15000 Storm MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
             &2Storm Degree Spell
             Increase your Mage Rank with a Magical Ability Degree in Storm Magic. Cast with a book.  
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: caster
             
 promote_storm:
     spell-class: ".ExternalCommandSpell"
@@ -521,12 +596,16 @@ promote_storm:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove storm:5000 required
-    str-modifier-failed: "You need 5000 Storm MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove storm:15000 required
+    str-modifier-failed: "You need 15000 Storm MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 250 Storm MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
             &2Fire Promotion Spell
             Increase another's Mage Rank with your Storm Magic Mastery. Cast with the school's grimoire.
+    effects:
+        huzzah:
+            effect: greensparkle
+            position: target
             
 
