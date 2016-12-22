@@ -41,8 +41,6 @@ lore_of_death:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: 403
-    xp-required:
-      - death 500
     xp-granted:
       - death 1 
     cost:
@@ -53,6 +51,9 @@ lore_of_death:
     memory: 10
     items:
       - death_grimoire 1
+    modifiers:
+        - magicxpabove death:500 required
+    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You have created a Necronomicon.  The secrets of death magic are yours to command."
     str-cost: "A book, 30 levels, 13 bones and a skull."
     description: |
@@ -71,8 +72,6 @@ bone_carving:
     spell-class: ".instant.ConjureSpell"
     cast-item: death_grimoire
     spell-icon: bone
-    xp-required:
-      - death 500
     xp-granted:
       - death 1 
     cost:
@@ -88,6 +87,8 @@ bone_carving:
         - death_wand 1
     modifiers:
       - holding "403|&5Necronomicon" casttime 1 # seconds
+      - magicxpabove death:500 required
+    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "The wand grows eerily cold to the touch.  The work is done."
     str-cost: "A bone, four rotten flesh, and ten levels."
     casttime: 240 # server ticks; 12 seconds
@@ -106,8 +107,6 @@ stain_steel:
     spell-class: ".instant.ConjureSpell"
     cast-item: death_grimoire
     spell-icon: iron_sword
-    xp-required:
-      - death 500
     xp-granted:
       - death 1 
       - stone 1 
@@ -122,6 +121,9 @@ stain_steel:
     memory: 3
     items:
       - death_knife 1
+    modifiers:
+      - magicxpabove death:500 required
+    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
 
 bottle_soul:
     permission-name: death
