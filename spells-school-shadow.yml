@@ -20,6 +20,9 @@ lore_of_shadow:
     memory: 10
     items:
         - shadow_grimoire 1
+    modifiers:
+        - magicxpabove shadow:500 required
+    str-modifier-failed: "You need 500 Shadow MagicXP to cast this spell. Do /magicxp"
     str-cost: "A book, 30 levels, a diamond block, and six ink sacks."
     description: |
             &7Lore of Shadow: Shadow Masters' Spell
@@ -84,7 +87,7 @@ blink:
     effects:
         - pos1 ender
         - pos2 ender
-invisibility:
+cloak:
     permission-name: shadow
     spell-class: ".buff.InvisibilitySpell"
     cast-item: bone
@@ -109,7 +112,7 @@ invisibility:
     str-cost: "25 mana, plus 15 mana every 5 seconds"
     str-fade: "You are visible again."
     description: |
-        &rInvisibility   5 Memory   Shadow School
+        &rCloak   5 Memory   Shadow School
         &3Makes you invisible to players and monsters.
     effects:
         - caster spawn
