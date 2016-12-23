@@ -38,8 +38,6 @@ lore_of_flame:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
-    xp-required:
-      - fire 500
     xp-granted:
       - fire 1
     cost:
@@ -49,6 +47,9 @@ lore_of_flame:
     memory: 10
     items:
         - fire_grimoire 1
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     allow-command-casting: false
     bindable: false
     description: |
@@ -61,8 +62,6 @@ fiery_staff:
     spell-class: ".instant.ConjureSpell"
     cast-item: fire_grimoire
     spell-icon: blaze_rod
-    xp-required:
-      - fire 500
     xp-granted:
       - fire 1
     cost:
@@ -77,6 +76,9 @@ fiery_staff:
     bindable: false
     items:
         - fire_staff 1
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You create a fiery staff."
     str-cost: "A blaze rod and 10 levels."
     description: |
@@ -237,15 +239,17 @@ lava:
     cost:
        - mana 10
        - flame_amalgam 4
-    prerequisites:
-       - fire_amalgam
+    modifiers:
     memory: 1
     allow-command-casting: false
+    check-plugins: true
     cooldown: 120
     range: 8
     reset-delay: 200
     modifiers:
         - world nether required
+        - magicxpabove fire:100 required
+    str-modifier-failed: "You need 100 Fire MagicXP to cast this spell. Do /magicxp"
     block-type: lava
     apply-physics: true
     description: |
@@ -287,6 +291,7 @@ fireball:
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
     spell-icon: "351:1"
+    check-plugins: true
     cost:
         - mana 50
         - blaze_powder 1
@@ -312,6 +317,7 @@ fire_nova:
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff
     spell-icon: blaze_powder
+    check-plugins: true
     cost:
         - mana 30
         - blaze_powder 1
