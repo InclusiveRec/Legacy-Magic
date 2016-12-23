@@ -37,6 +37,9 @@ lore_of_storms:
     memory: 10
     items:
         - storm_grimoire 1
+    modifiers:
+        - magicxpabove storm:500 required
+    str-modifier-failed: "You need 500 Storm MagicXP to cast this spell. Do /magicxp"
     str-cost: "A book, 30 levels, a diamond block, and six snowballs."
     description: |
             &9Lore of Storms: Storm Masters' Spell
@@ -60,6 +63,9 @@ stormhammer:
     memory: 5
     items:
       - stormhammer 1
+    modifiers:
+        - magicxpabove storm:500 required
+    str-modifier-failed: "You need 500 Storm MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You create a stormhammer."
     str-cost: "3 diamonds, 10 levels, and a snow block."
     description: |
@@ -101,6 +107,7 @@ gust:
     cast-item: stormhammer
     spell-icon: feather
     xp-granted:
+      - forest -1 
       - storm 1 
     cost:
         - mana 10
@@ -193,8 +200,8 @@ windwalk:
     cast-item: stormhammer
     spell-icon: diamond_boots
     xp-granted:
-      - storm 1 
-      - stone -1 
+        - storm 1 
+        - stone -1 
     cost:
         - mana 25
         - feather 2
@@ -223,8 +230,8 @@ storm_amalgam:
     cast-item: stormhammer,storm_grimoire
     spell-icon: "351:7"
     xp-granted:
-      - storm 1 
-      - ocean 1 
+        - storm 1 
+        - ocean 1 
     memory: 1
     items:
         - storm_amalgam 4-6
