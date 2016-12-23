@@ -99,6 +99,9 @@ warhorse:
     color: BLACK
     style: WHITE
     variant: HORSE
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
     str-cast-others: "%c summons a knightly warhorse!"
     str-cast-self: "You summon a knightly warhorse!"
     str-cost: "20 mana and a golden carrot."
@@ -155,6 +158,9 @@ knight_harness:
     helmet: knightly_helm
     leggings: knightly_greaves
     toggle: false
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "En garde!"
     str-cost: "1 iron block and 50 mana."
     description: "You ready your guard and summon a suit of armour."
@@ -205,6 +211,9 @@ lore_of_knighthood:
     bindable: false
     items:
       - knight_grimoire 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
 knightly_saddle:
     permission-name: knight
     spell-class: ".instant.ConjureSpell"
@@ -219,6 +228,9 @@ knightly_saddle:
     bindable: false
     items:
       - knight_saddle 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
 knightly_sword:
     permission-name: knight
     spell-class: ".instant.ConjureSpell"
@@ -234,6 +246,9 @@ knightly_sword:
     bindable: false
     items:
       - knight_sword 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
 
 #    Miscellaneous: Experience
 
