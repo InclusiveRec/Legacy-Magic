@@ -39,7 +39,7 @@ lore_of_flame:
     cast-item: book
     spell-icon: "enchanted_book"
     xp-granted:
-      - fire 1
+        - fire 1
     cost:
         - book 1
         - levels 30
@@ -63,7 +63,7 @@ fiery_staff:
     cast-item: fire_grimoire
     spell-icon: blaze_rod
     xp-granted:
-      - fire 1
+        - fire 1
     cost:
         - levels 10
         - blaze_rod 1
@@ -92,8 +92,8 @@ fire_amalgam:
     cast-item: fire_staff
     spell-icon: "351:1"
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     memory: 1
     items:
         - flame_amalgam 4-6
@@ -120,8 +120,8 @@ firebreathing:
     cast-item: fire_staff,blaze_powder
     spell-icon: blaze_powder
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cost:
         - mana 10
     memory: 3
@@ -145,8 +145,8 @@ fireproof:
     cast-item: blaze_rod,fire_staff
     spell-icon: magma_cream
     xp-granted:
-      - death -1 
-      - fire -1 
+        - death -1 
+        - fire -1 
     cost:
         - mana 30
         - 378 1
@@ -168,8 +168,8 @@ smoke:
     cast-item: fire_staff,blaze_powder
     spell-icon: "160:8"
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cost:
         - levels 3
         - mana 10
@@ -206,8 +206,8 @@ spark:
     cast-item: fire_staff,377
     spell-icon: fireball
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cost:
         - mana 20
         - blaze_powder 1
@@ -234,11 +234,11 @@ lava:
     cast-item: fire_staff,377
     spell-icon: lava_bucket
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cost:
-       - mana 10
-       - flame_amalgam 4
+        - mana 10
+        - flame_amalgam 4
     modifiers:
     memory: 1
     allow-command-casting: false
@@ -263,7 +263,7 @@ extinguish:
     permission-name: fire 
     spell-class: ".targeted.ReplaceSpell"
     xp-granted:
-      - fire -1 
+        - fire -1 
     cast-item: fire_staff
     cost:
         - mana 10
@@ -298,8 +298,8 @@ fireball:
         - flame_amalgam 4
     memory: 5
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cooldown: 10
     target-players: true
     damage-multiplier: 2
@@ -323,8 +323,8 @@ fire_nova:
         - blaze_powder 1
         - flame_amalgam 4
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     memory: 4
     bindable: false
     can-cast-by-command: false
@@ -339,8 +339,8 @@ warmth:
     permission-name: fire
     spell-class: ".targeted.DummySpell"
     xp-granted:
-      - fire 1
-      - forest -1
+        - fire 1
+        - forest -1
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
@@ -353,7 +353,7 @@ fire_shield:
     permission-name: fire
     spell-class: ".instant.DummySpell"
     xp-granted:
-      - fire 1
+        - fire 1
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
