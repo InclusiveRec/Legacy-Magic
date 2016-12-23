@@ -67,14 +67,17 @@ lore_of_the_rock:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
-      - book 1
-      - levels 30
-      - obsidian 1
+        - book 1
+        - levels 30
+        - obsidian 1
     memory: 10
     items:
-      - stone_grimoire
+        - stone_grimoire
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
     str-cost: "A book, 30 levels, and 1 obsidian."
     description: |
             &2Stone Lore: Stone Masters' Spell
@@ -91,13 +94,16 @@ magic_pickaxe:
     cast-item: stone_grimoire
     spell-icon: 257
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
         - levels 10
         - iron_pickaxe 1
     memory: 3
     items:
-      - minepick
+        - minepick
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels and an iron pick."
     description: |
         &8Magic Pickaxe: 3 Memory Stone Spell
@@ -108,13 +114,16 @@ cutter_pickaxe:
     cast-item: stone_grimoire
     spell-icon: 270
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
         - levels 10
         - wood_pickaxe 1
     memory: 3
     items:
-      - stonecutter_pick
+        - stonecutter_pick
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels and a wood pick."
     description: |
         &8Cutter Pickaxe: 3 Memory Stone Spell
@@ -124,16 +133,18 @@ masons_trowel:
     spell-class: ".instant.ConjureSpell"
     spell-icon: IRON_SPADE
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
         - iron_spade 1
         - levels 5
     prerequisites:
         - scroll
-        - mix_mortar
     memory: 2
     items:
-        - iron_trowel 1      
+        - iron_trowel 1 
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"     
     str-cost: "5 experience levels and an iron shovel."
     description: |
         &rTrowel   2 Memory Stone Spell
@@ -148,7 +159,7 @@ mix_mortar:
     spell-class: ".instant.ConjureSpell"
     spell-icon: "351:7"
     xp-granted:
-      - stone 1 
+        - stone 1 
     cast-item: stick, iron_trowel
     cost:
         - mana 4
@@ -181,7 +192,7 @@ mix_mortar:
 ##########################
     
 obsidian:
-    permission-name: ocean
+    permission-name: stone
     spell-class: ".targeted.ReplaceSpell"
     cast-item: iron_trowel
     spell-icon: IRON_SPADE
@@ -199,20 +210,20 @@ obsidian:
     replace-with:
         - obsidian
     xp-required:
-      - stone 50
+        - stone 50
     xp-granted:
-      - fire -1
-      - stone 1
+        - fire -1
+        - stone 1
     memory: 5
     cost:
         - mana 10
         - mortar 2
         - flame_amalgam 2
-        - ocean_amalgam 2
+        - diamond 2
     description: |
             &rObsidian 5 Memory Stone Spell
             &3rCooling lava to obsidian.
-    str-cost: 10 mana, 2 mortar, plus 2 Flame Amalgam and 2 Ocean Amalgam.
+    str-cost: 10 mana, 2 mortar, plus 2 Flame Amalgam and 2 Diamonds.
 
 patchwork:
     permission-name: stone 
@@ -244,7 +255,7 @@ repair:
     cast-item: iron_trowel
     spell-icon: workbench
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
         - mana 50
         - diamond_block 1
@@ -280,7 +291,7 @@ dowse:
     cast-item: minepick
     spell-icon: compass
     xp-granted:
-      - stone 1 
+        - stone 1 
     cost:
         - mana 20
         - mortar 2
@@ -301,7 +312,7 @@ mighty_swing:
     permission-name: stone 
     spell-class: ".targeted.PotionEffectSpell"
     xp-granted:
-      - stone 1 
+        - stone 1 
     cast-item: minepick
     cost:
         - mana 15
@@ -321,7 +332,7 @@ stonevision:
     permission-name: stone
     spell-class: ".buff.StonevisionSpell"
     xp-granted:
-      - stone 1 
+        - stone 1 
     cast-item: minepick
     cost:
         - mana 30
