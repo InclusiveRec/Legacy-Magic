@@ -319,7 +319,7 @@ stalking:
     memory: 2
     send-failure-messages: true
     spells:
-        - invisibility
+        - cloak
     triggers:
         - sneak
     modifiers:
