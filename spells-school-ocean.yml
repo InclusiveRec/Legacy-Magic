@@ -33,8 +33,6 @@ lore_of_oceans:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
-    xp-required:
-      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
@@ -45,6 +43,9 @@ lore_of_oceans:
     memory: 10
     items:
         - water_grimoire
+    modifiers:
+        - magicxpabove ocean:500 required
+    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
@@ -54,8 +55,6 @@ hydro_focus:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
-    xp-required:
-      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
@@ -68,6 +67,9 @@ hydro_focus:
     memory: 5
     items:
         - water_focus
+    modifiers:
+        - magicxpabove ocean:500 required
+    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels and 6 prismarine crystals."
     description: |
             &1Hydromantic Focus: 5 Memory Water Spell
@@ -77,8 +79,6 @@ dowsing_rod:
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
-    xp-required:
-      - ocean 500
     xp-granted:
       - ocean 1 
       - fire -1 
@@ -92,6 +92,9 @@ dowsing_rod:
     memory: 2
     items:
         - water_rod
+    modifiers:
+        - magicxpabove ocean:500 required
+    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
     str-cost: "5 levels, 3 prismarine crystals, and a stick."
 
 #########################
