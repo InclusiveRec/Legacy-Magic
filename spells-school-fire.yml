@@ -258,18 +258,18 @@ lava:
     str-cast-self: "You summon Molten Lava"
     str-cast-others: "%a Summons Molten Lava"
     str-modifier-failed: "You cannot cast that spell here."
-    
 extinguish:
     permission-name: fire 
-    spell-class: ".targeted.ReplaceSpell"
-    xp-granted:
-        - fire -1 
+    spell-class: ".targeted.ReplaceSpell" 
     cast-item: fire_staff
     cost:
         - mana 10
         - flame_amalgam 2
+    xp-granted:
+        - fire -1
     memory: 3
     radius-down: 2
+    cooldown: 15
     radius-horiz: 2
     radius-up: 2
     range: 8
@@ -286,7 +286,6 @@ extinguish:
     #  Intermediate Spells  #
     #########################
 fireball:
-    enabled: false
     permission-name: fire
     spell-class: ".targeted.FireballSpell"
     cast-item: fire_staff
@@ -294,15 +293,19 @@ fireball:
     check-plugins: true
     cost:
         - mana 50
-        - blaze_powder 1
+        - blaze_powder 2
         - flame_amalgam 4
+    bindable: false
+    can-cast-by-command: false
     memory: 5
     xp-granted:
         - fire 1
         - forest -1
     cooldown: 10
     target-players: true
-    damage-multiplier: 2
+    explosion-size: 5
+    range: 25
+    damage-multiplier: 3
     description: |
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
@@ -312,7 +315,6 @@ fireball:
     str-cast-others: "%a summons a fiery flare!"
 
 fire_nova:
-    enabled: false
     permission-name: fire
     spell-class: ".instant.FirenovaSpell"
     cast-item: fire_staff
@@ -322,6 +324,9 @@ fire_nova:
         - mana 30
         - blaze_powder 1
         - flame_amalgam 4
+    range: 4
+    tick-speed: 1
+    cooldown: 15
     xp-granted:
         - fire 1
         - forest -1
