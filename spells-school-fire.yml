@@ -52,10 +52,10 @@ lore_of_flame:
     str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     allow-command-casting: false
     bindable: false
+    str-cost: "A book, 30 levels, and five blaze rods."
     description: |
             &4Lore of Flame: Fire Masters' Spell
             Creates a fiery grimoire.
-    str-cost: "A book, 30 levels, and five blaze rods."
 
 fiery_staff:
     permission-name: fire
@@ -104,11 +104,11 @@ fire_amalgam:
         - 87 8
     modifiers:
         - outside required
+    str-modifier-failed: "Stand under a clear sky to cast this spell."
+    str-cost: "Under a clear sky, mix three lava buckets and 8 netherrack, using 20 mana in the process."
     description: |
             &eFire Amalgam: 1 Memory Fire Spell
             Mixes some Flame Amalgam.
-    str-modifier-failed: "Stand under a clear sky to cast this spell."
-    str-cost: "Under a clear sky, mix three lava buckets and 8 netherrack, using 20 mana in the process."
 
 ################
 # Basic spells #
@@ -133,11 +133,11 @@ firebreathing:
     particle-name: lava
     projectile-spread: 0.1
     spell: combust
+    str-cost: 10 mana
     description: |
             Firebreathing:  3 Memory   Fire School
             Breathe fire upon your foes!
             Uses 3 memory slots.
-    str-cost: 10 mana
     
 fireproof:
     permission-name: fire
@@ -221,12 +221,12 @@ spark:
     require-entity-target: false
     small-fireball: true
     target-players: true
-    description: |
-        &rSpark:    3 Memory   Fire School
-        &3Cast a fiery bolt at monsterous foes.
     str-cost: 20 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
+    description: |
+        &rSpark:    3 Memory   Fire School
+        &3Cast a fiery bolt at monsterous foes.
     
 lava:
     permission-name: fire
@@ -252,12 +252,12 @@ lava:
     str-modifier-failed: "You need 100 Fire MagicXP to cast this spell. Do /magicxp"
     block-type: lava
     apply-physics: true
-    description: |
-        &rLava  1 memory Fire school
-        &3Rises Lava from the core..
     str-cast-self: "You summon Molten Lava"
     str-cast-others: "%a Summons Molten Lava"
     str-modifier-failed: "You cannot cast that spell here."
+    description: |
+        &rLava  1 memory Fire school
+        &3Rises Lava from the core..
 extinguish:
     permission-name: fire 
     spell-class: ".targeted.ReplaceSpell" 
@@ -291,6 +291,8 @@ fireball:
     cast-item: fire_staff
     spell-icon: "351:1"
     check-plugins: true
+    prerequisites:
+        - fire_staff
     cost:
         - mana 50
         - blaze_powder 2
@@ -306,13 +308,13 @@ fireball:
     explosion-size: 5
     range: 25
     damage-multiplier: 3
+    str-cost: 50 mana, one blaze powder and four flame amalgam.
+    str-cast-self: "You summon a fiery flare!"
+    str-cast-others: "%a summons a fiery flare!"
     description: |
             &4Fireball: Lv05 Fire Spell
             Launches a great ball of fiery destruction.
             Requires the &4firestaff&3 spell.
-    str-cost: 50 mana, one blaze powder and four flame amalgam.
-    str-cast-self: "You summon a fiery flare!"
-    str-cast-others: "%a summons a fiery flare!"
 
 fire_nova:
     permission-name: fire
@@ -320,6 +322,8 @@ fire_nova:
     cast-item: fire_staff
     spell-icon: blaze_powder
     check-plugins: true
+    prerequisites:
+        - fire_staff
     cost:
         - mana 30
         - blaze_powder 1
@@ -333,12 +337,12 @@ fire_nova:
     memory: 4
     bindable: false
     can-cast-by-command: false
-    description: |
-            &4FireNova: Lv04 Fire Spell
-            Makes a ring of fire.
     str-cost: 30 mana, one blaze powder and four flame amalgam.
     str-cast-self: "You summon a Super Nova!"
     str-cast-others: "%a Creates a Super Nova!"
+    description: |
+            &4FireNova: Lv04 Fire Spell
+            Makes a ring of fire.
 warmth:
     enabled: false
     permission-name: fire
@@ -367,5 +371,4 @@ fire_shield:
 
 # warmth
 # fire shield
-# FireballSpell
 # Roaring Flames
