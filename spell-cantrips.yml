@@ -377,9 +377,11 @@ teach:
 dragonremoval:
      permission-name: master
      spell-class: ".ExternalCommandSpell"
+     execute-on-console-instead: true
      command-to-execute:
-          - dt remdragons world       
-       
+          - dt remdragons world
+     str-cast-self: "Dragon maintenance complete."    
+      
 # Sage level
 
 spellbook:
