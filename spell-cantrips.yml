@@ -373,7 +373,13 @@ teach:
     description: |
         &rTeach   -   Cantrip
         &3Teach a spell to another player. Requires the bind, unbind, scroll, tome, and spellbook spells.
-        
+
+dragonremoval:
+     permission-name: master
+     spell-class: ".ExternalCommandSpell"
+     command-to-execute:
+          - dt remdragons world       
+       
 # Sage level
 
 spellbook:
