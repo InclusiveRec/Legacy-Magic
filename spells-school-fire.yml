@@ -1,3 +1,6 @@
+# Fire Magic 
+# Needs school description
+
 predefined-items:
 
     #  School grimoire; standard
@@ -20,6 +23,8 @@ predefined-items:
           - "This wand is hot to the"
           - "touch, and smokes and sparks"
           - "with pyromantic magics."
+          
+    # Custom reagent
     
     flame_amalgam:
          type: "351:1"
@@ -114,31 +119,7 @@ fire_amalgam:
 # Basic spells #
 ################
 
-firebreathing:
-    permission-name: fire
-    spell-class: ".instant.ParticleProjectileSpell"
-    cast-item: fire_staff,blaze_powder
-    spell-icon: blaze_powder
-    xp-granted:
-        - fire 1
-        - forest -1
-    cost:
-        - mana 10
-    memory: 3
-    allow-command-casting: false
-    cooldown: 10
-    check-plugins: true
-    hit-non-players: true
-    hit-players: true
-    particle-name: lava
-    projectile-spread: 0.1
-    spell: combust
-    str-cost: 10 mana
-    description: |
-            Firebreathing:  3 Memory   Fire School
-            Breathe fire upon your foes!
-            Uses 3 memory slots.
-    
+
 fireproof:
     permission-name: fire
     spell-class: ".targeted.PotionEffectSpell"
@@ -162,6 +143,35 @@ fireproof:
     description: |
         &2Fireproof: 3 Memory Fire Spell
         Apply magma cream to protect yourself from fire and lava.
+firework:
+    enabled: true
+    permission-name: cantrip
+    spell-class: ".instant.ParticleProjectileSpell"
+    spell-icon: firework
+    xp-granted:
+        - fire 1 
+        - forest -1 
+    cost:
+        - mana 10
+    cooldown:  0
+    memory: 3
+    spell: fireworkblast
+    hit-air-at-end: true
+    max-distance: 20
+    max-duration: 20
+    projectile-vert-offset: 1.5
+    projectile-velocity: 20
+    projectile-gravity: .05
+    tick-interval: 2
+    modifiers:
+        - outside required
+    str-cost:  "10 mana"
+    despription:  |
+        &rFirework: 3 Memory Fire Spell
+        &3Shoots a firework from fingertips.
+    effects:
+        - caster sound fireworks.launch 1.0 1.0
+
 smoke:
     permission-name: fire
     spell-class: ".targeted.AreaEffectSpell"
@@ -221,6 +231,7 @@ spark:
     require-entity-target: false
     small-fireball: true
     target-players: true
+    bindable: false
     str-cost: 20 mana and 1 blaze powder.  Uses 3 memory slots.
     str-cast-self: "You hurl a bolt of fiery energy!"
     str-cast-others: "%a hurls a bolt of fiery energy!"
@@ -258,29 +269,6 @@ lava:
     description: |
         &rLava  1 memory Fire school
         &3Rises Lava from the core..
-extinguish:
-    permission-name: fire 
-    spell-class: ".targeted.ReplaceSpell" 
-    cast-item: fire_staff
-    cost:
-        - mana 10
-        - flame_amalgam 2
-    xp-granted:
-        - fire -1
-    memory: 3
-    radius-down: 2
-    cooldown: 15
-    radius-horiz: 2
-    radius-up: 2
-    range: 8
-    replace-blocks:
-        - fire
-    replace-with:
-        - air
-    str-cost: "10 mana and 2 flame_amalgam."
-    bindable: false
-    description: |
-            &rExtinguish Fire   5 Memory fire Spell.
 
     #########################
     #  Intermediate Spells  #
