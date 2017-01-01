@@ -1,3 +1,7 @@
+# Dragon Magic 
+# Needs school description, casting item & custom reagent
+
+
 predefined-items:
     dragon_grimoire:
         type: enchanted_book
@@ -18,16 +22,47 @@ lore_of_dragons:
         - book 1
         - levels 30
         - diamond_block 1
-        - dragon_egg 5
+        - dragon_egg 1
     memory: 10
     items:
         - dragon_grimoire 1
-    str-cost: "A book, 30 levels, a diamond block, and six dragon eggs."
+    modifiers:
+        - magicxpabove dragon:500 required
+    str-modifier-failed: "You need 500 Dragon MagicXP to cast this spell. Do /magicxp"
+    str-cost: "A book, 30 levels, a diamond block, and a dragon egg."
     description: |
             &5Lore of Dragons: Dragon Masters' Spell
             Creates a Dragon grimoire.
     
-#Bonus Spells
+
+################
+# Basic spells #
+################
+
+firebreathing:
+    permission-name: dragon
+    spell-class: ".instant.ParticleProjectileSpell"
+    cast-item: fire_staff,blaze_powder
+    spell-icon: blaze_powder
+    xp-granted:
+        - fire 1
+        - forest -1
+    cost:
+        - mana 10
+    memory: 3
+    allow-command-casting: false
+    cooldown: 10
+    check-plugins: true
+    hit-non-players: true
+    hit-players: true
+    particle-name: lava
+    projectile-spread: 0.1
+    spell: combust
+    str-cost: 10 mana
+    description: |
+            Firebreathing:  3 Memory   Dragon School
+            Breathe fire upon your foes!
+            Uses 3 memory slots.
     
 enderchest:
     permission-name: dragon
