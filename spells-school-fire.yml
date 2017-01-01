@@ -353,7 +353,7 @@ magmawall:
     modifiers:
         - holding "369|&2rod of pyromancy" power 2
     str-cost: "15 mana and 1 fire amalgam."
-    str-no-target: "You cannot create that steaming wall hear."
+    str-no-target: "You cannot create that steaming wall here."
     description: |
             &2MagmaWall: 5 Memory Fire Spell
             Sprouts a hot wall to impede your foes.
