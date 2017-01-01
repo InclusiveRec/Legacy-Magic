@@ -1,3 +1,7 @@
+# Shadow Magic 
+# Needs school description, casting item & custom reagent
+
+
 predefined-items:
     shadow_grimoire:
         type: enchanted_book
@@ -6,6 +10,12 @@ predefined-items:
             Any and all shadows
             are recorded in this
             magical book.
+            
+################
+#Item Creation #
+################
+            
+
 lore_of_shadow:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
@@ -27,14 +37,19 @@ lore_of_shadow:
     description: |
             &7Lore of Shadow: Shadow Masters' Spell
             Creates a Shadow grimoire.
+           
+################
+# Basic spells #
+################
+            
 blind:
     permission-name: shadow
     spell-class: ".targeted.PotionEffectSpell"
     cast-item: bone
     spell-icon: ink_sack:0
     xp-granted:
-      - shadow 1 
-      - solar -1  
+        - shadow 1 
+        - solar -1  
     cost:
         - mana 20
         - 375 1
@@ -63,10 +78,10 @@ blink:
     spell-class: ".targeted.BlinkSpell"
     cast-item: stick
     spell-icon: ender_pearl
-    xp-granted:
-      - shadow 1 
-      - knight 1 
-      - stone -1 
+    xp-granted: 
+        - knight 1 
+        - shadow 1 
+        - solar -1 
     cost:
         - mana 15
     cooldown: 3
@@ -76,7 +91,7 @@ blink:
     smoke-trail: true
     spell-power-affects-range: true
     modifiers:
-      - lightlevelbelow 8 power 2
+        - lightlevelbelow 8 power 2
     str-cost: 15 mana
     str-cast-self: You blink away!
     str-cast-others: "%a blinks away!"
@@ -93,8 +108,7 @@ cloak:
     cast-item: bone
     spell-icon: record_11
     xp-granted:
-      - shadow 1 
-      - forest 1 
+        - shadow 1 
     cost:
         - mana 25
     use-cost:
@@ -117,32 +131,12 @@ cloak:
     effects:
         - caster spawn
         - disabled spawn
-nightvision:
-    permission-name: shadow
-    spell-class: ".targeted.PotionEffectSpell"
-    cast-item: stick
-    spell-icon: 381
-    xp-granted:
-      - shadow 1 
-      - solar -1 
-    cost:
-        - mana 20
-        - 375 1
-    cooldown: 30
-    memory: 4
-    duration: 600
-    targeted: false
-    type: 16
-    str-cost: "20 mana and a spider eye"
-    description: |
-        &rNightvision   4 Memory   Shadow School
-        &3You can see in the dark!
 dim:
     permission-name: shadow
     spell-class: ".targeted.ZapSpell"
     xp-granted:
-      - shadow 1 
-      - solar -1 
+        - shadow 1 
+        - solar -1 
     cast-item: stick
     allowed-block-types:
        - "50:0"
@@ -158,26 +152,12 @@ dim:
     str-cast-others: "A light goes out."
     str-cast-self: "You put out a light."
     str-no-target: "No target!"
-lightsout:
-    permission-name: shadow
-    spell-class: ".targeted.AreaEffectSpell"
-    xp-granted:
-      - shadow 1 
-      - solar -1 
-    cast-item: stick
-    horizontal-radius: 10
-    spell-power-affects-range: true
-    spells:
-      - dim
-    vertical-radius: 5
-    str-cast-self: "You put out the lights."
-    str-cast-others: "The lights go out!"
 duskrite:
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
     xp-granted:
-      - shadow 1 
-      - solar -1 
+        - shadow 1 
+        - solar -1 
     cast-item: bone
     cost:
         - mana 100
@@ -203,4 +183,63 @@ duskrite:
             &7Dusk Rite&3: 6 Memory Shadow Spell
             A ritual which will cause the sun to set.
             This ritual requires three participants and takes 20 seconds of concentration to cast.
-            Moving will disrupt the ritual.  Requires the &eLights Out&3 spell
+            Moving will disrupt the ritual.  Requires the &eLights Out&3 spell  
+extinguish:
+    permission-name: shadow 
+    spell-class: ".targeted.ReplaceSpell" 
+    cast-item: stick
+    cost:
+        - mana 10
+        - storm_amalgam 2
+    xp-granted:
+        - fire -1
+    memory: 3
+    radius-down: 2
+    cooldown: 15
+    radius-horiz: 2
+    radius-up: 2
+    range: 8
+    replace-blocks:
+        - fire
+    replace-with:
+        - air
+    str-cost: "10 mana and 2 storm_amalgam."
+    bindable: false
+    description: |
+            &rExtinguish Fire 3 Memory Shadow Spell. 
+            Snuff out the light from a fire with mana and 2 storm amalgams.
+lightsout:
+    permission-name: shadow
+    spell-class: ".targeted.AreaEffectSpell"
+    xp-granted:
+        - shadow 1 
+        - solar -1 
+    cast-item: stick
+    horizontal-radius: 10
+    spell-power-affects-range: true
+    spells:
+        - dim
+    vertical-radius: 5
+    str-cast-self: "You put out the lights."
+    str-cast-others: "The lights go out!"
+nightvision:
+    permission-name: shadow
+    spell-class: ".targeted.PotionEffectSpell"
+    cast-item: stick
+    spell-icon: 381
+    xp-granted:
+        - shadow 1 
+        - solar -1 
+    cost:
+        - mana 20
+        - 375 1
+    cooldown: 30
+    memory: 4
+    duration: 600
+    targeted: false
+    type: 16
+    str-cost: "20 mana and a spider eye"
+    description: |
+        &rNightvision   4 Memory   Shadow School
+        &3You can see in the dark!
+
