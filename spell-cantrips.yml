@@ -249,7 +249,7 @@ bind:
     allow-bind-to-fist: true
     str-cant-bind-item: "That spell cannot be bound to that item."
     str-cant-bind-spell: "That spell cannot be bound to an item."
-    str-cast-self: "You have successfully bound the %s spell to the \nitem you are holding."
+    str-cast-self: "You have successfully bound the %s spell to the item you are holding."
     str-no-spell: "You do not know a spell by that name."
     str-usage: "You must specify a spell name and hold an item in your hand."
     description: |
@@ -343,15 +343,16 @@ teach:
         &3Teach a spell to another player. Requires the bind, unbind, scroll, tome, and spellbook spells.
 
 dt:
-     permission-name: master
-     spell-class: ".ExternalCommandSpell"
-     execute-on-console-instead: true
-     command-to-execute:
-          - dt remdragons world
-     str-cast-self: "Dragon maintenance complete."    
+    permission-name: master
+    spell-class: ".ExternalCommandSpell"
+    execute-on-console-instead: true
+    command-to-execute:
+        - dt remdragons world
+    str-cast-self: "Dragon maintenance complete."    
     description: |
         &rDT   -   Cantrip
-        &3Return wayward dragons to their station.
+        &3Return wayard dragons to their station.
+    
       
 # Sage level
 
