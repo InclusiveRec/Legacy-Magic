@@ -57,6 +57,11 @@ predefined-items:
         enchants:
          - "damage_all 1"
          - "loot_bonus_mobs 2"
+    ocelot_claw:
+        type: flint
+        name: "&2Ocelot's Claw"
+        lore:
+            - "A razor-sharp incisor."    
 
 #############################
 #                           #
@@ -593,3 +598,57 @@ call_of_the_wild:
     str-at-cap: "You cannot summon a larger pack!"
     str-cast-self: "You summon wolves!"
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
+claw:
+    permission-name: forest
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_grimoire
+    spell-icon: flint
+    xp-required:
+      - forest 500
+    xp-granted:
+      - forest 1
+    cost:
+        - bone 6
+        - forest_amalgam 3
+        - levels 10
+    prerequisites:
+        - ocelot
+        - scroll
+    memory: 2
+    bindable: false
+    can-cast-by-command: false
+    items:
+        - ocelot_claw
+    str-cost: "10 levels, 6 bones, and 3 woodland amalgam."
+    description: |
+            &2Fang: 2 Memory Forest Spell
+            Creates a Ocelot's Claw to channel wilderness magic.
+ocelot:
+    permission-name: forest
+    spell-class: ".ExternalCommandSpell"
+    cast-item: ocelot_claw
+    execute-on-console-instead: true
+    command-to-execute:
+        - execute %a ~ ~ ~ summon ocelot ~ ~ ~ {Owner:%a,CatType:2,Sitting:1}
+    spell-icon: 352
+    xp-granted:
+      - forest 1
+    cost:
+        - levels 20
+        - bone 3
+    prerequisites:
+        - forage
+    memory: 5
+    cooldown: 60
+    duration: 0
+    bindable: false
+    can-cast-by-command: false
+    modifiers:
+        - biome JUNGLE,JUNGLE_HILLS,JUNGLE_EDGE required
+    str-cast-self: "A Ocelot appears!"
+    str-cost: "3 bones and 20 experience levels."
+    str-modifier-failed: "There aren't any Ocelots here.  Go to a Jungle biome!"
+    description: |
+            &2Ocelot: 5 Memory Forest Spell
+            Summons a Ocelot to accompany you.
+            Requires the forage spell.          
