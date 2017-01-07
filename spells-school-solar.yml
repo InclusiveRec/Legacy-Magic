@@ -14,12 +14,12 @@ predefined-items:
 
     # Custom reagent
 
-    sun_amalgam:
+    sun_concoction:
         type: "351:11"
-        name: "&eSolar Amalgam"
+        name: "&eSolar Concoction"
         lore:
             - "The elves combine sunflowers"
-            - "with a druidic amalgam"
+            - "with a druidic concoction"
             - "to create this special mixture"
 
     # Defensive casting
@@ -189,7 +189,7 @@ solar_amalgam:
         - 175 2
         - forest_amalgam 6
     items:
-        - sun_amalgam 4-6
+        - sun_concoction 4-6
     str-cost: "Add 2 sunflowers to 6 woodland amalgam, using 10 mana."
     description: |
             &eSolar Amalgam: 1 Memory Solar Spell

@@ -26,9 +26,9 @@ predefined-items:
     # Reagents
     # Custom spell components consumed by some spells.
 
-    forest_amalgam:
+    forest_concoction:
         type: "351:2"
-        name: "&2Woodland Amalgam"
+        name: "&2Woodland concoction"
         lore:
           - "A mix of various"
           - "wildflowers and"
@@ -190,7 +190,7 @@ woodland_amalgam:
       - 38 1        # 1 red flower
     memory: 1
     items:
-      - forest_amalgam 2-4
+      - forest_concoction 2-4
     str-cost: "5 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
     description: |
             &2Herbal Amalgam: 1 Memory Forest Spell
