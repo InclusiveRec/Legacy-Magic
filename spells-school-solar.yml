@@ -45,7 +45,7 @@ lore_of_the_sun:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - solar 1
+        - solar 1
     bindable: false
     can-cast-by-command: false
     cost:
@@ -71,16 +71,13 @@ solar_staff:
     spell-class: ".instant.ConjureSpell"
     cast-item: sun_grimoire
     xp-granted:
-      - solar 1
+        - solar 1
     bindable: false
     can-cast-by-command: false
     cost:
         - levels 10
         - gold_ingot 1
         - sun_amalgam 1
-    prerequisites:
-        - scroll
-        - bloom
     memory: 5
     items:
         - sun_staff 1
@@ -106,13 +103,11 @@ dawnrite:
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
     xp-granted:
-      - solar 1
-      - shadow -1
+        - solar 1
+        - shadow -1
     cost:
         - mana 100
         - 266 1
-    prerequisites:
-        - solar_staff
     memory: 6
     charge-reagents-immediately: false
     cooldown: 1800
@@ -120,10 +115,11 @@ dawnrite:
     spell: sunrise
     modifiers:
         - night required
+        - magicxpabove solar:500 required
     str-cast-others: "%a has begun a ritual to summon dawn.  Right-click to participate."
     str-cast-self: "You have begun the ritual to summon the dawn."
     str-cost: "100 mana and 1 gold ingot."
-    str-modifier-failed: "You can only begin this ritual at night."
+    str-modifier-failed: "You can only begin this ritual at night. You need 500 Solar MagicXP to cast this spell. Do /magicxp "
     str-ritual-fail: "The dawn rite has failed."
     str-ritual-interrupted: "The dawn rite has been interrupted!"
     str-ritual-joined: "You have joined in the dawn rite."
@@ -138,26 +134,25 @@ skycalm:
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
     xp-granted:
-      - solar 1
-      - storm -1 
+        - solar 1
+        - storm -1 
     cost:
         - mana 80
         - sun_amalgam 3
     cooldown: 300
-    prerequisites:
-        - solar_amalgam
     memory: 8
     charge-reagents-immediately: true
-    need-spell-to-participate: false
+    need-spell-to-participate: true
     req-participants: 2
     ritual-duration: 400
     spell: sunny-helper
     modifiers:
         - storm required
+        - magicxpabove solar:500 required
     str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
     str-cast-self: "You begin to calm the skies..."
     str-cost: "80 mana and 3 solar amalgam."
-    str-modifier-failed: "The sky is already clear!"
+    str-modifier-failed: "The sky is already clear! You need 500 Solar MagicXP to cast this spell. Do /magicxp "
     str-ritual-failed: "You are not able to dispel the storm, and your ingredients are consumed!"
     str-ritual-joined: "You begin to calm the skies..."
     str-ritual-success: "The weather clears!"
@@ -181,8 +176,9 @@ solar_amalgam:
     cast-item: forest_sickle
     spell-icon: "351:11"
     xp-granted:
-      - solar 1
-      - forest 1
+        - forest 1
+        - ocean -1
+        - solar 1
     memory: 1
     cost:
         - mana 10
@@ -201,8 +197,8 @@ lightwalk:
     cast-item: stick,forest_sickle
     spell-icon: glowstone
     xp-granted:
-      - solar 1
-      - shadow -1
+        - solar 1
+        - shadow -1
     memory: 1
     cost:
         - mana 25
@@ -366,8 +362,6 @@ soothe:
       - knight 1
       - death -1 
     memory: 6
-    prerequisites:
-        - heal
     cost:
         - mana 25
         - sun_amalgam
@@ -401,8 +395,6 @@ solar_ray:
     xp-granted:
       - solar -1 
     memory: 4
-    prerequisites:
-        - solar_staff
     cost:
       - mana 40
       - sun_amalgam 6
