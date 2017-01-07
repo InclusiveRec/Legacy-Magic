@@ -72,9 +72,6 @@ fiery_staff:
     cost:
         - levels 10
         - blaze_rod 1
-    prerequisites:
-        - scroll
-        - spark
     memory: 5
     add-to-inventory: false
     allow-command-casting: false
@@ -285,8 +282,8 @@ lava:
     reset-delay: 200
     modifiers:
         - world nether required
-        - magicxpabove fire:100 required
-    str-modifier-failed: "You need 100 Fire MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove fire:250 required
+    str-modifier-failed: "You need 250 Fire MagicXP to cast this spell. Do /magicxp"
     block-type: lava
     apply-physics: true
     str-cast-self: "You summon Molten Lava"
@@ -305,8 +302,6 @@ fireball:
     cast-item: fire_staff
     spell-icon: "351:1"
     check-plugins: true
-    prerequisites:
-        - fire_staff
     cost:
         - mana 50
         - blaze_powder 2
@@ -322,6 +317,9 @@ fireball:
     explosion-size: 5
     range: 25
     damage-multiplier: 3
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     str-cost: 50 mana, one blaze powder and four flame amalgam.
     str-cast-self: "You summon a fiery flare!"
     str-cast-others: "%a summons a fiery flare!"
@@ -336,8 +334,6 @@ fire_nova:
     cast-item: fire_staff
     spell-icon: blaze_powder
     check-plugins: true
-    prerequisites:
-        - fire_staff
     cost:
         - mana 30
         - blaze_powder 1
@@ -351,6 +347,9 @@ fire_nova:
     memory: 4
     bindable: false
     can-cast-by-command: false
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     str-cost: 30 mana, one blaze powder and four flame amalgam.
     str-cast-self: "You summon a Super Nova!"
     str-cast-others: "%a Creates a Super Nova!"
@@ -365,8 +364,9 @@ warmth:
         - fire 1
         - forest -1
     cast-item: fire_staff
-    prerequisites:
-        - fiery_grimoire
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
 
     ###################
     # Advanced spells #
@@ -378,8 +378,9 @@ fire_shield:
     xp-granted:
         - fire 1
     cast-item: fire_staff
-    prerequisites:
-        - fiery_grimoire
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
 
 
 
