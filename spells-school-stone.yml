@@ -17,8 +17,8 @@ predefined-items:
           - "a powerful enchantment"
           - "of stone magic."
         enchants:
-          - "efficiency 5"
-          - "unbreaking 3"
+          - "dig_speed 5"
+          - "durability 3"
 
     stonecutter_pick:
         type: 270
@@ -28,8 +28,8 @@ predefined-items:
           - "stonecutters to cut through large"
           - "areas of stone and not much else."
         enchants:
-          - "efficiency 20"
-          - "unbreaking 10"
+          - "dig_speed 20"
+          - "durability 10"
 
     iron_trowel:
         name: "&8Mason's Trowel"
@@ -137,8 +137,6 @@ masons_trowel:
     cost:
         - iron_spade 1
         - levels 5
-    prerequisites:
-        - scroll
     memory: 2
     items:
         - iron_trowel 1 
@@ -198,9 +196,6 @@ obsidian:
     spell-icon: IRON_SPADE
     bindable: false
     allow-command-casting: false
-    prerequisites:
-       - water
-       - lava
     range: 8
     radius-up: 2
     radius-down: 2
@@ -220,6 +215,9 @@ obsidian:
         - mortar 2
         - flame_amalgam 2
         - diamond 2
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
     description: |
             &rObsidian 5 Memory Stone Spell
             &3rCooling lava to obsidian.
