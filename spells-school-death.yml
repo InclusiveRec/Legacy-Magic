@@ -79,9 +79,6 @@ bone_carving:
       - rotten_flesh 2
       - health 4
       - levels 3
-    prerequisites:
-      - blood_for_blood
-      - scroll
     memory: 4
     items:
         - death_wand 1
@@ -115,15 +112,13 @@ stain_steel:
       - rotten_flesh 3
       - levels 6
       - health 4
-    prerequisites:
-      - drain
-      - scroll
     memory: 3
     items:
       - death_knife 1
     modifiers:
       - magicxpabove death:500 required
-    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
+      - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 MagicXP in Death and Knight to cast this spell. Do /magicxp"
 
 bottle_soul:
     permission-name: death
@@ -135,9 +130,6 @@ bottle_soul:
     cost:
       - 374 1
       - experience 10
-    prerequisites:
-      - drain
-      - scroll
     memory: 3
     bindable: false
     can-cast-by-command: false
@@ -145,6 +137,9 @@ bottle_soul:
     spells:
       - xp_pot
       - idontfeelsogood
+    modifiers:
+        - magicxpabove death:500 required
+    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "This can't be good for your health..."
     str-cost: "A small glass bottle to contain the experience you wish to store."
     description: |
@@ -191,8 +186,6 @@ blood_for_blood:
     xp-granted:
       - death 1  
       - solar -1 
-    prerequisites:
-        - sacrifice
     memory: 7
     allow-command-casting: false
     check-plugins: true
@@ -204,6 +197,9 @@ blood_for_blood:
     use-cost-interval: 1
     cost:
         - health 2
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You have made a dark bargain..."
     str-cost: "2 hearts to cast, and 1 heart at each mana tick."
     str-fade: "Enough!"
@@ -288,7 +284,7 @@ rupture:
 
 #  Medium level: 6-10 memory
 
-necrotic_claw:
+necrotic_claw: #Needs strings and description
     permission-name: death
     spell-class: ".TargetedMultiSpell"
     cast-item: death_wand
@@ -299,9 +295,7 @@ necrotic_claw:
     cost:
         - mana 40
     cooldown: 20
-    prerequisites:
-        - drain
-    memory: 5
+    memory: 6
     allow-command-casting: false
     check-plugins: true
     range: 2
@@ -312,8 +306,11 @@ necrotic_claw:
         - drain
         - DELAY 20
         - drain
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
 
-deathray:
+deathray: #Needs strings and description
     permission-name: death
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: death_wand
@@ -323,8 +320,6 @@ deathray:
       - solar -1 
     cost:
       - mana 50
-    prerequisites:
-      - rupture
     memory: 7
     allow-command-casting: false
     check-plugins: true
@@ -337,6 +332,9 @@ deathray:
     projectile-velocity: 20
     spell: pain
     tick-interval: 10
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
 
 # High level: 10+ memory
 
@@ -346,16 +344,22 @@ awakening:
     cast-item: death_grimoire
     spell-icon: "397:1"
     xp-granted:
-      - death 1  
-      - solar -1 
-    prerequisites:
-      - lore_of_death
+        - death 1  
+        - solar -1
+    cost:
+        - mana 45
+        - rotten_flesh 2
+        - bone 2
+    cooldown: 10 
     memory: 10
     block-type: skull
     cap-per-player: 3
     interval: 20
     spells:
       - spawn_random
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You call upon the forces of darkness..."
     str-cast-others: "Undead creatures start clawing their way up through the ground..."
     description: |
@@ -370,8 +374,8 @@ revenant:
     cast-item: death_grimoire
     spell-icon: "383:54"
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
         - mana 30
         - rotten_flesh 2
@@ -402,15 +406,13 @@ spite:
     cast-item: bone
     spell-icon: 375
     xp-granted:
-      - death 1 
-      - shadow 1 
-      - solar -1 
+        - death 1 
+        - shadow 1 
+        - solar -1 
     cost:
         - mana 60
         - 375 6
     cooldown: 60
-    prerequisites:
-      - blind # Shadow
     memory: 5
     allow-command-casting: false
     check-plugins: true
@@ -424,6 +426,9 @@ spite:
     target-non-players: false
     target-players: true
     vertical-radius: 3
+    modifiers:
+        - magicxpabove shadow:250 required
+    str-modifier-failed: "You need 250 Shadow MagicXP to cast this spell. Do /magicxp"
     str-cost: "60 mana and six spider eyes."
     description: |
         &rSpite:   5 Memory   Death School
