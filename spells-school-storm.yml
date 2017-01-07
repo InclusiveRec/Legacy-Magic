@@ -23,12 +23,17 @@ predefined-items:
             - "The concentrated power"
             - "of a storm is contained"
             - "within this amalgam."
+            
+ # Item creation spells
+ 
 lore_of_storms:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
+    bindable: false
+    allow-command-casting: false
     xp-granted:
-      - storm 1 
+        - storm 1 
     cost:
         - book 1
         - levels 30
@@ -51,6 +56,8 @@ stormhammer:
     spell-class: ".instant.ConjureSpell"
     cast-item: storm_grimoire
     spell-icon: diamond_axe
+    bindable: false
+    allow-command-casting: false
     xp-granted:
       - storm 1
     cost:
@@ -62,7 +69,7 @@ stormhammer:
         - lightning
     memory: 5
     items:
-      - stormhammer 1
+        - stormhammer 1
     modifiers:
         - magicxpabove storm:500 required
     str-modifier-failed: "You need 500 Storm MagicXP to cast this spell. Do /magicxp"
@@ -71,14 +78,46 @@ stormhammer:
     description: |
         &rStormrod   5 Memory   Storm School
         &3You craft a storm rod.
+  
+    #
+    #  Reagents
+    #
+    
+storm_amalgam:
+    permission-name: storm
+    spell-class: ".instant.ConjureSpell"
+    cast-item: stormhammer,storm_grimoire
+    spell-icon: "351:7"
+    xp-granted:
+        - storm 1 
+        - ocean 1 
+    memory: 1
+    items:
+        - storm_amalgam 4-6
+        - bucket 3
+    cost:
+        - wool 8
+        - water_bucket 3
+        - mana 20
+    modifiers:
+        - outside required
+        - storm required
+    str-cost: "During a storm, mix three water buckets and 8 wool, using 20 mana in the process."
+    str-modifier-failed: "You must be in a storm cast this spell."
+    description: |
+            &7Storm Amalgam: 1 Memory Storm Spell
+            Concentrates some storm amalgam.
+            
+ #Spells 
+ 
 freeze:
     permission-name: storm
     spell-class: ".instant.FreezeSpell"
     cast-item: water_focus,stick
     spell-icon: snow_ball
     xp-granted:
-      - storm 1 
-      - solar -1  
+        - storm 1 
+        - solar -1  
     cost:
         - mana 15
         - snow_ball 1
@@ -107,8 +146,8 @@ gust:
     cast-item: stormhammer
     spell-icon: feather
     xp-granted:
-      - forest -1 
-      - storm 1 
+        - forest -1 
+        - storm 1 
     cost:
         - mana 10
         - feather 1
@@ -134,8 +173,10 @@ lightning:
     cast-item: stormhammer
     spell-icon: gold_sword
     xp-granted:
-      - storm 1 
-      - fire 1 
+        - fire 1 
+        - ocean -1
+        - solar -1  
+        - storm 1 
     cost:
         - mana 25
         - wool 1
@@ -164,11 +205,13 @@ stormy:
     permission-name: storm
     spell-class: ".instant.RitualSpell"
     cast-item: stormhammer
+    bindable: false
+    allow-command-casting: false
     xp-granted:
-      - storm 1 
-      - solar -1 
-      - ocean 1 
-      - fire -1 
+        - storm 1 
+        - solar -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - mana 80
         - storm_amalgam 3
@@ -200,8 +243,9 @@ windwalk:
     cast-item: stormhammer
     spell-icon: diamond_boots
     xp-granted:
+        - ocean -1 
+        - solar -1 
         - storm 1 
-        - stone -1 
     cost:
         - mana 25
         - feather 2
@@ -224,27 +268,3 @@ windwalk:
     description: |
         &rWindwalk   7 Memory   Storm School
         The caster rides the winds of a raging storm.
-storm_amalgam:
-    permission-name: storm
-    spell-class: ".instant.ConjureSpell"
-    cast-item: stormhammer,storm_grimoire
-    spell-icon: "351:7"
-    xp-granted:
-        - storm 1 
-        - ocean 1 
-    memory: 1
-    items:
-        - storm_amalgam 4-6
-        - bucket 3
-    cost:
-        - wool 8
-        - water_bucket 3
-        - mana 20
-    modifiers:
-        - outside required
-        - storm required
-    str-cost: "During a storm, mix three water buckets and 8 wool, using 20 mana in the process."
-    str-modifier-failed: "You must be in a storm cast this spell."
-    description: |
-            &7Storm Amalgam: 1 Memory Storm Spell
-            Concentrates some storm amalgam.
