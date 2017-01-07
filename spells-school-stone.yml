@@ -93,6 +93,8 @@ magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 257
+    bindable: false
+    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
@@ -113,6 +115,8 @@ cutter_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 270
+    bindable: false
+    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
@@ -131,7 +135,10 @@ cutter_pickaxe:
 masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
+    cast-item: stone_grimoire
     spell-icon: IRON_SPADE
+    bindable: false
+    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
