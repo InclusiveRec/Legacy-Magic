@@ -17,7 +17,7 @@ lore_of_dragons:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - dragon 1 
+        - dragon 1 
     cost:
         - book 1
         - levels 30
@@ -88,7 +88,8 @@ gate:
     spell-icon: 358
     always-granted: true
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 30
     cooldown: 60
@@ -116,7 +117,8 @@ recall:
     spell-icon: bed
     memory: 7
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 50
     cooldown: 120
@@ -143,14 +145,12 @@ summon_helper:
     name: summon
     spell-icon: 358
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 60
         - emerald_block 1
     memory: 7
-    prerequisites:
-        - gate
-        - recall
     cooldown: 120
     shared-cooldowns:
         - gate 30
@@ -160,6 +160,9 @@ summon_helper:
     require-acceptance: true
     require-exact-name: false
     accept-command: "accept"
+    modifiers:
+        - magicxpabove dragon:250 required
+    str-modifier-failed: "You need 250 Dragon MagicXP to cast this spell. Do /magicxp"
     str-cost: "60 mana and an emerald blocks"
     str-summon-accepted: "You have been summoned."
     str-summon-expired: "The summon has expired."
