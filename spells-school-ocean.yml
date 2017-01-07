@@ -41,6 +41,8 @@ lore_of_oceans:
         - book 1
         - prismarine_crystals 3
     memory: 10
+    allow-command-casting: false
+    bindable: false
     items:
         - water_grimoire
     modifiers:
@@ -61,9 +63,8 @@ hydro_focus:
     cost:
         - levels 10
         - prismarine_crystals 6
-    prerequisites:
-        - scroll
-        - geyser
+    allow-command-casting: false
+    bindable: false
     memory: 5
     items:
         - water_focus
@@ -80,15 +81,14 @@ dowsing_rod:
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 5
         - prismarine_crystals 3
         - stick 1
-    prerequisites:
-        - scroll
-        - water
+    allow-command-casting: false
+    bindable: false
     memory: 2
     items:
         - water_rod
@@ -109,8 +109,8 @@ gills:
     cast-item: water_rod,stick
     spell-icon: gold_helmet
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - mana 50
         - sugar_cane 1
@@ -134,10 +134,11 @@ water:
     cast-item: water_rod,stick
     spell-icon: water_bucket
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
+        - stone -1 
     cost:
-       - mana 10
+        - mana 10
     cooldown: 120
     memory: 1
     apply-physics: true
@@ -216,13 +217,13 @@ geyser:
     description: |
         &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
-watersee:
+watersee: #Needs better description
     enabled: false
     permission-name: ocean
     spell-class: ".PassiveSpell"
     xp-granted:
-      - ocean 1 
-      - shadow -1 
+        - ocean 1 
+        - shadow -1 
     cooldown: 40
     triggers: 
         - stopsneak
@@ -230,7 +231,7 @@ watersee:
     spells:
         - watersee_effect
     modifiers:
-      - inblock 8,9 required
+        - inblock 8,9 required
     str-cost: "Night vision needs 120 mana!"
     str-cast: "Night vision for you!"
     str-cast-self: "Night vision! Yay!"
