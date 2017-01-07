@@ -367,6 +367,28 @@ warmth:
     cast-item: fire_staff
     prerequisites:
         - fiery_grimoire
+extinguish:
+    permission-name: fire 
+    spell-class: ".targeted.ReplaceSpell"
+    xp-granted:
+      - fire -1 
+    cast-item: fire_staff
+    cost:
+        - mana 10
+        - flame_concotion 2
+    memory: 5
+    radius-down: 2
+    radius-horiz: 2
+    radius-up: 2
+    range: 8
+    replace-blocks:
+        - fire
+    replace-with:
+        - air
+    str-cost: "10 mana and 2 flame_concotion."
+    bindable: false
+    description: |
+            &rextinguish Fire   5 Memory fire Spell.
 
     ###################
     # Advanced spells #
