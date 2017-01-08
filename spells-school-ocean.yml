@@ -56,7 +56,7 @@ lore_of_oceans:
     str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
-                Create a grimoire of Hydromantic lore.
+              Create a grimoire of Hydromantic lore.
 ocean_amalgam:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
