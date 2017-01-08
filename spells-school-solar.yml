@@ -450,23 +450,24 @@ solar_guard:
 
 populate:
     permission-name: solar
-    spell-class: ".targeted.SpawnMonsterSpell"
+    spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: emerald
     xp-granted:
       - solar 1
       - death -1 
-    memory: 6
     cost:
         - mana 20
-        - 388 1
-    entity-type: villager
+        - 133 1
+    items:
+        - 383:120 1
+    memory: 6
     range: 10
-    str-cast-self: "You summon a villager."
-    str-cost: "20 mana and an emerald."
+    str-cast-self: "You gain a villager egg."
+    str-cost: "20 mana and an emerald block."
     description: |
         &rPopulate   6 Memory   Solar Spell
-        &3Spawns a random villager.
+        &3Gives a Villager Egg.
     effects:
         spit:
             position: line
