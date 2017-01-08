@@ -56,7 +56,7 @@ lore_of_oceans:
     str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
-            Create a grimoire of Hydromantic lore.
+                Create a grimoire of Hydromantic lore.
 ocean_amalgam:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
@@ -64,23 +64,23 @@ ocean_amalgam:
     spell-icon: "351:12"
     xp-granted:
         - ocean 1
-    memory: 1
-    items:
-        - ocean_amalgam 4-6
-        - bucket 3
     cost:
         - mana 20
         - storm_amalgam 2
         - 409 2
+    memory: 1
+    items:
+        - ocean_amalgam 4-6
+        - bucket 3
     modifiers:
         - inblock 9 required
         - biome DEEP_OCEAN required
         - elevationbelow 55 required
+    str-modifier-failed: "Swim under the oceanto cast this spell."
+    str-cost: "Mix 2 Storm amalgam with 2 Prismarine Shards, using 20 mana in the process."
     description: |
             &eOcean Amalgam: 1 Memory Ocean Spell
             Mixes some Ocean Amalgam.
-    str-modifier-failed: "Swim under the oceanto cast this spell."
-    str-cost: "Mix 2 Storm amalgam with 2 Prismarine Shards, using 20 mana in the process."
 hydro_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
