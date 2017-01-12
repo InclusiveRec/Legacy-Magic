@@ -178,7 +178,6 @@ warhorse:
 
 stunning_blow:
     permission-name: knight
-    enabled: false 
     spell-class: ".PassiveSpell"
     xp-granted:
         - dragon -1
@@ -187,9 +186,10 @@ stunning_blow:
     spells:
         - cripple
     triggers:
-        - givedamage "267|&8Broadsword","267|&eElvensteel Blade"
+        - givedamage 
     modifiers:
         - chance 4 required
+        - holding "267|&8Broadsword" required
     str-cast-self: "You lash out at %t with your blade, briefly stunning them."
     str-cast-target: "You have been stunned by %c's attack!"
     effects:
