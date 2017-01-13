@@ -183,14 +183,14 @@ woodland_amalgam:
         - solar 1 
         - ocean -1
     cost:
-        - mana 5
+        - mana 25
         - 39 1        # 1 brown mushroom
         - 37 1        # 1 yellow flowers
         - 38 1        # 1 red flower
     memory: 1
     items:
       - forest_amalgam 2-4
-    str-cost: "5 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
+    str-cost: "25 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
     description: |
             &2Herbal Amalgam: 1 Memory Forest Spell
             Prepare a woodland amalgam.
@@ -233,7 +233,7 @@ forage:
         - holding "359|&2Magic Sickle" power 2.5
         - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,JUNGLE_HILLS,JUNGLE_EDGE required
         - elevationabove 62 required
-    str-cost: "10 mana and 6 seeds."
+    str-cost: "30 mana and 6 seeds."
     str-modifier-failed: "This is not good foraging terrain."
     str-on-cooldown: "Rummage..."
     description: |
@@ -263,7 +263,7 @@ lifewalk:
     use-cost:
         - forest_amalgam 1
     use-cost-interval: 10
-    str-cost: "10 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
+    str-cost: "30 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
     str-cast-self: "Flowers spring up in your footsteps."
     str-fade: "Your steps no longer cause flowers to grow."
     description: |
@@ -284,7 +284,7 @@ mulch:
     memory: 3
     items:
         - "351:15 8-10"
-    str-cost: "5 mana and 12 blades of grass."
+    str-cost: "30 mana and 12 blades of grass."
     str-cast-self: "You cut some grass into mulch."
     description: |
             &2Mulch: 3 Memory Forest spell
@@ -352,7 +352,7 @@ haste:
         - knight 1
         - ocean -1
     cost:
-        - mana 60
+        - mana 40
     memory: 3
     boost-duration: 300
     duration: 60
@@ -361,7 +361,7 @@ haste:
         - holding "280|&2Oak wand" power 2
     str-cast-others: "%a gains unnatural speed!"
     str-cast-self: "You gain unnatural speed!"
-    str-cost: "20 mana."
+    str-cost: "40 mana."
     str-fade: "You lose your unnatural speed."
     description: |
         &rHaste: 3 Memory Forest Spell
@@ -390,7 +390,7 @@ leap:
         - forest 1
         - ocean -1
     cost:
-        - mana 60
+        - mana 40
     cooldown: 1.8
     memory: 3
     cancel-damage: true
@@ -399,7 +399,7 @@ leap:
     modifiers:
         - holding "280|&2Oak wand" power 2
         - wearing 443 power .34
-    str-cost: "10 mana."
+    str-cost: "40 mana."
     str-cast-self: "You leap forward!"
     str-cast-others: "%a leaps forward!"
     str-on-cooldown: "You are tensing your muscles..."
@@ -429,7 +429,7 @@ safefall:
         - mana 15
     use-cost-interval: 1
     str-cast-self: "You feel lighter."
-    str-cost: "30 mana, plus 15 mana per fall."
+    str-cost: "40 mana, plus 15 mana per fall."
     str-fade: "Your normal weight returns."
     description: |
         &2Safefall: 1 Memory Forest Spell
@@ -456,7 +456,7 @@ entangle:
         - getvined
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "12 mana and 1 woodland amalgam."
+    str-cost: "40 mana and 1 woodland amalgam."
     str-on-cooldown: ""
     description:  |
             &2Entangle:  4 Memory Forest Spell
@@ -483,7 +483,7 @@ hedge:
     wall-width: 6
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "15 mana and 1 woodland amalgam."
+    str-cost: "30 mana and 1 woodland amalgam."
     str-no-target: "You cannot create a hedge there."
     description: |
             &2Hedge: 5 Memory Forest Spell
