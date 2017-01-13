@@ -215,7 +215,7 @@ forage:
         - solar 1 
         - ocean -1
     cost:
-        - mana 10
+        - mana 30
         - seeds 6
     cooldown: 0.5
     memory: 4
@@ -256,7 +256,7 @@ lifewalk:
         - death -1 
         - ocean -1
     cost:
-        - mana 10
+        - mana 30
         - forest_amalgam 2
     memory: 2
     bindable: false
@@ -278,7 +278,7 @@ mulch:
         - forest 1
         - solar 1 
     cost:
-        - mana 5
+        - mana 30
         - "31:1 12"
     bindable: false
     memory: 3
@@ -321,7 +321,7 @@ stalking:
         - forest 1
         - shadow 1 
     cost:
-        - mana 10
+        - mana 30
     cooldown: 20
     memory: 2
     send-failure-messages: true
@@ -352,7 +352,7 @@ haste:
         - knight 1
         - ocean -1
     cost:
-        - mana 20
+        - mana 60
     memory: 3
     boost-duration: 300
     duration: 60
@@ -390,7 +390,7 @@ leap:
         - forest 1
         - ocean -1
     cost:
-        - mana 10
+        - mana 60
     cooldown: 1.8
     memory: 3
     cancel-damage: true
@@ -418,7 +418,7 @@ safefall:
     xp-granted:
         - forest 1
     cost:
-        - mana 30
+        - mana 40
     cooldown: 3
     memory: 1
     damage-causes:
@@ -444,7 +444,7 @@ entangle:
         - forest 1
         - ocean -1
     cost:
-        - mana 12
+        - mana 40
         - forest_amalgam 1
     cooldown: 0.2
     memory: 4
@@ -470,7 +470,7 @@ hedge:
         - forest 1
         - ocean -1
     cost:
-        - mana 15
+        - mana 30
         - forest_amalgam 1
     cooldown: 4
     memory: 5
@@ -522,7 +522,7 @@ fang:
 
 
 
-rend:
+rend: #Needs costs
     permission-name: forest
     spell-class: ".TargetedMultiSpell"
     cast-item: wolf_fang
