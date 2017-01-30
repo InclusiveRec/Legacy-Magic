@@ -57,7 +57,8 @@ stormhammer:
     cast-item: storm_grimoire
     spell-icon: diamond_axe
     bindable: false
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     xp-granted:
       - storm 1
     cost:
@@ -190,7 +191,7 @@ lightning:
     target-players: true
     modifiers:
         - outside required
-        - storm cooldown 0.3
+        - storm required
         - holding "279|&9Stormhammer" power 2.5
     description: |
         &rLightning   3 Memory   Storm School
@@ -201,42 +202,41 @@ lightning:
     str-cast-others: "%a calls down lightning."
     str-on-cooldown: ""
     str-modifier-failed: You can only target areas outside.
-stormy:
+storm:
     permission-name: storm
     spell-class: ".instant.RitualSpell"
-    cast-item: stormhammer
-    bindable: false
-    allow-command-casting: false
-    xp-granted:
-        - storm 1 
-        - solar -1 
-        - ocean 1 
-        - fire -1 
-    cost:
-        - mana 80
-        - storm_amalgam 3
     cooldown: 300
-    memory: 8
-    always-activate: true
-    charge-reagents-immediately: true
-    need-spell-to-participate: false
-    req-participants: 2
+    cast-item: storm_grimoire
     ritual-duration: 400
+    cost:
+        - mana 100
+        - 264 1
+    memory: 8
+    str-cost: 100 mana and a diamond.
     spell: stormy-helper
+    req-participants: 2
+    need-spell-to-participate: false
     modifiers:
         - outside required
-    str-cast-others: "%a glows with energy and they hurl their hands upward.  The energy courses upward to pierce the clouds!"
-    str-cast-others: "%a has begun a ritual to summon rain.  Right-click to participate."
-    str-cast-self: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
-    str-cost: "80 mana and 3 storm amalgam to channel the power."
-    str-modifier-failed: You must have a view of the sky to cast this spell.
-    str-ritual-interrupted: You are not able not strong enough to summon the storm and your ingredients are consumed!
-    str-ritual-joined: You spread a fleece mat before you and stand on it.  Reaching out to the skies, you begin to call the storm...
-    str-ritual-success: Ripples of electricity shoot through you and to the sky, which cracks and lets forth its waters!
+        - inblock 171 required
+    charge-reagents-immediately: true
+    always-activate: true
     description: |
         &rStorm   8 Memory   Storm School
         &3Harnessing the air's latent electrical energy, the mage calls forth a powerful &9storm&3.
-        All &9storm&3 elemental spells will be empowered during a storm, natural or conjured.
+    str-cast-self: "You stand upon the mat, grimoire in one hand and a diamond in the other, close your eyes, and concentrate."
+    str-cast-others: "%a has begun a ritual to summon rain.  Right-click to participate."
+    str-ritual-interrupted: "The diamond melts and drips from your hand.  The ritual has failed."
+    str-ritual-joined: "You reach forward, joining hands with %a around the outstretched diamond, and a ripple of energy passes between your hands."
+    str-ritual-success: "The diamond shatters between your hands into a spray of ice."
+    str-modifier-failed: To start the ritual, you must stand on a carpet with a clear view of the sky.
+    effects:
+      charging:
+        position: caster
+        effect: sound
+        sound: ambient.weather.thunder
+        volume: 0.4
+        pitch: 0.5
 windwalk:
     permission-name: storm
     spell-class: ".buff.WindwalkSpell"
