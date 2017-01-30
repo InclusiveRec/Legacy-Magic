@@ -202,11 +202,13 @@ lightning:
     str-cast-others: "%a calls down lightning."
     str-on-cooldown: ""
     str-modifier-failed: You can only target areas outside.
-storm:
+stormy:
     permission-name: storm
     spell-class: ".instant.RitualSpell"
     cooldown: 300
     cast-item: storm_grimoire
+    require-cast-item-on-command: true
+    allow-command-casting: true
     ritual-duration: 400
     cost:
         - mana 100
