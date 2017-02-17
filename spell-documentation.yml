@@ -1,12 +1,12 @@
 predefined-items:
     server_manual:
         type: "written_book"
-        title: "Galdur"
+        title: "Hakken"
         author: "Inclusive Recreation"
         pages:
             - |
 
-              &l         Galdur
+              &l         Hakken
 
                        &rA Guide
 
@@ -17,7 +17,7 @@ predefined-items:
 
 
 
-                       &oSixth edition
+                       &oFirst edition
             -  |
               &lTable of Contents
 
@@ -30,32 +30,33 @@ predefined-items:
 
 
 
-              Also be sure to visit:
-              inclusiverec.enjin.com
+              
+              
+              
             - |
               &nI.  Welcome
 
-              &r  Welcome to &oGaldur&r, a world on the Inclusive Recreation program's Minecraft server.  It might be a little different from servers you've played on before, so this guide is to help you get started.
+              &r  Welcome to &oHakken&r, a world on the Inclusive Recreation program's Minecraft server.  It might be a little different from servers you've played on before, so this guide is to help you get started.
             - |
               &nII.  Towns
               
               &r  If you wish, you can set off on your own into the wilderness to establish your home.  However, you may wish to join many of the server's players in one of the server's towns.
-            - When you first join the server, you will start off in the town of Sunfield.  Sunfield offers protections from monsters, pvp, fire spread and explosions.
+            - When you first join the server, you will start off in a settlement.  Cities offer protections from monsters, pvp, fire spread and explosions.
             - In time, you may wish to resettle yourself in a different part of town, or in another town entirely.  If you find four other players to join you, you can even start your own town.
             - They are also a good place to engage in trade, joining craftspeople and merchants in the server economy.  You can safely travel to other towns by riding a dragon.
             - |
               &nIII.  The Economy
 
-              &r  On &oGaldur, &rcommerce is carried out with an emerald currency.  Gaining emeralds will let you buy items, supplies, and magic spells.
-            - There are some useful tools for managing your treasure.  If you place a sign on a chest with &o[Vault] &ron the first line, the server will use it to store your emeralds.
+              &r  On &oHakken, &rcommerce is carried out with an diamond currency.  Gaining diamonds will let you buy items, supplies, and magic spells.
+            - There are some useful tools for managing your treasure.  If you place a sign on a chest with &o[Vault] &ron the first line, the server will use it to store your riches.
             - |
-                The following self-explanatory commands can be used to measure and manipulate your emeralds:
+                The following self-explanatory commands can be used to measure and manipulate your riches:
 
                 /balance or /money
                 /money pay
                 /money deposit
                 /money withdraw
-            - You can gain emeralds by mining, selling Claim Blocks, or selling things to merchants.  If you want to start a shop of your own, you can hire a villager or get what you need at the marketplace in Sunfield. Then follow the ingame instructions.
+            - You can gain diamonds by mining, selling Claim Blocks, or from other residents.  If you want to start a shop of your own, you can hire a villager. Then follow the ingame instructions.
             - |
               &nIV.  Magic&r
               
@@ -69,7 +70,7 @@ predefined-items:
             - |
               &nV.  Roleplaying&r
 
-                &oGaldur &ris part of a roleplaying server.  This means that the character a person plays as and the person themself are seperate identities.  You can be a hero or villain, or anyone else you can imagine.
+                &oHakken &ris part of a roleplaying server.  This means that the character a person plays as and the person themself are seperate identities.  You can be a hero or villain, or anyone else you can imagine.
             - The important thing to remember about roleplaying is that it can only work when everyone is glad to participate.  You can have a fight or a war, but only if both sides agree.  Make sure you respect others' boundaries, so it can be fun for everyone.
             - There are a few things to keep in mind when you are roleplaying.  These come in various forms of symbols that you use.
             - Brackets "[]" are used to differentiate what your character is saying and what you are saying.  So your character might say "I hate you." but you might say [This is fun.]
@@ -83,6 +84,7 @@ manual:
     spell-icon: 387
     cost:
       - mana 10
+      - writable_book 1
     add-to-inventory: true
     always-granted: true
     items:
@@ -90,7 +92,7 @@ manual:
     str-cast-self: |
         The quill rises in the air, moves quickly over
         the rapidly flipping pages, and pens a guide
-        to the magical world of Galdur.
+        to the magical world of Hakken.
     str-cost: "10 mana, and a book and quill."
     description: |
         &rManual   -   Arcane Art
