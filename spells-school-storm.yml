@@ -202,7 +202,7 @@ lightning:
     str-cast-others: "%a calls down lightning."
     str-on-cooldown: ""
     str-modifier-failed: You can only target areas outside.
-stormy:
+storm:
     permission-name: storm
     spell-class: ".instant.RitualSpell"
     cooldown: 300
@@ -221,6 +221,7 @@ stormy:
     modifiers:
         - outside required
         - inblock 171 required
+        - magicxpabove storm:500 required
     charge-reagents-immediately: true
     always-activate: true
     description: |
