@@ -24,7 +24,12 @@ predefined-items:
             - "of a storm is contained"
             - "within this amalgam."
             
- # Item creation spells
+ 
+#############################
+#       The Grimoire        #
+#############################
+
+# Creating the Grimoire
  
 lore_of_storms:
     spell-class: ".instant.ConjureSpell"
@@ -50,6 +55,11 @@ lore_of_storms:
             &9Lore of Storms: Storm Masters' Spell
             Creates a Storm grimoire.
 
+#############################
+#                           #
+#   Item creation spells    #
+#                           #
+#############################
 
 stormhammer:
     permission-name: storm
@@ -63,11 +73,9 @@ stormhammer:
       - storm 1
     cost:
         - diamond 3
+        - mana 100
         - levels 10
-        - snow 1
-    prerequisites:
-        - scroll
-        - lightning
+        - storm_amalgam 1
     memory: 5
     items:
         - stormhammer 1
@@ -75,7 +83,7 @@ stormhammer:
         - magicxpabove storm:500 required
     str-modifier-failed: "You need 500 Storm MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You create a stormhammer."
-    str-cost: "3 diamonds, 10 levels, and a snow block."
+    str-cost: "3 diamonds, 10 levels, 100 mana, and a storm amalgam."
     description: |
         &rStormrod   5 Memory   Storm School
         &3You craft a storm rod.
@@ -117,6 +125,7 @@ freeze:
     cast-item: water_focus,stick
     spell-icon: snow_ball
     xp-granted:
+        - ocean 1 
         - storm 1 
         - solar -1  
     cost:
@@ -139,7 +148,7 @@ freeze:
     str-cost: "15 mana and a snowball."
     str-on-cooldown: ""
     description: |
-        &1Freeze:  4 Memory Water Spell
+        &1Freeze:  4 Memory Storm Spell
         Blast forth a flurry of icy shards which damage and slow all in their path.
 gust:
     permission-name: storm
@@ -210,6 +219,10 @@ storm:
     require-cast-item-on-command: true
     allow-command-casting: true
     ritual-duration: 400
+    xp-granted:
+        - ocean 1 
+        - solar -1 
+        - storm 1 
     cost:
         - mana 100
         - 264 1
@@ -246,7 +259,6 @@ windwalk:
     cast-item: stormhammer
     spell-icon: diamond_boots
     xp-granted:
-        - ocean -1 
         - solar -1 
         - storm 1 
     cost:
