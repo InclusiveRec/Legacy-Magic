@@ -375,4 +375,4 @@ spellbook:
     description: |
         &rSpellbook   -   Cantrip
         &3Create a spellbook that teaches a spell. 
-        Requires the bind, unbind, scroll, and tome spells.
+        Requires the bind, unbind, scroll, and tome spells. 
