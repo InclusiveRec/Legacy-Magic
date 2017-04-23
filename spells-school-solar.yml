@@ -25,7 +25,7 @@ predefined-items:
     # Defensive casting
 
     sun_staff:
-        type: 369
+        type: 294
         name: "&eSolar Staff"
         lore:
           - "A golden staff,"
@@ -47,7 +47,8 @@ lore_of_the_sun:
     xp-granted:
         - solar 1
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     cost:
         - levels 30
         - book 1
@@ -73,8 +74,10 @@ solar_staff:
     xp-granted:
         - solar 1
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     cost:
+        - mana 100
         - levels 10
         - gold_ingot 1
         - sun_amalgam 1
@@ -85,7 +88,7 @@ solar_staff:
         - magicxpabove solar:500 required
     str-modifier-failed: "You need 500 Solar MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "With a flash, the gold shapes itself into a shining golden staff."
-    str-cost: "100 mana, 2 gold ingots, 2 sticks, and 6 solar amalgam."
+    str-cost: "100 mana, a gold ingot, 10 levels, and a solar amalgam."
     description: |
         &eSolar Staff  -   5 Memory Solar Spell
         Infuse your wand with the life-giving energy of the sun.
@@ -99,6 +102,7 @@ solar_staff:
 # Bonus spells
 
 dawnrite:
+    enabled: false
     permission-name: solar
     spell-class: ".instant.RitualSpell"
     cast-item: sun_staff
@@ -132,29 +136,32 @@ dawnrite:
 skycalm:
     permission-name: solar
     spell-class: ".instant.RitualSpell"
-    cast-item: sun_staff
+    cast-item: sun_grimoire
+    require-cast-item-on-command: true
+    allow-command-casting: true
     xp-granted:
         - solar 1
         - storm -1 
     cost:
-        - mana 80
-        - sun_amalgam 3
+        - mana 100
+        - 266 3
     cooldown: 300
     memory: 8
     charge-reagents-immediately: true
-    need-spell-to-participate: true
+    need-spell-to-participate: false
     req-participants: 2
     ritual-duration: 400
     spell: sunny-helper
     modifiers:
+        - outside required
         - storm required
         - magicxpabove solar:500 required
     str-cast-others: "%a has begun a ritual to summon clear skies.  Right-click to participate."
     str-cast-self: "You begin to calm the skies..."
-    str-cost: "80 mana and 3 solar amalgam."
+    str-cost: "100 mana and 3 gold ingots."
     str-modifier-failed: "The sky is already clear! You need 500 Solar MagicXP to cast this spell. Do /magicxp "
     str-ritual-failed: "You are not able to dispel the storm, and your ingredients are consumed!"
-    str-ritual-joined: "You begin to calm the skies..."
+    str-ritual-joined: "You reach forward, joining hands with %a, and a ripple of energy passes between your hands as you begin to calm the skies."
     str-ritual-success: "The weather clears!"
     description: |
             &eSkycalm: 8 Memory Solar Spell
@@ -244,7 +251,7 @@ bloom:
 # Solar staff
 
 banish:
-    enabled: true
+    enabled: false
     permission-name: solar
     spell-class: ".instant.PurgeSpell"
     cast-item: sun_staff
@@ -330,7 +337,7 @@ heal:
     spell-class: ".targeted.HealSpell"
     cast-item: sun_staff
     spell-icon: red_rose
-    can-target: players,wolf,cat,horse
+    can-target: players,wolf,cat,horse,pig,iron_golem
     xp-granted:
       - solar 1
       - knight 1
@@ -395,10 +402,13 @@ solar_ray:
     xp-granted:
       - solar -1 
     memory: 4
+    check-plugins: true
     cost:
       - mana 40
       - sun_amalgam 6
     bindable: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     cooldown: 5
     hit-players: true
     max-distance: 120
@@ -429,11 +439,11 @@ solar_guard:
       - death -1
       - solar -1  
     memory: 7
-    prerequisites:
-        - solar_ray
     cost:
       - mana 40
       - sun_amalgam 6
+    modifiers:
+        - magicxpabove solar:5000 required
     spells:
         - solar_ray
     triggers:
@@ -443,7 +453,6 @@ solar_guard:
     description: |
             &eSolar Guard: 7 Memory Solar Spell
             Passively protect yourself with solar energy, forcing foes back and disorienting them.
-            Requires the &eSolar Ray&3 spell.
 
 
 # Settlement Magic
