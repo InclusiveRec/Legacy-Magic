@@ -31,7 +31,7 @@ predefined-items:
          name: "&4Fire Amalgam"
          lore:
             - "The Hottest Substance"
-            - "known to the realm"
+            - "known to Galdur"
             - "Used to harness the power of the Center Core"
 
 
@@ -55,7 +55,8 @@ lore_of_flame:
     modifiers:
         - magicxpabove fire:500 required
     str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     str-cost: "A book, 30 levels, and five blaze rods."
     description: |
@@ -74,7 +75,8 @@ fiery_staff:
         - blaze_rod 1
     memory: 5
     add-to-inventory: false
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - fire_staff 1
@@ -84,7 +86,7 @@ fiery_staff:
     str-cast-self: "You create a fiery staff."
     str-cost: "A blaze rod and 10 levels."
     description: |
-            Firestaff:  10 Memory   Fire Spell.
+            Firestaff:  5 Memory   Fire Spell.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
     
@@ -140,7 +142,8 @@ fireproof:
     description: |
         &2Fireproof: 3 Memory Fire Spell
         Apply magma cream to protect yourself from fire and lava.
-firework:
+
+fireworks:
     enabled: true
     permission-name: cantrip
     spell-class: ".instant.ParticleProjectileSpell"
@@ -151,7 +154,7 @@ firework:
     cost:
         - mana 10
     cooldown:  0
-    memory: 3
+    memory: 1
     spell: fireworkblast
     hit-air-at-end: true
     max-distance: 20
@@ -164,8 +167,8 @@ firework:
         - outside required
     str-cost:  "10 mana"
     despription:  |
-        &rFirework: 3 Memory Fire Spell
-        &3Shoots a firework from fingertips.
+        &rFireworks: 1 Memory Fire Spell
+        &3Shoot fireworks from fingertips.
     effects:
         - caster sound fireworks.launch 1.0 1.0
 magmawall:
