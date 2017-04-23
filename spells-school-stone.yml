@@ -73,6 +73,9 @@ lore_of_the_rock:
         - levels 30
         - obsidian 1
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - stone_grimoire
     modifiers:
@@ -93,8 +96,9 @@ magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 257
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
@@ -115,8 +119,9 @@ cutter_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 270
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
@@ -137,8 +142,9 @@ masons_trowel:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: IRON_SPADE
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     xp-granted:
         - stone 1 
     cost:
