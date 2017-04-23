@@ -93,7 +93,8 @@ lore_of_knighthood:
         - book 1
         - iron_block 3
     memory: 10
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - knight_grimoire 1
@@ -110,7 +111,8 @@ knightly_saddle:
         - levels 15
         - saddle 1
     memory: 5
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - knight_saddle 1
@@ -155,8 +157,9 @@ warhorse:
         - mana 20
     memory: 5
     armor: iron_horse_armor
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     color: BLACK
     style: WHITE
     variant: HORSE
@@ -213,6 +216,8 @@ knight_harness:
         - mana 50
         - 42 1
     memory: 4
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     boots: knightly_sabatons
     can-cast-by-command: false
@@ -252,7 +257,7 @@ determination:
         - wearing "303|&8Hauberk" power 2
     spells:
         - second_wind
-    str-cost: "40 mana; 5 memory; must be wearing your knightly hardness."
+    str-cost: "40 mana; must be wearing your knightly hardness."
     description: "When near death, you find the strength to continue fighting."
     str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
     str-no-reagents:  "Your strength is failing you..."
@@ -270,7 +275,8 @@ experience: # For now - needs balancing and description
       - 351:4 1
       - mana 10
     memory: 3
-    can-cast-by-command: true
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
       - 384 3-5 # Exp Bottle
