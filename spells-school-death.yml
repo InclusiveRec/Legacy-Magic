@@ -49,6 +49,9 @@ lore_of_death:
         - 397 1 # a skull
         - bone 13
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - death_grimoire 1
     modifiers:
@@ -80,6 +83,9 @@ bone_carving:
         - health 4
         - levels 3
     memory: 4
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - death_wand 1
     modifiers:
@@ -113,6 +119,9 @@ stain_steel:
         - levels 6
         - health 4
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - death_knife 1
     modifiers:
@@ -131,8 +140,9 @@ bottle_soul:
         - 374 1
         - experience 10
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     spell-icon: 384
     spells:
         - xp_pot
@@ -163,7 +173,9 @@ sacrifice:
     cost:
         - health 6
     memory: 2
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     cooldown: 1
     mana: 50
@@ -187,7 +199,9 @@ blood_for_blood:
         - death 1  
         - solar -1 
     memory: 7
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     use-cost:
         - health 4
@@ -220,7 +234,9 @@ drain:
     cost:
         - mana 10
     memory: 2
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     cooldown: 0.2
     give-amt: 1
@@ -269,7 +285,9 @@ rupture:
     cooldown: 10
     memory: 5
     backfire-chance: 3
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     explosion-size: 4
     interrupt-on-move: false
@@ -296,7 +314,9 @@ necrotic_claw: #Needs strings and description
         - mana 40
     cooldown: 20
     memory: 6
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     range: 2
     spells:
@@ -321,7 +341,9 @@ deathray: #Needs strings and description
     cost:
         - mana 50
     memory: 7
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     hit-ground: false
     hit-non-players: true
@@ -352,6 +374,9 @@ awakening:
         - bone 2
     cooldown: 10 
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     block-type: skull
     cap-per-player: 3
     interval: 20
@@ -382,6 +407,9 @@ revenant:
         - bone 2
     cooldown: 10
     memory: 6
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     cancel-on-death: true
     duration: 60
     mob-chances:
@@ -414,7 +442,9 @@ spite:
         - 375 6
     cooldown: 60
     memory: 5
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     fail-if-no-targets: false
     horizontal-radius: 4
