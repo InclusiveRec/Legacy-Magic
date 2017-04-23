@@ -28,7 +28,8 @@ lore_of_shadow:
         - diamond_block 1
         - ink_sack 6
     memory: 10
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - shadow_grimoire 1
@@ -155,6 +156,7 @@ dim:
     str-cast-self: "You put out a light."
     str-no-target: "No target!"
 duskrite:
+    enabled: false
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
     xp-granted:
