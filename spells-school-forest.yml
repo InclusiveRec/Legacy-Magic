@@ -84,7 +84,8 @@ lore_of_the_woods:
         - sapling 1
         - forest_amalgam 12
     memory: 10
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
       - forest_grimoire
@@ -111,7 +112,8 @@ gardener:
         - levels 5
         - shears 1
     memory: 2
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - forest_sickle
@@ -140,7 +142,8 @@ woodland_wand:
         - levels 10
         - "6:0 1"
     memory: 5
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - forest_wand
@@ -151,7 +154,7 @@ woodland_wand:
 hunting_knife:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: book
+    cast-item: forest_grimoire
     xp-granted:
         - death 1 
         - forest 1
@@ -161,6 +164,8 @@ hunting_knife:
         - iron_sword 1
         - levels 5
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
     items:
         - forest_sword 1
     modifiers:
@@ -183,14 +188,14 @@ woodland_amalgam:
         - solar 1 
         - ocean -1
     cost:
-        - mana 25
+        - mana 10
         - 39 1        # 1 brown mushroom
         - 37 1        # 1 yellow flowers
         - 38 1        # 1 red flower
     memory: 1
     items:
       - forest_amalgam 2-4
-    str-cost: "25 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
+    str-cost: "10 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
     description: |
             &2Herbal Amalgam: 1 Memory Forest Spell
             Prepare a woodland amalgam.
@@ -208,7 +213,7 @@ woodland_amalgam:
 forage:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: stick,forest_sickle
+    cast-item: forest_sickle
     spell-icon: apple
     xp-granted:
         - forest 1
@@ -256,14 +261,14 @@ lifewalk:
         - death -1 
         - ocean -1
     cost:
-        - mana 30
+        - mana 20
         - forest_amalgam 2
     memory: 2
     bindable: false
     use-cost:
         - forest_amalgam 1
     use-cost-interval: 10
-    str-cost: "30 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
+    str-cost: "20 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
     str-cast-self: "Flowers spring up in your footsteps."
     str-fade: "Your steps no longer cause flowers to grow."
     description: |
@@ -272,7 +277,7 @@ lifewalk:
 mulch:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: stick,forest_sickle
+    cast-item: forest_sickle
     spell-icon: "31:1"
     xp-granted:
         - forest 1
@@ -292,7 +297,7 @@ mulch:
 trapper:
     permission-name: forest
     spell-class: ".MultiSpell"
-    cast-item: stick,forest_sickle
+    cast-item: hunting_knife
     spell-icon: 420
     xp-granted:
         - forest 1
@@ -321,7 +326,7 @@ stalking:
         - forest 1
         - shadow 1 
     cost:
-        - mana 30
+        - mana 20
     cooldown: 20
     memory: 2
     send-failure-messages: true
@@ -352,7 +357,7 @@ haste:
         - knight 1
         - ocean -1
     cost:
-        - mana 40
+        - mana 20
     memory: 3
     boost-duration: 300
     duration: 60
@@ -361,7 +366,7 @@ haste:
         - holding "280|&2Oak wand" power 2
     str-cast-others: "%a gains unnatural speed!"
     str-cast-self: "You gain unnatural speed!"
-    str-cost: "40 mana."
+    str-cost: "20 mana."
     str-fade: "You lose your unnatural speed."
     description: |
         &rHaste: 3 Memory Forest Spell
@@ -390,7 +395,7 @@ leap:
         - forest 1
         - ocean -1
     cost:
-        - mana 40
+        - mana 20
     cooldown: 1.8
     memory: 3
     cancel-damage: true
@@ -399,7 +404,7 @@ leap:
     modifiers:
         - holding "280|&2Oak wand" power 2
         - wearing 443 power .34
-    str-cost: "40 mana."
+    str-cost: "20 mana."
     str-cast-self: "You leap forward!"
     str-cast-others: "%a leaps forward!"
     str-on-cooldown: "You are tensing your muscles..."
@@ -418,7 +423,8 @@ safefall:
     xp-granted:
         - forest 1
     cost:
-        - mana 40
+        - feather 1
+        - mana 10
     cooldown: 3
     memory: 1
     damage-causes:
@@ -427,9 +433,10 @@ safefall:
     num-uses: 5
     use-cost:
         - mana 15
+        - feather 1
     use-cost-interval: 1
     str-cast-self: "You feel lighter."
-    str-cost: "40 mana, plus 15 mana per fall."
+    str-cost: "10 mana and a feather, plus 15 mana and a feather per fall."
     str-fade: "Your normal weight returns."
     description: |
         &2Safefall: 1 Memory Forest Spell
@@ -510,6 +517,8 @@ fang:
         - forest_amalgam 3
         - levels 10
     memory: 2
+    require-cast-item-on-command: true
+    allow-command-casting: true
     items:
         - wolf_fang
     modifiers:
@@ -522,7 +531,7 @@ fang:
 
 
 
-rend: #Needs costs
+rend: 
     permission-name: forest
     spell-class: ".TargetedMultiSpell"
     cast-item: wolf_fang
@@ -530,9 +539,14 @@ rend: #Needs costs
     xp-granted:
         - forest 1
         - death 1 
+    cost:
+        - bone 6
+        - forest_amalgam 3
+        - mana 30
     memory: 2
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     check-plugins: true
     debug: true
     point-blank: true
@@ -626,7 +640,8 @@ claw:
         - levels 10
     memory: 2
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     items:
         - ocelot_claw
     modifiers:
@@ -651,13 +666,12 @@ ocelot:
     cost:
         - levels 20
         - bone 3
-    prerequisites:
-        - forage
     memory: 5
     cooldown: 60
     duration: 0
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     modifiers:
         - biome JUNGLE,JUNGLE_HILLS,JUNGLE_EDGE required
         - magicxpabove forest:500 required
@@ -667,5 +681,4 @@ ocelot:
     description: |
             &2Ocelot: 5 Memory Forest Spell
             Summons a Ocelot to accompany you.
-            Requires the forage spell.          
 
