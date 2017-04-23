@@ -24,24 +24,25 @@ predefined-items:
             - "the world's waters."
 
 #############################
-#                           #
-#   Item creation spells    #
-#                           #
+#       The Grimoire        #
 #############################
 
-lore_of_oceans:
+# Creating the Grimoire
+
+lore_of_hydromancy:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 30
         - book 1
         - prismarine_crystals 3
     memory: 10
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - water_grimoire
@@ -52,18 +53,26 @@ lore_of_oceans:
     description: |
             &1Lore of Water: Water Masters' Spell
             Create a grimoire of Hydromantic lore.
+ 
+#############################
+#                           #
+#   Item creation spells    #
+#                           #
+#############################
+ 
 hydro_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 10
         - prismarine_crystals 6
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     memory: 5
     items:
@@ -87,7 +96,8 @@ dowsing_rod:
         - levels 5
         - prismarine_crystals 3
         - stick 1
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     memory: 2
     items:
@@ -136,7 +146,8 @@ water:
     xp-granted:
         - ocean 1 
         - fire -1 
-        - stone -1 
+        - stone -1  
+        - storm 1 
     cost:
         - mana 10
     cooldown: 120
@@ -195,7 +206,8 @@ geyser:
     spell-icon: "38:1"
     xp-granted:
       - ocean 1 
-      - fire -1 
+      - fire -1  
+      - storm 1 
     cost:
         - mana 15
     cooldown: 3
@@ -217,6 +229,7 @@ geyser:
     description: |
         &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
+        
 watersee: #Needs better description
     enabled: false
     permission-name: ocean
