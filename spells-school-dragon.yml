@@ -24,6 +24,9 @@ lore_of_dragons:
         - diamond_block 1
         - dragon_egg 1
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - dragon_grimoire 1
     modifiers:
@@ -50,7 +53,9 @@ firebreathing:
     cost:
         - mana 10
     memory: 3
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     cooldown: 10
     check-plugins: true
     hit-non-players: true
@@ -97,6 +102,7 @@ gate:
         - summon_helper 120
         - recall 120
     can-cast-with-item: false
+    bindable: false
     execute-on-console-instead: true
     command-to-execute:
         - "settlement tp %a"
@@ -116,6 +122,7 @@ recall:
     cast-item: book
     spell-icon: bed
     memory: 7
+    bindable: false
     xp-granted:
         - dragon 1
         - knight -1
@@ -151,6 +158,7 @@ summon_helper:
         - mana 60
         - emerald_block 1
     memory: 7
+    bindable: false
     cooldown: 120
     shared-cooldowns:
         - gate 30
