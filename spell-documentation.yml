@@ -30,9 +30,8 @@ predefined-items:
 
 
 
-              
-              
-              
+              Also be sure to visit:
+              inclusiverec.enjin.com
             - |
               &nI.  Welcome
 
@@ -84,7 +83,7 @@ manual:
     spell-icon: 387
     cost:
       - mana 10
-      - writable_book 1
+      - 386 1
     add-to-inventory: true
     always-granted: true
     items:
