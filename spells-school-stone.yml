@@ -17,8 +17,8 @@ predefined-items:
           - "a powerful enchantment"
           - "of stone magic."
         enchants:
-          - "efficiency 5"
-          - "unbreaking 3"
+          - "dig_speed 5"
+          - "durability 3"
 
     stonecutter_pick:
         type: 270
@@ -28,8 +28,8 @@ predefined-items:
           - "stonecutters to cut through large"
           - "areas of stone and not much else."
         enchants:
-          - "efficiency 20"
-          - "unbreaking 10"
+          - "dig_speed 20"
+          - "durability 10"
 
     iron_trowel:
         name: "&8Mason's Trowel"
@@ -73,6 +73,9 @@ lore_of_the_rock:
         - levels 30
         - obsidian 1
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - stone_grimoire
     modifiers:
@@ -93,6 +96,9 @@ magic_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 257
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     xp-granted:
         - stone 1 
     cost:
@@ -113,6 +119,9 @@ cutter_pickaxe:
     spell-class: ".instant.ConjureSpell"
     cast-item: stone_grimoire
     spell-icon: 270
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     xp-granted:
         - stone 1 
     cost:
@@ -131,14 +140,16 @@ cutter_pickaxe:
 masons_trowel:
     permission-name: stone
     spell-class: ".instant.ConjureSpell"
+    cast-item: stone_grimoire
     spell-icon: IRON_SPADE
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     xp-granted:
         - stone 1 
     cost:
         - iron_spade 1
         - levels 5
-    prerequisites:
-        - scroll
     memory: 2
     items:
         - iron_trowel 1 
@@ -198,9 +209,6 @@ obsidian:
     spell-icon: IRON_SPADE
     bindable: false
     allow-command-casting: false
-    prerequisites:
-       - water
-       - lava
     range: 8
     radius-up: 2
     radius-down: 2
@@ -220,6 +228,9 @@ obsidian:
         - mortar 2
         - flame_amalgam 2
         - diamond 2
+    modifiers:
+        - magicxpabove stone:500 required
+    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
     description: |
             &rObsidian 5 Memory Stone Spell
             &3rCooling lava to obsidian.

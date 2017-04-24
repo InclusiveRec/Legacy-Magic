@@ -31,23 +31,26 @@
              - "ocean."
 
 #############################
-#                           #
-#   Item creation spells    #
-#                           #
+#       The Grimoire        #
 #############################
 
-lore_of_oceans:
+# Creating the Grimoire
+
+lore_of_hydromancy:
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: "enchanted_book"
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 30
         - book 1
         - prismarine_crystals 3
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - water_grimoire
     modifiers:
@@ -56,8 +59,18 @@ lore_of_oceans:
     str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
-              Create a grimoire of Hydromantic lore.
-ocean_amalgam:
+            Create a grimoire of Hydromantic lore.
+
+
+ 
+#############################
+#                           #
+#   Item creation spells    #
+#                           #
+#############################
+
+#Reagent               
+hydro_amalgam:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_rod
@@ -76,25 +89,28 @@ ocean_amalgam:
         - inblock 9 required
         - biome DEEP_OCEAN required
         - elevationbelow 55 required
-    str-modifier-failed: "Swim under the oceanto cast this spell."
+    str-modifier-failed: "Swim under the ocean to cast this spell."
     str-cost: "Mix 2 Storm amalgam with 2 Prismarine Shards, using 20 mana in the process."
     description: |
             &eOcean Amalgam: 1 Memory Ocean Spell
             Mixes some Ocean Amalgam.
+
+            
+#Cast items
 hydro_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 10
         - prismarine_crystals 6
-    prerequisites:
-        - scroll
-        - geyser
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     memory: 5
     items:
         - water_focus
@@ -111,15 +127,15 @@ dowsing_rod:
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - levels 5
         - prismarine_crystals 3
         - stick 1
-    prerequisites:
-        - scroll
-        - water
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     memory: 2
     items:
         - water_rod
@@ -140,8 +156,8 @@ gills:
     cast-item: water_rod,stick
     spell-icon: gold_helmet
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
     cost:
         - mana 50
         - sugar_cane 1
@@ -165,10 +181,12 @@ water:
     cast-item: water_rod,stick
     spell-icon: water_bucket
     xp-granted:
-      - ocean 1 
-      - fire -1 
+        - ocean 1 
+        - fire -1 
+        - stone -1  
+        - storm 1 
     cost:
-       - mana 10
+        - mana 10
     cooldown: 120
     memory: 1
     apply-physics: true
@@ -225,7 +243,8 @@ geyser:
     spell-icon: "38:1"
     xp-granted:
       - ocean 1 
-      - fire -1 
+      - fire -1  
+      - storm 1 
     cost:
         - mana 15
     cooldown: 3
@@ -247,13 +266,14 @@ geyser:
     description: |
         &rGeyser   4 Memory   Water School
         Create a water geyser at your enemy's feet.
-watersee:
+        
+watersee: #Needs better description
     enabled: false
     permission-name: ocean
     spell-class: ".PassiveSpell"
     xp-granted:
-      - ocean 1 
-      - shadow -1 
+        - ocean 1 
+        - shadow -1 
     cooldown: 40
     triggers: 
         - stopsneak
@@ -261,7 +281,7 @@ watersee:
     spells:
         - watersee_effect
     modifiers:
-      - inblock 8,9 required
+        - inblock 8,9 required
     str-cost: "Night vision needs 120 mana!"
     str-cast: "Night vision for you!"
     str-cast-self: "Night vision! Yay!"

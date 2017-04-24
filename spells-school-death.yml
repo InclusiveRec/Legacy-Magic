@@ -42,15 +42,18 @@ lore_of_death:
     cast-item: book
     spell-icon: 403
     xp-granted:
-      - death 1 
+        - death 1 
     cost:
         - book 1
         - levels 30
         - 397 1 # a skull
         - bone 13
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
-      - death_grimoire 1
+        - death_grimoire 1
     modifiers:
         - magicxpabove death:500 required
     str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
@@ -73,21 +76,21 @@ bone_carving:
     cast-item: death_grimoire
     spell-icon: bone
     xp-granted:
-      - death 1 
+        - death 1 
     cost:
-      - bone 1
-      - rotten_flesh 2
-      - health 4
-      - levels 3
-    prerequisites:
-      - blood_for_blood
-      - scroll
+        - bone 1
+        - rotten_flesh 2
+        - health 4
+        - levels 3
     memory: 4
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - death_wand 1
     modifiers:
-      - holding "403|&5Necronomicon" casttime 1 # seconds
-      - magicxpabove death:500 required
+        - holding "403|&5Necronomicon" casttime 1 # seconds
+        - magicxpabove death:500 required
     str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "The wand grows eerily cold to the touch.  The work is done."
     str-cost: "A bone, four rotten flesh, and ten levels."
@@ -108,43 +111,45 @@ stain_steel:
     cast-item: death_grimoire
     spell-icon: iron_sword
     xp-granted:
-      - death 1 
-      - stone 1 
+        - death 1 
+        - stone 1 
     cost:
-      - iron_sword 1
-      - rotten_flesh 3
-      - levels 6
-      - health 4
-    prerequisites:
-      - drain
-      - scroll
+        - iron_sword 1
+        - rotten_flesh 3
+        - levels 6
+        - health 4
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
-      - death_knife 1
+        - death_knife 1
     modifiers:
-      - magicxpabove death:500 required
-    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove death:500 required
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 MagicXP in Death and Knight to cast this spell. Do /magicxp"
 
 bottle_soul:
     permission-name: death
     spell-class: ".MultiSpell"
     cast-item: death_grimoire
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
-      - 374 1
-      - experience 10
-    prerequisites:
-      - drain
-      - scroll
+        - 374 1
+        - experience 10
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    can-cast-by-command: false
     spell-icon: 384
     spells:
-      - xp_pot
-      - idontfeelsogood
+        - xp_pot
+        - idontfeelsogood
+    modifiers:
+        - magicxpabove death:500 required
+    str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "This can't be good for your health..."
     str-cost: "A small glass bottle to contain the experience you wish to store."
     description: |
@@ -163,12 +168,14 @@ sacrifice:
     cast-item: bone,death_wand
     spell-icon: potion:8193
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
         - health 6
     memory: 2
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     cooldown: 1
     mana: 50
@@ -189,12 +196,12 @@ blood_for_blood:
     cast-item: bone, death_wand
     spell-icon: redstone
     xp-granted:
-      - death 1  
-      - solar -1 
-    prerequisites:
-        - sacrifice
+        - death 1  
+        - solar -1 
     memory: 7
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     use-cost:
         - health 4
@@ -204,6 +211,9 @@ blood_for_blood:
     use-cost-interval: 1
     cost:
         - health 2
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You have made a dark bargain..."
     str-cost: "2 hearts to cast, and 1 heart at each mana tick."
     str-fade: "Enough!"
@@ -219,12 +229,14 @@ drain:
     cast-item: bone, death_wand
     spell-icon: ghast_tear
     xp-granted:
-      - death 1 
-      - solar -1  
+        - death 1 
+        - solar -1  
     cost:
         - mana 10
     memory: 2
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     cooldown: 0.2
     give-amt: 1
@@ -264,8 +276,8 @@ rupture:
     cast-item: bone, death_wand
     spell-icon: 289
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
         - mana 15
         - 289 1
@@ -273,7 +285,9 @@ rupture:
     cooldown: 10
     memory: 5
     backfire-chance: 3
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     explosion-size: 4
     interrupt-on-move: false
@@ -288,21 +302,21 @@ rupture:
 
 #  Medium level: 6-10 memory
 
-necrotic_claw:
+necrotic_claw: #Needs strings and description
     permission-name: death
     spell-class: ".TargetedMultiSpell"
     cast-item: death_wand
     spell-icon: "367"
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
         - mana 40
     cooldown: 20
-    prerequisites:
-        - drain
-    memory: 5
-    allow-command-casting: false
+    memory: 6
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     range: 2
     spells:
@@ -312,21 +326,24 @@ necrotic_claw:
         - drain
         - DELAY 20
         - drain
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
 
-deathray:
+deathray: #Needs strings and description
     permission-name: death
     spell-class: ".instant.ParticleProjectileSpell"
     cast-item: death_wand
     spell-icon: "381"
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
-      - mana 50
-    prerequisites:
-      - rupture
+        - mana 50
     memory: 7
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     hit-ground: false
     hit-non-players: true
@@ -337,6 +354,9 @@ deathray:
     projectile-velocity: 20
     spell: pain
     tick-interval: 10
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
 
 # High level: 10+ memory
 
@@ -346,16 +366,25 @@ awakening:
     cast-item: death_grimoire
     spell-icon: "397:1"
     xp-granted:
-      - death 1  
-      - solar -1 
-    prerequisites:
-      - lore_of_death
+        - death 1  
+        - solar -1
+    cost:
+        - mana 45
+        - rotten_flesh 2
+        - bone 2
+    cooldown: 10 
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     block-type: skull
     cap-per-player: 3
     interval: 20
     spells:
-      - spawn_random
+        - spawn_random
+    modifiers:
+        - magicxpabove death:250 required
+    str-modifier-failed: "You need 250 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "You call upon the forces of darkness..."
     str-cast-others: "Undead creatures start clawing their way up through the ground..."
     description: |
@@ -370,14 +399,17 @@ revenant:
     cast-item: death_grimoire
     spell-icon: "383:54"
     xp-granted:
-      - death 1  
-      - solar -1 
+        - death 1  
+        - solar -1 
     cost:
         - mana 30
         - rotten_flesh 2
         - bone 2
     cooldown: 10
     memory: 6
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     cancel-on-death: true
     duration: 60
     mob-chances:
@@ -402,17 +434,17 @@ spite:
     cast-item: bone
     spell-icon: 375
     xp-granted:
-      - death 1 
-      - shadow 1 
-      - solar -1 
+        - death 1 
+        - shadow 1 
+        - solar -1 
     cost:
         - mana 60
         - 375 6
     cooldown: 60
-    prerequisites:
-      - blind # Shadow
     memory: 5
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     check-plugins: true
     fail-if-no-targets: false
     horizontal-radius: 4
@@ -424,6 +456,9 @@ spite:
     target-non-players: false
     target-players: true
     vertical-radius: 3
+    modifiers:
+        - magicxpabove shadow:250 required
+    str-modifier-failed: "You need 250 Shadow MagicXP to cast this spell. Do /magicxp"
     str-cost: "60 mana and six spider eyes."
     description: |
         &rSpite:   5 Memory   Death School

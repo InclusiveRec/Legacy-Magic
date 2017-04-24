@@ -17,13 +17,16 @@ lore_of_dragons:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - dragon 1 
+        - dragon 1 
     cost:
         - book 1
         - levels 30
         - diamond_block 1
         - dragon_egg 1
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - dragon_grimoire 1
     modifiers:
@@ -50,7 +53,9 @@ firebreathing:
     cost:
         - mana 10
     memory: 3
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     cooldown: 10
     check-plugins: true
     hit-non-players: true
@@ -88,7 +93,8 @@ gate:
     spell-icon: 358
     always-granted: true
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 30
     cooldown: 60
@@ -96,6 +102,7 @@ gate:
         - summon_helper 120
         - recall 120
     can-cast-with-item: false
+    bindable: false
     execute-on-console-instead: true
     command-to-execute:
         - "settlement tp %a"
@@ -115,8 +122,10 @@ recall:
     cast-item: book
     spell-icon: bed
     memory: 7
+    bindable: false
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 50
     cooldown: 120
@@ -143,14 +152,13 @@ summon_helper:
     name: summon
     spell-icon: 358
     xp-granted:
-      - dragon 1
+        - dragon 1
+        - knight -1
     cost:
         - mana 60
         - emerald_block 1
     memory: 7
-    prerequisites:
-        - gate
-        - recall
+    bindable: false
     cooldown: 120
     shared-cooldowns:
         - gate 30
@@ -160,6 +168,9 @@ summon_helper:
     require-acceptance: true
     require-exact-name: false
     accept-command: "accept"
+    modifiers:
+        - magicxpabove dragon:250 required
+    str-modifier-failed: "You need 250 Dragon MagicXP to cast this spell. Do /magicxp"
     str-cost: "60 mana and an emerald blocks"
     str-summon-accepted: "You have been summoned."
     str-summon-expired: "The summon has expired."

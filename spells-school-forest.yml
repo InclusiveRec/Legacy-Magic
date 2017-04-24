@@ -8,20 +8,20 @@ predefined-items:
         type: enchanted_book
         name: "&2Herbology"
         lore:
-          - "A compendium of druidic knowledge"
-          - "concerning the plants and"
-          - "creatures of the wilderness."
+            - "A compendium of druidic knowledge"
+            - "concerning the plants and"
+            - "creatures of the wilderness."
     forest_sickle:
         type: shears
         name: "&2Magic Sickle"
         lore:
-          - "Woodland shamans and druids"
-          - "use enchanted sickles"
-          - "to prepare their spell"
-          - "components."
+            - "Woodland shamans and druids"
+            - "use enchanted sickles"
+            - "to prepare their spell"
+            - "components."
         enchants:
-          - "durability 2"
-          - "damage_all 1"
+            - "durability 2"
+            - "damage_all 1"
 
     # Reagents
     # Custom spell components consumed by some spells.
@@ -30,9 +30,9 @@ predefined-items:
         type: "351:2"
         name: "&2Woodland Amalgam"
         lore:
-          - "A mix of various"
-          - "wildflowers and"
-          - "woodland plants."
+            - "A mix of various"
+            - "wildflowers and"
+            - "woodland plants."
 
     # Cast items
     # These items cast the main spells
@@ -44,7 +44,12 @@ predefined-items:
             - "A branch cut from an oak tree, living,"
             - "breathing with druidic magic."
 
-
+    ocelot_claw:
+        type: flint
+        name: "&2Ocelot's Claw"
+        lore:
+            - "A razor-sharp claw." 
+            
     wolf_fang:
         type: flint
         name: "&2Wolf's Fang"
@@ -72,13 +77,16 @@ lore_of_the_woods:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - forest 1
+        - forest 1
     cost:
-      - book 1
-      - levels 30
-      - sapling 1
-      - forest_amalgam 12
+        - book 1
+        - levels 30
+        - sapling 1
+        - forest_amalgam 12
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
       - forest_grimoire
     modifiers:
@@ -97,18 +105,18 @@ gardener:
     cast-item: forest_grimoire
     spell-icon: shears
     xp-granted:
-      - forest 1
-      - solar 1 
-      - stone 1 
+        - forest 1
+        - solar 1 
+        - stone 1 
     cost:
         - levels 5
         - shears 1
-    prerequisites:
-      - woodland_amalgam
-      - scroll
     memory: 2
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
-      - forest_sickle
+        - forest_sickle
     modifiers:
         - magicxpabove forest:500 required
     str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
@@ -129,15 +137,14 @@ woodland_wand:
     cast-item: forest_grimoire
     spell-icon: stick
     xp-granted:
-      - forest 1
-      - solar 1 
+        - forest 1
     cost:
         - levels 10
         - "6:0 1"
-    prerequisites:
-        - woodland_gardener
-        - scroll
     memory: 5
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - forest_wand
     modifiers:
@@ -147,23 +154,24 @@ woodland_wand:
 hunting_knife:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: book
+    cast-item: forest_grimoire
     xp-granted:
-      - death 1 
-      - forest 1
-      - stone 1 
+        - death 1 
+        - forest 1
+        - knight 1
+        - stone 1 
     cost:
         - iron_sword 1
         - levels 5
-    prerequisites:
-        - scroll
-        - stalking
     memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
     items:
         - forest_sword 1
     modifiers:
         - magicxpabove forest:500 required
-    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500MagicXP in Forest and Knight to cast this spell. Do /magicxp"
     str-cost: "5 levels and an iron sword."
     description: |
             &2Hunting Knife: 3 memory Forest Spell.
@@ -176,17 +184,18 @@ woodland_amalgam:
     cast-item: forest_sickle
     spell-icon: "351:2"
     xp-granted:
-      - forest 1
-      - solar 1 
+        - forest 1
+        - solar 1 
+        - ocean -1
     cost:
-      - mana 5
-      - 39 1        # 1 brown mushroom
-      - 37 1        # 1 yellow flowers
-      - 38 1        # 1 red flower
+        - mana 10
+        - 39 1        # 1 brown mushroom
+        - 37 1        # 1 yellow flowers
+        - 38 1        # 1 red flower
     memory: 1
     items:
       - forest_amalgam 2-4
-    str-cost: "5 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
+    str-cost: "10 mana, 1 brown mushroom, 1 yellow flower, and 1 red flower."
     description: |
             &2Herbal Amalgam: 1 Memory Forest Spell
             Prepare a woodland amalgam.
@@ -204,13 +213,14 @@ woodland_amalgam:
 forage:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: stick,forest_sickle
+    cast-item: forest_sickle
     spell-icon: apple
     xp-granted:
-      - forest 1
-      - solar 1 
+        - forest 1
+        - solar 1 
+        - ocean -1
     cost:
-        - mana 10
+        - mana 30
         - seeds 6
     cooldown: 0.5
     memory: 4
@@ -228,7 +238,7 @@ forage:
         - holding "359|&2Magic Sickle" power 2.5
         - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,JUNGLE_HILLS,JUNGLE_EDGE required
         - elevationabove 62 required
-    str-cost: "10 mana and 6 seeds."
+    str-cost: "30 mana and 6 seeds."
     str-modifier-failed: "This is not good foraging terrain."
     str-on-cooldown: "Rummage..."
     description: |
@@ -246,18 +256,19 @@ lifewalk:
     cast-item: stick,forest_sickle
     spell-icon: yellow_flower
     xp-granted:
-      - forest 1
-      - solar 1 
-      - death -1 
+        - forest 1
+        - solar 1 
+        - death -1 
+        - ocean -1
     cost:
-        - mana 10
+        - mana 20
         - forest_amalgam 2
     memory: 2
     bindable: false
     use-cost:
         - forest_amalgam 1
     use-cost-interval: 10
-    str-cost: "10 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
+    str-cost: "20 mana and 2 forest amalgam, plus 1 forest amalgam every 10 steps."
     str-cast-self: "Flowers spring up in your footsteps."
     str-fade: "Your steps no longer cause flowers to grow."
     description: |
@@ -266,19 +277,19 @@ lifewalk:
 mulch:
     permission-name: forest
     spell-class: ".instant.ConjureSpell"
-    cast-item: stick,forest_sickle
+    cast-item: forest_sickle
     spell-icon: "31:1"
     xp-granted:
-      - forest 1
-      - solar 1 
+        - forest 1
+        - solar 1 
     cost:
-        - mana 5
+        - mana 30
         - "31:1 12"
     bindable: false
     memory: 3
     items:
         - "351:15 8-10"
-    str-cost: "5 mana and 12 blades of grass."
+    str-cost: "30 mana and 12 blades of grass."
     str-cast-self: "You cut some grass into mulch."
     description: |
             &2Mulch: 3 Memory Forest spell
@@ -286,10 +297,11 @@ mulch:
 trapper:
     permission-name: forest
     spell-class: ".MultiSpell"
-    cast-item: stick,forest_sickle
+    cast-item: hunting_knife
     spell-icon: 420
     xp-granted:
-      - forest 1
+        - forest 1
+        - knight 1
     cost:
         - levels 1
         - forest_amalgam 6
@@ -311,10 +323,10 @@ stalking:
     permission-name: forest
     spell-class: ".PassiveSpell"
     xp-granted:
-      - forest 1
-      - shadow 1 
+        - forest 1
+        - shadow 1 
     cost:
-        - mana 10
+        - mana 20
     cooldown: 20
     memory: 2
     send-failure-messages: true
@@ -341,7 +353,9 @@ haste:
     cast-item: stick,forest_wand
     spell-icon: gold_boots
     xp-granted:
-      - forest 1
+        - forest 1
+        - knight 1
+        - ocean -1
     cost:
         - mana 20
     memory: 3
@@ -378,9 +392,10 @@ leap:
     cast-item: stick,forest_wand
     spell-icon: diamond_boots
     xp-granted:
-      - forest 1
+        - forest 1
+        - ocean -1
     cost:
-        - mana 10
+        - mana 20
     cooldown: 1.8
     memory: 3
     cancel-damage: true
@@ -389,7 +404,7 @@ leap:
     modifiers:
         - holding "280|&2Oak wand" power 2
         - wearing 443 power .34
-    str-cost: "10 mana."
+    str-cost: "20 mana."
     str-cast-self: "You leap forward!"
     str-cast-others: "%a leaps forward!"
     str-on-cooldown: "You are tensing your muscles..."
@@ -406,9 +421,10 @@ safefall:
     cast-item: stick,forest_wand
     spell-icon: feather
     xp-granted:
-      - forest 1
+        - forest 1
     cost:
-        - mana 30
+        - feather 1
+        - mana 10
     cooldown: 3
     memory: 1
     damage-causes:
@@ -417,9 +433,10 @@ safefall:
     num-uses: 5
     use-cost:
         - mana 15
+        - feather 1
     use-cost-interval: 1
     str-cast-self: "You feel lighter."
-    str-cost: "30 mana, plus 15 mana per fall."
+    str-cost: "10 mana and a feather, plus 15 mana and a feather per fall."
     str-fade: "Your normal weight returns."
     description: |
         &2Safefall: 1 Memory Forest Spell
@@ -431,9 +448,10 @@ entangle:
     cast-item: stick,forest_wand
     spell-icon: 106
     xp-granted:
-      - forest 1
+        - forest 1
+        - ocean -1
     cost:
-        - mana 12
+        - mana 40
         - forest_amalgam 1
     cooldown: 0.2
     memory: 4
@@ -442,10 +460,10 @@ entangle:
     spell-power-affects-range: true
     spell-source-in-center: true
     spells:
-      - getvined
+        - getvined
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "12 mana and 1 woodland amalgam."
+    str-cost: "40 mana and 1 woodland amalgam."
     str-on-cooldown: ""
     description:  |
             &2Entangle:  4 Memory Forest Spell
@@ -456,9 +474,10 @@ hedge:
     cast-item: stick,forest_wand
     spell-icon: 184
     xp-granted:
-      - forest 1
+        - forest 1
+        - ocean -1
     cost:
-        - mana 15
+        - mana 30
         - forest_amalgam 1
     cooldown: 4
     memory: 5
@@ -471,7 +490,7 @@ hedge:
     wall-width: 6
     modifiers:
         - holding "280|&2Oak wand" power 2
-    str-cost: "15 mana and 1 woodland amalgam."
+    str-cost: "30 mana and 1 woodland amalgam."
     str-no-target: "You cannot create a hedge there."
     description: |
             &2Hedge: 5 Memory Forest Spell
@@ -492,15 +511,14 @@ fang:
     cast-item: forest_grimoire
     spell-icon: flint
     xp-granted:
-      - forest 1
+        - forest 1
     cost:
         - bone 6
         - forest_amalgam 3
         - levels 10
-    prerequisites:
-        - wolf
-        - scroll
     memory: 2
+    require-cast-item-on-command: true
+    allow-command-casting: true
     items:
         - wolf_fang
     modifiers:
@@ -513,17 +531,22 @@ fang:
 
 
 
-rend:
+rend: 
     permission-name: forest
     spell-class: ".TargetedMultiSpell"
     cast-item: wolf_fang
     spell-icon: 423
     xp-granted:
-      - forest 1
-      - death 1 
+        - forest 1
+        - death 1 
+    cost:
+        - bone 6
+        - forest_amalgam 3
+        - mana 30
     memory: 2
     bindable: false
-    can-cast-by-command: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     check-plugins: true
     debug: true
     point-blank: true
@@ -549,12 +572,12 @@ wolf:
     cast-item: wolf_fang
     spell-icon: 352
     xp-granted:
-      - forest 1
+        - fire -1
+        - forest 1
+        - ocean -1
     cost:
         - levels 20
         - bone 3
-    prerequisites:
-        - forage
     memory: 5
     cooldown: 60
     duration: 0
@@ -564,9 +587,10 @@ wolf:
     tamed: true
     modifiers:
         - biome FOREST,TAIGA,FOREST_HILLS,TAIGA_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST required
+        - magicxpabove forest:500 required
     str-cast-self: "A wolf appears!"
     str-cost: "3 bones and 20 experience levels."
-    str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
+    str-modifier-failed: "There aren't any wolves here.  Go to a forest biome! You need 500 Forest MagicXP to cast this spell. Do /magicxp"
     description: |
             &2Wolf: 5 Memory Forest Spell
             Summons a wolf to accompany you.
@@ -578,7 +602,8 @@ call_of_the_wild:
     cast-item: wolf_fang
     spell-icon: "6:1"
     xp-granted:
-      - forest 1
+        - forest 1
+        - ocean -1
     cost:
         - mana 60
     memory: 6
@@ -593,3 +618,67 @@ call_of_the_wild:
     str-at-cap: "You cannot summon a larger pack!"
     str-cast-self: "You summon wolves!"
     str-modifier-failed: "There aren't any wolves here.  Go to a forest biome!"
+    
+####################
+#                  #
+#     Cat magic    #
+#                  #
+####################    
+    
+claw:
+    permission-name: forest
+    spell-class: ".instant.ConjureSpell"
+    cast-item: forest_grimoire
+    spell-icon: flint
+    xp-granted:
+        - forest 1
+        - ocean -1
+        - storm -1
+    cost:
+        - bone 6
+        - forest_amalgam 3
+        - levels 10
+    memory: 2
+    bindable: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    items:
+        - ocelot_claw
+    modifiers:
+        - magicxpabove forest:500 required
+    str-modifier-failed: "You need 500 Forest MagicXP to cast this spell. Do /magicxp"
+    str-cost: "10 levels, 6 bones, and 3 woodland amalgam."
+    description: |
+            &2Fang: 2 Memory Forest Spell
+            Creates a Ocelot's Claw to channel wilderness magic.
+ocelot:
+    permission-name: forest
+    spell-class: ".ExternalCommandSpell"
+    cast-item: ocelot_claw
+    execute-on-console-instead: true
+    command-to-execute:
+        - execute %a ~ ~ ~ summon ocelot ~ ~ ~ {Owner:%a,CatType:2,Sitting:1}
+    spell-icon: 352
+    xp-granted:
+        - forest 1
+        - ocean -1
+        - storm -1
+    cost:
+        - levels 20
+        - bone 3
+    memory: 5
+    cooldown: 60
+    duration: 0
+    bindable: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    modifiers:
+        - biome JUNGLE,JUNGLE_HILLS,JUNGLE_EDGE required
+        - magicxpabove forest:500 required
+    str-cast-self: "A Ocelot appears!"
+    str-cost: "3 bones and 20 experience levels."
+    str-modifier-failed: "There aren't any Ocelots here.  Go to a Jungle biome! You need 500 Forest MagicXP to cast this spell. Do /magicxp"
+    description: |
+            &2Ocelot: 5 Memory Forest Spell
+            Summons a Ocelot to accompany you.
+

@@ -1,350 +1,282 @@
+#
+#               Items
+#
+#  The armoury of the knightly school is generated
+#  through use of the Heraldric Manual (knight_grimoire).
+#  This allows one to make swords and saddles, cast
+#  items for other spells.
+#
+#
+
 predefined-items:
 
-    stone_grimoire:
+    # Grimoire
+
+    knight_grimoire:
         type: "enchanted_book"
-        name: "&8Stone Tablet"
+        name: "&8Heraldric Manual"
         lore:
-          - "The passage of time"
-          - "has etched into Stone"
-          - "the magical secrets"
-          - "found deep underground."
+            - "Details the rules, disciplines,"
+            - "and orders of knighthood."
+            - "As well, it contains the crests"
+            - "and histories of rulers."
 
-    minepick:
-        type: 257
-        name: "&8Miner's Pick"
+    #       Buff caster
+
+    knight_saddle:
+        type: "saddle"
+        name: "&8War Saddle"
         lore:
-          - "This pick carries"
-          - "a powerful enchantment"
-          - "of stone magic."
+            - "High at the front and back,"
+            - "with reinforced stirrups"
+            - "for powerful charges."
+
+    #       Swords
+
+    knight_sword:
+        type: "iron_sword"
+        name: "&8Broadsword"
+        lore:
+            - "A well-balanced broadsword,"
+            - "suited to swashing blows."
         enchants:
-          - "dig_speed 5"
-          - "durability 3"
+            - damage_all 2
+            - durability 2
 
-    stonecutter_pick:
-        type: 270
-        name: "&8Stonecutter's Pick"
+    # Elven blade will form part of solar expansion.  Coming soon.
+
+    elven_blade:
+        type: iron_sword
+        name: "&eElvensteel Blade"
         lore:
-          - "This pick is used by stonecutters"
-          - "stonecutters to cut through large"
-          - "areas of stone and not much else."
+            - "This sword is both"
+            - "surprisingly lightweight"
+            - "and lethally sharp."
         enchants:
-          - "dig_speed 20"
-          - "durability 10"
-
-    iron_trowel:
-        name: "&8Mason's Trowel"
-        lore: 
-          - "An enchanted tool."
-        type: IRON_SPADE
-        enchants:
-          - "dig_speed 2"
-          - "durability 2"
-          - "silk_touch 1"
-
-    # Custom reagent
-
-    mortar:
-        name: "&8Mortar"
-        lore:
-          - "A wet, sticky mixture"
-          - "of sand and ground bone"
-          - "used in masonry."
-        type: "351:7"
-
-
-#################################
-#                               #
-#       Item creation spells    #
-#                               #
-#################################
+            - "damage_undead 2"
+            - "durability 2"
 
     #
-    # The item factory
+    #           Armour
+    #    Granted as a temporary buff.  Confers bonuses to
+    #    sword spells.
     #
 
-lore_of_the_rock:
+    knightly_helm:
+        type: 302
+        name: "&8Great Helm"
+        enchants:
+            - PROTECTION_PROJECTILE 2
+    knightly_hauberk:
+        type: 303
+        name: "&8Hauberk"
+    knightly_greaves:
+        type: 304
+        name: "&8Banded Greaves"
+    knightly_sabatons:
+        type: 305
+        name: "&8Spurs"
+ 
+ 
+#   Item factory
+
+lore_of_knighthood:
+    permission-name: knight
     spell-class: ".instant.ConjureSpell"
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-        - stone 1 
+        - dragon -1
+        - knight 1
     cost:
-        - book 1
         - levels 30
-        - obsidian 1
+        - book 1
+        - iron_block 3
     memory: 10
-    items:
-        - stone_grimoire
-    modifiers:
-        - magicxpabove stone:500 required
-    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
-    str-cost: "A book, 30 levels, and 1 obsidian."
-    description: |
-            &2Stone Lore: Stone Masters' Spell
-            Creates a Stone grimoire.
-            Requires mix_mortar, trowel, and magic_pickaxe spells.
-
-    # 
-    #   Cast items 
-    #
-
-magic_pickaxe:
-    permission-name: stone
-    spell-class: ".instant.ConjureSpell"
-    cast-item: stone_grimoire
-    spell-icon: 257
-    xp-granted:
-        - stone 1 
-    cost:
-        - levels 10
-        - iron_pickaxe 1
-    memory: 3
-    items:
-        - minepick
-    modifiers:
-        - magicxpabove stone:500 required
-    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
-    str-cost: "10 levels and an iron pick."
-    description: |
-        &8Magic Pickaxe: 3 Memory Stone Spell
-
-cutter_pickaxe:
-    permission-name: stone
-    spell-class: ".instant.ConjureSpell"
-    cast-item: stone_grimoire
-    spell-icon: 270
-    xp-granted:
-        - stone 1 
-    cost:
-        - levels 10
-        - wood_pickaxe 1
-    memory: 3
-    items:
-        - stonecutter_pick
-    modifiers:
-        - magicxpabove stone:500 required
-    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"
-    str-cost: "10 levels and a wood pick."
-    description: |
-        &8Cutter Pickaxe: 3 Memory Stone Spell
-
-masons_trowel:
-    permission-name: stone
-    spell-class: ".instant.ConjureSpell"
-    spell-icon: IRON_SPADE
-    xp-granted:
-        - stone 1 
-    cost:
-        - iron_spade 1
-        - levels 5
-    prerequisites:
-        - scroll
-    memory: 2
-    items:
-        - iron_trowel 1 
-    modifiers:
-        - magicxpabove stone:500 required
-    str-modifier-failed: "You need 500 Stone MagicXP to cast this spell. Do /magicxp"     
-    str-cost: "5 experience levels and an iron shovel."
-    description: |
-        &rTrowel   2 Memory Stone Spell
-        &3Crafts an iron trowel. 
-
-    #
-    #  Reagents
-    #
-
-mix_mortar:
-    permission-name: stone
-    spell-class: ".instant.ConjureSpell"
-    spell-icon: "351:7"
-    xp-granted:
-        - stone 1 
-    cast-item: stick, iron_trowel
-    cost:
-        - mana 4
-        - sand 16
-        - "351:15 8"
-    cooldown: 1
-    memory: 1
-    items:
-        - mortar 64
-    modifiers:
-        - holding "256|&8Mason's Trowel" cooldown 0.1
-    str-cost: "4 mana, 16 sand, and 8 bone meal."
-    str-on-cooldown: ""
-    description: |
-            &rMix Mortar  1 Memory Stone Spell
-            &3Mixes mortar out of raw materials.
-
-##########################
-#                        #
-#        Trowel          #
-#                        #
-#   Stoneworking spells  #
-#   to enable fast       #
-#   construction.        #
-#   Many require mortar  #
-#   or cobblestone, but  #
-#   have low mana        #
-#   costs and cooldowns  #
-#                        #
-##########################
-    
-obsidian:
-    permission-name: stone
-    spell-class: ".targeted.ReplaceSpell"
-    cast-item: iron_trowel
-    spell-icon: IRON_SPADE
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
-    allow-command-casting: false
-    prerequisites:
-       - water
-       - lava
-    range: 8
-    radius-up: 2
-    radius-down: 2
-    radius-horiz: 2
-    replace-blocks:
-        - lava
-    replace-with:
-        - obsidian
-    xp-required:
-        - stone 50
+    items:
+        - knight_grimoire 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
+knightly_saddle:
+    permission-name: knight
+    spell-class: ".instant.ConjureSpell"
     xp-granted:
-        - fire -1
+        - knight 1 
+    cast-item: knight_grimoire
+    cost:
+        - levels 15
+        - saddle 1
+    memory: 5
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
+    items:
+        - knight_saddle 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
+knightly_sword:
+    permission-name: knight
+    spell-class: ".instant.ConjureSpell"
+    xp-granted:
+        - dragon -1
+        - knight 1
         - stone 1
-    memory: 5
+    cast-item: knight_grimoire
     cost:
-        - mana 10
-        - mortar 2
-        - flame_amalgam 2
-        - diamond 2
-    description: |
-            &rObsidian 5 Memory Stone Spell
-            &3rCooling lava to obsidian.
-    str-cost: 10 mana, 2 mortar, plus 2 Flame Amalgam and 2 Diamonds.
-
-patchwork:
-    permission-name: stone 
-    spell-class: ".targeted.ReplaceSpell"
-    xp-granted:
-      - stone 1 
-    cast-item: iron_trowel
-    cost:
-        - mana 10
-        - mortar 2
+        - levels 10
+        - iron_sword 1
     memory: 5
-    radius-down: 2
-    radius-horiz: 2
-    radius-up: 2
-    range: 8
-    replace-blocks:
-        - cobblestone
-    replace-with:
-        - stonebrick
-    str-cost: "10 mana and 2 mortar."
+    can-cast-by-command: false
     bindable: false
-    description: |
-            &rPatchwork   5 Memory Stone Spell
-            &3Patches up cobblestone as stonebrick.
+    items:
+        - knight_sword 1
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
 
-repair:
-    permission-name: stone
-    spell-class: ".instant.RepairSpell"
-    cast-item: iron_trowel
-    spell-icon: workbench
+#               Steed spells
+#   Cast from a war saddle.  Summon steeds
+#   for limited durations.
+#
+
+warhorse:
+    permission-name: knight
+    spell-class: ".instant.SteedSpell"
+    cast-item: knight_saddle
+    spell-icon: iron_horse_armor
     xp-granted:
-        - stone 1 
+        - dragon -1
+        - knight 1 
+    cost:
+        - 396 1
+        - mana 20
+    memory: 5
+    armor: iron_horse_armor
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
+    color: BLACK
+    style: WHITE
+    variant: HORSE
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
+    str-cast-others: "%c summons a knightly warhorse!"
+    str-cast-self: "You summon a knightly warhorse!"
+    str-cost: "20 mana and a golden carrot."
+    description: "Summons a mount to aid you in battle. 20 mana and a golden carrot; uses the War Saddle; 2 memory Knight spell."
+
+#
+#                       Sword spells
+#
+#   These are effects randomly applied to attacks
+#   made using knightly swords.  Some swords are 
+#   tied to other schools of magic.
+#
+
+stunning_blow:
+    permission-name: knight
+    spell-class: ".PassiveSpell"
+    xp-granted:
+        - dragon -1
+        - knight 1 
+    memory: 2
+    spells:
+        - cripple
+    triggers:
+        - givedamage 
+    modifiers:
+        - chance 4 required
+        - holding "267|&8Broadsword" required
+    str-cast-self: "You lash out at %t with your blade, briefly stunning them."
+    str-cast-target: "You have been stunned by %c's attack!"
+    effects:
+        owie:
+            effect: splash
+            pot: slowness
+
+#
+#           The knightly_harness spell.
+#
+
+knight_harness:
+    permission-name: knight
+    spell-class: ".buff.ArmorSpell"
+    cast-item: knight_saddle
+    spell_icon: iron_helmet
+    xp-granted:
+        - dragon -1
+        - knight 1 
     cost:
         - mana 50
-        - diamond_block 1
-    cooldown: 120
-    memory: 2
-    ignore-items:
-        - 259
-    repair-amount: 200
-    to-repair:
-        - held
-        - hotbar
-        - inventory
-        - helmet
-        - chestplate
-        - leggings
-        - boots
-    str-cast-self: "You've repaired your gear!"
-    str-cost: "50 mana and 1 diamond block"
-    str-nothing-to-repair: "You have nothing to repair."
-    description: |
-        &rRepair   2 Memory: &4Stone Spell
-        &3Repairs your gear.
-   
-#####################
-#                   #
-#       Minepick    #
-#                   #
-#####################
+        - 42 1
+    memory: 4
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
+    boots: knightly_sabatons
+    can-cast-by-command: false
+    chestplate: knightly_hauberk
+    duration: 360
+    helmet: knightly_helm
+    leggings: knightly_greaves
+    toggle: false
+    modifiers:
+        - magicxpabove knight:500 required
+    str-modifier-failed: "You need 500 Knight MagicXP to cast this spell. Do /magicxp"
+    str-cast-self: "En garde!"
+    str-cost: "1 iron block and 50 mana."
+    description: "You ready your guard and summon a suit of armour."
 
-dowse:
-    permission-name: Stone 
-    spell-class: ".instant.DowseSpell"
-    cast-item: minepick
-    spell-icon: compass
+
+#              Guard spells
+#
+#   Guard spells are passively triggered
+#   by enemy attacks.  They are quite
+#   mana-hungry.
+#
+
+determination:
+    permission-name: knight
+    spell-class: ".PassiveSpell"
     xp-granted:
-        - stone 1 
+        - death -1 
+        - dragon -1
     cost:
-        - mana 20
-        - mortar 2
-    cooldown: 60
-    memory: 2
-    block-type: iron_ore
-    entity-type: ""
-    radius: 5
-    rotate-player: true
-    set-compass: true
-    str-cast-self: "There is iron ore nearby."
-    str-cost: "20 mana and 2 mortar"
-    str-not-found: "No iron ore found nearby."
-    description: |
-        &rDowse   2 Memory: &4Stone Spell
-        &3Dowse for iron ore.
-mighty_swing:
-    permission-name: stone 
-    spell-class: ".targeted.PotionEffectSpell"
-    xp-granted:
-        - stone 1 
-    cast-item: minepick
-    cost:
-        - mana 15
-        - 17 1
-    cooldown: 30
+        - mana 40
     memory: 5
-    duration: 200
-    strength: 1
-    target-self: true
-    type: 3
-    str-cost: "15 mana and an oak log."
-    str-cast-self: "Your arms pulse with new strength!"
-    description: |
-        &rMighty Swing   5 Memory: &4Stone Spell
-        &3Your muscles bulge with strength, and you cut through stone with ease.
-stonevision:
-    permission-name: stone
-    spell-class: ".buff.StonevisionSpell"
+    triggers:
+        - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
+    modifiers:
+        - healthbelow 5 required
+        - wearing "303|&8Hauberk" power 2
+    spells:
+        - second_wind
+    str-cost: "40 mana; must be wearing your knightly hardness."
+    description: "When near death, you find the strength to continue fighting."
+    str-cast-self: "Though battered and bleeding, you find the strength to keep fighting!"
+    str-no-reagents:  "Your strength is failing you..."
+
+#    Miscellaneous: Experience
+
+experience: # For now - needs balancing and description
+    permission-name: knight
+    enabled: false
+    spell-class: ".instant.ConjureSpell"
     xp-granted:
-        - stone 1 
-    cast-item: minepick
+      - knight 1
+    cast-item: knight_grimoire
     cost:
-        - mana 30
-        - 20 1
-    use-cost:
-        - 20 1
-    use-cost-interval: 5
-    memory: 6
-    duration: 60
-    range: 5
-    str-cast-self: "The stone around you flickers and fades away..."
-    str-cost: "30 mana and 1 glass, plus 1 glass for every five blocks walked."
-    description: |
-        &rStonevision   6 Memory Stone Spell
-        &3With great concentration, you can see through stone.
+      - 351:4 1
+      - mana 10
+    memory: 3
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
+    items:
+      - 384 3-5 # Exp Bottle

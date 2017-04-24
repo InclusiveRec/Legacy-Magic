@@ -17,19 +17,18 @@ str-wrong-world: You cannot cast that spell here.
 str-console-name: Wizard
 text-color: 3
 broadcast-range: 20
-spell-icon-slot: 8
 separate-player-spells-per-world: false
-allow-cycle-to-no-spell: true
+allow-cycle-to-no-spell: false
 always-show-message-on-cycle: false
 only-cycle-to-castable-spells: true
 allow-cast-with-fist: false
 cast-with-left-click: true
 cast-with-right-click: false
-ops-have-all-spells: true
+ops-have-all-spells: false
 ops-ignore-reagents: true
 ops-ignore-cooldowns: true
 ops-ignore-cast-times: true
-default-all-perms-false: false
+default-all-perms-false: true
 ignore-default-bindings: false
 ignore-cast-item-enchants: true
 ignore-cast-item-names: false
@@ -45,6 +44,7 @@ str-xp-learned: "You have learned the %s spell!"
 str-xp-header: "Magic Experience:"
 magic-schools:
     death: "  &0Death&f"
+    dragon: "   &5Dragon&f"
     fire: "   &4Fire&f"
     forest: "   &2Forest&f"
     knight: "  &eKnight&f"
@@ -53,7 +53,6 @@ magic-schools:
     solar: "   &eSolar&f"
     stone: "   &7Stone&f"
     storm: "   &3Storm&f"
-    dragon: "   &5Dragon&f"
 entity-names:
     zombie: an ugly zombie
     skeleton: a scary skeleton

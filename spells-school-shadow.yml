@@ -21,13 +21,16 @@ lore_of_shadow:
     cast-item: book
     spell-icon: enchanted_book
     xp-granted:
-      - shadow 1 
+        - shadow 1 
     cost:
         - book 1
         - levels 30
         - diamond_block 1
         - ink_sack 6
     memory: 10
+    require-cast-item-on-command: true
+    allow-command-casting: true
+    bindable: false
     items:
         - shadow_grimoire 1
     modifiers:
@@ -153,6 +156,7 @@ dim:
     str-cast-self: "You put out a light."
     str-no-target: "No target!"
 duskrite:
+    enabled: false
     permission-name: shadow
     spell-class: ".instant.RitualSpell"
     xp-granted:
@@ -171,6 +175,7 @@ duskrite:
     spell: sunset
     modifiers:
         - day required
+        - magicxpabove shadow:500 required
     str-cost: "100 mana and 1 gold ingot."
     str-cast-self: "You have begun the ritual to summon the dusk."
     str-cast-others: "%a has begun a ritual to summon dusk.  Right-click to participate."
@@ -178,7 +183,7 @@ duskrite:
     str-ritual-interrupted: "The dusk rite has been interrupted!"
     str-ritual-fail: "The dusk rite has failed."
     str-ritual-success: "The dusk is summoned!"
-    str-modifier-failed: "You can only begin this ritual during day."
+    str-modifier-failed: "You can only begin this ritual during day. You need 500 Shadow MagicXP to cast this spell. Do /magicxp"
     description: |
             &7Dusk Rite&3: 6 Memory Shadow Spell
             A ritual which will cause the sun to set.
@@ -193,6 +198,7 @@ extinguish:
         - storm_amalgam 2
     xp-granted:
         - fire -1
+        - shadow 1 
     memory: 3
     radius-down: 2
     cooldown: 15

@@ -55,7 +55,8 @@ lore_of_flame:
     modifiers:
         - magicxpabove fire:500 required
     str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     str-cost: "A book, 30 levels, and five blaze rods."
     description: |
@@ -72,12 +73,10 @@ fiery_staff:
     cost:
         - levels 10
         - blaze_rod 1
-    prerequisites:
-        - scroll
-        - spark
     memory: 5
     add-to-inventory: false
-    allow-command-casting: false
+    require-cast-item-on-command: true
+    allow-command-casting: true
     bindable: false
     items:
         - fire_staff 1
@@ -87,7 +86,7 @@ fiery_staff:
     str-cast-self: "You create a fiery staff."
     str-cost: "A blaze rod and 10 levels."
     description: |
-            Firestaff:  10 Memory   Fire Spell.
+            Firestaff:  5 Memory   Fire Spell.
             Creates a powerful wand of fire magic.
             Requires the spark spell.
     
@@ -143,7 +142,8 @@ fireproof:
     description: |
         &2Fireproof: 3 Memory Fire Spell
         Apply magma cream to protect yourself from fire and lava.
-firework:
+
+fireworks:
     enabled: true
     permission-name: cantrip
     spell-class: ".instant.ParticleProjectileSpell"
@@ -154,7 +154,7 @@ firework:
     cost:
         - mana 10
     cooldown:  0
-    memory: 3
+    memory: 1
     spell: fireworkblast
     hit-air-at-end: true
     max-distance: 20
@@ -167,10 +167,36 @@ firework:
         - outside required
     str-cost:  "10 mana"
     despription:  |
-        &rFirework: 3 Memory Fire Spell
-        &3Shoots a firework from fingertips.
+        &rFireworks: 1 Memory Fire Spell
+        &3Shoot fireworks from fingertips.
     effects:
         - caster sound fireworks.launch 1.0 1.0
+magmawall:
+    permission-name: fire
+    spell-class: ".instant.WallSpell"
+    cast-item: fire_staff
+    spell-icon: 385
+    xp-granted:
+        - fire 1
+    cost:
+        - mana 15
+        - flame_amalgam 1
+    cooldown: 4
+    memory: 5
+    range: 10
+    spell-power-affects-range: false
+    wall-depth: 2
+    wall-duration: 30
+    wall-height: 3
+    wall-type: 213
+    wall-width: 6
+    modifiers:
+        - holding "369|&2rod of pyromancy" power 2
+    str-cost: "15 mana and 1 fire amalgam."
+    str-no-target: "You cannot create that steaming wall here."
+    description: |
+            &2MagmaWall: 5 Memory Fire Spell
+            Sprouts a hot wall to impede your foes.
 
 smoke:
     permission-name: fire
@@ -259,8 +285,8 @@ lava:
     reset-delay: 200
     modifiers:
         - world nether required
-        - magicxpabove fire:100 required
-    str-modifier-failed: "You need 100 Fire MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove fire:250 required
+    str-modifier-failed: "You need 250 Fire MagicXP to cast this spell. Do /magicxp"
     block-type: lava
     apply-physics: true
     str-cast-self: "You summon Molten Lava"
@@ -279,8 +305,6 @@ fireball:
     cast-item: fire_staff
     spell-icon: "351:1"
     check-plugins: true
-    prerequisites:
-        - fire_staff
     cost:
         - mana 50
         - blaze_powder 2
@@ -296,6 +320,9 @@ fireball:
     explosion-size: 5
     range: 25
     damage-multiplier: 3
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     str-cost: 50 mana, one blaze powder and four flame amalgam.
     str-cast-self: "You summon a fiery flare!"
     str-cast-others: "%a summons a fiery flare!"
@@ -310,8 +337,6 @@ fire_nova:
     cast-item: fire_staff
     spell-icon: blaze_powder
     check-plugins: true
-    prerequisites:
-        - fire_staff
     cost:
         - mana 30
         - blaze_powder 1
@@ -325,6 +350,9 @@ fire_nova:
     memory: 4
     bindable: false
     can-cast-by-command: false
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
     str-cost: 30 mana, one blaze powder and four flame amalgam.
     str-cast-self: "You summon a Super Nova!"
     str-cast-others: "%a Creates a Super Nova!"
@@ -339,8 +367,9 @@ warmth:
         - fire 1
         - forest -1
     cast-item: fire_staff
-    prerequisites:
-        - fiery_grimoire
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
 
     ###################
     # Advanced spells #
@@ -352,8 +381,9 @@ fire_shield:
     xp-granted:
         - fire 1
     cast-item: fire_staff
-    prerequisites:
-        - fiery_grimoire
+    modifiers:
+        - magicxpabove fire:500 required
+    str-modifier-failed: "You need 500 Fire MagicXP to cast this spell. Do /magicxp"
 
 
 

@@ -606,6 +606,6 @@ promote_storm:
     effects:
         huzzah:
             effect: greensparkle
-            position: target
+            position: target 
             
 
