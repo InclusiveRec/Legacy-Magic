@@ -1,4 +1,4 @@
-predefined-items:
+ predefined-items:
     water_grimoire:
         type: "enchanted_book"
         name: "&1On Hydromancy"
@@ -22,6 +22,13 @@ predefined-items:
             - "a hydromancer can"
             - "find and navigate"
             - "the world's waters."
+    ocean_amalgam:
+         type: "351:12"
+         name: "&4Ocean Amalgam"
+         lore:
+             - "Found at the bottem"
+             - "of the deepest"
+             - "ocean."
 
 #############################
 #       The Grimoire        #
@@ -53,13 +60,43 @@ lore_of_hydromancy:
     description: |
             &1Lore of Water: Water Masters' Spell
             Create a grimoire of Hydromantic lore.
+
+
  
 #############################
 #                           #
 #   Item creation spells    #
 #                           #
 #############################
- 
+
+#Reagent               
+hydro_amalgam:
+    permission-name: ocean
+    spell-class: ".instant.ConjureSpell"
+    cast-item: water_rod
+    spell-icon: "351:12"
+    xp-granted:
+        - ocean 1
+    cost:
+        - mana 20
+        - storm_amalgam 2
+        - 409 2
+    memory: 1
+    items:
+        - ocean_amalgam 4-6
+        - bucket 3
+    modifiers:
+        - inblock 9 required
+        - biome DEEP_OCEAN required
+        - elevationbelow 55 required
+    str-modifier-failed: "Swim under the ocean to cast this spell."
+    str-cost: "Mix 2 Storm amalgam with 2 Prismarine Shards, using 20 mana in the process."
+    description: |
+            &eOcean Amalgam: 1 Memory Ocean Spell
+            Mixes some Ocean Amalgam.
+
+            
+#Cast items
 hydro_focus:
     permission-name: ocean
     spell-class: ".instant.ConjureSpell"
