@@ -99,7 +99,7 @@ storm_amalgam:
     spell-icon: "351:7"
     xp-granted:
         - storm 1 
-        - ocean 1 
+        - hydro 1 
     memory: 1
     items:
         - storm_amalgam 4-6
@@ -125,7 +125,7 @@ freeze:
     cast-item: water_focus,stick
     spell-icon: snow_ball
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - storm 1 
         - solar -1  
     cost:
@@ -184,7 +184,7 @@ lightning:
     spell-icon: gold_sword
     xp-granted:
         - fire 1 
-        - ocean -1
+        - hydro -1
         - solar -1  
         - storm 1 
     cost:
@@ -220,7 +220,7 @@ storm:
     allow-command-casting: true
     ritual-duration: 400
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - solar -1 
         - storm 1 
     cost:
