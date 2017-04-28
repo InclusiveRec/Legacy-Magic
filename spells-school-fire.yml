@@ -152,7 +152,9 @@ fireworks:
         - fire 1 
         - forest -1 
     cost:
-        - mana 10
+        - mana 30
+        - torch 1
+        - fire_amalgam 1
     cooldown:  0
     memory: 1
     spell: fireworkblast
@@ -165,7 +167,7 @@ fireworks:
     tick-interval: 2
     modifiers:
         - outside required
-    str-cost:  "10 mana"
+    str-cost:  "30 mana, 1 fire amalgam and a torch"
     despription:  |
         &rFireworks: 1 Memory Fire Spell
         &3Shoot fireworks from fingertips.
