@@ -2,14 +2,6 @@
 # Spells to award Degrees of Magical Ability and increase Mage rank.
 #
 
-#Changelog #
-# - 12/22/16 Adjusted modifiers (Connie)
-# - 12/11/16 Added effects (Connie)
-# - 12/7/16 Removed magic-xp required, added strings (Connie)
-# - 12/6/16 Added magicxp modifiers (Connie)
-# - 8/17/16 Fixed magicxp cost and requirements (Connie)
-
-
 dragon_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
@@ -310,7 +302,7 @@ promote_knight:
             effect: greensparkle
             position: target
             
-ocean_education:
+hydro_education:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
@@ -319,25 +311,25 @@ ocean_education:
     cast-item: water_grimoire
     spell-icon: 386
     xp-granted:
-      - ocean -15000
+      - hydro -15000
     cost:
       - book 1
       - levels 30
     memory: 10
     modifiers:
-        - magicxpabove ocean:115000 required
-    str-modifier-failed: "You need 5000 Ocean MagicXP to cast this spell. Do /magicxp"   
-    str-cost: "30 levels, a book, and 15000 Ocean MagicXP."
+        - magicxpabove hydro:115000 required
+    str-modifier-failed: "You need 5000 Hydro MagicXP to cast this spell. Do /magicxp"   
+    str-cost: "30 levels, a book, and 15000 Hydro MagicXP."
     str-cast-self: "You've educated yourself to a higher mage rank."
     description: |
-            &2Ocean Degree Spell
-            Increase your Mage Rank with a Magical Ability Degree in Ocean Magic. Cast with a book.
+            &2Hydro Degree Spell
+            Increase your Mage Rank with a Magical Ability Degree in Hydro Magic. Cast with a book.
     effects:
         huzzah:
             effect: greensparkle
             position: caster
 
-promote_ocean:
+promote_hydro:
     spell-class: ".ExternalCommandSpell"
     permission-name: degree
     execute-on-console-instead: true
@@ -348,7 +340,7 @@ promote_ocean:
     cast-item: water_grimoire
     spell-icon: 386
     xp-granted:
-      - ocean -250
+      - hydro -250
     cost:
       - book 1
       - levels 30
@@ -356,13 +348,13 @@ promote_ocean:
     can-cast-by-command: false
     range: 7
     modifiers:
-        - magicxpabove ocean:15000 required
-    str-modifier-failed: "You need 15000 Ocean MagicXP to cast this spell. Do /magicxp"
-    str-cost: "30 levels, a book, and 250 Ocean MagicXP."
+        - magicxpabove hydro:15000 required
+    str-modifier-failed: "You need 15000 Hydro MagicXP to cast this spell. Do /magicxp"
+    str-cost: "30 levels, a book, and 250 Hydro MagicXP."
     str-cast-self: "You've promoted %t to a higher mage rank."
     description: |
-            &2Ocean Promotion Spell
-            Increase another's Mage Rank with your Ocean Magic Mastery. Cast with the school's grimoire.
+            &2Hydro Promotion Spell
+            Increase another's Mage Rank with your Hydro Magic Mastery. Cast with the school's grimoire.
     effects:
         huzzah:
             effect: greensparkle
@@ -606,6 +598,6 @@ promote_storm:
     effects:
         huzzah:
             effect: greensparkle
-            position: target 
+            position: target
             
 
