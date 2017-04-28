@@ -1,5 +1,5 @@
- predefined-items:
-    water_grimoire:
+predefined-items:
+    hydro_grimoire:
         type: "enchanted_book"
         name: "&1On Hydromancy"
         lore:
@@ -22,13 +22,13 @@
             - "a hydromancer can"
             - "find and navigate"
             - "the world's waters."
-    ocean_amalgam:
+    hydro_amalgam:
          type: "351:12"
-         name: "&4Ocean Amalgam"
+         name: "&4Hydro Amalgam"
          lore:
              - "Found at the bottem"
              - "of the deepest"
-             - "ocean."
+             - "hydro."
 
 #############################
 #       The Grimoire        #
@@ -41,7 +41,7 @@ lore_of_hydromancy:
     cast-item: book
     spell-icon: "enchanted_book"
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - fire -1 
     cost:
         - levels 30
@@ -54,8 +54,8 @@ lore_of_hydromancy:
     items:
         - water_grimoire
     modifiers:
-        - magicxpabove ocean:500 required
-    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove hydro:500 required
+    str-modifier-failed: "You need 500 Hydro MagicXP to cast this spell. Do /magicxp"
     str-cost: "30 levels, a book, and 3 prismarine crystals."
     description: |
             &1Lore of Water: Water Masters' Spell
@@ -71,39 +71,39 @@ lore_of_hydromancy:
 
 #Reagent               
 hydro_amalgam:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".instant.ConjureSpell"
     cast-item: water_rod
     spell-icon: "351:12"
     xp-granted:
-        - ocean 1
+        - hydro 1
     cost:
         - mana 20
         - storm_amalgam 2
         - 409 2
     memory: 1
     items:
-        - ocean_amalgam 4-6
+        - hydro_amalgam 4-6
         - bucket 3
     modifiers:
         - inblock 9 required
         - biome DEEP_OCEAN required
         - elevationbelow 55 required
-    str-modifier-failed: "Swim under the ocean to cast this spell."
+    str-modifier-failed: "Swim under the hydro to cast this spell."
     str-cost: "Mix 2 Storm amalgam with 2 Prismarine Shards, using 20 mana in the process."
     description: |
-            &eOcean Amalgam: 1 Memory Ocean Spell
-            Mixes some Ocean Amalgam.
+            &eHydro Amalgam: 1 Memory Hydro Spell
+            Mixes some Hydro Amalgam.
 
             
 #Cast items
 hydro_focus:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: diamond
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - fire -1 
     cost:
         - levels 10
@@ -115,19 +115,19 @@ hydro_focus:
     items:
         - water_focus
     modifiers:
-        - magicxpabove ocean:500 required
-    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove hydro:500 required
+    str-modifier-failed: "You need 500 Hydro MagicXP to cast this spell. Do /magicxp"
     str-cost: "10 levels and 6 prismarine crystals."
     description: |
             &1Hydromantic Focus: 5 Memory Water Spell
             Create a hydromantic focus to direct water spells.
 dowsing_rod:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".instant.ConjureSpell"
     cast-item: water_grimoire
     spell-icon: "diamond_hoe"
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - fire -1 
     cost:
         - levels 5
@@ -140,8 +140,8 @@ dowsing_rod:
     items:
         - water_rod
     modifiers:
-        - magicxpabove ocean:500 required
-    str-modifier-failed: "You need 500 Ocean MagicXP to cast this spell. Do /magicxp"
+        - magicxpabove hydro:500 required
+    str-modifier-failed: "You need 500 Hydro MagicXP to cast this spell. Do /magicxp"
     str-cost: "5 levels, 3 prismarine crystals, and a stick."
 
 #########################
@@ -151,12 +151,12 @@ dowsing_rod:
 #########################
 
 gills:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".buff.GillsSpell"
     cast-item: water_rod,stick
     spell-icon: gold_helmet
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - fire -1 
     cost:
         - mana 50
@@ -176,12 +176,12 @@ gills:
         &rGills   5 Memory   Water School
         &3Allows you to breathe underwater.
 water:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".targeted.MaterializeSpell"
     cast-item: water_rod,stick
     spell-icon: water_bucket
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - fire -1 
         - stone -1  
         - storm 1 
@@ -203,12 +203,12 @@ water:
         &rWater   1 Memory   Water School
         &3Summons a water spring into existence..
 waterwalk:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".buff.WaterwalkSpell"
     cast-item: water_rod,stick
     spell-icon: boat
     xp-granted:
-      - ocean 1 
+      - hydro 1 
       - stone -1 
     cost:
         - mana 25
@@ -237,12 +237,12 @@ waterwalk:
 
 
 geyser:
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".targeted.GeyserSpell"
     cast-item: water_focus,stick
     spell-icon: "38:1"
     xp-granted:
-      - ocean 1 
+      - hydro 1 
       - fire -1  
       - storm 1 
     cost:
@@ -269,10 +269,10 @@ geyser:
         
 watersee: #Needs better description
     enabled: false
-    permission-name: ocean
+    permission-name: hydro
     spell-class: ".PassiveSpell"
     xp-granted:
-        - ocean 1 
+        - hydro 1 
         - shadow -1 
     cooldown: 40
     triggers: 
