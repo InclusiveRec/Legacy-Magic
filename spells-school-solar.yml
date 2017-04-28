@@ -184,7 +184,7 @@ solar_amalgam:
     spell-icon: "351:11"
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
         - solar 1
     memory: 1
     cost:
