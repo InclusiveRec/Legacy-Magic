@@ -186,7 +186,7 @@ woodland_amalgam:
     xp-granted:
         - forest 1
         - solar 1 
-        - ocean -1
+        - hydro -1
     cost:
         - mana 10
         - 39 1        # 1 brown mushroom
@@ -218,7 +218,7 @@ forage:
     xp-granted:
         - forest 1
         - solar 1 
-        - ocean -1
+        - hydro -1
     cost:
         - mana 30
         - seeds 6
@@ -259,7 +259,7 @@ lifewalk:
         - forest 1
         - solar 1 
         - death -1 
-        - ocean -1
+        - hydro -1
     cost:
         - mana 20
         - forest_amalgam 2
@@ -355,7 +355,7 @@ haste:
     xp-granted:
         - forest 1
         - knight 1
-        - ocean -1
+        - hydro -1
     cost:
         - mana 20
     memory: 3
@@ -393,7 +393,7 @@ leap:
     spell-icon: diamond_boots
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
     cost:
         - mana 20
     cooldown: 1.8
@@ -449,7 +449,7 @@ entangle:
     spell-icon: 106
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
     cost:
         - mana 40
         - forest_amalgam 1
@@ -475,7 +475,7 @@ hedge:
     spell-icon: 184
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
     cost:
         - mana 30
         - forest_amalgam 1
@@ -574,7 +574,7 @@ wolf:
     xp-granted:
         - fire -1
         - forest 1
-        - ocean -1
+        - hydro -1
     cost:
         - levels 20
         - bone 3
@@ -603,7 +603,7 @@ call_of_the_wild:
     spell-icon: "6:1"
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
     cost:
         - mana 60
     memory: 6
@@ -632,7 +632,7 @@ claw:
     spell-icon: flint
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
         - storm -1
     cost:
         - bone 6
@@ -661,7 +661,7 @@ ocelot:
     spell-icon: 352
     xp-granted:
         - forest 1
-        - ocean -1
+        - hydro -1
         - storm -1
     cost:
         - levels 20
