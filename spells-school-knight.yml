@@ -192,7 +192,7 @@ stunning_blow:
         - givedamage 
     modifiers:
         - chance 4 required
-        - holding "267|&8Broadsword" required
+        - holding 267|&8Broadsword required
     str-cast-self: "You lash out at %t with your blade, briefly stunning them."
     str-cast-target: "You have been stunned by %c's attack!"
     effects:
@@ -254,7 +254,7 @@ determination:
         - takedamage ENTITY_ATTACK,ENTITY_EXPLOSION,MAGIC,PROJECTILE,THORNS
     modifiers:
         - healthbelow 5 required
-        - wearing "303|&8Hauberk" power 2
+        - wearing 303|&8Hauberk power 2
     spells:
         - second_wind
     str-cost: "40 mana; must be wearing your knightly hardness."

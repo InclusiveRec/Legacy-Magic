@@ -89,7 +89,7 @@ bone_carving:
     items:
         - death_wand 1
     modifiers:
-        - holding "403|&5Necronomicon" casttime 1 # seconds
+        - holding 403|&5Necronomicon casttime 1 # seconds
         - magicxpabove death:500 required
     str-modifier-failed: "You need 500 Death MagicXP to cast this spell. Do /magicxp"
     str-cast-self: "The wand grows eerily cold to the touch.  The work is done."
@@ -181,7 +181,7 @@ sacrifice:
     mana: 50
     modifiers:
         - potioneffect 17 continue
-        - holding "352|&5Carved bone" power 2
+        - holding 352|&5Carved__bone power 2
     str-cast-self: "You feel a surge of magical power!"
     str-cost: "3 hearts"
     str-missing-reagents: "If you cast that any more, you'll kill yourself."
@@ -248,7 +248,7 @@ drain:
     target-players: true
     modifiers:
         - potioneffect 17 power 2
-        - holding "352|&5Carved bone" power 2
+        - holding 352|&5Carved__bone power 2
     str-cast-others: "%a sucks the life from %t!"
     str-cast-self: "You drain life from your enemy."
     str-cast-target: "%a sucks some of your life away!"

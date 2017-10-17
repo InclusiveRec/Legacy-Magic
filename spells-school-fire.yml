@@ -145,7 +145,7 @@ fireproof:
 
 fireworks:
     enabled: true
-    permission-name: cantrip
+    permission-name: fire
     spell-class: ".instant.ParticleProjectileSpell"
     spell-icon: firework
     xp-granted:
@@ -154,7 +154,7 @@ fireworks:
     cost:
         - mana 30
         - torch 1
-        - fire_amalgam 1
+        - flame_amalgam 1
     cooldown:  0
     memory: 1
     spell: fireworkblast
@@ -167,7 +167,7 @@ fireworks:
     tick-interval: 2
     modifiers:
         - outside required
-    str-cost:  "30 mana, 1 fire amalgam and a torch"
+    str-cost:  "30 mana, 1 flame amalgam and a torch"
     despription:  |
         &rFireworks: 1 Memory Fire Spell
         &3Shoot fireworks from fingertips.
@@ -193,7 +193,7 @@ magmawall:
     wall-type: 213
     wall-width: 6
     modifiers:
-        - holding "369|&2rod of pyromancy" power 2
+        - holding 369|&2rod_of_pyromancy power 2
     str-cost: "15 mana and 1 fire amalgam."
     str-no-target: "You cannot create that steaming wall here."
     description: |

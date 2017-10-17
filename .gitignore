@@ -4,6 +4,7 @@ spellbooks/
 errors/
 special/
 xp/
+vars/
 
 # Unwanted files
 *.txt
