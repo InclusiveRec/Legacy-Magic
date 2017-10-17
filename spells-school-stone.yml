@@ -181,7 +181,7 @@ mix_mortar:
     items:
         - mortar 64
     modifiers:
-        - holding "256|&8Mason's Trowel" cooldown 0.1
+        - holding 256|&8Mason's_Trowel cooldown 0.1
     str-cost: "4 mana, 16 sand, and 8 bone meal."
     str-on-cooldown: ""
     description: |

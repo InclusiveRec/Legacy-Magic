@@ -51,35 +51,6 @@ forget:
 # Bonus spells
 
 
-firework:
-    enabled: false
-    permission-name: cantrip
-    spell-class: ".instant.ParticleProjectileSpell"
-    spell-icon: firework
-    xp-granted:
-      - test 10 
-    always-granted:  true
-    cost:
-        - mana 10
-    cooldown:  0
-    spell: fireworkblast
-    hit-air-at-end: true
-    max-distance: 20
-    max-duration: 20
-    projectile-vert-offset: 1.5
-    projectile-velocity: 20
-    projectile-gravity: .05
-    tick-interval: 2
-    modifiers:
-        - outside required
-    str-cost:  "10 mana"
-    despription:  |
-        &rFirework: Cantrip
-        &3Shoots a firework from fingertips.
-    effects:
-        - caster sound fireworks.launch 1.0 1.0
-
-
 # Apprentice level
 
 bind:
@@ -375,4 +346,4 @@ spellbook:
     description: |
         &rSpellbook   -   Cantrip
         &3Create a spellbook that teaches a spell. 
-        Requires the bind, unbind, scroll, and tome spells. 
+        Requires the bind, unbind, scroll, and tome spells.

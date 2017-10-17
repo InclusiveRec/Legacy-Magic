@@ -144,7 +144,7 @@ freeze:
     vertical-spread: 5
     modifiers:
         - onblock 78,79,80,174 power 2
-        - holding "264|&1Hydromantic__Focus" cooldown 0.2
+        - holding 264|&1Hydromantic__Focus cooldown 0.2
     str-cost: "15 mana and a snowball."
     str-on-cooldown: ""
     description: |
@@ -201,7 +201,7 @@ lightning:
     modifiers:
         - outside required
         - storm required
-        - holding "279|&9Stormhammer" power 2.5
+        - holding 279|&9Stormhammer power 2.5
     description: |
         &rLightning   3 Memory   Storm School
         &3The mage calls down single lightning bolt.

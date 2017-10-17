@@ -26,7 +26,7 @@ ranks:
         regen-amount: 1
         starting-mana: 50
 
-show-mana-on-use: true
+show-mana-on-use: false
 show-mana-on-regen: false
 show-mana-on-wood-tool: false
 show-mana-on-hunger-bar: false
@@ -38,4 +38,3 @@ mana-potions:
     - 351:4 30   # Lapis
     - 348 30     # Glowstone dust
     - 406 30     # Quartz
-    - 371 30     # Gold Nugget

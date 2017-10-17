@@ -39,7 +39,7 @@ predefined-items:
 
     forest_wand:
         type: stick
-        name: "&2Oak wand"
+        name: "&2Oak_wand"
         lore:
             - "A branch cut from an oak tree, living,"
             - "breathing with druidic magic."
@@ -235,7 +235,7 @@ forage:
         - melon_block 1 5%
         - egg 1 12%
     modifiers:
-        - holding "359|&2Magic Sickle" power 2.5
+        - holding 359|&2Magic__Sickle power 2.5
         - biome FOREST,PLAINS,FOREST_HILLS,BIRCH_FOREST,BIRCH_FOREST_HILLS,ROOFED_FOREST,JUNGLE_HILLS,JUNGLE_EDGE required
         - elevationabove 62 required
     str-cost: "30 mana and 6 seeds."
@@ -363,7 +363,7 @@ haste:
     duration: 60
     effect-strength: 2
     modifiers:
-        - holding "280|&2Oak wand" power 2
+        - holding 280|&2Oak__wand power 2
     str-cast-others: "%a gains unnatural speed!"
     str-cast-self: "You gain unnatural speed!"
     str-cost: "20 mana."
@@ -402,7 +402,7 @@ leap:
     forward-velocity: 20
     upward-velocity: 6
     modifiers:
-        - holding "280|&2Oak wand" power 2
+        - holding 280|&2Oak__wand power 2
         - wearing 443 power .34
     str-cost: "20 mana."
     str-cast-self: "You leap forward!"
@@ -462,7 +462,7 @@ entangle:
     spells:
         - getvined
     modifiers:
-        - holding "280|&2Oak wand" power 2
+        - holding 280|&2Oak__wand power 2
     str-cost: "40 mana and 1 woodland amalgam."
     str-on-cooldown: ""
     description:  |
@@ -489,7 +489,7 @@ hedge:
     wall-type: 18
     wall-width: 6
     modifiers:
-        - holding "280|&2Oak wand" power 2
+        - holding 280|&2Oak__wand power 2
     str-cost: "30 mana and 1 woodland amalgam."
     str-no-target: "You cannot create a hedge there."
     description: |

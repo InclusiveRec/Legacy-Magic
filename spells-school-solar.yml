@@ -233,7 +233,7 @@ bloom:
     growth: 1
     radius: 3
     modifiers:
-        - holding "359|&2Magic Sickle" cooldown 0.1
+        - holding 359|&2Magic__Sickle cooldown 0.1
         - outside continue
         - day power 1.5
     str-cost: "2 mana and 4 seeds."
@@ -381,10 +381,10 @@ soothe:
     target-non-players: false
     target-players: true
     modifiers:
-        - wearing "314|&eKnight's Helm" continue
-        - wearing "315|&eKnight's Cuirass" continue
-        - wearing "316|&eKnight's Greaves" continue
-        - wearing "317|&eKnight's Sabatons" power 1
+        - wearing 314|&eKnight's__Helm continue
+        - wearing 315|&eKnight's__Cuirass continue
+        - wearing 316|&eKnight's__Greaves continue
+        - wearing 317|&eKnight's__Sabatons power 1
     str-cast-others: "A wave of soothing energy emanates from %a."
     str-cast-self: "You send forth a wave of soothing energy."
     str-cost: "25 mana and one solar amalgam."
